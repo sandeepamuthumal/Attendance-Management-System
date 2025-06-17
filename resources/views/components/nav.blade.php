@@ -27,7 +27,7 @@
                         echo 'Good Morning ';
                     }
                 @endphp
-                {{-- {{ Auth::user()->first_name }} --}}
+                {{ Auth::user()->first_name }}
             </h3>
         </div>
         <div class="nav-right">
@@ -81,8 +81,8 @@
                                 width="20" alt="" />
                         </div>
                         <div class="user-content">
-                            {{-- <h6>{{ Auth::user()->first_name }}</h6> --}}
-                            <p class="mb-0">{{ Session::get('tickets_director_user_type') }}<i
+                            <h6>{{ Auth::user()->first_name }}</h6>
+                            <p class="mb-0">{{ Auth::user()->userTypeName() }}<i
                                     class="fa-solid fa-chevron-down"></i></p>
                         </div>
                     </div>

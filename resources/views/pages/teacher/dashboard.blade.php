@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Admin Dashboard
+    Teacher Dashboard
 @endsection
 
 @section('content')
@@ -9,14 +9,14 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-sm-6 col-12">
-                    <h2>Admin Dashboard</h2>
+                    <h2>Teacher Dashboard</h2>
                     <p class="mb-0 text-title-gray">Welcome back! Let’s start from where you left.</p>
                 </div>
                 <div class="col-sm-6 col-12">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="iconly-Home icli svg-color"></i></a></li>
                         <li class="breadcrumb-item">Dashboard</li>
-                        <li class="breadcrumb-item active">Admin</li>
+                        <li class="breadcrumb-item active">Teacher</li>
                     </ol>
                 </div>
             </div>

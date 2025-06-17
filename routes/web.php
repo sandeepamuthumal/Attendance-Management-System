@@ -16,27 +16,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Dashboards
-Route::get('/', [DashboardController::class, 'index']);
-Route::get('/admin-dashboard', [DashboardController::class, 'adminDashboard']);
-Route::get('/manager-dashboard', [DashboardController::class, 'managerDashboard']);
+// Redirect to dashboard if already logged in
+Route::get('/', function () {
+    return redirect()->route('dashboard');
+})->middleware('auth');
 
 //Authentication Routes
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login/process', [AuthController::class, 'loginProcess'])->name('login.process');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
+//Dashboard Routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/admin-dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.dashboard');
+    Route::get('/teacher-dashboard', [DashboardController::class, 'teacherDashboard'])->name('teacher.dashboard');
+});
 
 // User Management Routes
-Route::get('/admin/users/admins', [UserController::class, 'admins'])->name('admin.users.admins');
-Route::get('/admin/users/teachers', [UserController::class, 'teachers'])->name('admin.users.teachers');
-Route::get('/load/users', [UserController::class, 'loadUsers'])->name('load.users');
-Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
-Route::get('/users/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::post('/users/update', [UserController::class, 'update'])->name('users.update');
-Route::post('/users/deactivate/{id}', [UserController::class, 'deactivate'])->name('users.deactivate');
-Route::post('/users/activate/{id}', [UserController::class, 'activate'])->name('users.activate');
-Route::post('/users/reset-password', [UserController::class, 'resetPassword'])->name('users.reset-password');
+Route::middleware(['auth', 'is.admin'])->group(function () {
+    Route::get('/admin/users/admins', [UserController::class, 'admins'])->name('admin.users.admins');
+    Route::get('/admin/users/teachers', [UserController::class, 'teachers'])->name('admin.users.teachers');
+    Route::get('/load/users', [UserController::class, 'loadUsers'])->name('load.users');
+    Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+    Route::get('/users/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::post('/users/update', [UserController::class, 'update'])->name('users.update');
+    Route::post('/users/deactivate/{id}', [UserController::class, 'deactivate'])->name('users.deactivate');
+    Route::post('/users/activate/{id}', [UserController::class, 'activate'])->name('users.activate');
+    Route::post('/users/reset-password', [UserController::class, 'resetPassword'])->name('users.reset-password');
+});
+
 
 
 
