@@ -1,0 +1,26 @@
+.actions {
+  top: -10px;
+  position: relative;
+  z-index: 10;
+  max-width: 400px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 480px) {
+  .actions {
+    margin-top: 0;
+    left: 0
+  }
+}
+.chart-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.riskchart {
+  path {
+    stroke-width: 10px;
+    stroke-dasharray: 10, 20;
+    stroke-linecap: round;
+  }
+}

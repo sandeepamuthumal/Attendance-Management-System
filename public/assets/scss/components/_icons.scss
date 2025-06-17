@@ -1,0 +1,264 @@
+/**=====================
+    03.  Icons CSS Start
+==========================**/
+.icon-main {
+	font-family: var(--body-font-color) !important;
+	.icon-lists {
+		font-family: var(--body-font-color) !important;
+		gap: 10px;
+		justify-content: center;
+	}
+	.icons-item {
+		display: block;
+		text-align: center;
+		border: 1px solid var(--light-semi-gray);
+		padding: 20px;
+		border-radius: 4px;
+		width: calc(20% - 10px);
+		@media (max-width:1399px) {
+			width: calc(25% - 10px);
+		}
+		@media (max-width:1199px) {
+			width: calc(33% - 10px);
+		}
+		@media (max-width:675px) {
+			width: calc(50% - 10px);
+			padding: 15px;
+		}
+		@media (max-width:380px) {
+			padding: 8px;
+		}
+		h5 {
+			padding-top: 10px;
+			color: var(--body-font-color);
+			opacity: 0.7;
+		}
+		i {
+			font-size: 25px;
+			color: var(--body-font-color);
+			opacity: 0.7;
+		}
+		svg {
+			stroke: var(--body-font-color);
+			opacity: 0.7;
+		}
+	}
+}
+.icon-modal {
+	.modal-content {
+		.modal-body {
+			position: relative;
+			padding: 20px;
+			.btn-close {
+				position: absolute;
+				top: -10px;
+				right: -10px;
+				background-color: white;
+				padding: 8px;
+				border-radius: 100%;
+				opacity: 1;
+				font-size: 10px;
+			}
+			.icon-hover-bottom {
+				text-align: center;
+			}
+			.form-inline {
+				padding-top: 20px;
+				.form-group {
+					position: relative;
+					i {
+						position: absolute;
+						top: 11px;
+						right: 12px;
+					}
+					.form-control {
+						background-color: var(--light-gray);
+						border: none;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+.icon-hover-bottom {
+	background-color: var(--body-color);
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	box-shadow: 0px 0px 1px 1px var(--shape-border);
+	z-index: 999;
+	display: none;
+	&.open {
+		display: block;
+	}
+	.icon-popup {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		padding: 20px;
+		font-family: $body-font;
+		@media only screen and (max-width: 767.98px){
+			display: block;
+		}
+		@media only screen and (max-width: 575.98px){
+			padding: 15px;
+		}
+		>div {
+			display: inline-block;
+			.flag-icon {
+				width: 60px;
+				height: 60px;
+			}
+		}
+		.icon-class {
+			margin: 0 20px;
+			cursor: pointer;
+			@media only screen and (max-width: 480px) {
+				display: none;
+			}
+		}
+		.icon-last {
+			@media only screen and (max-width: 767.98px){
+				display: block;
+				margin-top: 15px;
+			}
+			.form-inline {
+				.form-group {
+					display: initial;
+				}
+			}
+		}
+	}
+	.icon-title {
+		display: block;
+		color: var(--body-font-color);
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: $body-font;
+	}
+	.form-group {
+		input {
+			display: inline-block;
+			width: 300px;
+			background-color: var(--white);
+			@media only screen and (max-width: 575.98px){
+				width: 100% !important;
+			}
+		}
+	}
+}
+.iconly-icons {
+	.svg-menu {
+		width: 24px;
+		height: 24px;
+		stroke: var(--body-font-color);
+	}
+}
+.iconModal {
+	.modal-body {
+		pre {
+			margin-bottom: 0;
+		}
+		.copy-text {
+			position: absolute;
+			top: 12px;
+			right: 12px;
+		}
+	}
+}
+.fa-fa-icon-show-div {
+	display: none;
+}
+.icon-hover-bottom {
+	.icon-popup {
+		.close-icon {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			font-size: 20px;
+			color: var(--body-font-color);
+			cursor: pointer;
+		}
+		.icon-first {
+			@media only screen and (max-width: 480px){
+				margin-right: 10px;
+				display: inline-block;
+			}
+			i {
+				color: var(--body-font-color);
+				opacity: 0.7;
+			}
+			svg {
+				stroke: var(--body-font-color);
+				opacity: 0.7;
+			}
+			.svg-menu {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}
+.alert {
+	border-radius: 0.15rem;
+	padding: 15px;
+	svg {
+		vertical-align: middle;
+	}
+	.progress {
+		margin-top: 15px;
+	}
+	[data-notify='icon'] {
+		margin-right: 10px;
+		line-height: 20px;
+		position: absolute;
+	}
+	[data-notify='message'] {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
+	i {
+		margin-right: 5px;
+		font-size: 16px;
+	}
+	p {
+		margin-bottom: 0;
+	}
+	.close {
+		opacity: 1;
+		display: none;
+		span {
+			font-size: 24px;
+			font-weight: 400;
+			display: inline-block;
+			border-radius: 3px;
+			text-shadow: none;
+			padding: 0 5px;
+			padding-right: 0;
+		}
+	}
+}
+.icon-hover-bottom {
+	span {
+		font-family: $body-font;
+	}
+	label {
+		font-family: $body-font;
+	}
+	.btn {
+		font-family: $body-font;
+		@media only screen and (max-width: 575.98px){
+			margin-top: 15px;
+		}
+	}
+	h5 {
+		font-family: $body-font;
+	}
+}
+/**=====================
+    Icon css end
+==========================**/

@@ -1,0 +1,135 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var feather                = true;
+include ../../components/mixin 
+doctype html 
+html(lang='en')
+  include ../../components/header-files
+  body
+    // page-wrapper Start
+    include ../../components/taptop
+    include ../../components/loader
+    #pageWrapper.page-wrapper.compact-wrapper 
+      include ../../components/header/header
+      // Page Body Start
+      .page-body-wrapper 
+        include ../../components/sidebar 
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6.col-12 
+                  h2
+                    | Pricing
+                .col-sm-6.col-12
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                        a(href='index.html')
+                            i.iconly-Home.icli.svg-color
+                    li.breadcrumb-item ECommerce
+                    li.breadcrumb-item.active Pricing
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-sm-12
+                .card
+                  .card-header.card-no-border.pb-0 
+                    h3 Become member
+                  .card-body.row.pricing-block
+                    .col-lg-3.col-md-6
+                      .pricingtable
+                        .pricingtable-header
+                          h3.title Standard
+                        .price-value
+                          span.currency $
+                          span.amount 10
+                          span.duration /mo
+                        ul.pricing-content
+                          li 50GB Disk Space
+                          li 50 Email Accounts
+                          li Maintenance
+                          li 15 Subdomains
+                        .pricingtable-signup
+                          a.btn.btn-primary.btn-lg(href='#') Sign Up
+                    .col-lg-3.col-md-6
+                      .pricingtable
+                        .pricingtable-header
+                          h3.title Premium
+                        .price-value
+                          span.currency $
+                          span.amount 20
+                          span.duration /mo
+                        ul.pricing-content
+                          li 10% on all product
+                          li 50 Email Accounts
+                          li Maintenance
+                          li 15 Subdomains
+                        .pricingtable-signup
+                          a.btn.btn-primary.btn-lg(href='#') Sign Up
+                    .col-lg-3.col-md-6
+                      .pricingtable
+                        .pricingtable-header
+                          h3.title Auther pack
+                        .price-value
+                          span.currency $
+                          span.amount 50
+                          span.duration /mo
+                        ul.pricing-content
+                          li Upload 50 product
+                          li 50 Email Accounts
+                          li Maintenance
+                          li 15 Subdomains
+                        .pricingtable-signup
+                          a.btn.btn-primary.btn-lg(href='#') Sign Up
+                    .col-lg-3.col-md-6
+                      .pricingtable
+                        .pricingtable-header
+                          h3.title Auther pack
+                        .price-value
+                          span.currency $
+                          span.amount 50
+                          span.duration /mo
+                        ul.pricing-content
+                          li Upload 50 product
+                          li 50 Email Accounts
+                          li Maintenance
+                          li 15 Subdomains
+                        .pricingtable-signup
+                          a.btn.btn-primary.btn-lg(href='#') Sign Up
+                .card
+                  .card-header.card-no-border.pb-0
+                    h3 Simple Pricing Card
+                  .card-body.pricing-content
+                    .row.g-sm-4.g-3
+                      .col-xl-3.col-sm-6.xl-50.box-col-6
+                        .card.text-center.pricing-simple
+                          .card-body
+                            h3 Standard
+                            h2 $15
+                            h6.mb-0 Standard Plan
+                          a.btn.btn-lg.btn-primary.btn-block(href='#') Purchase
+                      .col-xl-3.col-sm-6.xl-50.box-col-6
+                        .card.text-center.pricing-simple
+                          .card-body
+                            h3 Business
+                            h2 $25
+                            h6.mb-0 Business Plan
+                          a.btn.btn-lg.btn-primary.btn-block(href='#') Purchase
+                      .col-xl-3.col-sm-6.xl-50.box-col-6
+                        .card.text-center.pricing-simple
+                          .card-body
+                            h3 Premium
+                            h2 $35
+                            h6.mb-0 Premium Plan
+                          a.btn.btn-lg.btn-primary.btn-block(href='#') Purchase
+                      .col-xl-3.col-sm-6.xl-50.box-col-6
+                        .card.text-center.pricing-simple
+                          .card-body
+                            h3 Extra
+                            h2 $45
+                            h6.mb-0 Extra Plan
+                          a.btn.btn-lg.btn-primary.btn-block(href='#') Purchase
+        include ../../components/footer
+    include ../../components/footer-files

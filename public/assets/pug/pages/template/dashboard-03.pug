@@ -1,0 +1,712 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var date_picker            = true;
+- var dashboard_3            = true;
+- var config                 = true;
+- var echart_pie             = true;
+- var morrischart            = true;
+- var page_datatable         = true;
+- var data_table             = true;
+- var page_datatable1        = true;
+- var apex                   = true;
+include ../../components/mixin
+doctype html 
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Education Dashboard
+                                    p.mb-0.text-title-gray "Welcome back to your educational adventure!"
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Dashboard
+                                        li.breadcrumb-item.active Education
+                    // Container-fluid starts
+                    .container-fluid.dashboard-3
+                      .row
+                        .col-xxl-4.col-xl-4.col-md-6
+                          .card.graphic-design.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                .d-flex.align-items-center.gap-2
+                                  .flex-shrink-0
+                                    .icon
+                                      img.img-fluid(src='../assets/images/dashboard-3/user/20.png' alt='chair')
+                                  .flex-grow-1 
+                                    h5 Graphic Design
+                                    p.mb-0 Alice Goodwin
+                                .dropdown.icon-dropdown
+                                  button#userdropdown1.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown1')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.p-0
+                              ul 
+                                li
+                                  i.iconly-Document.icli.me-1
+                                  h5 10 Lessons
+                                li
+                                  i.iconly-Time-Square.icli.me-1
+                                  h5 8 Hours
+                                li
+                                  i.iconly-User3.icli.me-1
+                                  h5 16 Students
+                                li
+                                  i.iconly-Star.icli.me-1
+                                  h5 3.6
+                              .crypto-dashborad-chart
+                                #bitcoin-chart.bitcoin-chart
+                        .col-xxl-4.col-xl-4.col-md-6
+                          .card.graphic-design.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                .d-flex.align-items-center.gap-2
+                                  .flex-shrink-0
+                                    .icon
+                                      img.img-fluid(src='../assets/images/dashboard-3/user/21.png' alt='chair')
+                                  .flex-grow-1 
+                                    h5 Design Thinking
+                                    p.mb-0 Alice Goodwin
+                                .dropdown.icon-dropdown
+                                  button#userdropdown2.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown2')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.p-0
+                              ul 
+                                li
+                                  i.iconly-Document.icli.me-1
+                                  h5 112 Lessons
+                                li
+                                  i.iconly-Time-Square.icli.me-1
+                                  h5 6 Hours
+                                li
+                                  i.iconly-User3.icli.me-1
+                                  h5 20 Students
+                                li
+                                  i.iconly-Star.icli.me-1
+                                  h5 5.8
+                              .crypto-dashborad-chart
+                                #ripple-chart.ripple-chart
+                        .col-xxl-4.col-xl-4.col-md-12
+                          .card.graphic-design.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                .d-flex.align-items-center.gap-2
+                                  .flex-shrink-0
+                                    .icon
+                                      img.img-fluid(src='../assets/images/dashboard-3/user/22.png' alt='chair')
+                                  .flex-grow-1 
+                                    h5 Graphic Design
+                                    p.mb-0 Alice Goodwin
+                                .dropdown.icon-dropdown
+                                  button#userdropdown3.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown3')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.p-0
+                              ul 
+                                li
+                                  i.iconly-Document.icli.me-1
+                                  h5 18 Lessons
+                                li
+                                  i.iconly-Time-Square.icli.me-1
+                                  h5 9 Hours
+                                li
+                                  i.iconly-User3.icli.me-1
+                                  h5 10 Students
+                                li
+                                  i.iconly-Star.icli.me-1
+                                  h5 9.5
+                              .crypto-dashborad-chart
+                                #ethereum-chart.ethereum-chart
+                        .col-xxl-3.col-xl-4.col-sm-6.order-sm-1.order-xl-0.box-col-5
+                          .card.upcoming-card
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 Upcoming Classes
+                                .dropdown.icon-dropdown
+                                  button#userdropdown4.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown4')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.upcoming-class.pt-0
+                              .activity-day
+                                h6 15 march
+                              ul
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0
+                                    h5 09:00
+                                  .flex-grow-1.border-2.b-l-primary
+                                    h6 GDM 2nd semester
+                                    p One-line Drawing Method
+                                  i.fa-solid.fa-circle.circle-dot-primary.pull-right
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0
+                                    h5 10:00
+                                  .flex-grow-1.border-2.b-l-secondary
+                                    h6 GDM 2nd semester
+                                    p Continuous Line Drawing
+                                  i.fa-solid.fa-circle.circle-dot-secondary.pull-right
+                              .activity-day
+                                h6 17 march
+                              ul
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0
+                                    h5 12:00
+                                  .flex-grow-1.border-2.b-l-primary
+                                    h6 GDM 2nd semester
+                                    p One-line Drawing Method
+                                  i.fa-solid.fa-circle.circle-dot-primary.pull-right
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0
+                                    h5 08:00
+                                  .flex-grow-1.border-2.b-l-secondary
+                                    h6 GDM 2nd semester
+                                    p Continuous Line Drawing
+                                  i.fa-solid.fa-circle.circle-dot-secondary.pull-right
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0
+                                    h5 11:00
+                                  .flex-grow-1.border-2.b-l-primary
+                                    h6 GDM 2nd semester
+                                    p Continuous Line Drawing
+                                  i.fa-solid.fa-circle.circle-dot-primary.pull-right
+                        .col-xl-6.order-xxl-0.order-xl-4.col-lg-12.box-col-7
+                          .card.performance-card
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 School Performance
+                                div.d-flex
+                                  ul.performance-header
+                                    li.me-3
+                                      span.circle.bg-primary.me-1  
+                                      p.mb-0 Students
+                                    li.me-3
+                                      span.circle.bg-secondary.me-1
+                                      p.mb-0 Teachers
+                                  ul.simple-wrapper#myTab.nav.nav-pills(role='tablist')
+                                    li.nav-item
+                                      a#home-tab.nav-link(data-bs-toggle='tab' href='#yearly' role='tab'  aria-selected='true') Yearly
+                                    li.nav-item
+                                      a#profile-tabs.nav-link(data-bs-toggle='tab' href='#monthly' role='tab'  aria-selected='false') Monthly
+                                    li.nav-item
+                                      a#contact-tab.nav-link.active(data-bs-toggle='tab' href='#weekly' role='tab'  aria-selected='false') Weekly
+                            .card-body.pb-0
+                              #groupBarChart
+                        .col-xxl-3.col-xl-4.col-sm-6.box-col-5.box-order-1
+                          .card
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 Notice Board
+                                .dropdown.icon-dropdown
+                                  button#userdropdown5.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown5')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.notice-board
+                              ul 
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/1.png' alt="")
+                                  .flex-grow-1 
+                                    h6 Virtual STEM Clubs for 4-8 with Destina...
+                                    p.text-truncate Wed, Feb 24,2024; 12:00 pm-1:00pm
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/2.png' alt="")
+                                  .flex-grow-1 
+                                    h6 Art Now Series Presents Catherine...
+                                    p.text-truncate Wed, Feb 24,2024; 12:00 pm-1:00pm
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/3.png' alt="")
+                                  .flex-grow-1 
+                                    h6 Artistic Challenges For Your Creatie...
+                                    p.text-truncate Wed, Feb 24,2024; 12:00 pm-1:00pm
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/4.png' alt="")
+                                  .flex-grow-1 
+                                    h6 Weekly Photo Challenge & Critique...
+                                    p.text-truncate Wed, Feb 24,2024; 12:00 pm-1:00pm
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/5.png' alt="")
+                                  .flex-grow-1 
+                                    h6 Art Now Series Presents Catherine...
+                                    p.text-truncate Wed, Feb 24,2024; 12:00 pm-1:00pm
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/6.png' alt="")
+                                  .flex-grow-1 
+                                    h6 Virtual STEM Clubs for 4-8 with Destina...
+                                    p.text-truncate Wed, Feb 24,2024; 12:00 pm-1:00pm
+                        .col-xxl-6.col-xl-7.order-xxl-0.order-xl-1.col-sm-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Student Details
+                            .card-body.pt-0.details-table
+                              .table-responsive.theme-scrollbar
+                                table#student-detail.table.display.table-bordernone.mt-0(style='width:100%')
+                                  thead
+                                    tr 
+                                      th Customer
+                                      th Poduct
+                                      th QTY
+                                      th Attendance
+                                      th.text-center rating
+                                  tbody
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0.comman-round
+                                            img(src='../assets/images/dashboard-3/user/7.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Gary Goodwin
+                                            p 2019
+                                      td
+                                        h6.f-w-600 Dedoh5@error.com
+                                      td.f-w-600 QTY:12
+                                      td.f-w-600.text-center 51
+                                      td.text-end
+                                        .btn.bg-light-success.border-light-success.text-success 45/50
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0.comman-round
+                                            img(src='../assets/images/dashboard-3/user/8.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Ralph Venter
+                                            p 2019
+                                      td
+                                        h6.f-w-600 Norog95@fada.com
+                                      td.f-w-600 QTY:14
+                                      td.f-w-600.text-center 95
+                                      td.text-end
+                                        .btn.bg-light-success.border-light-success.text-success 30/100
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0.comman-round
+                                            img(src='../assets/images/dashboard-3/user/9.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Edwin Deo
+                                            p 2019
+                                      td
+                                        h6.f-w-600 Mopot43@fada.com
+                                      td.f-w-600 QTY:16
+                                      td.f-w-600.text-center 94
+                                      td.text-end
+                                        .btn.bg-light-warning.border-light-warning.text-warning 45/60
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0.comman-round
+                                            img(src='../assets/images/dashboard-3/user/10.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Aaron Hors
+                                            p 2019
+                                      td
+                                        h6.f-w-600 Fafiya34@fada.com
+                                      td.f-w-600 QTY:18
+                                      td.f-w-600.text-center 62
+                                      td.text-end
+                                        .btn.bg-light-danger.border-light-danger.text-danger 26/50
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0.comman-round
+                                            img(src='../assets/images/dashboard-3/user/11.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Fenter Jessy
+                                            p 2019
+                                      td
+                                        h6.f-w-600 Rewox6@erroe.com
+                                      td.f-w-600 QTY:20
+                                      td.f-w-600.text-center 91
+                                      td.text-end
+                                        .btn.bg-light-success.border-light-success.text-success 80/100
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0.comman-round
+                                            img(src='../assets/images/dashboard-3/user/12.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Alice Hogan
+                                            p 2019
+                                      td
+                                        h6.f-w-600 Alice345@fada.com
+                                      td.f-w-600 QTY:22
+                                      td.f-w-600.text-center 93
+                                      td.text-end
+                                        .btn.bg-light-success.border-light-success.text-success 45/50
+                        .col-xxl-3.col-xl-6.order-xxl-0.order-xl-4.col-lg-6.col-md-7.box-col-6
+                            .card
+                                .card-header.card-no-border.pb-0
+                                    .header-top
+                                        h3 New Courses
+                                        .dropdown.icon-dropdown
+                                          button#userdropdown7.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                            i.fa-solid.fa-ellipsis
+                                          .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown7')
+                                            a.dropdown-item(href='#') Weekly
+                                            a.dropdown-item(href='#') Monthly
+                                            a.dropdown-item(href='#') Yearly
+                                .card-body.course-table.pt-0
+                                    .table-responsive
+                                      table.table.table-bordernone
+                                        tbody
+                                          tr
+                                            td
+                                              .d-flex.align-items-center.gap-2
+                                                .flex-shrink-0.comman-round
+                                                  .icon
+                                                    img.img-fluid(src='../assets/images/dashboard-3/user/13.png' alt='chair')
+                                                .flex-grow-1
+                                                  a(href='product-page.html')
+                                                    h5 Gary Goodwin
+                                                  p Elementary
+                                            td
+                                              h5 30 class
+                                              p 60 hours
+                                            td 5 days left
+                                          tr
+                                            td
+                                              .d-flex.align-items-center.gap-2
+                                                .flex-shrink-0.comman-round
+                                                  .icon
+                                                    img.img-fluid(src='../assets/images/dashboard-3/user/14.png' alt='chair')
+                                                .flex-grow-1
+                                                  a(href='product-page.html')
+                                                    h5 Ralph Venter
+                                                  p Advanced
+                                            td
+                                              h5 34 class
+                                              p 45 hours
+                                            td 2 days left
+                                          tr
+                                            td
+                                              .d-flex.align-items-center.gap-2
+                                                .flex-shrink-0.comman-round
+                                                  .icon
+                                                    img.img-fluid(src='../assets/images/dashboard-3/user/15.png' alt='chair')
+                                                .flex-grow-1
+                                                  a(href='product-page.html')
+                                                    h5 Edwin Deo
+                                                  p Advanced
+                                            td
+                                              h5 87 class
+                                              p 23 hours
+                                            td 4 days left
+                                          tr
+                                            td
+                                              .d-flex.align-items-center.gap-2
+                                                .flex-shrink-0.comman-round
+                                                  .icon
+                                                    img.img-fluid(src='../assets/images/dashboard-3/user/16.png' alt='chair')
+                                                .flex-grow-1
+                                                  a(href='product-page.html')
+                                                    h5 Aaron Hors
+                                                  p Elementary
+                                            td
+                                              h5 12 class
+                                              p 56 hours
+                                            td 9 days left
+                                          tr
+                                            td
+                                              .d-flex.align-items-center.gap-2
+                                                .flex-shrink-0.comman-round
+                                                  .icon
+                                                    img.img-fluid(src='../assets/images/dashboard-3/user/17.png' alt='chair')
+                                                .flex-grow-1
+                                                  a(href='product-page.html')
+                                                    h5 Fenter Jessy
+                                                  p Art.3748979
+                                            td
+                                              h5 65 class
+                                              p 60 hours
+                                            td 1 days left
+                                          tr
+                                            td
+                                              .d-flex.align-items-center.gap-2
+                                                .flex-shrink-0.comman-round
+                                                  .icon
+                                                    img.img-fluid(src='../assets/images/dashboard-3/user/18.png' alt='chair')
+                                                .flex-grow-1
+                                                  a(href='product-page.html')
+                                                    h5 Alice Hogan
+                                                  p Art.2738979
+                                            td
+                                              h5 43 class
+                                              p 78 hours
+                                            td 6 days left
+                                          tr
+                                            td
+                                              .d-flex.align-items-center.gap-2
+                                                .flex-shrink-0.comman-round
+                                                  .icon
+                                                    img.img-fluid(src='../assets/images/dashboard-3/user/19.png' alt='chair')
+                                                .flex-grow-1
+                                                  a(href='product-page.html')
+                                                    h5 Aaron Hors
+                                                  p Art.7438378
+                                            td
+                                              h5 20 class
+                                              p 40 hours
+                                            td 5 days left
+                        .col-xxl-3.col-xl-5.order-xxl-0.order-xl-2.col-lg-6.col-md-5.col-sm-6.box-col-6
+                            .card.pie-card
+                                .card-header.card-no-border.pb-0
+                                    .header-top
+                                        h3 Time Spent on Learning
+                                        .dropdown.icon-dropdown
+                                          button#userdropdown8.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                            i.fa-solid.fa-ellipsis
+                                          .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown8')
+                                            a.dropdown-item(href='#') Weekly
+                                            a.dropdown-item(href='#') Monthly
+                                            a.dropdown-item(href='#') Yearly
+                                .card-body.revenue-category
+                                  #pie-chart.pie-chart
+                                  #legend.donut-legend
+                        .col-xxl-3.col-xl-4.col-sm-6.box-col-6
+                            .card
+                                .card-header.card-no-border.pb-0
+                                    .header-top
+                                        h3 To-do list
+                                        .dropdown.icon-dropdown
+                                          button#userdropdown9.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                            i.fa-solid.fa-ellipsis
+                                          .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown9')
+                                            a.dropdown-item(href='#') Weekly
+                                            a.dropdown-item(href='#') Monthly
+                                            a.dropdown-item(href='#') Yearly
+                                .card-body.todo-list.filled-checkbox
+                                    ul
+                                        li.d-flex.line-primary
+                                          .flex-shrink-0
+                                            .form-check.checkbox.checkbox-solid-primary
+                                              input#solid1.form-check-input(type='checkbox')
+                                              label.form-check-label(for='solid1') 
+                                          .flex-grow-1
+                                            a(href='task.html')
+                                              h5.f-w-500 Complete English test
+                                            h6 Complete english test
+                                          span 2 hours
+                                        li.d-flex.line-secondary
+                                          .flex-shrink-0
+                                            .form-check.checkbox.checkbox-solid-primary
+                                              input#solid2.form-check-input(type='checkbox' checked='')
+                                              label.form-check-label(for='solid2') 
+                                          .flex-grow-1
+                                            a(href='task.html')
+                                              h5.f-w-500 Prepare for History exam
+                                            h6 Complete english test
+                                          span 4 hours
+                                        li.d-flex.line-danger
+                                          .flex-shrink-0
+                                            .form-check.checkbox.checkbox-solid-primary
+                                              input#solid3.form-check-input(type='checkbox')
+                                              label.form-check-label(for='solid3') 
+                                          .flex-grow-1
+                                            a(href='task.html')
+                                              h5.f-w-500 Finish Digital Art project
+                                            h6 Make the adjustments
+                                          span 6 hours
+                                        li.d-flex.line-info
+                                          .flex-shrink-0
+                                            .form-check.checkbox.checkbox-solid-primary
+                                              input#solid4.form-check-input(type='checkbox')
+                                              label.form-check-label(for='solid4') 
+                                          .flex-grow-1
+                                            a(href='task.html')
+                                              h5.f-w-500 Write essay Honesty is....
+                                            h6 2-3 pages, include at least 3...
+                                          span 8 hours
+                                        li.d-flex.line-secondary
+                                          .flex-shrink-0
+                                            .form-check.checkbox.checkbox-solid-primary
+                                              input#solid5.form-check-input(type='checkbox')
+                                              label.form-check-label(for='solid5') 
+                                          .flex-grow-1
+                                            a(href='task.html')
+                                              h5.f-w-500 Make Presentation
+                                            h6 Complete english test
+                                          span 1 hours
+                                        li.d-flex.line-success
+                                          .flex-shrink-0
+                                            .form-check.checkbox.checkbox-solid-primary
+                                              input#solid6.form-check-input(type='checkbox' checked='')
+                                              label.form-check-label(for='solid6') 
+                                          .flex-grow-1
+                                            a(href='task.html')
+                                              h5.f-w-500 Complete English test
+                                            h6 Make the adjustments
+                                          span 3 hours
+                                        li.d-flex.line-warning
+                                          .flex-shrink-0
+                                            .form-check.checkbox.checkbox-solid-primary
+                                              input#solid7.form-check-input(type='checkbox')
+                                              label.form-check-label(for='solid7') 
+                                          .flex-grow-1
+                                            a(href='task.html')
+                                              h5.f-w-500 Prepare for History exam
+                                            h6 Complete english test
+                                          span 5 hours
+                        .col-xxl-6.col-xl-7.order-xxl-0.order-xl-3.col-md-6.box-col-7.box-order-2
+                            .card
+                                .card-header.card-no-border.pb-0
+                                  h3 Assignments
+                                .card-body.pt-0.assignment-table
+                                  .table-responsive.theme-scrollbar
+                                    table#assignment.table.display.table-bordernone.pt-0(style='width:100%')
+                                      thead
+                                        tr 
+                                          th Customer
+                                          th Subject
+                                          th Start Date
+                                          th.text-center Status
+                                          th.text-center submit date
+                                      tbody
+                                        tr
+                                          td
+                                            .d-flex.align-items-center.gap-3
+                                              .flex-shrink-0.comman-round
+                                                img(src='../assets/images/dashboard-3/user/1.png' alt="")
+                                              .flex-grow-1
+                                                a(href="product-page.html")
+                                                  h6 Gary Goodwin
+                                                p 2019
+                                          td
+                                            h6.f-w-600 Accounts
+                                          td.f-w-600 20 May
+                                          td.text-end
+                                            .btn.bg-light-success.border-light-success.text-success Completed  
+                                          td.f-w-600.text-center 31 july
+                                        tr
+                                          td
+                                            .d-flex.align-items-center.gap-3
+                                              .flex-shrink-0.comman-round
+                                                img(src='../assets/images/dashboard-3/user/2.png' alt="")
+                                              .flex-grow-1
+                                                a(href="product-page.html")
+                                                  h6 Ralph Venter
+                                                p 2019
+                                          td
+                                            h6.f-w-600 Bus. Study
+                                          td.f-w-600 10 May
+                                          td.text-end
+                                            .btn.bg-light-success.border-light-success.text-success Completed  
+                                          td.f-w-600.text-center 5th Aug
+                                        tr
+                                          td
+                                            .d-flex.align-items-center.gap-3
+                                              .flex-shrink-0.comman-round
+                                                img(src='../assets/images/dashboard-3/user/3.png' alt="")
+                                              .flex-grow-1
+                                                a(href="product-page.html")
+                                                  h6 Edwin Deo
+                                                p 2019
+                                          td 
+                                            h6.f-w-600  Mathematics
+                                          td.f-w-600 30 Sep
+                                          td.text-end
+                                            .btn.bg-light-warning.border-light-warning.text-warning Pending 
+                                          td.f-w-600.text-center 31 July
+                                        tr
+                                          td
+                                            .d-flex.align-items-center.gap-3
+                                              .flex-shrink-0.comman-round
+                                                img(src='../assets/images/dashboard-3/user/4.png' alt="")
+                                              .flex-grow-1
+                                                a(href="product-page.html")
+                                                  h6 Aaron Hors
+                                                p 2019
+                                          td 
+                                            h6.f-w-600 Computer App
+                                          td.f-w-600 13 Oct
+                                          td.text-end
+                                            .btn.bg-light-danger.border-light-danger.text-danger Canceled 
+                                          td.f-w-600.text-center 31 May
+                                        tr
+                                          td
+                                            .d-flex.align-items-center.gap-3
+                                              .flex-shrink-0.comman-round
+                                                img(src='../assets/images/dashboard-3/user/5.png' alt="")
+                                              .flex-grow-1
+                                                a(href="product-page.html")
+                                                  h6 Fenter Jessy
+                                                p 2019
+                                          td 
+                                            h6.f-w-600  Graphic Design
+                                          td.f-w-600 25 May
+                                          td.text-end
+                                            .btn.bg-light-success.border-light-success.text-success Completed  
+                                          td.f-w-600.text-center 24 Oct
+                                        tr
+                                          td
+                                            .d-flex.align-items-center.gap-3
+                                              .flex-shrink-0.comman-round
+                                                img(src='../assets/images/dashboard-3/user/6.png' alt="")
+                                              .flex-grow-1
+                                                a(href="product-page.html")
+                                                  h6 Alice Hogan
+                                                p 2019
+                                          td
+                                            h6.f-w-600  Design Thinking
+                                          td.f-w-600 20 Feb
+                                          td.text-end
+                                            .btn.bg-light-success.border-light-success.text-success Completed  
+                                          td.f-w-600.text-center 31 July
+                        .col-xxl-3.col-xl-5.col-sm-6.box-col-6
+                            .card.overflow-hidden
+                                .card-header.card-no-border.pb-0
+                                    .header-top
+                                        h3 Schedule a lesson
+                                        .dropdown.icon-dropdown
+                                          button#userdropdown02.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                            i.fa-solid.fa-ellipsis
+                                          .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown02')
+                                            a.dropdown-item(href='#') Weekly
+                                            a.dropdown-item(href='#') Monthly
+                                            a.dropdown-item(href='#') Yearly
+                                .card-body.p-0
+                                    .default-datepicker
+                                      .datepicker-here(data-language='en')                                    
+                include ../../components/footer
+        include ../../components/footer-files  

@@ -1,0 +1,93 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var vector_map             = true;
+- var config                 = true;
+- var page_vector_map        = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12 
+                                    h2
+                                        | Vector map 
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item 
+                                            a(href='index.html')  
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Map
+                                        li.breadcrumb-item.active Vector Map 
+                    // Container-fluid starts
+                    .container-fluid
+                        .row
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3  VECTOR WORLD MAP
+                                        span Below Map is displaying the world map.
+                                    .card-body
+                                        #world-map.jvector-map-height
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3  VECTOR USA MAP
+                                        span Below Map is displaying the usa map.
+                                    .card-body
+                                        #usa.jvector-map-height
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3  VECTOR CANADA MAP
+                                        span Below Map is displaying the canada map.
+                                    .card-body
+                                        #canada.jvector-map-height
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3  VECTOR INDIA MAP
+                                        span Below Map is displaying the india map.
+                                    .card-body
+                                        #india.jvector-map-height
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3  VECTOR ASIA MAP
+                                        span Below Map is displaying the asia map.
+                                    .card-body
+                                        #asia.jvector-map-height
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3  VECTOR UK MAP
+                                        span Below Map is displaying the uk map.
+                                    .card-body
+                                        #uk.jvector-map-height
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3  VECTOR CHICAGO MAP
+                                        span Below Map is displaying the chicago map.
+                                    .card-body
+                                        #chicago.jvector-map-height
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3  VECTOR AUSTRALIA MAP
+                                        span Below Map is displaying the australia map.
+                                    .card-body
+                                        #australia.jvector-map-height
+                include ../../components/footer 
+        include ../../components/footer-files

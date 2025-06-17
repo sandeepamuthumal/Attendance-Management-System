@@ -1,0 +1,53 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var tree                   = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Tree View   
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Bonus Ui
+                                        li.breadcrumb-item.active Tree View     
+                    // Container-fluid starts  
+                    .container-fluid
+                        .row
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Basic Tree
+                                        p.mt-1.mb-0 
+                                            | Use the dynamic tree view with checkboxes.  
+                                    .card-body
+                                        .tree-container
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Disabled Tree
+                                        p.mt-1.mb-0 
+                                            | Use the dynamic tree view with checkboxes.
+                                    .card-body
+                                        .disabled-container 
+                include ../../components/footer   
+        include ../../components/footer-files

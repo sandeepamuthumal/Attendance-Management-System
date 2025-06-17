@@ -1,0 +1,144 @@
+/**=====================
+    avatars CSS start
+==========================**/
+.avatars {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    .avatar {
+        position: relative;
+        &.ratio {
+            width: unset;
+            img {
+                width: auto;
+            }
+        }
+        .status {
+            position: absolute;
+            height: 12%;
+            width: 12%;
+            border-radius: 100%;
+            top: 12%;
+            right: 4%;
+        }
+    }
+    .b-r-8 {
+        border-radius: 8px;
+    }
+    .b-r-30 {
+        border-radius: 30px;
+    }
+    .b-r-35 {
+        border-radius: 35px;
+    }
+    .img-100 {
+        width: calc(65px + (100 - 65) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(65px + (100 - 65) * ((100vw - 320px) / (1920 - 320)));
+    }
+    .img-90 {
+        width: calc(55px + (90 - 55) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(55px + (90 - 55) * ((100vw - 320px) / (1920 - 320)));
+    }
+    .img-80 {
+        width: calc(45px + (80 - 45) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(45px + (80 - 45) * ((100vw - 320px) / (1920 - 320)));
+    }
+    .img-70 {
+        width: calc(35px + (70 - 35) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(35px + (70 - 35) * ((100vw - 320px) / (1920 - 320)));
+    }
+    .img-50 {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .img-60 {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .img-40 {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .img-30 {
+        width: 35px !important;
+        height: 35px !important;
+    }
+}
+.status-offline {
+    background-color: var(--danger-color);
+}
+.status-online {
+    background-color: var(--success-color);
+}
+.status-dnd {
+    background-color: var(--warning-color);
+}
+.customers {
+    ul {
+        display: inline-block;
+        li {
+            img {
+                border: 2px solid var(--white);
+                transition: 0.5s;
+                &:hover {
+                    transform: translateY(-4px) scale(1.02);
+                    transition: 0.5s;
+                }
+            }
+            +li {
+                margin-left: -7%;
+            }
+        }
+    }
+    &.avatar-group {
+        margin-right: 30px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+.avatar-showcase {
+    .ratio {
+        >* {
+            position: relative;
+            top: unset;
+            left: unset;
+        }
+    }
+    .avatar-intial {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 11px 18px;
+    }
+    .ping {
+        animation: load 1.5s ease-out infinite;
+    }
+    @keyframes load {
+        0% {
+            background-color: var(--ping-success);
+            border: 0px solid var(--ping-success);
+        }
+        50% {
+            background-color: var(--white);
+            border: 3px solid var(--white);
+        }
+        100% {
+            background-color: var(--ping-light-success);
+            border: 0px solid var(--ping-light-success);
+        }
+    }
+}
+.avatar-profile {
+    &.bg-light-primary {
+        &:hover {
+            background-color: rgba($primary-color, 0.1);
+            color: var(--theme-default);
+        }
+    }
+}
+/**=====================
+    avatars CSS Ends
+==========================**/

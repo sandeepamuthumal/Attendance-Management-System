@@ -1,0 +1,153 @@
+/**=====================
+     15. Helper CSS start
+==========================**/
+.helper-common-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &.helper-p-wrapper {
+        gap: 12px;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+    }
+}
+.border-wrapper {
+    padding: 20px;
+    @include media-breakpoint-down(xl) {
+        padding: 15px;
+    }
+    @include media-breakpoint-down(sm) {
+        padding: 12px;
+    }
+    h6 {
+        font-weight: 600;
+    }
+    &.border {
+        border: 1px solid var(--light-gray) !important;
+        border-radius: 1.5rem;
+    }
+    &.helper-bg {
+        border-radius: 1.5rem;
+    }
+}
+.helper-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 25%;
+    &.helper-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 900;
+    }
+}
+.helper-radius {
+    width: 60px;
+    height: 30px;
+}
+.dark-helper {
+    &.border {
+        border: transparent !important;
+    }
+}
+.fill-wrapper {
+    background-color: var(--bg-light);
+}
+$colors: (primary: $primary-color,
+    secondary: $secondary-color,
+    success: $success-color,
+    info: $info-color,
+    warning: $warning-color,
+    danger: $danger-color,
+    light: $light-color,
+    dark: $dark);
+@each $key,
+$val in $colors {
+    .alert-light-#{$key} {
+        background-color: rgba($val, 0.2);
+        color: $val;
+    }
+    .alert-light {
+        color: var(--body-font-color);
+    }
+    .alert-light-light {
+        background-color: rgba($light-color, 0.5);
+        color: var(--body-font-color);
+    }
+}
+.light-card,
+.light-background {
+    background-color: rgba($gray-60, 0.7);
+}
+.gradient-border {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    align-items: center;
+    @media (max-width: 1200px) {
+        gap: calc(13px + (22 - 13) * ((100vw - 320px) / (1200 - 320)));
+    }
+}
+.radius-wrapper {
+    background-color: var(--light-semi-gray);
+}
+.font-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+}
+.img-30 {
+    width: 30px;
+}
+.img-h-30 {
+    height: 30px;
+}
+.img-40 {
+    width: 40px;
+}
+.img-h-40 {
+    height: 40px;
+}
+.img-50 {
+    width: 50px;
+}
+.img-h-50 {
+    height: 50px;
+}
+.img-60 {
+    width: 60px;
+}
+.img-h-60 {
+    height: 60px;
+}
+.img-70 {
+    width: 70px;
+}
+.img-h-70 {
+    height: 70px;
+}
+.img-80 {
+    width: 80px;
+}
+.img-h-80 {
+    height: 80px;
+}
+.img-90 {
+    width: 90px;
+}
+.img-h-90 {
+    height: 90px;
+}
+.img-100 {
+    width: 100px;
+}
+.img-h-100 {
+    height: 100px;
+}
+/**=====================
+     15. Helper CSS end
+==========================**/

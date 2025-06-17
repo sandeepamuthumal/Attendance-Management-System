@@ -1,0 +1,123 @@
+.touchspin-wrapper {
+    .btn-touchspin {
+        border-radius: 5px;
+        width: 32px;
+        height: 32px;
+    }
+    input[type=number] {
+        width: 85px;
+        padding: 3px;
+        text-align: center;
+        height: 30px;
+        &.spin-outline-primary {
+            outline: 1px solid var(--theme-default);
+            border: none;
+            border-radius: 3px;
+        }
+    }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.touchspin-wrapper {
+    @each $touchspin-name,
+    $touchspin-color in (primary, var(--theme-default)),
+    (secondary, var(--theme-secondary)),
+    (success, var(--success-color)),
+    (danger, var(--danger-color)),
+    (warning, var(--warning-color)),
+    (info, var(--info-color)),
+    (light, var(--light-color)),
+    (dark, var(--body-font-color)) {
+        .touchspin-#{$touchspin-name} {
+            background-color: $touchspin-color;
+            border: 1px solid $touchspin-color;
+            color: var(--white);
+        }
+        .spin-border-#{$touchspin-name} {
+            background-color: unset;
+            border: 1px solid $touchspin-color;
+            color: $touchspin-color;
+        }
+        input[type='number'] {
+            &.spin-outline-#{$touchspin-name} {
+                outline: 1px solid $touchspin-color;
+                border: none;
+                border-radius: 3px;
+            }
+        }
+    }
+}
+.pre-post-touchspin {
+    .btn-touchspin {
+        &.touchspin-primary {
+            background-color: var(--theme-default);
+            border: 1px solid var(--theme-default);
+            color: var(--white);
+        }
+        &.touchspin-secondary {
+            background-color: var(--theme-secondary);
+            border: 1px solid var(--theme-secondary);
+            color: var(--white);
+        }
+    }
+    .input-group-text {
+        background-color: var(--light-gray);
+        padding: 7px 14px;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+    .decrement-touchspin {
+        padding: 7px 14px;
+    }
+    .input-touchspin {
+        border: 1px solid var(--light-color);
+        border-width: 2px;
+        text-align: center;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+    .increment-touchspin {
+        padding: 7px 14px;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+    .input-group {
+        width: auto;
+        @media (max-width : 400px) {
+            .input-touchspin {
+                width: 40%;
+            }
+        }
+    }
+    &.bg-touchspin {
+        button[type=button] {
+            border: 1px solid var(--light-color);
+            border-width: 2px;
+            text-align: center;
+            padding: 1px 6px;
+        }
+        .btn-outline-secondary {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+        }
+        .input-touchspin {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+        }
+    }
+}
+.rounded-touchspin {
+    .btn-touchspin {
+        border-radius: 50%;
+    }
+    .touchspin-wrapper {
+        input[type=number] {
+            &.input-touchspin {
+                border-radius: 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,262 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Pagination 
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Bonus Ui
+                                        li.breadcrumb-item.active Pagination
+                    .container-fluid 
+                        .row  
+                            // simple pagination
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0    
+                                        h3 Default Pagination
+                                        p.mt-1.mb-0
+                                            | Change color using 
+                                            code .pagination-*(primary)
+                                    .card-body
+                                        nav(aria-label='Page navigation example')
+                                            ul.pagination.pagination-primary
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') Previous 
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') 1
+                                                li.page-item.active
+                                                    a.page-link(href='javascript:void(0)') 2
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 3
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') Next
+                            // Disabled
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 With Disabled
+                                        p.mt-1.mb-0 
+                                            | You can set disabled page with 
+                                            code .disabled 
+                                            | class.
+                                    .card-body
+                                        nav(aria-label='Page navigation example')
+                                            ul.pagination.pagination-secondary
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 1
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') 2    
+                                                li.page-item.disabled
+                                                    a.page-link(href='#' tabindex='-1' aria-disabled='ture') ... 
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 9
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 10   
+                            // icons
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 With  Icons    
+                                        p.mt-1.mb-0
+                                            | Add icons inside the pagination
+                                    .card-body
+                                        nav(aria-label='Page navigation example')
+                                            ul.pagination.pagination-success 
+                                                li.page-item.active
+                                                    a.page-link(href='#' aria-label='Previous')
+                                                        span(aria-hidden='true') &laquo;
+                                                li.page-item    
+                                                    a.page-link(href='#') 1
+                                                li.page-item 
+                                                    a.page-link(href='#') 2
+                                                li.page-item 
+                                                    a.page-link(href='#') 3
+                                                li.page-item
+                                                    a.page-link(href='#' aria-label='Next')
+                                                        span(aria-hidden='true') &raquo;
+                            // pagination with active and disable
+                            .col-md-6
+                                .card 
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Pagination with Active and Disable 
+                                        p.mt-1.mb-0
+                                            | Use  
+                                            code .disabled  
+                                            | for links that appear un-clickable and
+                                            code  .active  
+                                            |  to indicate the current page.
+                                    .card-body
+                                        nav(aria-label='Page navigation example')
+                                            ul.pagination.pagination-secondary
+                                                li.page-item.disabled    
+                                                    a.page-link(href='javascript:void(0)' tabindex='-1') Previous
+                                                li.page-item 
+                                                    a.page-link(href='javascriptL:void(0)') 1
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 2
+                                                li.page-item.active
+                                                    a.page-link(href='javascript:void(0)') 3
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') Next
+                            // Outline
+                            .col-md-6
+                                .card   
+                                    .card-header.card-no-border.pb-0 
+                                        h3 With Outline
+                                        p.mt-1.mb-0
+                                            | you can use to pagination 
+                                            code pagination- 
+                                            | class.
+                                    .card-body 
+                                        nav(aria-label='Page navigation example')
+                                            ul.pagination.outline-pagination.text-primary
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') 1
+                                                li.page-item.active
+                                                    a.page-link(href='javascript:void(0)') 2
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 3
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') 4  
+                            // Rounded pagination    
+                            .col-md-6
+                                .card 
+                                    .card-header.card-no-border.pb-0
+                                        h3  Rounded Pagination 
+                                        p.fm-light.mt-1.mb-0    
+                                            | Used in rounded pagination   
+                                            code .rounded-circle      
+                                            | class.   
+                                    .card-body 
+                                        nav(aria-label='Page navigation example')
+                                            ul.pagination.pagination-secondary.gap-2
+                                                li.page-item
+                                                    a.page-link.rounded-circle(href='javascript:void(0)' aria-label='Previous')
+                                                        span(aria-hidden='true') &laquo;
+                                                li.page-item 
+                                                    a.page-link.rounded-circle(href='javascript:void(0)') 1
+                                                li.page-item 
+                                                    a.page-link.rounded-circle(href='javascript:void(0)') 2
+                                                li.page-item.active
+                                                    a.page-link.rounded-circle(href='javascript:void(0)')  ...
+                                                li.page-item 
+                                                    a.page-link.rounded-circle(href='javascript:void(0)') 20
+                                                li.page-item
+                                                    a.page-link.rounded-circle(href='javascript:void(0)' aria-label='Next')
+                                                        span(aria-hidden='true') &raquo;
+                            // pagination alignment 
+                            .col-md-6
+                                .card   
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Pagination Alignment 
+                                        p.fm-light.mt-1.mb-0 
+                                            | Change the alignment of pagination
+                                            code .justify-content-center:
+                                            | class.
+                                    .card-body 
+                                        // left aligned pagination
+                                        nav.mb-3(aria-label='Page navigation example')
+                                            ul.pagination.pagination-primary.justify-content-start
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') Previous
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') 1
+                                                li.page-item.active
+                                                    a.page-link(href='javascript:void(0)') 2
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 3
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') Next
+                                        // center aligned pagination 
+                                        nav.mb-3(aria-label='Page navigation example')
+                                            ul.pagination.pagination-secondary.justify-content-center
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)')  Previous
+                                                li.page-item.active
+                                                    a.page-link(href='javascript:void(0)') I
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') II
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') III
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)')  Next
+                                        // end aliged pagination
+                                        nav(aria-label='Page navigation example')
+                                            ul.pagination.pagination-success.justify-content-end 
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)')  Previous
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') i
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') ii
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') iii
+                                                li.page-item.active
+                                                    a.page-link(href='javascript:void(0)') Next
+                            //Pagination Size
+                            .col-md-6
+                                .card 
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Pagination Size 
+                                        p.fm-light.mt-1.mb-0 
+                                            | Pagination size using 
+                                            code .pagination-* 
+                                            | class.
+                                    .card-body 
+                                        //pagination ig
+                                        nav.mb-3(aria-label='Page navigation example')
+                                            ul.pagination.pagination-lg.pagination-primary
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') Previous
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 1
+                                                li.page-item.active
+                                                    a.page-link(href='javascript:void(0)') 2
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') Next 
+                                        // pagination md
+                                        nav.mb-3(aria-label='Page navigation example')
+                                            ul.pagination.pagination-md.pagination-secondary
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)')  Previous
+                                                li.page-item.active 
+                                                    a.page-link(href='javascript:void(0)') 1
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 2
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') Next
+                                        //  pagination sm
+                                        nav(aria-label='Page navigation example')
+                                            ul.pagination.pagination-sm.pagination-success 
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') Previous
+                                                li.page-item
+                                                    a.page-link(href='javascript:void(0)') 1
+                                                li.page-item.active 
+                                                    a.page-link(href='javascript:void(0)') 2
+                                                li.page-item 
+                                                    a.page-link(href='javascript:void(0)') Next                                   
+                include ../../components/footer
+        include ../../components/footer-files

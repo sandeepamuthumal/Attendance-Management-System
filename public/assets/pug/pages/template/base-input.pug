@@ -1,0 +1,299 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Base Inputs
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Form Controls
+                                        li.breadcrumb-item.active Base Inputs
+                    // Container-fluid starts  
+                    .container-fluid
+                        .row
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Simple Example
+                                        p.mt-1.mb-0
+                                            | Use the
+                                            code .form-label
+                                            | and
+                                            code .form-control 
+                                            | through create basic form.
+                                    .card-body.basic-form
+                                        .card-wrapper.border.rounded-3
+                                            form.row
+                                                .mb-3
+                                                    label.form-label(for='exampleFormControlInput1') Email address
+                                                    input#exampleFormControlInput1.form-control(type='email' placeholder='name@example.com')
+                                                div
+                                                    label.form-label(for='exampleFormControlTextarea1') Example textarea
+                                                    textarea#exampleFormControlTextarea1.form-control(rows='3')
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Sizing
+                                        p.mt-1.mb-0
+                                            | Use the 
+                                            code .form-floating
+                                            |  through create floating form.
+                                    .card-body.basic-form 
+                                        .card-wrapper.border.rounded-3
+                                            form.row.floating-wrapper
+                                                .mb-3
+                                                    input.form-control.form-control-lg(type='text' placeholder='.form-control-lg' aria-label='.form-control-lg example')
+                                                .mb-3
+                                                    input.form-control(type='text' placeholder='Default input' aria-label='default input example')
+                                                .mb-3
+                                                    input.form-control.form-control-sm(type='text' placeholder='.form-control-sm' aria-label='.form-control-sm example')
+                                                #passwordHelpBlock.form-text
+                                                    | Your password must be 8-20 characters long, contain letters and numbers.
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Basic Input Type Control 
+                                        p.mt-1.mb-0 
+                                            code .form-select
+                                            |  to trigger the custom styles.
+                                    .card-body.basic-form
+                                        form.theme-form.row.g-3
+                                            .col-sm-3
+                                                label.form-label Place holder
+                                            .col-sm-9
+                                                input.form-control(type='text' placeholder="This is for hint only ..!")
+                                            .col-sm-3
+                                                label.form-label Number
+                                            .col-sm-9
+                                                input.form-control(type='number' value="50")
+                                            .col-sm-3
+                                                label.form-label Phone Number
+                                            .col-sm-9
+                                                input.form-control(type="tel" value="91-(999)-999-999")
+                                            .col-sm-3
+                                                label.form-label URL
+                                            .col-sm-9
+                                                input.form-control(type="url" value="https://themeforest.net")
+                                            .col-sm-3
+                                                label.form-label Date and time
+                                            .col-sm-9
+                                                input.form-control(type="datetime-local" value="2024-05-01T00:00" min="2024-05-01T00:00")
+                                            .col-sm-3
+                                                label.form-label Date
+                                            .col-sm-9
+                                                input.form-control(type="date" value="2024-05-01")
+                                            .col-sm-3
+                                                label.form-label Time
+                                            .col-sm-9
+                                                input.form-control(type="time" value="00:00")
+                                            .col-sm-3
+                                                label.form-label File
+                                            .col-sm-9
+                                                input.form-control(type="file")
+                                            .col-sm-3
+                                                label.form-label Maximum Length
+                                            .col-sm-9
+                                                input.form-control(type="text" maxlength="6" value="Content must be in 6 characters" )
+                                            .col-sm-3
+                                                label.form-label Color
+                                            .col-sm-9
+                                                input.form-control.form-control-color(type='color' value="#2e8e87")
+                                            .col-sm-3
+                                                label.form-label Read only
+                                            .col-sm-9
+                                                input#staticEmail.form-control-plaintext(type='text' readonly='' value='email@example.com')
+                                            .col-sm-3
+                                                label.form-label Textarea
+                                            .col-sm-9
+                                                textarea.form-control(rows="5" cols="5" placeholder="Default textarea")
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Flat Style 
+                                        p.mt-1.mb-0 
+                                            | Set heights using classes like 
+                                            code .form-control-lg
+                                            |  and 
+                                            code .form-control-sm
+                                            | .
+                                    .card-body.basic-form
+                                        form.form.theme-form.flat-form
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='email') Email address
+                                                        input#email.form-control(type='email' placeholder='name@example.com')
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='pwd') Password
+                                                        input#pwd.form-control.mb-3(type='password' placeholder='Password')
+                                                        input#pwdre.form-control(type='password' placeholder='Re Enter Password')
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='disable') Disabled
+                                                        input#disable.form-control(type='text' disabled='' placeholder='Disabled')
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='select') Example select   
+                                                        select#select.form-select
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='multiselect') Example multiple select
+                                                        select#multiselect.form-select(multiple='')
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='textarea') Example textarea
+                                                        textarea#textarea.form-control(rows='3')
+                                            .row
+                                                .col
+                                                .text-end
+                                                    button.btn.btn-primary.me-2.btn-square(type='submit') Submit
+                                                    input.btn.btn-danger.btn-square(type='reset' value='Cancel')
+                            .col-xl-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Edges Style
+                                        p.mt-1.mb-0 
+                                            | Give textual form controls like 
+                                            code &lt;input&gt;
+                                            | s and 
+                                    .card-body.custom-input
+                                        form.form.theme-form.edges-form
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='edgesmail') Email address
+                                                        input#edgesmail.form-control(type='email' placeholder='name@example.com')
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='edgespwd') Password
+                                                        input#edgespwd.form-control(type='password' placeholder='Password')
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='edgesdisable') Disabled
+                                                        input#edgesdisable.form-control(type='text' disabled='' placeholder='Disabled')
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='edgesselect') Example select
+                                                        select#edgesselect.form-select
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='edgesselectmulti') Example multiple select
+                                                        select#edgesselectmulti.form-select(multiple='')
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                            .row
+                                                .col
+                                                    div.mb-3
+                                                        label.form-label(for='edgestextarea') Example textarea
+                                                        textarea#edgestextarea.form-control(rows='3')
+                                            .row
+                                                .col
+                                                    .text-end
+                                                        button.btn.btn-primary.me-2(type='submit') Submit
+                                                        input.btn.btn-danger(type='reset' value='Cancel')
+                            .col-xl-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Raise Style 
+                                        p.mt-1.mb-0 
+                                            | Give textual form controls like 
+                                            code &lt;input&gt;
+                                            | s and 
+                                    .card-body.custom-input
+                                        form.form.theme-form.raise-form
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='raiseemail') Email address
+                                                        input#raiseemail.form-control(type='email' placeholder='name@example.com')
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='raisepwd') Password
+                                                        input#raisepwd.form-control(type='password' placeholder='Password')
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='raisedisable') Disabled
+                                                        input#raisedisable.form-control(type='text' disabled='' placeholder='Disabled')
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='raiseselect') Example select
+                                                        select#raiseselect.form-select
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='raiseselectmulti') Example multiple select
+                                                        select#raiseselectmulti.form-select(multiple='')
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                            .row
+                                                .col
+                                                    .mb-3
+                                                        label.form-label(for='raisetextarea') Example textarea
+                                                        textarea#raisetextarea.form-control(rows='3')
+                                            .row
+                                                .col    
+                                                    .text-end
+                                                        button.btn.btn-primary.btn-air-light.me-2(type='submit') Submit
+                                                        input.btn.btn-danger.btn-air-light(type='reset' value='Cancel')
+                include ../../components/footer
+        include ../../components/footer-files   

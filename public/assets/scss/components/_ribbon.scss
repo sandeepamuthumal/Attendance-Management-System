@@ -1,0 +1,219 @@
+[class*="ribbon-wrapper"] {
+    position: relative;
+    padding: 58px 18px 28px 18px;
+}
+.ribbon {
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+    clear: left;
+    position: absolute;
+    top: 12px;
+    left: 0px;
+    color: var(--white);
+    z-index: 2;
+}
+.ribbon-space-bottom {
+    top: 0px;
+    z-index: 1;
+}
+.ribbon-clip {
+    left: -14px;
+    z-index: 1;
+    &:before {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 0;
+        height: 0;
+        content: "";
+        border: 7px solid transparent;
+        border-top-color: var(--dark);
+        border-right-color: var(--dark);
+    }
+}
+@each $ribbon-name,
+$ribbon-color in (primary, var(--theme-default)),
+(secondary, var(--theme-secondary)),
+(success, var(--success-color)),
+(danger, var(--danger-color)),
+(warning, var(--warning-color)),
+(info, var(--info-color)),
+(light, var(--light-color)),
+(dark, var(--body-font-color)) {
+    .ribbon-#{$ribbon-name} {
+        background: $ribbon-color;
+    }
+    .ribbon-#{$ribbon-name}.ribbon-clip {
+        &:before {
+            border-color: transparent;
+            border-top-color: $ribbon-color;
+            border-right-color: $ribbon-color;
+        }
+    }
+    .ribbon-bookmark {
+        &.ribbon-#{$ribbon-name}:before {
+            border-color: $ribbon-color;
+            border-right-color: transparent;
+        }
+        &.ribbon-right.ribbon-#{$ribbon-name}:before {
+            border-right-color: $ribbon-color;
+            border-left-color: transparent;
+        }
+        &.ribbon-vertical-left.ribbon-#{$ribbon-name}:before,
+        &.ribbon-vertical-right.ribbon-#{$ribbon-name}:before {
+            border-right-color: $ribbon-color;
+            border-bottom-color: transparent;
+        }
+    }
+    .ribbon-#{$ribbon-name}.ribbon-clip-bottom {
+        &:before {
+            border-top-color: transparent;
+            border-bottom-color: $ribbon-color;
+            border-right-color: $ribbon-color;
+        }
+    }
+    .ribbon-#{$ribbon-name}.ribbon-clip-right {
+        &:before {
+            border-right-color: transparent;
+            border-top-color: $ribbon-color;
+            border-left-color: $ribbon-color;
+        }
+    }
+    .ribbon-#{$ribbon-name}.ribbon-clip-bottom-right {
+        &:before {
+            border-top-color: transparent;
+            border-bottom-color: $ribbon-color;
+            border-right-color: transparent;
+            border-left-color: $ribbon-color;
+        }
+    }
+}
+.ribbon-clip-bottom-right {
+    right: -14px;
+    left: auto;
+    bottom: 12px;
+    top: auto;
+    &:before {
+        position: absolute;
+        bottom: 30px;
+        right: 0;
+        width: 0;
+        height: 0;
+        content: "";
+        border: 7px solid transparent;
+        border-top-color: var(--dark);
+        border-right-color: var(--dark);
+    }
+}
+.ribbon-vertical-left-wrapper {
+    padding-left: 40px;
+    position: relative;
+}
+.vertical-lp-space {
+    padding: 58px 28px 28px 50px;
+}
+.ribbon-vertical-left {
+    clear: none;
+    padding: 0 5px;
+    height: 60px;
+    width: 30px;
+    line-height: 70px;
+    text-align: center;
+    left: 12px;
+    top: -2px;
+    z-index: 1;
+}
+.ribbon-bookmark {
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        display: block;
+        width: 0;
+        height: 0;
+        content: '';
+        border: 15px solid var(--dark);
+        border-right: 10px solid transparent;
+        z-index: 1;
+    }
+}
+.ribbon-clip-bottom {
+    left: -14px;
+    bottom: 12px;
+    top: auto;
+    z-index: 1;
+    &:before {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        width: 0;
+        height: 0;
+        content: "";
+        border: 7px solid transparent;
+        border-top-color: var(--dark);
+        border-right-color: var(--dark);
+    }
+}
+.clip-bp-space {
+    padding: 28px 18px 58px 18px;
+}
+.ribbon-bookmark {
+    &.ribbon-vertical-left:before,
+    &.ribbon-vertical-right:before {
+        top: 100%;
+        left: 0;
+        margin-top: -14px;
+        border-right: 15px solid var(--dark);
+        border-bottom: 10px solid transparent;
+    }
+}
+.ribbon-right {
+    left: auto;
+    right: -2px;
+    z-index: 1;
+}
+.ribbon-bookmark {
+    &.ribbon-info {
+        z-index: 1;
+    }
+}
+.ribbon-clip-right {
+    right: -14px;
+    &:before {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        width: 0;
+        height: 0;
+        content: "";
+        border: 7px solid transparent;
+        border-top-color: var(--dark);
+        border-right-color: var(--dark);
+    }
+}
+.ribbon-vertical-right-wrapper {
+    padding-right: 40px;
+    position: relative;
+}
+.vertical-rp-space {
+    padding: 58px 50px 28px 28px;
+}
+.ribbon-vertical-right {
+    clear: none;
+    padding: 0 5px;
+    height: 70px;
+    width: 30px;
+    line-height: 70px;
+    text-align: center;
+    top: -2px;
+    left: auto;
+    right: 12px;
+    z-index: 1;
+}
+.ribbon-bookmark.ribbon-right:before {
+    right: 100%;
+    left: auto;
+    border-right: 15px solid var(--dark);
+    border-left: 10px solid transparent;
+}

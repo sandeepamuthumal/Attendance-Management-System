@@ -1,0 +1,111 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var page_chartist          = true;
+- var chartist               = true;
+include ../../components/mixin
+doctype html   
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar   
+                .page-body    
+                    .container-fluid
+                        .page-title      
+                            .row 
+                                .col-sm-6.col-12
+                                    h2
+                                        | Apex chart 
+                                .col-sm-6.col-12 
+                                    ol.breadcrumb
+                                        li.breadcrumb-item  
+                                            a(href='index.html')   
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Charts 
+                                        li.breadcrumb-item.active Apex chart   
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Advanced SMIL Animations
+                            .card-body
+                              .ct-6.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 SVG Path animation
+                            .card-body
+                              .ct-7.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Animating a Donut with Svg.animate
+                            .card-body
+                              .ct-8.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Bi-polar Line chart with area only
+                            .card-body
+                              .ct-5.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Line chart with area
+                            .card-body
+                              .ct-4.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Bi-polar bar chart
+                            .card-body
+                              .ct-9.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Stacked bar chart
+                            .card-body
+                              .ct-10.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Horizontal bar chart
+                            .card-body
+                              .ct-11.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Extreme responsive configuration
+                            .card-body
+                              .ct-12.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Simple line chart
+                            .card-body
+                              .ct-1.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Holes in data
+                            .card-body
+                              .ct-2.flot-chart-container
+                        .col-xl-6.col-sm-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Filled holes in data
+                            .card-body
+                              .ct-3.flot-chart-container
+                    // Container-fluid Ends
+                include ../../components/footer  
+        include ../../components/footer-files  

@@ -1,0 +1,281 @@
+/**=====================
+    03.  Card CSS Start
+==========================**/
+.card {
+  border-radius: 1.5rem;
+  border: unset;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 20px;
+  }
+  .sub-title {
+    padding-bottom: 0.75rem;
+    font-size: 1.125rem;
+  }
+  code {
+    font-size: 0.875em;
+    color: var(--theme-secondary);
+    word-wrap: break-word;
+  }
+}
+.card-header {
+  background-color: var(--white);
+  padding: $card-padding;
+  border-bottom: $card-border;
+  position: relative;
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @include media-breakpoint-down (sm) {
+    padding: 15px;
+  }
+  p {
+    color: var(--font-color);
+  }
+  &:first-child {
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+  &.card-no-border {
+    border-bottom: none !important;
+  }
+  >span {
+    font-size: 12px;
+    color: var(--sub-title);
+    margin-top: 5px;
+    display: block;
+    letter-spacing: 1px;
+  }
+  .card-header-right {
+    border-radius: 0 0 0 7px;
+    right: 35px;
+    top: 15px;
+    display: inline-block;
+    float: right;
+    padding: 8px 0;
+    position: absolute;
+    background-color: var(--white);
+    z-index: 1;
+    .card-option {
+      text-align: right;
+      width: 35px;
+      height: 20px;
+      overflow: hidden;
+      transition: 0.3s ease-in-out;
+      li {
+        display: inline-block;
+        &:first-child {
+          .fa-ellipsis {
+            transition: 1s;
+            font-size: 16px;
+            color: var(--theme-default);
+            .fa-solid {
+              color: unset;
+            }
+          }
+        }
+      }
+    }
+    i {
+      margin: 0 5px;
+      cursor: pointer;
+      color: var(--dark);
+      line-height: 20px;
+      font-size: 12px;
+    }
+  }
+}
+.card-footer {
+  background-color: var(--white);
+  border-top: var(--border-color);
+  padding: $card-padding;
+  &:last-child {
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 10px;
+  }
+}
+.card-body {
+  padding: $card-padding;
+  background-color: transparent;
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include media-breakpoint-down (sm) {
+    padding: 12px;
+  }
+}
+.social {
+  &-profile {
+    text-align: center;
+    background-image: url(../images/other-images/profile-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card-body {
+      padding-left: 20px;
+      padding-right: 20px;
+      @media (max-width: 1399px) {
+        padding: 23px 15px;
+      }
+    }
+  }
+  &-details {
+    margin-top: 15px;
+    h5 {
+      a {
+        color: var(--black);
+        font-weight: 700;
+      }
+    }
+    span {
+      color: rgba($gray-700, 0.7);
+      font-weight: 600;
+    }
+    .social-follow {
+      column-count: 3;
+      column-gap: 30px;
+      margin-top: 25px;
+      @media (max-width: 1399px) {
+        column-gap: 23px;
+      }
+      li {
+        position: relative;
+        h4 {
+          font-weight: 700;
+        }
+        span {
+          color: rgba($gray-700, 0.7);
+          font-weight: 600;
+        }
+        +li {
+          &::before {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 14px;
+            background-color: rgba($gray-700, 0.5);
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+    .card-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      li {
+        a {
+          color: var(--theme-default);
+        }
+      }
+    }
+  }
+  &-img-wrap {
+    background: linear-gradient(253deg, var(--theme-default) 11.51%, rgba(115, 102, 255, 0) 82.07%);
+    display: inline-block;
+    border-radius: 100%;
+    padding: 2px;
+    position: relative;
+    .edit-icon {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      svg {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        border: 2px dashed var(--white);
+        background: var(--white);
+      }
+    }
+  }
+  &-img {
+    padding: 5px;
+    background: var(--white);
+    border-radius: 100%;
+    img {
+      height: 68px;
+      border-radius: 100%;
+    }
+  }
+}
+.card-absolute {
+  margin-top: 20px;
+  .card-header {
+    position: absolute;
+    top: -20px;
+    left: 15px;
+    border-radius: 0.25rem;
+    padding: 10px 15px;
+    @include media-breakpoint-down(lg) {
+      padding: 10px 15px !important;
+    }
+    h5 {
+      font-size: 17px;
+    }
+  }
+  .card-body {
+    margin-top: 10px;
+  }
+}
+.dark-color-header {
+  background-color: unset !important;
+  color: var(--theme-default);
+}
+.card {
+  &.full-card {
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    box-shadow: none;
+    right: 0;
+    border-radius: 0;
+    border: 1px solid var(--light-border);
+    width: calc(100vw - 12px);
+    height: 100vh;
+  }
+  &.card-load {
+    .card-loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      background-color: rgba($white, 0.7);
+      z-index: 8;
+      align-items: center;
+      justify-content: center;
+      i {
+        margin: 0 auto;
+        color: var(--theme-default);
+        font-size: 20px;
+      }
+    }
+  }
+}
+.tab-img {
+  height: 100px;
+}
+.dark-color-header {
+  ul {
+    li {
+      i {
+        color: var(--white) !important;
+      }
+    }
+  }
+}
+/**=====================
+    03.  Card CSS end
+==========================**/

@@ -1,0 +1,254 @@
+/**=====================
+    According CSS start
+==========================**/
+.default-according {
+    .card {
+        margin-bottom: 0;
+        box-shadow: none;
+        &+.card {
+            margin-top: $according-card-top-margin;
+        }
+        .card-header {
+            padding: $according-card-header-padding;
+            border: var(--border-color);
+            i {
+                position: absolute;
+                left: 18px;
+                font-size: 20px;
+                top: 20px;
+            }
+            h5 {
+                margin-top: 2px;
+            }
+        }
+        .card-body {
+            border: var(--border-color);
+            border-top: none;
+            p {
+                color: var(--font-color)
+            }
+            span {
+                color: var(--body-font-color);
+                font-size: 16px;
+                &.badge-primary {
+                    color: var(--white);
+                    padding: 3px 5px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+.accordion-button {
+    &:not(.collapsed) {
+        background-color: var(--white);
+        &::after {
+            background-image: unset;
+        }
+    }
+    &::after {
+        background-image: unset;
+    }
+    &:focus {
+        border-color: unset;
+        box-shadow: unset;
+        z-index: 0;
+    }
+    &::after {
+        content: none;
+    }
+}
+.simple-according {
+    .accordion-button {
+        background-color: rgba($primary-color, 0.2);
+    }
+}
+.accordion-border {
+    .accordion-item {
+        border: 0;
+    }
+}
+.accordion-header {
+    margin-bottom: 0;
+}
+.according-icon {
+    margin-left: unset !important;
+}
+@each $according-name,
+$according-color in (primary, rgba($primary-color, 0.2)),
+(secondary, rgba($secondary-color, 0.2)),
+(warning, rgba($warning-color, 0.2)),
+(success, rgba($success-color, 0.2)),
+(danger, rgba($danger-color, 0.2)),
+(info, rgba($info-color, 0.2)),
+(light, rgba($light-color, 0.2)) {
+    .accordion-button {
+        &.accordion-light-#{$according-name} {
+            &:not(.collapsed) {
+                background-color: $according-color !important;
+                color: var(--dark);
+            }
+            &:active,
+            &.active {
+                background-color: $according-color;
+                color: var(--dark);
+            }
+        }
+    }
+    .multi-collapse {
+        &.show {
+            .collapse-wrapper {
+                &.accordion-light-#{$according-name} {
+                    background-color: $according-color !important;
+                }
+            }
+        }
+    }
+}
+.collapse-horizontal {
+    .card {
+        border: none;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+        border-radius: 15px;
+        box-shadow: 0px 9px 20px rgb(46 35 94 / 7%);
+        width: 400px;
+    }
+}
+.accordion-left-border {
+    &:active {
+        border: 1px solid var(--theme-default);
+        border-top: 1px solid var(--theme-default) !important;
+    }
+}
+.accordion-button {
+    .accordion-light-primary {
+        &:not(.collapsed) {
+            background-color: rgba($primary-color, 0.2);
+        }
+    }
+}
+.default-according {
+    .card {
+        .card-header {
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            &.bg-primary,
+            &.bg-secondary {
+                .btn {
+                    border-color: transparent;
+                }
+            }
+            i {
+                position: initial;
+                font-size: 20px;
+                display: inline-block;
+                vertical-align: text-bottom;
+                margin-right: 5px;
+            }
+            h5 {
+                margin-top: 0;
+            }
+            .btn-link {
+                padding: 12px 20px;
+                width: 100%;
+                font-weight: 700;
+                text-align: left;
+                letter-spacing: 0.7px;
+                border: 1px solid var(--light-semi-gray);
+                border-radius: 0;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                @media (max-width: 575px) {
+                    padding: 12px 15px;
+                }
+            }
+        }
+        .card-body {
+            padding: 15px 20px;
+            line-height: 1.3;
+            font-size: 13px;
+            border-color: var(--light-semi-gray);
+            border-radius: 0;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: var(--dark);
+        }
+    }
+    .avatar-showcase {
+        margin-bottom: 0;
+    }
+    .card {
+        margin-bottom: 0;
+        box-shadow: none;
+        &+.card {
+            margin-top: $according-card-top-margin;
+        }
+        .btn-link {
+            font-weight: $according-btn-weight;
+            color: var(--body-font-color);
+            text-decoration: none;
+        }
+        .btn-link {
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        .card-header {
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            i {
+                position: absolute;
+                left: 18px;
+                font-size: 20px;
+                top: 20px;
+            }
+            h5 {
+                margin-top: 0;
+            }
+        }
+        .card-body {
+            border-top: none;
+        }
+    }
+}
+.default-according.style-1 {
+    button {
+        width: 100%;
+        text-align: left;
+        &:before {
+            right: 20px;
+            position: absolute;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            font-size: 15px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            @media (max-width: 575px) {
+                right: 15px;
+            }
+        }
+        &[aria-expanded="true"] {
+            &:before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f078"
+            }
+        }
+        &[aria-expanded="false"] {
+            &:before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f077"
+            }
+        }
+    }
+}

@@ -1,0 +1,126 @@
+/*! -----------------------------------------------------------------------------------
+
+    Template Name: Admiro Admin
+    Template URI: http://admin.pixelstrap.com/Admiro/theme
+    Description: This is Admin Template
+    Author: Pixelstrap
+    Author URI: https://themeforest.net/user/pixelstrap
+
+-----------------------------------------------------------------------------------*/
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// *** utils ***
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/key-frames';
+
+// *** base ***
+@import './base/typography';
+@import './base/reset';
+
+// *** components ***
+@import './components/dark';
+@import "./components/according";
+@import './components/forms';
+@import './components/dropdown';
+@import './components/color';
+@import './components/buttons';
+@import './components/breadcrumb';
+@import './components/bookmark';
+@import './components/user';
+@import './components/card';
+@import './components/cart';
+@import './components/datatable';
+@import './components/table';
+@import './components/grid';
+@import './components/avatars';
+@import './components/helpers';
+@import './components/badge';
+@import './components/alert';
+@import './components/tabs';
+@import './components/list';
+@import './components/modal';
+@import './components/scrollbar';
+@import './components/toasts';
+@import './components/rating';
+@import './components/ribbon';
+@import './components/timeline';
+@import './components/range';
+@import './components/form-input';
+@import './components/order-history';
+@import './components/checkbox';
+@import './components/datepicker';
+@import './components/touchspin';
+@import './components/switch';
+@import './components/typeahead-search';
+@import './components/form-wizard';
+@import './components/aos';
+@import './components/wow';
+@import './components/icons';
+@import './components/apexchart';
+@import './components/gallery';
+@import './components/blog';
+@import './components/add_post';
+@import './components/job-search';
+@import './components/tree';
+@import './components/tour';
+@import './components/typehead';
+
+// *** layout ***
+@import './layout/sidebar';
+@import './layout/header';
+@import './layout/footer';
+@import './layout/select-2';
+@import './layout/box-layout';
+
+// *** pages ***
+
+@import "./pages/dashboard_2";
+@import "./pages/dashboard_3";
+@import "./pages/dashboard_default";
+@import './pages/progress';
+@import './pages/page';
+@import './pages/checkout';
+@import './pages/sweetalert';
+@import './pages/charts';
+@import './pages/chat';
+@import './pages/choice';
+@import './pages/faq' ;
+@import './pages/project';
+@import './pages/general';
+@import './pages/file';
+@import './pages/kanban';
+@import './pages/ecommerce';
+@import './pages/add-product';
+@import './pages/pricing';
+@import './pages/letter_box';
+@import './pages/email-application';
+@import './pages/user-profile';
+@import './pages/bookmark-app';
+@import './pages/contacts';
+@import './pages/task';
+@import './pages/social-app';
+@import './pages/knowledgebase';
+@import './pages/search';
+@import './pages/supportticket';
+@import './pages/internationalization';
+@import './pages/errorpage';
+@import './pages/login';
+@import './pages/comingsoon';
+@import './pages/megaoption';
+@import './pages/jsgrid';
+@import './pages/print';
+@import './pages/invoice';
+@import './pages/imgcrop';
+@import './pages/swiper';
+@import './pages/starterkit';
+@import './pages/general-widget';
+@import './pages/landing';
+@import './pages/loader';
+@import './pages/wheathericon';
+
+// *** Themes *** 
+@import './themes/rtl';
+@import './themes/update';
+@import './themes/custom';
+@import './themes/theme-customizer';

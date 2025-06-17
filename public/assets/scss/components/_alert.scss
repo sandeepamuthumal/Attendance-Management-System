@@ -1,0 +1,128 @@
+@each $alert-name,
+$alert-color in (primary, var(--theme-default)),
+(secondary, var(--theme-secondary)),
+(success, var(--success-color)),
+(danger, var(--danger-color)),
+(warning, var(--warning-color)),
+(info, var(--info-color)),
+(light, var(--light-color)),
+(dark, var(--body-font-color)) {
+  .list-group {
+    .form-check-input:checked[type=checkbox],
+    [type=radio] {
+      &.checkbox-#{$alert-name} {
+        background-color: unset;
+        border-color: $alert-color;
+        outline: 0;
+        background-color: unset;
+        &:focus,
+        &:active,
+        &.active {
+          border-color: $alert-color;
+          outline: 0;
+          background-color: $alert-color;
+        }
+      }
+    }
+  }
+}
+.alert-dismissible {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  .btn-close {
+    padding: 10px 1.25rem;
+    top: 10px;
+    padding-right: 13px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    &:hover {
+      transition: all 0.3s ease;
+      opacity: 1;
+      color: inherit;
+    }
+  }
+  @media (max-width: 767px) {
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 294px;
+    }
+  }
+  @media (max-width: 575px) {
+    p {
+      max-width: 102px;
+    }
+  }
+}
+.border-left-wrapper {
+  border-left: 4px solid var(--dark);
+}
+@each $alert-name,
+$alert-color in (primary, var(--theme-default)),
+(secondary, var(--theme-secondary)),
+(success, var(--success-color)),
+(danger, var(--danger-color)),
+(warning, var(--warning-color)),
+(info, var(--info-color)),
+(light, var(--light-color)),
+(dark, var(--body-font-color)) {
+  .alert-#{$alert-name} {
+    background-color: $alert-color;
+    border-color: $alert-color;
+    color: var(--white);
+  }
+}
+@each $border-name,
+$border-color in (primary, rgba($primary-color, 0.1)),
+(secondary, rgba($secondary-color, 0.1)),
+(success, rgba($success-color, 0.1)),
+(danger, rgba($danger-color, 0.1)),
+(warning, rgba($warning-color, 0.1)),
+(info, rgba($info-color, 0.1)),
+(light, rgba($light-color, 0.1)),
+(dark, rgba($body-font-color, 0.1)) {
+  .border-light-#{$border-name} {
+    border-color: $border-color;
+  }
+}
+.outline-2x {
+  border-width: 2px;
+  padding: 11px 1.25rem;
+}
+.alert-icons {
+  &.outline-2x {
+    padding: 15px;
+  }
+}
+.alert-theme {
+  .alert {
+    padding: 12px !important;
+    border-radius: 0.15rem;
+  }
+  p {
+    font-weight: 600;
+  }
+}
+.alert {
+  border-radius: 0.15rem;
+}
+.alert-arrow {
+  min-width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  i {
+    margin-right: 0;
+    color: var(--white);
+  }
+}
+.alert-secondary,
+.alert-warning {
+  .btn-close {
+    filter: brightness(1) invert(1);
+  }
+}

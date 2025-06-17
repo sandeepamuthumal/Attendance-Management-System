@@ -1,0 +1,134 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var googlechart            = true;
+- var page_googlechart       = true;
+- var config                 = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper  
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar    
+                .page-body   
+                    .container-fluid
+                        .page-title   
+                            .row 
+                                .col-sm-6.col-12
+                                    h2   
+                                        | Google Chart 
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item 
+                                            a(href='index.html')   
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Charts 
+                                        li.breadcrumb-item.active Google Chart 
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Area Chart 
+                                span 1
+                            .card-body.p-0.chart-block
+                              #area-chart1.chart-overflow
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Area Chart 
+                                span 2
+                            .card-body.p-0.chart-block
+                              #area-chart2.chart-overflow
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Column Chart 
+                                span 1 
+                            .card-body.chart-block
+                              #column-chart1.chart-overflow
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Column Chart 
+                                span 2
+                            .card-body.chart-block
+                              #column-chart2.chart-overflow
+                        .col-sm-12.box-col-12
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3 Gantt Chart
+                            .card-body.chart-block
+                              #gantt_chart.chart-overflow
+                        .col-sm-12.box-col-12
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3 Line Chart
+                            .card-body.chart-block
+                              #line-chart.chart-overflow
+                        .col-sm-12.box-col-12
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3 Combo Chart
+                            .card-body.chart-block
+                              #combo-chart.chart-overflow
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3 bar-chart2
+                            .card-body.chart-block
+                              #bar-chart2
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3 word tree
+                            .card-body.chart-block
+                              #wordtree_basic.word-tree
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Pie Chart 
+                                span 1
+                            .card-body.p-0.chart-block
+                              #pie-chart1.chart-overflow
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Pie Chart 
+                                span 2
+                            .card-body.p-0.chart-block
+                              #pie-chart3.chart-overflow
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Pie Chart 
+                                span 3
+                            .card-body.p-0.chart-block
+                              #pie-chart4.chart-overflow
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card.overflow-hidden
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Pie Chart 
+                                span 4
+                            .card-body.p-0.chart-block
+                              #pie-chart2.chart-overflow
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files    

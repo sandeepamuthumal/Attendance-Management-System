@@ -1,0 +1,789 @@
+- var sidebar               = true;
+- var theme_customizer      = true;
+- var slick                 = true;
+- var scrollbar             = true;
+- var apex                  = true;
+- var data_table            = true;
+- var page_datatable        = true;
+- var feather               = true;
+- var page_datatable1       = true;
+- var page_tilt             = true;
+- var tilt                  = true;
+- var dashboard_1           = true;
+- var config                = true;
+- var height_equal          = true;
+include ../../components/mixin
+doctype html 
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12 
+                                    h2
+                                        | Default Dashboard
+                                    p.mb-0.text-title-gray Welcome back! Let’s start from where you left.
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Dashboard
+                                        li.breadcrumb-item.active Default
+                    // Container-fluid starts
+                    .container-fluid.default-dashboard
+                      .row
+                        .col-xl-4.proorder-xxl-1.col-sm-6.box-col-6
+                          .card.welcome-banner
+                            .card-header.p-0.card-no-border
+                              .welcome-card
+                                img.w-100.img-fluid(src='../assets/images/dashboard-1/welcome-bg.png' alt="")
+                                img.position-absolute.img-1.img-fluid(src='../assets/images/dashboard-1/img-1.png' alt="")
+                                img.position-absolute.img-2.img-fluid(src='../assets/images/dashboard-1/img-2.png' alt="")
+                                img.position-absolute.img-3.img-fluid(src='../assets/images/dashboard-1/img-3.png' alt="")
+                                img.position-absolute.img-4.img-fluid(src='../assets/images/dashboard-1/img-4.png' alt="")
+                                img.position-absolute.img-5.img-fluid(src='../assets/images/dashboard-1/img-5.png' alt="")
+                            .card-body
+                              div.d-flex.align-center
+                                h1 Hello, Amirreza  
+                                  img(src='../assets/images/dashboard-1/hand.png' alt="")
+                              p  Welcome back! Let’s start from where you left.
+                              div.d-flex.align-center.justify-content-between
+                                a.btn.btn-pill.btn-primary(href="") Whats New!
+                                span 
+                                  svg.stroke-icon
+                                    use(href="../assets/svg/icon-sprite.svg#watch")
+                                  |  11:14 AM
+                        .col-xxl-3.col-xl-4.proorder-xxl-2.col-sm-6.box-col-6
+                          .card.earning-card
+                            .card-header.pb-0.card-no-border
+                              .header-top
+                                h3 Earnings Trend 
+                                .dropdown
+                                  button#userdropdown3.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    | Monthly
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown3')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.pb-0
+                              div.d-flex.align-center.gap-3
+                                h2 $4,875
+                                span.text-primary 
+                                  | 36.28%
+                                  svg.stroke-icon.stroke-primary
+                                    use(href="../assets/svg/icon-sprite.svg#arrow-down")
+                              #earnings-chart
+                        .col-xxl-5.col-xl-6.proorder-xxl-7.col-lg-12.box-col-12
+                          .card.job-card
+                            .card-header.pb-0.card-no-border
+                              .header-top
+                                h3 Job Today
+                                div   
+                                  p Wednesday 6, 
+                                    span Dec 2024
+                            .card-body.pt-2
+                              ul.d-flex.align-center.justify-content-center.gap-3 
+                                li
+                                  .d-flex.gap-2  
+                                    .flex-shrink-0.bg-light-primary
+                                      svg.stroke-icon
+                                        use(href="../assets/svg/icon-sprite.svg#job-bag")
+                                    .flex-grow-1 
+                                      h3 40
+                                      p Total Jobs 
+                                li
+                                  .d-flex.gap-2  
+                                    .flex-shrink-0.bg-light-secondary
+                                      svg.stroke-icon
+                                        use(href="../assets/svg/icon-sprite.svg#employees")
+                                    .flex-grow-1 
+                                      h3 30
+                                      p Employees
+                                li
+                                  .d-flex.gap-2  
+                                    .flex-shrink-0.bg-light-warning
+                                      svg.stroke-icon
+                                        use(href="../assets/svg/icon-sprite.svg#hours-work")
+                                    .flex-grow-1 
+                                      h3 40
+                                      p Hours of work
+                              .table-responsive.theme-scrollbar
+                                table.table.display(style='width:100%')
+                                  thead
+                                    tr 
+                                      th Time 
+                                      th Job 
+                                      th Company
+                                      th.text-center Employee 
+                                  tbody
+                                    tr
+                                      td 10:AM
+                                      td Maintenace
+                                      td Apple Inc.
+                                      td  
+                                        .d-flex.align-items-center.gap-2
+                                          .flex-shrink-0
+                                            img(src='../assets/images/dashboard-1/user/1.png' alt="")
+                                          .flex-grow-1
+                                            h6 Michele Ronaldo
+                                    tr
+                                      td 07:AM
+                                      td General
+                                      td Hewlett packard
+                                      td  
+                                        .d-flex.align-items-center.gap-2
+                                          .flex-shrink-0
+                                            img(src='../assets/images/dashboard-1/user/2.png' alt="")
+                                          .flex-grow-1
+                                            h6 Naomi watson
+                                    tr
+                                      td 03:AM
+                                      td Cleaning
+                                      td Microsoft
+                                      td  
+                                        .d-flex.align-items-center.gap-2
+                                          .flex-shrink-0
+                                            img(src='../assets/images/dashboard-1/user/3.png' alt="")
+                                          .flex-grow-1
+                                            h6 Dann Petty
+                        .col-xxl-6.col-xl-8.proorder-xxl-8.col-lg-12.col-md-6.box-col-7
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Transition History
+                            .card-body.transaction-history.pt-0
+                              .table-responsive.theme-scrollbar
+                                table#transaction.table.display.table-bordernone(style='width:100%')
+                                  thead
+                                    tr 
+                                      th Item Name
+                                      th Invoice No.
+                                      th Credit/Debit
+                                      th Date/Time
+                                      th.text-center Status
+                                  tbody
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0
+                                            img(src='../assets/images/dashboard-1/icon/1.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Samsung TV
+                                            p Item Sold
+                                      td  #px0101
+                                      td.text-success + $3460
+                                      td
+                                        .d-flex 
+                                          .flex-grow-1
+                                            h6 Jan 25
+                                            p 08:35:65
+                                      td.text-end
+                                        .btn.bg-light-success.border-light-success.text-success Completed
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0
+                                            img(src='../assets/images/dashboard-1/icon/2.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Spring Bed
+                                            p Bought item
+                                      td  #rf304f
+                                      td.text-danger - $910
+                                      td
+                                        .d-flex 
+                                          .flex-grow-1
+                                            h6 Feb 20
+                                            p 12:35:00  
+                                      td.text-end
+                                        .btn.bg-light-success.border-light-success.text-success Completed
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0
+                                            img(src='../assets/images/dashboard-1/icon/3.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Long Dress
+                                            p Bought item
+                                      td  #dnj480
+                                      td.text-success + $4380
+                                      td
+                                        .d-flex 
+                                          .flex-grow-1
+                                            h6 Oct 25
+                                            p 04:39:08
+                                      td.text-end
+                                        .btn.bg-light-warning.border-light-warning.text-warning Pending
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0
+                                            img(src='../assets/images/dashboard-1/icon/4.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Phillip Lightbulb
+                                            p Item Sold
+                                      td  #g189d0
+                                      td.text-success + $246
+                                      td
+                                        .d-flex 
+                                          .flex-grow-1
+                                            h6 Dec 25
+                                            p 08:35:65
+                                      td.text-end
+                                        .btn.bg-light-danger.border-light-danger.text-danger Canceled
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0
+                                            img(src='../assets/images/dashboard-1/icon/5.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Sofa Hauga
+                                            p Item Sold
+                                      td  #31d8fs
+                                      td.text-danger - $220
+                                      td
+                                        .d-flex 
+                                          .flex-grow-1
+                                            h6 Jan 25
+                                            p 10:20:87
+                                      td.text-end
+                                        .btn.bg-light-success.border-light-success.text-success Completed
+                                    tr
+                                      td
+                                        .d-flex.align-items-center.gap-3
+                                          .flex-shrink-0
+                                            img(src='../assets/images/dashboard-1/icon/6.png' alt="")
+                                          .flex-grow-1
+                                            a(href="product-page.html")
+                                              h6 Apple iMac 19”
+                                            p Item Sold
+                                      td  #g5384h
+                                      td.text-success + $983
+                                      td
+                                        .d-flex 
+                                          .flex-grow-1
+                                            h6 Feb 05
+                                            p 10:49:50
+                                      td.text-end
+                                        .btn.bg-light-success.border-light-success.text-success Completed
+                        .col-xxl-3.col-xl-4.proorder-xxl-9.col-md-6.box-col-5
+                          .card
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 Audit log
+                                .dropdown.icon-dropdown
+                                  button#userdropdown4.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown4')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.audit-log 
+                              ul 
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-success
+                                    img(src='../assets/images/dashboard-1/icon/checked.png' alt="")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 Route P204_salesfores created
+                                    p Andre Sluczka
+                                  span 2 hours
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-warning
+                                    img(src='../assets/images/dashboard-1/icon/danger.png' alt="")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 R304_salesforece undeployed
+                                    p Fabian Beliza
+                                  span 4 hours 
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-danger
+                                    img(src='../assets/images/dashboard-1/icon/cancel.png' alt="")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 R304_salesforece failed...
+                                    p Michael Ganatra
+                                  span 10 Jun
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-success
+                                    img(src='../assets/images/dashboard-1/icon/checked.png' alt="")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 New environment DEV created
+                                    p Wade Warren
+                                  span 22 Jun 
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-success
+                                    img(src='../assets/images/dashboard-1/icon/checked.png' alt="")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 Project salesforce created
+                                    p Bessie Cooper
+                                  span 10 july 
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-warning
+                                    img(src='../assets/images/dashboard-1/icon/danger.png' alt="")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 G202_Salesforce undeployed
+                                    p Andre Sluczka
+                                  span 22 Jun 
+                        .col-xxl-3.col-xl-4.proorder-xxl-3.col-md-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 Total Investment
+                                .dropdown.icon-dropdown
+                                  button#userdropdown5.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown5')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.investment-card
+                              #investment
+                              ul.d-flex.align-center.justify-content-center
+                                li.text-center
+                                  p.mb-0 Total
+                                  h6 $45,9760
+                                li.text-center
+                                  p.mb-0 Monthly
+                                  h6 $12,263
+                                li.text-center
+                                  p.mb-0 Daily
+                                  h6 $32600
+                        .col-xxl-3.col-xl-4.proorder-xxl-12.col-md-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 Latest Activity
+                                .dropdown.icon-dropdown
+                                  button#userdropdown6.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown6')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.latest-activity
+                              ul 
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-light-primary.border-light-primary
+                                    svg.stroke-icon.stroke-primary
+                                      use(href="../assets/svg/icon-sprite.svg#box")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 Added new repository
+                                    p Fabpot/symfony-docker
+                                  span 2 hours
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-light-warning.border-light-warning
+                                    svg.stroke-icon.stroke-warning
+                                      use(href="../assets/svg/icon-sprite.svg#dolar")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 Added new work
+                                    p Private Contributions
+                                  span 4 hours
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-light-danger.border-light-danger
+                                    svg.stroke-icon.stroke-danger
+                                      use(href="../assets/svg/icon-sprite.svg#round-right")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 Review
+                                    p Reviewed repositories
+                                  span 10 Jun 
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-light-primary.border-light-primary
+                                    svg.stroke-icon.stroke-primary
+                                      use(href="../assets/svg/icon-sprite.svg#pie-chart")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 Upload documents
+                                    p Development Startup
+                                  span 22 Jun 
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-light-warning.border-light-warning
+                                    svg.stroke-icon.stroke-warning
+                                      use(href="../assets/svg/icon-sprite.svg#globe")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 Opened issue
+                                    p Private Contributions
+                                  span 10 july 
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-light-danger.border-light-danger
+                                    svg.stroke-icon.stroke-none
+                                      use(href="../assets/svg/icon-sprite.svg#box-user")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 Customer added by @jhon
+                                    p Fabpot/symfony-docker
+                                  span 26 Jun
+                                li.d-flex.align-items-center.gap-2
+                                  .flex-shrink-0.bg-light-primary.border-light-primary
+                                    svg.stroke-icon.stroke-primary
+                                      use(href="../assets/svg/icon-sprite.svg#work-bag")
+                                  .flex-grow-1
+                                    a(href="product-page.html")
+                                      h6 Added new work
+                                    p Contributions repositories
+                                  span 22 Jun
+                        .col-lg-6.proorder-xxl-6.box-col-12
+                          .card.growthcard
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 Monthly Revenue Growth
+                                ul.simple-wrapper#myTab.nav.nav-pills(role='tablist')
+                                  li.nav-item
+                                    a#home-tab.nav-link(data-bs-toggle='tab' href='#yearly' role='tab'  aria-selected='true') Yearly
+                                  li.nav-item
+                                    a#profile-tabs.nav-link(data-bs-toggle='tab' href='#monthly' role='tab'  aria-selected='false') Monthly
+                                  li.nav-item
+                                    a#contact-tab.nav-link.active(data-bs-toggle='tab' href='#weekly' role='tab'  aria-selected='false') Weekly
+                            .card-body.pb-0
+                              #growth-chart
+                        .col-xxl-3.col-xl-5.proorder-xxl-4.col-md-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 Top Users
+                                .dropdown.icon-dropdown
+                                  button#userdropdown7.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown7')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.top-user.pt-2
+                              ul
+                                li.d-flex.align-items-center.justify-content-between.gap-2  
+                                  div.d-flex.gap-2
+                                    .flex-shrink-0.comman-round
+                                      img(src='../assets/images/dashboard-1/user/01.png' alt="")
+                                    div
+                                      a(href="#") 
+                                        h6 Alice Goodwin
+                                      p 
+                                        svg.stroke-icon
+                                          use(href="../assets/svg/icon-sprite.svg#map-icon")
+                                        | Texas
+                                  button.btn.bg-light-success.border-light-success.text-success Completed
+                                  span $250.00
+                                li.d-flex.align-items-center.justify-content-between.gap-2  
+                                  div.d-flex.gap-2
+                                    .flex-shrink-0.comman-round
+                                      img(src='../assets/images/dashboard-1/user/02.png' alt="")
+                                    div
+                                      a(href="#") 
+                                        h6 Smith Lovell
+                                      p 
+                                        svg.stroke-icon
+                                          use(href="../assets/svg/icon-sprite.svg#map-icon")
+                                        | Texas
+                                  button.btn.bg-light-success.border-light-success.text-success Completed
+                                  span $682.00
+                                li.d-flex.align-items-center.justify-content-between.gap-2  
+                                  div.d-flex.gap-2
+                                    .flex-shrink-0.comman-round
+                                      img(src='../assets/images/dashboard-1/user/03.png' alt="")
+                                    div
+                                      a(href="#") 
+                                        h6 Jones Brooks
+                                      p 
+                                        svg.stroke-icon
+                                          use(href="../assets/svg/icon-sprite.svg#map-icon")
+                                        | Texas
+                                  button.btn.bg-light-warning.border-light-warning.text-warning Pending
+                                  span $387.00
+                                li.d-flex.align-items-center.justify-content-between.gap-2  
+                                  div.d-flex.gap-2
+                                    .flex-shrink-0.comman-round
+                                      img(src='../assets/images/dashboard-1/user/04.png' alt="")
+                                    div
+                                      a(href="#") 
+                                        h6 Brown Acum
+                                      p 
+                                        svg.stroke-icon
+                                          use(href="../assets/svg/icon-sprite.svg#map-icon")
+                                        | Texas
+                                  button.btn.bg-light-danger.border-light-danger.text-danger Canceled
+                                  span $355.00
+                                li.d-flex.align-items-center.justify-content-between.gap-2  
+                                  div.d-flex.gap-2
+                                    .flex-shrink-0.comman-round
+                                      img(src='../assets/images/dashboard-1/user/05.png' alt="")
+                                    div
+                                      a(href="#") 
+                                        h6 Evans Mayo
+                                      p 
+                                        svg.stroke-icon
+                                          use(href="../assets/svg/icon-sprite.svg#map-icon")
+                                        | Texas
+                                  button.btn.bg-light-success.border-light-success.text-success Completed
+                                  span $584.00
+                                li.d-flex.align-items-center.justify-content-between.gap-2  
+                                  div.d-flex.gap-2
+                                    .flex-shrink-0.comman-round
+                                      img(src='../assets/images/dashboard-1/user/06.png' alt="")
+                                    div
+                                      a(href="#") 
+                                        h6 Wilson Pipes
+                                      p 
+                                        svg.stroke-icon
+                                          use(href="../assets/svg/icon-sprite.svg#map-icon")
+                                        | Texas
+                                  button.btn.bg-light-success.border-light-success.text-success Completed
+                                  span $954.00
+                                li.d-flex.align-items-center.justify-content-between.gap-2  
+                                  div.d-flex.gap-2
+                                    .flex-shrink-0.comman-round
+                                      img(src='../assets/images/dashboard-1/user/07.png' alt="")
+                                    div
+                                      a(href="#") 
+                                        h6 Alice Pindar
+                                      p 
+                                        svg.stroke-icon
+                                          use(href="../assets/svg/icon-sprite.svg#map-icon")
+                                        | Texas
+                                  button.btn.bg-light-danger.border-light-danger.text-danger Canceled
+                                  span $756.00
+                        .col-xxl-3.col-xl-4.proorder-xxl-10.col-md-6.box-col-6
+                          .card.height-equal
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 News & Update
+                                .dropdown.icon-dropdown
+                                  button#userdropdown8.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown8')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.news-update 
+                              ul 
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/1.png' alt="")
+                                  .flex-grow-1 
+                                    a(href="private-chat.html") 
+                                      h6 Google project apply reviwe
+                                    p.text-truncate Today’s news headlines,Breaking...
+                                  span 2 hours
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/2.png' alt="")
+                                  .flex-grow-1 
+                                    a(href="private-chat.html") 
+                                      h6 Business logo create
+                                    p.text-truncate check out the latest news from...
+                                  span 4 hours
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/3.png' alt="")
+                                  .flex-grow-1 
+                                    a(href="private-chat.html") 
+                                      h6 Business project research
+                                    p.text-truncate News in english: get all Breaking...
+                                  span 6 hours
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/4.png' alt="")
+                                  .flex-grow-1 
+                                    a(href="private-chat.html") 
+                                      h6 Recruitment in it Department
+                                    p.text-truncate Technology and indian business
+                                  span 8 hours
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/5.png' alt="")
+                                  .flex-grow-1 
+                                    a(href="private-chat.html") 
+                                      h6 Business project research
+                                    p.text-truncate Contributions private repositories
+                                  span 1 hours
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/6.png' alt="")
+                                  .flex-grow-1 
+                                    a(href="private-chat.html") 
+                                      h6 Submit riverfront project
+                                    p.text-truncate check out the latest news from...
+                                  span 3 hours
+                                li.d-flex.gap-2  
+                                  .flex-shrink-0
+                                    img.img-fluid(src='../assets/images/dashboard-1/news-update/7.png' alt="")
+                                  .flex-grow-1 
+                                    a(href="private-chat.html") 
+                                      h6 Added new work
+                                    p.text-truncate Today’s news headlines,Breaking...
+                                  span 5 hours
+                        .col-xxl-3.col-xl-4.proorder-xxl-11.col-md-6.box-col-6
+                          .card.height-equal
+                            .card-header.card-no-border.pb-0
+                              .header-top
+                                h3 Total Invest
+                                .dropdown.icon-dropdown
+                                  button#userdropdown1.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.fa-solid.fa-ellipsis
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown1')
+                                    a.dropdown-item(href='#') Weekly
+                                    a.dropdown-item(href='#') Monthly
+                                    a.dropdown-item(href='#') Yearly
+                            .card-body.total-invest
+                              .row 
+                                .col-6.col-md-12.income-chart
+                                  #Incomechrt.Incomechrt
+                                .col-6.col-md-12.invest-content.text-center
+                                  svg.stroke-icon
+                                    use(href="../assets/svg/icon-sprite.svg#chart-invest")
+                                  .btn.btn-pill.btn-primary 
+                                    span 
+                                    | Live
+                                  p.mb-0.des-title This Invest Cycle
+                                  h3 7,48,000
+                                  p.description-title Current Balance this invest cycle
+                        .col-xxl-6.col-xl-7.proorder-xxl-5.col-md-6.box-col-6
+                          .card.height-equal
+                            .card-header.card-no-border.pb-0
+                              h3 Manage Invoice
+                            .card-body.pt-0.manage-invoice.filled-checkbox
+                              .table-responsive.theme-scrollbar
+                                table#manage-invoice.table.display.table-bordernone.mt-0(style='width:100%')
+                                  thead
+                                    tr 
+                                      th
+                                        .form-check.checkbox.checkbox-solid-primary
+                                          input#solid.form-check-input(type='checkbox')
+                                          label.form-check-label(for='solid') 
+                                      th Client
+                                      th Date
+                                      th Payment
+                                      th Id No
+                                      th Amount
+                                      th.text-center Status
+                                  tbody
+                                    tr
+                                      td
+                                        .form-check.checkbox.checkbox-solid-primary
+                                          input#solid1.form-check-input(type='checkbox')
+                                          label.form-check-label(for='solid1') 
+                                      td
+                                        a(href="list-products.html") 
+                                          h6.f-w-600 Comelune
+                                      td 
+                                        p.f-w-600 27 Nov
+                                      td
+                                        h6.f-w-600 Private
+                                      td 
+                                        p.f-w-600 9605
+                                      td
+                                        h6.f-w-600 $2,500
+                                      td.text-end 
+                                        .btn.bg-light-success.border-light-success.text-success Completed  
+                                    tr
+                                      td
+                                        .form-check.checkbox.checkbox-solid-primary
+                                          input#solid2.form-check-input(type='checkbox', checked='')
+                                          label.form-check-label(for='solid2') 
+                                      td
+                                        a(href="list-products.html") 
+                                          h6.f-w-600 Diagnos
+                                      td 
+                                        p.f-w-600 30 Nov
+                                      td
+                                        h6.f-w-600 Bill Payment
+                                      td 
+                                        p.f-w-600 9548
+                                      td
+                                        h6.f-w-600 $4,560
+                                      td.text-end 
+                                        .btn.bg-light-success.border-light-success.text-success Completed
+                                    tr
+                                      td
+                                        .form-check.checkbox.checkbox-solid-primary
+                                          input#solid3.form-check-input(type='checkbox')
+                                          label.form-check-label(for='solid3') 
+                                      td
+                                        a(href="list-products.html") 
+                                          h6.f-w-600 Saturan
+                                      td 
+                                        p.f-w-600 27 Jun
+                                      td
+                                        h6.f-w-600 Bill Payment
+                                      td 
+                                        p.f-w-600 2950
+                                      td
+                                        h6.f-w-600 $4,876
+                                      td.text-end 
+                                        .btn.bg-light-warning.border-light-warning.text-warning Pending
+                                    tr
+                                      td
+                                        .form-check.checkbox.checkbox-solid-primary
+                                          input#solid4.form-check-input(type='checkbox', checked='')
+                                          label.form-check-label(for='solid4') 
+                                      td
+                                        a(href="list-products.html") 
+                                          h6.f-w-600 Williams
+                                      td 
+                                        p.f-w-600 16 Dec
+                                      td
+                                        h6.f-w-600 Private
+                                      td 
+                                        p.f-w-600 1552
+                                      td
+                                        h6.f-w-600 $3,876
+                                      td.text-end
+                                        .btn.bg-light-danger.border-light-danger.text-danger Canceled
+                                    tr
+                                      td
+                                        .form-check.checkbox.checkbox-solid-primary
+                                          input#solid5.form-check-input(type='checkbox', checked='')
+                                          label.form-check-label(for='solid5') 
+                                      td
+                                        a(href="list-products.html") 
+                                          h6.f-w-600 Davies
+                                      td 
+                                        p.f-w-600 10 Nov
+                                      td
+                                        h6.f-w-600 Bill Payment
+                                      td 
+                                        p.f-w-600 9567
+                                      td
+                                        h6.f-w-600 $2,986
+                                      td.text-end 
+                                        .btn.bg-light-success.border-light-success.text-success Completed
+                                    tr
+                                      td
+                                        .form-check.checkbox.checkbox-solid-primary
+                                          input#solid6.form-check-input(type='checkbox')
+                                          label.form-check-label(for='solid6') 
+                                      td
+                                        a(href="list-products.html") 
+                                          h6.f-w-600 Smith
+                                      td 
+                                        p.f-w-600 30 Nov
+                                      td
+                                        h6.f-w-600 Private
+                                      td 
+                                        p.f-w-600 8992
+                                      td
+                                        h6.f-w-600 $6,789
+                                      td.text-end 
+                                        .btn.bg-light-success.border-light-success.text-success Completed
+                include ../../components/footer
+        include ../../components/footer-files

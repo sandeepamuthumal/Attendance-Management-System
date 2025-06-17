@@ -1,0 +1,494 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var feather                = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                  h2
+                                    | FAQ
+                                .col-sm-6.col-12
+                                  ol.breadcrumb
+                                    li.breadcrumb-item
+                                        a(href='index.html')
+                                            i.iconly-Home.icli.svg-color
+                                    li.breadcrumb-item FAQ
+                                    li.breadcrumb-item.active FAQ
+                    // Container-fluid starts
+                    .container-fluid
+                        .faq-wrap
+                            .row
+                                .col-xl-4.box-col-6
+                                    .card.bg-primary
+                                        .card-body  
+                                            .d-flex.faq-widgets
+                                                .flex-grow-1
+                                                    h3 Articles
+                                                    p
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                                i(data-feather='file-text') 
+                                .col-xl-4.col-sm-6.box-col-6
+                                    .card.bg-primary
+                                        .card-body
+                                            .d-flex.faq-widgets  
+                                                .flex-grow-1
+                                                    h3 Knowledgebase  
+                                                    p
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                                i(data-feather='book-open')
+                                .col-xl-4.col-sm-6.box-col-12
+                                    .card.bg-primary
+                                        .card-body
+                                            .d-flex.faq-widgets
+                                                .flex-grow-1
+                                                    h3 Support
+                                                    p
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                                i(data-feather='aperture')
+                                .col-lg-12
+                                    .header-faq
+                                        h3.f-w-700.mb-3 Quick Questions are answered
+                                    #accordionoc.row.default-according.style-1.faq-accordion
+                                        .col-xl-8.xl-60.col-lg-6.col-md-7
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon', aria-expanded='false', aria-controls='collapseicon')
+                                                            i(data-feather='help-circle')
+                                                            |  Integrating WordPress with Your Website?
+                                                #collapseicon.collapse(aria-labelledby='collapseicon', data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon2', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            |  WordPress Site Maintenance ?
+                                                #collapseicon2.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon3', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            | Meta Tags in WordPress ?
+                                                #collapseicon3.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0 
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon4', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            |    WordPress in Your Language ?
+                                                #collapseicon4.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .faq-title
+                                                h3.f-w-700.mb-3 Intellectual Property
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon5', aria-expanded='false')
+                                                            i(data-feather='help-circle')
+                                                            |  WordPress Site Maintenance ?
+                                                #collapseicon5.collapse(aria-labelledby='collapseicon5', data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon7', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            |    WordPress in Your Language ?
+                                                #collapseicon7.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon8', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            | Integrating WordPress with Your Website ?
+                                                #collapseicon8.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .faq-title
+                                                h3.f-w-700.mb-3 Selling And Buying
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon9', aria-expanded='false')
+                                                            i(data-feather='help-circle')
+                                                            |  WordPress Site Maintenance ?
+                                                #collapseicon9.collapse(aria-labelledby='collapseicon9', data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon10', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            | Meta Tags in WordPress ?
+                                                #collapseicon10.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0             
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon11', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            | Validating a Website ?
+                                                #collapseicon11.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card   
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon12', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            | Know Your Sources ?
+                                                #collapseicon12.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .faq-title
+                                                h3.f-w-700.mb-3 User Accounts
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon13', aria-expanded='false')
+                                                            i(data-feather='help-circle')
+                                                            | Integrating WordPress with Your Website ?
+                                                #collapseicon13.collapse(aria-labelledby='collapseicon13', data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon14', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            | WordPress Site Maintenance ?
+                                                #collapseicon14.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon16', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            |  WordPress in Your Language ?
+                                                #collapseicon16.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon17', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            |   Validating a Website ?
+                                                #collapseicon17.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            .card
+                                                .card-header
+                                                    h5.mb-0
+                                                        button.btn.btn-link.collapsed.ps-0(data-bs-toggle='collapse', data-bs-target='#collapseicon18', aria-expanded='false', aria-controls='collapseicon2')
+                                                            i(data-feather='help-circle')
+                                                            | Meta Tags in WordPress ?
+                                                #collapseicon18.collapse(data-bs-parent='#accordionoc')
+                                                    .card-body
+                                                        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                        .col-xl-4.xl-40.col-lg-6.col-md-5
+                                            .row
+                                                .col-lg-12
+                                                    .card.card-mb-faq.xs-mt-search
+                                                        .card-header.faq-header.pb-0
+                                                            h4.f-w-700 Search articles
+                                                            i(data-feather='help-circle')
+                                                        .card-body.faq-body
+                                                            .faq-form.basic-form
+                                                                input.form-control(type='text', placeholder='Search..')
+                                                                i.search-icon(data-feather='search')
+                                                .col-lg-12
+                                                    .card.card-mb-faq
+                                                        .card-header.faq-header.pb-0
+                                                            h4.f-w-700 Navigation
+                                                            i(data-feather='settings')
+                                                        .card-body.faq-body
+                                                            .navigation-btn
+                                                                a.btn.btn-primary(href='#')
+                                                                    i.m-r-10(data-feather='message-square')
+                                                                    | Ask Question
+                                                            .navigation-option
+                                                                ul
+                                                                    li
+                                                                        a(href='#')
+                                                                            i(data-feather='edit')
+                                                                            | Tutorials
+                                                                    li
+                                                                        a(href='#')
+                                                                            i(data-feather='globe')
+                                                                            | Help center
+                                                                    li
+                                                                        a(href='#')
+                                                                            i(data-feather='book-open')
+                                                                            | Knowledgebase
+                                                                    li
+                                                                        a(href='#')
+                                                                            i(data-feather='file-text')
+                                                                            | Articles
+                                                                        span.badge.badge-primary.rounded-pill.pull-right 42
+                                                                    li
+                                                                        a(href='#')
+                                                                            i(data-feather='youtube')
+                                                                            | Video Tutorials
+                                                                        span.badge.badge-primary.rounded-pill.pull-right 648
+                                                                    li
+                                                                        a(href='#')
+                                                                            i(data-feather='message-circle')
+                                                                            | Ask our community
+                                                                    li
+                                                                        a(href='#')
+                                                                            i(data-feather='mail')
+                                                                            | Contact us
+                                                                hr
+                                                                ul
+                                                                    li
+                                                                        a(href='#')
+                                                                            i(data-feather='message-circle')
+                                                                            | Ask our community
+                                                                    li
+                                                                        a(href='#')
+                                                                            i(data-feather='mail')
+                                                                            | Contact us
+                                                .col-lg-12
+                                                    .card
+                                                        .card-header.faq-header.pb-0
+                                                            h4.f-w-700.d-inline-block Latest Updates
+                                                            span.pull-right.d-inline-block See All
+                                                        .card-body.faq-body
+                                                            .d-flex.updates-faq-main
+                                                                .updates-faq
+                                                                    i.font-primary(data-feather='rotate-cw')
+                                                                .flex-grow-1.updates-bottom-time
+                                                                    p.f-w-600
+                                                                        a(href='#') David Linner   
+                                                                        | requested money back for a double debit card charge
+                                                                    p 10 minutes ago
+                                                            .d-flex.updates-faq-main
+                                                                .updates-faq
+                                                                    i.font-primary(data-feather='dollar-sign')
+                                                                .flex-grow-1.updates-bottom-time
+                                                                    p.f-w-600 All sellers have received monthly payouts
+                                                                    p 2 hours ago
+                                                            .d-flex.updates-faq-main
+                                                                .updates-faq
+                                                                    i.font-primary(data-feather='link')
+                                                                .flex-grow-1.updates-bottom-time
+                                                                    p.f-w-600
+                                                                        | User Christopher  
+                                                                        a(href='#') Wallace  
+                                                                        |  is on hold and awaiting for staff reply
+                                                                    p 45 minutes ago
+                                                            .d-flex.updates-faq-main
+                                                                .updates-faq
+                                                                    i.font-primary(data-feather='check')
+                                                                .flex-grow-1.updates-bottom-time
+                                                                    p.f-w-600
+                                                                        | Ticket #43683 has been closed by  
+                                                                        a(href='#') Victoria Wilson
+                                                                    p Dec 7, 11:48
+                                .col-lg-12
+                                    .header-faq
+                                        h3.f-w-700.mb-0 Featured Tutorials
+                                    .row
+                                        .col-xxl-3.col-md-6.box-col-6
+                                            .card.features-faq.product-box
+                                                .faq-image.product-img
+                                                    img.img-fluid(src='../assets/images/faq/1.jpg', alt='')
+                                                    .product-hover
+                                                        ul
+                                                            li
+                                                                i.fa-solid.fa-link
+                                                            li 
+                                                                i.fa-solid.fa-download
+                                                .card-body
+                                                    h5.f-w-700 Web Design
+                                                    p
+                                                        | Web Design Trends: Provide an overview of current web design trends, such as minimalist design, microinteractions, dark mode, and immersive experiences.
+                                                .card-footer
+                                                    span.f-w-600 May 15, 2024
+                                                    span.pull-right
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                        .col-xxl-3.col-md-6.box-col-6
+                                            .card.features-faq.product-box
+                                                .faq-image.product-img
+                                                    img.img-fluid(src='../assets/images/faq/2.jpg', alt='')                            
+                                                    .product-hover
+                                                        ul
+                                                            li  
+                                                                i.fa-solid.fa-link
+                                                            li  
+                                                                i.fa-solid.fa-download
+                                                .card-body
+                                                    h5.f-w-700 Web Development
+                                                    p
+                                                        | Web development is a vast field, and there are many other aspects and technologies involved. It's important to continuously learn and keep up with the latest trends and technologies to stay. 
+                                                .card-footer
+                                                    span.f-w-600 May 12, 2024
+                                                    span.pull-right
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                        .col-xxl-3.col-md-6.box-col-6
+                                            .card.features-faq.product-box
+                                                .faq-image.product-img
+                                                    img.img-fluid(src='../assets/images/faq/3.jpg', alt='')
+                                                    .product-hover
+                                                        ul
+                                                            li  
+                                                                i.fa-solid.fa-link
+                                                            li
+                                                                i.fa-solid.fa-download 
+                                                .card-body
+                                                    h5.f-w-700 UI Design
+                                                    p
+                                                        | UI design is an iterative process that involves research, ideation, prototyping, testing, and refinement. It requires a blend of creativity, user empathy, and understanding of design.
+                                                .card-footer
+                                                    span.f-w-600 May 13, 2024
+                                                    span.pull-right
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary    
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                        .col-xxl-3.col-md-6.box-col-6
+                                            .card.features-faq.product-box
+                                                .faq-image.product-img
+                                                    img.img-fluid(src='../assets/images/faq/4.jpg', alt='')
+                                                    .product-hover
+                                                        ul
+                                                            li
+                                                                i.fa-solid.fa-link
+                                                            li 
+                                                                i.fa-solid.fa-download 
+                                                .card-body
+                                                    h5.f-w-700 UX Design
+                                                    p
+                                                        | UX design is a holistic approach that focuses on understanding and meeting user needs, ultimately aiming to create products that are valuable, usable, and delightful for the users.
+                                                .card-footer
+                                                    span.f-w-600 May 14, 2024
+                                                    span.pull-right
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                                        i.fa-solid.fa-star.font-primary 
+                                .col-lg-12  
+                                    .header-faq
+                                        h3.f-w-600.mb-0 Latest articles and videos
+                                    .row
+                                        .col-xl-4.col-md-6
+                                            .row
+                                                .col-sm-12
+                                                    .card
+                                                        .card-body
+                                                            .d-flex
+                                                                i.m-r-30(data-feather='codepen')
+                                                                .flex-grow-1
+                                                                    h5.f-w-600 Using Video
+                                                                    p The web is a very big place, and if you are the typical internet base user.
+                                                .col-sm-12
+                                                    .card
+                                                        .card-body
+                                                            .d-flex
+                                                                i.m-r-30(data-feather='codepen')
+                                                                .flex-grow-1
+                                                                    h5.f-w-600 Vel illum qu
+                                                                    p A book giving information on many subjects or on many aspects of one subject.
+                                                .col-sm-12
+                                                    .card
+                                                        .card-body
+                                                            .d-flex
+                                                                i.m-r-30(data-feather='codepen')
+                                                                .flex-grow-1
+                                                                    h5.f-w-600  Cum sociis natoqu
+                                                                    p Simple demos of frequently asked questions about using the information resources
+                                        .col-xl-4.col-md-6
+                                            .row
+                                                .col-sm-12
+                                                    .card
+                                                        .card-body
+                                                            .d-flex
+                                                                i.m-r-30(data-feather='file-text')
+                                                                .flex-grow-1
+                                                                    h5.f-w-600  Donec pede justo
+                                                                    p  Website is the process of ensuring that the pages on the website conform.
+                                                .col-sm-12
+                                                    .card
+                                                        .card-body
+                                                            .d-flex
+                                                                i.m-r-30(data-feather='file-text')
+                                                                .flex-grow-1
+                                                                    h5.f-w-600  Nam quam nunc
+                                                                    p  Tailwind is so low-level, it never encourages you to design the same site twice.
+                                                .col-sm-12
+                                                    .card   
+                                                        .card-body
+                                                            .d-flex
+                                                                i.m-r-30(data-feather='file-text')
+                                                                .flex-grow-1
+                                                                    h5.f-w-600 Using Video
+                                                                    p A book giving information on many subjects or on many aspects of one subject.
+                                        .col-xl-4
+                                            .row
+                                                .col-xl-12.col-md-6
+                                                    .card
+                                                        .card-body
+                                                            .d-flex
+                                                                i.m-r-30(data-feather='youtube')
+                                                                .flex-grow-1
+                                                                    h5.f-w-600  Vel illum qu
+                                                                    p Simple demos of frequently asked questions about using the information resources
+                                                .col-xl-12.col-md-6
+                                                    .card
+                                                        .card-body
+                                                            .d-flex
+                                                                i.m-r-30(data-feather='youtube')
+                                                                .flex-grow-1
+                                                                    h5.f-w-600  Cum sociis natoqu
+                                                                    p Website is the process of ensuring that the pages on the website conform.
+                                                .col-xl-12
+                                                    .card
+                                                        .card-body
+                                                            .d-flex
+                                                                i.m-r-30(data-feather='youtube')
+                                                                .flex-grow-1
+                                                                    h5.f-w-600 Donec pede justo
+                                                                    p Web is so high-level, it never encourages you to design the same site twice
+                include ../../components/footer
+        include ../../components/footer-files

@@ -1,0 +1,211 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+include ../../components/mixin
+doctype html 
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12 
+                                    h2
+                                        | Invoice-2
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Ecommerce
+                                        li.breadcrumb-item.active Invoice-2
+                    // Container-Fluid Starts
+                    .container.invoice-2
+                      .row 
+                        .col-sm-12
+                          .card 
+                            .card-body
+                              table.table-borderless.table-wrapper.table-responsive.theme-scrollbar
+                                tbody
+                                  tr
+                                    td
+                                      table.table-responsive(style='width: 100%;')
+                                        tbody
+                                          tr
+                                              td(style="min-width: 347px; width: 30%;")
+                                                  img.for-dark(src="../assets/images/logo/logo1.png" alt="logo")
+                                                  img.for-light(src="../assets/images/logo/logo-dark.png" alt="logo")
+                                                  address(style='opacity: 0.8; width: 80%; margin-top: 10px; font-style:normal;')
+                                                      span(style="font-size: 16px; line-height: 1.5; font-weight: 500;") 1982 Harvest Lane
+                                                          |  New York, NY12210
+                                                          |  United State
+                                              td(style='opacity: 0.8; text-align:end;')
+                                                  span(style="display:block; line-height: 1.5; font-size:16px; font-weight:500;") Email : Admiro@themesforest.com
+                                                  span(style="display:block; line-height: 1.5; font-size:16px; font-weight:500;") Website: www.Admirothemes.com
+                                                  span(style="display:block; line-height: 1.5; font-size:16px; font-weight:500;") Contact No : (316) 555-0116
+                                  tr 
+                                      td 
+                                          table.table-responsive(style="width:100%;")
+                                              tbody 
+                                                  tr(style="display:flex;justify-content:space-between;padding: 25px 0;")
+                                                      td(style="display:flex;align-items:center; gap: 6px;flex-wrap: wrap;min-width: 136px;") 
+                                                          span(style="opacity: 0.8; font-size: 16px; font-weight: 500;") Invoice No.
+                                                          h4(style="margin:0;font-weight:400; font-size: 16px;") #VL25000365
+                                                      td(style="display:flex;align-items:center; gap: 6px;flex-wrap: wrap;min-width: 136px;") 
+                                                          span(style="opacity: 0.8; font-size: 16px; font-weight: 500;") Date : 
+                                                          h4(style="margin:0;font-weight:400; font-size: 16px;") 09/03/2023
+                                                      td(style="display:flex;align-items:center; gap: 6px; flex-wrap: wrap;min-width: 146px;") 
+                                                          span(style="opacity: 0.8; font-size: 16px; font-weight: 500;") Payment Status :
+                                                          h4(style="margin:0;font-weight:400; font-size: 16px;padding:6px 18px; background-color:rgba(84, 186, 74, 0.1);color:#0DA759; border-radius: 5px;") Paid
+                                                      td(style="display:flex;align-items:center; gap: 6px; flex-wrap: wrap;") 
+                                                          span(style="opacity: 0.8; font-size: 16px; font-weight: 500;min-width: 136px;") Total Amount :
+                                                          h4(style="margin:0;font-weight:400; font-size: 16px;") $26,410.00
+                                  tr 
+                                    td 
+                                      table.table-responsive(style='width: 100%;')
+                                        tbody 
+                                          tr(style="padding: 28px 0; display:block;") 
+                                            td(Style="width:70%; min-width: 304px;")
+                                              span(style="opacity: 0.8; font-size: 16px; font-weight: 500;") BILLING ADDRESS
+                                              h4(style="font-weight:400; margin: 12px 0 6px 0; font-size: 16px;") Brooklyn Simmons
+                                              span(style="width: 54%; display:block; line-height: 1.5; opacity: 0.8; font-size: 16px; font-weight: 400;") 2118 Thornridge Cir. Syracuse, Connecticut 35624, United State
+                                              span(style="line-height:2.6; opacity: 0.8; font-size: 16px; font-weight: 400;") Phone : (239) 555-0108
+                                            td(Style="min-width: 280px;")
+                                              span(style="opacity: 0.8;font-size: 16px; font-weight: 500;") SHIPPING ADDRESS
+                                              h4(style="font-weight:400; margin: 12px 0 6px 0; font-size: 16px;") Cameron Williamson
+                                              span(style="width: 95%; display:block; line-height: 1.5; opacity: 0.8; font-size: 16px; font-weight: 400;") 2972 Westheimer Rd. Santa Ana, Illinois 85486 
+                                              span(style="line-height:2.6; opacity: 0.8; font-size: 16px; font-weight: 400;") Phone : (219) 555-0114
+                                  tr 
+                                    td 
+                                      table.table-borderless.table-responsive(style='width: 100%;border-collapse: separate;border-spacing: 0;')
+                                        thead 
+                                          tr(style="background: #134D80;border-radius: 8px;overflow: hidden;box-shadow: 0px 10.9412px 10.9412px rgba(82, 77, 141, 0.04), 0px 9.51387px 7.6111px rgba(82, 77, 141, 0.06), 0px 5.05275px 4.0422px rgba(82, 77, 141, 0.0484671);border-radius: 5.47059px;") 
+                                            th(style="padding: 18px 15px;text-align: left")
+                                              span(style="color: #fff; font-size: 16px;") Products
+                                            th(style="padding: 18px 15px;text-align: left")
+                                              span(style="color: #fff; font-size: 16px;") Quantity
+                                            th(style="padding: 18px 15px;text-align: left")
+                                              span(style="color: #fff; font-size: 16px;") Price
+                                            th(style="padding: 18px 15px;text-align: left")
+                                              span(style="color: #fff; font-size: 16px;") Unit
+                                            th(style="padding: 18px 15px;text-align: left")
+                                              span(style="color: #fff; font-size: 16px;") Vat %
+                                            th(style="padding: 18px 15px;text-align: left")
+                                              span(style="color: #fff; font-size: 16px;") Total
+                                        tbody
+                                          tr.invoice-dark(style="background-color: rgba(48, 142, 135, 0.1);box-shadow: 0px 1px 0px 0px rgba(82, 82, 108, 0.15);") 
+                                            td(style="padding: 18px 15px;display:flex;align-items: center;gap: 10px;")
+                                              span(style="width: 54px; height: 51px; background-color:#F5F6F9; display: flex; justify-content: center;align-items: center; border-radius: 5px;")
+                                                  img(src="../assets/images/email-template/4.png", alt="laptop" style="height:29px;")
+                                              ul(style="padding: 0;margin: 0;list-style: none;")
+                                                  li 
+                                                      h4(style="font-weight:400; margin:4px 0px; font-size: 16px;") Apple Desktop
+                                                      span(style="opacity: 0.8; font-size: 14px;") #XDG-6437
+                                            td(style="padding: 18px 15px;")
+                                              span 2
+                                            td(style="padding: 18px 15px; width: 12%;") 
+                                              span $100
+                                            td(style="padding: 18px 15px; width: 12%;") 
+                                              span Hour(s)
+                                            td(style="padding: 18px 15px; width: 10%;") 
+                                              span 0
+                                            td(style="padding: 18px 15px;")
+                                              span $200
+                                          tr(style="box-shadow: 0px 1px 0px 0px rgba(82, 82, 108, 0.15);")
+                                            td(style="padding: 18px 15px;display:flex;align-items: center;gap: 10px;")
+                                              span(style="width: 54px; height: 51px;background-color:#F5F6F9; display: flex; justify-content: center;align-items: center; border-radius: 5px;")
+                                                  img(src="../assets/images/email-template/3.png", alt="laptop" style="height:29px;")
+                                              div 
+                                                  h4(style="font-weight:400; margin:4px 0px; font-size: 16px;") Smart Watch
+                                                  span(style="opacity: 0.8; font-size: 14px;") #XDG-6437
+                                            td(style="padding: 18px 15px;")
+                                              span 1
+                                            td(style="padding: 18px 15px; width: 12%;") 
+                                              span $200
+                                            td(style="padding: 18px 15px; width: 12%;") 
+                                              span Hour(s)
+                                            td(style="padding: 18px 15px; width: 10%;") 
+                                              span 0
+                                            td(style="padding: 18px 15px;")
+                                              span $200
+                                          tr.invoice-dark(style="background-color: rgba(48, 142, 135, 0.1);box-shadow: 0px 1px 0px 0px rgba(82, 82, 108, 0.15);") 
+                                            td(style="padding: 18px 15px;display:flex;align-items: center;gap: 10px;")
+                                              span(style="width: 54px; height: 51px; background-color:#F5F6F9; display: flex; justify-content: center;align-items: center; border-radius: 5px;")
+                                                  img(src="../assets/images/email-template/2.png", alt="laptop" style="height:29px;")
+                                              div 
+                                                  h4(style="font-weight:400; margin:4px 0px; font-size: 16px;") Apple iphone 13 Pro
+                                                  span(style="opacity: 0.8; font-size: 14px;") #XDG-6437
+                                            td(style="padding: 18px 15px;")
+                                              span 1
+                                            td(style="padding: 18px 15px; width: 12%;") 
+                                              span $10,000
+                                            td(style="padding: 18px 15px; width: 12%;") 
+                                              span Hour(s)
+                                            td(style="padding: 18px 15px; width: 10%;") 
+                                              span 0
+                                            td(style="padding: 18px 15px;")
+                                              span $10,000
+                                          tr(style="box-shadow: 0px 1px 0px 0px rgba(82, 82, 108, 0.15);")
+                                            td(style="padding: 18px 15px;display:flex;align-items: center;gap: 10px;")
+                                              span(style="width: 54px; height: 51px; background-color:#F5F6F9; display: flex; justify-content: center;align-items: center; border-radius: 5px;")
+                                                  img(src="../assets/images/email-template/1.png", alt="laptop" style="height:29px;")
+                                              div 
+                                                  h4(style="font-weight:400; margin:4px 0px; font-size: 16px;") Wireless Headphone
+                                                  span(style="opacity: 0.8; font-size: 14px;") #XDG-6437
+                                            td(style="padding: 18px 15px;")
+                                              span 2
+                                            td(style="padding: 18px 15px; width: 12%;") 
+                                              span $8,000
+                                            td(style="padding: 18px 15px; width: 12%;") 
+                                              span Hour(s)
+                                            td(style="padding: 18px 15px; width: 10%;") 
+                                              span 0
+                                            td(style="padding: 18px 15px;")
+                                              span $16,000
+                                  tr  
+                                      td 
+                                          table.table-responsive.table-borderless
+                                              tfoot
+                                                  tr 
+                                                      td(style="padding: 5px 24px 5px 0; padding-top: 15px;") 
+                                                          span(style=" font-size: 16px; font-weight: 400;") Subtotal :
+                                                      td(style="padding: 5px 0;text-align: left;padding-top: 15px;")
+                                                          span $26,400.00
+                                                  tr
+                                                      td(style="padding: 5px 24px 5px 0;") 
+                                                          span(style=" font-size: 16px; font-weight: 400;") VAT (0%) :
+                                                      td(style="padding: 5px 0;text-align: left;padding-top: 0;")
+                                                          span $0.00
+                                                  tr
+                                                      td(style="padding: 5px 24px 5px 0;min-width: 200px;") 
+                                                          span(style=" font-size: 16px; font-weight: 400;") Shipping Rate :
+                                                      td(style="padding: 5px 0;text-align: left;padding-top: 0;")
+                                                          span $10.00
+                                                  tr
+                                                      td(style="padding: 12px 24px 5px 0;min-width: 200px;") 
+                                                          span(style="font-weight: 600; font-size: 20px; color: #134D80;") Total Amount :
+                                                      td(style="padding: 12px 24px 5px 0;;text-align: right")
+                                                          span(style="font-weight: 500; font-size: 20px; color: rgba(48, 142, 135, 1);") $26,410.00
+                                  tr 
+                                      td 
+                                          span(style="display:block;background: rgba(82, 82, 108, 0.3);height: 1px;width: 100%;margin-bottom:24px;")
+                                  tr
+                                    td 
+                                      span(style="display: flex; justify-content: end; gap: 15px; margin-bottom:15px;")
+                                        a(style="background: rgba(48, 142, 135, 1); color:rgba(255, 255, 255, 1);border-radius: 10px;padding: 18px 27px;font-size: 16px;font-weight: 600;outline: 0;border: 0; text-decoration: none;" href="#!" onclick="window.print();") Print Invoice
+                                          i.icofont.icon-arrow-right(style="font-size:13px;font-weight:bold; margin-left: 10px;")
+                                        a(style="background: rgba(48, 142, 135, 0.1);color: rgba(48, 142, 135, 1);border-radius: 10px;padding: 18px 27px;font-size: 16px;font-weight: 600;outline: 0;border: 0; text-decoration: none;" href="../template/invoice-1.html" download='') Download
+                                          i.icofont.icon-arrow-right(style="font-size:13px;font-weight:bold; margin-left: 10px;")
+                    // Container-Fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

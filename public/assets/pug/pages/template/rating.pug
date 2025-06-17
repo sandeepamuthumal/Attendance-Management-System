@@ -1,0 +1,205 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var rating                 = true;
+- var height_equal           = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body 
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Rating 
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Bonus Ui
+                                        li.breadcrumb-item.active Rating
+                    // Container-fluid starts
+                    .container-fluid
+                        .row
+                            .col-xl-4
+                                // Star rating
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Star Rating
+                                        p.desc.mb-0.mt-1
+                                            span Rating is displayed using
+                                            code .rating-star
+                                            span  id using javascript.
+                                    .card-body
+                                        .rating
+                                            span.rating-value
+                                            i.rating-star.fa-regular.fa-star
+                                            i.rating-star.fa-regular.fa-star
+                                            i.rating-star.fa-regular.fa-star
+                                            i.rating-star.fa-regular.fa-star
+                                            i.rating-star.fa-regular.fa-star
+                            .col-xl-4
+                                // Face rating
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Rating with feedback
+                                        p.desc.mb-0.mt-1
+                                            span Rating is displayed using
+                                            code .rating-star
+                                            span  id using javascript.
+                                    .card-body
+                                        .heart-rating
+                                            .rating-system3
+                                                input#star5_3(type='radio' name='rate3')
+                                                label(for='star5_3')
+                                                input#star4_3(type='radio' name='rate3')
+                                                label(for='star4_3')
+                                                input#star3_3(type='radio' name='rate3')
+                                                label(for='star3_3')
+                                                input#star2_3(type='radio' name='rate3')
+                                                label(for='star2_3')
+                                                input#star1_3(type='radio' name='rate3')
+                                                label(for='star1_3')
+                                                .text
+                            .col-xl-4
+                                // Face rating
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Animated  Rating
+                                        p.desc.mb-0.mt-1
+                                            span Rating is displayed using
+                                            code .rating-star
+                                            span  id using javascript.
+                                    .card-body
+                                        ul.feedback
+                                            li.angry
+                                                div
+                                                    svg.eye.left
+                                                        use(href='../assets/svg/iconly-sprite.svg#eye')
+                                                    svg.eye.right
+                                                        use(href='../assets/svg/iconly-sprite.svg#eye')
+                                                    svg.mouth
+                                                        use(href='../assets/svg/iconly-sprite.svg#mouth')
+                                            li.sad
+                                                div
+                                                    svg.eye.left
+                                                        use(href='../assets/svg/iconly-sprite.svg#eye')
+                                                    svg.eye.right
+                                                        use(href='../assets/svg/iconly-sprite.svg#eye')
+                                                    svg.mouth
+                                                        use(href='../assets/svg/iconly-sprite.svg#mouth')
+                                            li.ok
+                                                div
+                                            li.good.active
+                                                div
+                                                    svg.eye.left
+                                                        use(href='../assets/svg/iconly-sprite.svg#eye')
+                                                    svg.eye.right
+                                                        use(href='../assets/svg/iconly-sprite.svg#eye')
+                                                    svg.mouth
+                                                        use(href='../assets/svg/iconly-sprite.svg#mouth')
+                                            li.happy
+                                                div
+                                                    svg.eye.left
+                                                        use(href='../assets/svg/iconly-sprite.svg#eye')
+                                                    svg.eye.right
+                                                        use(href='../assets/svg/iconly-sprite.svg#eye')
+                            .col-xl-4
+                                // Number rating
+                                .card.height-equal
+                                    .card-body.number-rating
+                                        .card.rating_card.mb-0
+                                            h3.title How did we do?
+                                            p
+                                                | Please let us know how we did with your support request. All feedback is appreciated
+                                                | to help us improve our offering!
+                                            ul.ratings
+                                                li.circle.rating(data-rating='1') 1
+                                                li.circle.rating(data-rating='2') 2
+                                                li.circle.rating(data-rating='3') 3
+                                                li.circle.rating(data-rating='4') 4
+                                                li.circle.rating(data-rating='5') 5
+                                            button.rating-button.btn.btn-secondary Submit
+                                            // Rating state end
+                                        .card.back-card.hidden.mb-0
+                                            .illustration
+                                                img(src='../assets/images/other-images/invoice.svg' alt='')
+                                            p.result
+                                            .greet
+                                                h4 Thank you!
+                                                p
+                                                    | We appreciate you taking the time to give a rating. If you ever need more support,
+                                                    | don&rsquo;t hesitate to get in touch!
+                                            // Thank you state end
+                            .col-xl-4
+                                // Star rating
+                                .card.height-equal
+                                    .card-header.card-no-border.pb-0
+                                        h3 Slider Rating
+                                        p.desc.mb-0.mt-1
+                                            span Use slider
+                                            code form , .fr
+                                            span  to use emoji slider ratings with hue gradient.
+                                    .card-body
+                                        form.fr
+                                            label.fr__label(for='face-rating') How was your experience?
+                                            .fr__face(role='img' aria-label='Straight face')
+                                                .fr__face-right-eye(data-right='')
+                                                .fr__face-left-eye(data-left='')
+                                                .fr__face-mouth-lower(data-mouth-lower='')
+                                                .fr__face-mouth-upper(data-mouth-upper='')
+                                            input#face-rating.fr__input(type='range' value='2.5' min='0' max='5' step='0.1')
+                            .col-xl-4
+                                // Emoji with message rating
+                                .card.height-equal
+                                    .card-header.card-no-border.pb-0
+                                        h3 Emoji with message
+                                        p.desc.mb-0.mt-1
+                                            span Use
+                                            code .emoji-wrapper
+                                            span add emoji with messages.
+                                    .card-body
+                                        .emoji-wrapper
+                                            input#star-1(type='radio' name='rate')
+                                            input#star-2(type='radio' name='rate')
+                                            input#star-3(type='radio' name='rate')
+                                            input#star-4(type='radio' name='rate')
+                                            input#star-5(type='radio' name='rate')
+                                            .content
+                                                .outer
+                                                    ul.emojis
+                                                        li.slideImg
+                                                            img(src='../assets/images/other-images/emoji/angry.png' alt='')
+                                                        li
+                                                            img(src='../assets/images/other-images/emoji/sad.png' alt='')
+                                                        li
+                                                            img(src='../assets/images/other-images/emoji/think.png' alt='')
+                                                        li
+                                                            img(src='../assets/images/other-images/emoji/smile.png' alt='')
+                                                        li
+                                                            img(src='../assets/images/other-images/emoji/love.png' alt='')
+                                                .stars
+                                                    label.star-1.fas.fa-star(for='star-1')
+                                                    label.star-2.fas.fa-star(for='star-2')
+                                                    label.star-3.fas.fa-star(for='star-3')
+                                                    label.star-4.fas.fa-star(for='star-4')
+                                                    label.star-5.fas.fa-star(for='star-5')
+                                            .footer
+                                                span.text
+                                                span.numb
+                    // Container-fluid ends
+                include ../../components/footer
+        include ../../components/footer-files

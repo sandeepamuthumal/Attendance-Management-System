@@ -1,0 +1,246 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var touchspin_2            = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Touchspin
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Form Widgets
+                                        li.breadcrumb-item.active Touchspin
+                    // Container-fluid starts
+                    .container-fluid
+                        // Custom TouchSpin Spinners start
+                        .bootstrap-touchspin
+                            .row
+                                .col-xl-6
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Default touchspin
+                                            p.mt-1.mb-0
+                                                | Use the  
+                                                code .decrement-touchspin  
+                                                | and  
+                                                code .increment-touchspin 
+                                                | class.
+                                        .card-body.common-flex
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-primary
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-primary(type='number' value='0')
+                                                button.increment-touchspin.btn-touchspin.touchspin-primary
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-secondary
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-secondary(type='number' value='2')
+                                                button.increment-touchspin.btn-touchspin.touchspin-secondary
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-success
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-success(type='number' value='1')
+                                                button.increment-touchspin.btn-touchspin.touchspin-success
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-danger
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-danger(type='number' value='8')
+                                                button.increment-touchspin.btn-touchspin.touchspin-danger
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-warning
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-warning(type='number' value='3')
+                                                button.increment-touchspin.btn-touchspin.touchspin-warning
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-info
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-info(type='number' value='9')
+                                                button.increment-touchspin.btn-touchspin.touchspin-info
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-dark
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-dark(type='number' value='4')
+                                                button.increment-touchspin.btn-touchspin.touchspin-dark
+                                                    i.fa-solid.fa-plus
+                                .col-xl-6
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Outlined touchspin
+                                            p.mt-1.mb-0 
+                                                | Use the  
+                                                code .decrement-touchspin  
+                                                | and   
+                                                code .increment-touchspin  
+                                                | class.
+                                        .card-body.common-flex
+                                            .touchspin-wrapper 
+                                                button.decrement-touchspin.btn-touchspin.spin-border-primary
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-primary(type='number' value='0')
+                                                button.increment-touchspin.btn-touchspin.spin-border-primary
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.spin-border-secondary
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-secondary(type='number' value='2')
+                                                button.increment-touchspin.btn-touchspin.spin-border-secondary
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.spin-border-success
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-success(type='number' value='1')
+                                                button.increment-touchspin.btn-touchspin.spin-border-success
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.spin-border-danger
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-danger(type='number' value='8')
+                                                button.increment-touchspin.btn-touchspin.spin-border-danger
+                                                      i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.spin-border-warning
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-warning(type='number' value='3')
+                                                button.increment-touchspin.btn-touchspin.spin-border-warning
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.spin-border-info
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-info(type='number' value='9')
+                                                button.increment-touchspin.btn-touchspin.spin-border-info
+                                                    i.fa-solid.fa-plus
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.spin-border-dark
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-dark(type='number' value='4')
+                                                button.increment-touchspin.btn-touchspin.spin-border-dark
+                                                    i.fa-solid.fa-plus
+                                .col-xl-6
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Icons with prefix and postfix
+                                            p.mt-1.mb-0 
+                                                | Use the   
+                                                code .decrement-touchspin    
+                                                | and     
+                                                code .increment-touchspin     
+                                                | class.
+                                        .card-body.common-flex.pre-post-touchspin
+                                            .input-group
+                                                button.decrement-touchspin.btn-touchspin.touchspin-primary
+                                                    i.fa-solid.fa-minus
+                                                span.input-group-text $
+                                                input.input-touchspin.spin-outline-primary(type='number' value='0')
+                                                button.increment-touchspin.btn-touchspin.touchspin-primary
+                                                    i.fa-solid.fa-plus 
+                                            .input-group
+                                                button.decrement-touchspin.btn-touchspin.touchspin-primary
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-primary(type='number' value='0')
+                                                span.input-group-text %
+                                                button.increment-touchspin.btn-touchspin.touchspin-primary
+                                                    i.fa-solid.fa-plus
+                                .col-xl-6
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Buttons with prefix and postfix
+                                            p.mt-1.mb-0 
+                                                | Use the   
+                                                code .decrement-touchspin  
+                                                | and   
+                                                code .increment-touchspin  
+                                                | class.
+                                        .card-body.common-flex.pre-post-touchspin.bg-touchspin
+                                            .input-group
+                                                button.decrement-touchspin.btn-touchspin.touchspin-secondary
+                                                    i.fa-solid.fa-minus
+                                                button#button-addon1.btn-outline-secondary(type='button') Pre
+                                                input.input-touchspin.spin-outline-primary(type='number' value='0')
+                                                button.increment-touchspin.btn-touchspin.touchspin-secondary
+                                                    i.fa-solid.fa-plus
+                                            .input-group
+                                                button.decrement-touchspin.btn-touchspin.touchspin-secondary
+                                                    i.fa-solid.fa-minus
+                                                input.input-touchspin.spin-outline-primary(type='number' value='0')
+                                                button#button-addon2.btn-outline-secondary(type='button') Post
+                                                button.increment-touchspin.btn-touchspin.touchspin-secondary
+                                                    i.fa-solid.fa-plus 
+                                .col-xl-12
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Rounded touchspin
+                                            p.mt-1.mb-0 
+                                                | Use the   
+                                                code .decrement-touchspin  
+                                                | and   
+                                                code .increment-touchspin   
+                                                | class.
+                                        .card-body.common-flex.rounded-touchspin
+                                            .touchspin-wrapper 
+                                                button.decrement-touchspin.btn-touchspin.touchspin-primary
+                                                    i.fa-solid.fa-angle-left
+                                                input.input-touchspin.spin-outline-primary(type='number' value='0')
+                                                button.increment-touchspin.btn-touchspin.touchspin-primary
+                                                    i.fa-solid.fa-angle-right
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-secondary
+                                                    i.fa-solid.fa-angle-left
+                                                input.input-touchspin.spin-outline-secondary(type='number' value='2')
+                                                button.increment-touchspin.btn-touchspin.touchspin-secondary
+                                                    i.fa-solid.fa-angle-right
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-success
+                                                    i.fa-solid.fa-angle-left
+                                                input.input-touchspin.spin-outline-success(type='number' value='1')
+                                                button.increment-touchspin.btn-touchspin.touchspin-success
+                                                    i.fa-solid.fa-angle-right
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-danger
+                                                    i.fa-solid.fa-angle-left
+                                                input.input-touchspin.spin-outline-danger(type='number' value='8')
+                                                button.increment-touchspin.btn-touchspin.touchspin-danger
+                                                    i.fa-solid.fa-angle-right
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-warning
+                                                    i.fa-solid.fa-angle-left 
+                                                input.input-touchspin.spin-outline-warning(type='number' value='3')
+                                                button.increment-touchspin.btn-touchspin.touchspin-warning
+                                                    i.fa-solid.fa-angle-right
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-info
+                                                    i.fa-solid.fa-angle-left 
+                                                input.input-touchspin.spin-outline-info(type='number' value='9')
+                                                button.increment-touchspin.btn-touchspin.touchspin-info
+                                                    i.fa-solid.fa-angle-right
+                                            .touchspin-wrapper
+                                                button.decrement-touchspin.btn-touchspin.touchspin-dark
+                                                    i.fa-solid.fa-angle-left
+                                                input.input-touchspin.spin-outline-dark(type='number' value='9')
+                                                button.increment-touchspin.btn-touchspin.touchspin-dark
+                                                    i.fa-solid.fa-angle-right
+                include ../../components/footer
+        include ../../components/footer-files

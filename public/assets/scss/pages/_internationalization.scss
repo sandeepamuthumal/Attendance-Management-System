@@ -1,0 +1,63 @@
+/**=====================
+    3.21 Internationalization CSS start
+==========================**/
+.navs-icon {
+    padding: 30px;
+    li {
+        padding: 9px 0;
+        a {
+            color: var(--body-font-color);
+            &:hover {
+                color: var(--theme-default);
+            }
+        }
+        ul {
+            padding-top: 9px;
+        }
+    }
+}
+.hdg_main {
+    position: relative;
+}
+.main {
+    .langChoice {
+        position: absolute;
+        right: 40px;
+        top: 11px;
+        padding: 10px 12px;
+        background-color: transparent;
+        @include media-breakpoint-down(lg) {
+            right: 20px;
+            top: 11px;
+            padding: 8px;
+        }
+        @include media-breakpoint-down(sm) {
+            top: 14px;
+            padding: 4px 7px;
+        }
+        @media only screen and (max-width: 360px) {
+            left: 0;
+            margin: 0 auto;
+            top: 50px;
+            width: 30%;
+            right: 0;
+        }
+    }
+}
+.language-xs {
+    @include media-breakpoint-down(sm) {
+        margin-top: 15px;
+    }
+}
+.language-header {
+    @media only screen and (max-width: 360px) {
+        padding-bottom: 60px !important;
+    }
+}
+pre {
+    background-color: rgba($primary-color, 0.1);
+    padding: 20px 0;
+}
+/**=====================
+    3.21 Internationalization CSS End
+==========================**/

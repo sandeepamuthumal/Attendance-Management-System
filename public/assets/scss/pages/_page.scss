@@ -1,0 +1,110 @@
+@each $page-name,
+$page-color in (primary, var(--theme-default)),
+(secondary, var(--theme-secondary)),
+(warning, var(--warning-color)),
+(success, var(--success-color)),
+(danger, var(--danger-color)),
+(info, var(--info-color)),
+(light, var(--light-color)) {
+  .pagination-#{$page-name} {
+    .page-item {
+      .page-link {
+        color: $page-color !important;
+        &:hover {
+          background-color: $page-color !important;
+          border-color: $page-color !important;
+          color: var(--white) !important;
+        }
+        &:focus {
+          box-shadow: none !important;
+        }
+      }
+      &.active {
+        .page-link {
+          color: var(--white) !important;
+          background-color: $page-color !important;
+          border-color: $page-color;
+        }
+      }
+    }
+  }
+}
+.outline-pagination {
+  .page-item {
+    &.active,
+    &:hover {
+      .page-link {
+        border-color: var(--theme-default);
+        background-color: unset;
+      }
+    }
+    .page-link {
+      color: var(--theme-default);
+    }
+  }
+}
+.pagination-secondary {
+  .page-item {
+    &.disabled {
+      .page-link {
+        background-color: var(--light-color);
+      }
+    }
+  }
+}
+.pagination-danger {
+  .disabled {
+    .page-link {
+      color: rgba($danger-color, 0.5) !important;
+    }
+  }
+}
+.pagination {
+  --bs-pagination-border-color: var(--border-light-color);
+  .page-item {
+    .page-link {
+      &.rounded-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+      }
+    }
+    &.disabled {
+      .page-link {
+        border-color: var(--border-light-color);
+      }
+    }
+    &.active {
+      z-index: 1;
+    }
+  }
+  &.pagination-lg {
+    @media (max-width: 572px) {
+      .page-link {
+        padding: 10px 17px;
+        font-size: 16px;
+      }
+    }
+  }
+  &.justify-content-end,
+  &.justify-content-start {
+    @media (max-width: 572px) {
+      justify-content: center !important;
+    }
+  }
+}
+.pagination-secondary {
+  .disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+.pagination {
+  .active {
+    .page-link {
+      color: var(--black) !important;
+    }
+  }
+}

@@ -1,0 +1,156 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body 
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper   
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        |  Ribbons 
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Bonus Ui
+                                        li.breadcrumb-item.active Ribbons
+                    // Container-fluid starts
+                    .container-fluid
+                        // ribbon left (default) side
+                        .row
+                            .col-sm-12.col-xl-12
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Variations Of Left Ribbons
+                                        p.mt-1.mb-0 
+                                            | Use the class of     
+                                            code .ribbon-*
+                                            | [ribbon-space-bottom/ribbon-clip/ribbon-vertical-left/ribbon-bookmark/ribbon-clip-bottom/ribbon-vertical-left] through create ribbons and all ribbon colors are available.
+                                            code [.ribbon-*] 
+                                    .card-body
+                                        .row.g-3
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-wrapper.border.border-1.alert-light-light
+                                                    .ribbon.ribbon-primary.ribbon-space-bottom SAVE 10%
+                                                    p
+                                                        em.text-danger Ribbon designs
+                                                        |  have been a part of web design. There is a design for you in this collection, regardless of whether you use 
+                                                        em.text-danger CSS ribbons 
+                                                        |  to identify your items.
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-wrapper.border.border-1
+                                                    .ribbon.ribbon-secondary.ribbon-clip SAVE 50%
+                                                    p   
+                                                        | The 
+                                                        em.text-danger ribbon and tag
+                                                        |  frequently appear together because they have similar features that capture attention and make wonderful spaces for vital information.
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-vertical-left-wrapper.border.border-1.vertical-lp-space.alert-light-light
+                                                    .ribbon.ribbon-warning.ribbon-vertical-left
+                                                        i.fa-regular.fa-heart
+                                                    p
+                                                        | The 
+                                                        em.text-danger ribbons
+                                                        |  have also been utilised by certain inventive developers in the menu and navigation choices.The possibilities are endless when it comes to creativity. 
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-wrapper.border.border-1
+                                                    .ribbon.ribbon-info.ribbon-bookmark Cashback 20%
+                                                    p   
+                                                        |  Although the majority of the
+                                                        em.text-danger ribbon components
+                                                        |  on this list have static, straightforward styles, we have also gathered dynamic ribbons.
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-wrapper-bottom.border.border-1.clip-bp-space.alert-light-light
+                                                    .ribbon.ribbon-dark.ribbon-clip-bottom 40% OFF
+                                                    p
+                                                        | Edge 
+                                                        em.text-danger ribbon 
+                                                        | among the most often used 
+                                                        em.text-danger ribbon styles is CSS.
+                                                        |  This design's author provides you with a short piece of code that has room for several optional components and effects.
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-vertical-left-wrapper.border.border-1.vertical-lp-space
+                                                    .ribbon.ribbon-bookmark.ribbon-vertical-left.ribbon-danger         
+                                                        i.fa-solid.fa-gift
+                                                    p
+                                                        | The entire ribbon and other components seem clean since they were created entirely with CSS. You may utilize the 
+                                                        em.text-danger ribbons
+                                                        |  as cards to deliver the material.   
+                        // ribbon right side(default)
+                        .row
+                            .col-sm-12.col-xl-12
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Variations Of Right Ribbons
+                                        p.mt-1.mb-0
+                                            | Use the class of 
+                                            code .ribbon-*
+                                            | [ribbon-right/ribbon-clip-right/ribbon-vertical-right/ribbon-bookmark/ribbon-clip-bottom-right/ribbon-vertical-right] through create ribbons and all ribbon colors are available.
+                                            code [.ribbon-*]  
+                                    .card-body
+                                        .row.g-3
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-wrapper.border.border-1
+                                                    .ribbon.ribbon-dark.ribbon-right 50% OFF
+                                                    p
+                                                        | The 
+                                                        em.text-danger ribbon and tag
+                                                        |  frequently appear together because they have similar features that capture attention and make wonderful spaces for vital information.
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-wrapper-right.border.border-1.alert-light-light
+                                                    .ribbon.ribbon-primary.ribbon-clip-right.ribbon-right SAVE 50%
+                                                    p
+                                                        | Since very early times, 
+                                                        em.text-danger ribbon designs
+                                                        |  have been a part of web design. There is a design for you in this collection, regardless of whether you use 
+                                                        em.text-danger CSS ribbons 
+                                                        |  to identify your items.  
+                                            .col-sm-6.col-xl-4 
+                                                .ribbon-vertical-right-wrapper.border.border-1.vertical-rp-space
+                                                    .ribbon.ribbon-bookmark.ribbon-vertical-right.ribbon-secondary
+                                                        i.fa-solid.fa-signal
+                                                    p
+                                                        | The entire ribbon and other components seem clean since they were created entirely with CSS. You may utilize the 
+                                                        em.text-danger ribbons
+                                                        |  as cards to deliver the material.         
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-wrapper.border.border-1.alert-light-light
+                                                    .ribbon.ribbon-warning.ribbon-bookmark.ribbon-right SAVE 20%
+                                                    p
+                                                        | Edge 
+                                                        em.text-danger ribbon 
+                                                        | among the most often used 
+                                                        em.text-danger ribbon styles is CSS.
+                                                        |  This design's author provides you with a short piece of code that has room for several optional components and effects.
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-wrapper-bottom.border.border-1.clip-bp-space.height-equal
+                                                    .ribbon.ribbon-success.ribbon-clip-bottom-right Cashback 10%
+                                                    p
+                                                        |  Although the majority of the 
+                                                        em.text-danger ribbon components
+                                                        |  on this list have static, straightforward styles, we have also gathered dynamic ribbons.
+                                            .col-sm-6.col-xl-4
+                                                .ribbon-vertical-right-wrapper.border.border-1.vertical-rp-space.height-equal.alert-light-light
+                                                    .ribbon.ribbon-danger.ribbon-vertical-right
+                                                        i.fa-solid.fa-taxi 
+                                                    p   
+                                                        | The 
+                                                        em.text-danger ribbons
+                                                        |  have also been utilized by certain inventive developers in the menu and navigation choices. The possibilities are endless when it comes to creativity.
+                include ../../components/footer
+        include ../../components/footer-files

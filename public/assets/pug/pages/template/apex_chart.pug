@@ -1,0 +1,131 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var apex                   = true;
+- var page_apex              = true; 
+- var config                 = true;
+- var feather                = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper  
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar    
+                .page-body   
+                    .container-fluid
+                        .page-title   
+                            .row 
+                                .col-sm-6.col-12
+                                    h2   
+                                        | Apex chart 
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item 
+                                            a(href='index.html')   
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Charts 
+                                        li.breadcrumb-item.active Apex chart 
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Radar Chart 
+                            .card-body
+                              #radarchart
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Radial Bar Chart
+                            .card-body
+                              #circlechart
+                        .col-sm-12.col-xl-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Candlestick Chart 
+                            .card-body
+                              #candlestick
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Basic Area Chart 
+                            .card-body
+                              #basic-apex
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Area Spaline Chart 
+                            .card-body
+                              #area-spaline
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Bar chart
+                            .card-body
+                              #basic-bar
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Column Chart 
+                            .card-body
+                              #column-chart
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 
+                                | 3d Bubble Chart 
+                            .card-body
+                              #chart-bubble
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Stepline Chart 
+                            .card-body
+                              #stepline
+                        .col-sm-12.col-xl-12.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Column Chart
+                            .card-body
+                              #annotationchart
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Pie Chart 
+                            .card-body.apex-chart
+                              #piechart
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3
+                                | Donut Chart
+                            .card-body.apex-chart
+                              #donutchart
+                        .col-sm-12.col-xl-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Mixed Chart
+                            .card-body
+                              #mixedchart                        
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files    

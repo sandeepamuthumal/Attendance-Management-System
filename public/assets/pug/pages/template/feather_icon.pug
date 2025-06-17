@@ -1,0 +1,366 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var feather                = true;
+- var notify                 = true;
+- var icon_notify            = true;
+- var animate                = true;
+- var page_feather_icon      = true;
+include ../../components/mixin 
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body 
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body  
+                    .container-fluid
+                        .page-title
+                            .row  
+                                .col-sm-6.col-12  
+                                    h2
+                                        | Feather Icon
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Icons
+                                        li.breadcrumb-item.active Feather icon
+                    // Container-fluid starts
+                    .container-fluid
+                        .row.icon-main
+                            .col-sm-12
+                                .card   
+                                    .card-header.card-no-border.pb-0
+                                        h3.f-w-700
+                                            | Feather Icon 
+                                    .card-body
+                                        .row.icon-event.feather-icons.icon-lists
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item
+                                                i(data-feather='activity')
+                                                h5.mt-0 activity 
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item
+                                                i(data-feather='airplay')
+                                                h5.mt-0 airplay
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='alert-circle')
+                                                h5.mt-0 alert-circle
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='alert-octagon')
+                                                h5.mt-0 alert-octagon
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='alert-triangle')
+                                                h5.mt-0 alert-triangle
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='align-center')
+                                                h5.mt-0 align-center
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='align-justify')
+                                                h5.mt-0 align-justify
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='align-left')
+                                                h5.mt-0 align-left
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='align-right')
+                                                h5.mt-0 align-right
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='anchor')
+                                                h5.mt-0 anchor
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item
+                                                i(data-feather='aperture')
+                                                h5.mt-0 aperture
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='archive')
+                                                h5.mt-0 archive
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-down-circle')
+                                                h5.mt-0 arrow-down-circle
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-down-left')
+                                                h5.mt-0 arrow-down-left
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-down-right')
+                                                h5.mt-0 arrow-down-right    
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-down')
+                                                h5.mt-0 arrow-down
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-left-circle')
+                                                h5.mt-0 arrow-left-circle
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item
+                                                i(data-feather='arrow-left')
+                                                h5.mt-0 arrow-left
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-right-circle')
+                                                h5.mt-0 arrow-right-circle
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-right')
+                                                h5.mt-0 arrow-right
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-up-circle')
+                                                h5.mt-0 arrow-up-circle
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-up-left')
+                                                h5.mt-0 arrow-up-left
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-up-right')
+                                                h5.mt-0 arrow-up-right
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='arrow-up')
+                                                h5.mt-0.mb-2 arrow-up
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='at-sign')
+                                                h5.mt-0 at-sign
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='award')
+                                                h5.mt-0 award
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='bar-chart-2')
+                                                h5.mt-0 bar-chart-2
+                                            .col-12.col-xxl-2.col-lh-4.col-md-6.icons-item 
+                                                i(data-feather='bar-chart')
+                                                h5.mt-0 bar-chart
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='battery-charging')
+                                                h5.mt-0 battery-charging
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='battery')
+                                                h5.mt-0 battery
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='bell-off')
+                                                h5.mt-0 bell-off 
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='bell')
+                                                h5.mt-0 bell
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item
+                                                i(data-feather='bluetooth')
+                                                h5.mt-0 bluetooth
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='bold')
+                                                h5.mt-0 bold    
+                                            .col-12.col-xxl-12.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='book-open')
+                                                h5.mt-0 book-open
+                                            .col-12.col-xxl-12.col-lg-4.col-md-6.icons-item
+                                                i(data-feather='book')
+                                                h5.mt-0 book
+                                            .col-12.col-xxl-12.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='bookmark')
+                                                h5.mt-0 bookmark
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='box')
+                                                h5.mt-0 box
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='briefcase')
+                                                h5.mt-0 briefcase
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='calendar')
+                                                h5.mt-0 calendar
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item
+                                                i(data-feather='camera-off')
+                                                h5.mt-0 camera-off
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='camera')
+                                                h5.mt-0 camera
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item
+                                                i(data-feather='cast')
+                                                h5.mt-0 cast
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='check-circle')
+                                                h5.mt-0 check-circle
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='check-square')
+                                                h5.mt-0 check-square
+                                            .col-12.colxxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='check')
+                                                h5.mt-0 check
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='chevron-down')
+                                                h5.mt-0 chevron-down
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='chevron-right')
+                                                h5.mt-0 chevron-right
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item  
+                                                i(data-feather='chevron-up')
+                                                h5.mt-0 chevron-up
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item  
+                                                i(data-feather='chevrons-down')
+                                                h5.mt-0 chevrons-down
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='chevrons-left')
+                                                h5.mt-0 chevrons-left
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='chevrons-right')
+                                                h5.mt-0 chevrons-right
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='chevrons-up')
+                                                h5.mt-0 chevrons-up
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='chrome')
+                                                h5.mt-0 chrome
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item  
+                                                i(data-feather='circle')
+                                                h5.mt-0 circle
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='clipboard')
+                                                h5.mt-0 clipboard
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='clock')
+                                                h5.mt-0 clock
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='cloud-drizzle')
+                                                h5.mt-0 cloud-drizzle
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='cloud-lightning')
+                                                h5.mt-0 cloud-lightning
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='cloud-off')
+                                                h5.mt-0 cloud-off
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='cloud-rain')
+                                                h5.mt-0 cloud-rain
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='cloud-snow')
+                                                h5.mt-0 cloud-snow
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='cloud')
+                                                h5.mt-0 cloud
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='code')
+                                                h5.mt-0 code
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='codepen')
+                                                h5.mt-0 codepen
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='coffee')
+                                                h5.mt-0 coffee
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='command')
+                                                h5.mt-0 command
+                                            .col-12.col-xxol-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='compass')
+                                                h5.mt-0 compass
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='copy')
+                                                h5.mt-0 copy
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='corner-down-left')
+                                                h5.mt-0 corner-down-left
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='corner-down-right')
+                                                h5.mt-0 corner-down-right
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='corner-left-down')
+                                                h5.mt-0 corner-left-down
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='corner-left-up')
+                                                h5.mt-0 corner-left-up
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='corner-right-down')
+                                                h5.mt-0 corner-right-down
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='corner-right-up')
+                                                h5.mt-0 corner-right-up
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='corner-up-left')
+                                                h5.mt-0 corner-up-left
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='corner-up-right')
+                                                h5.mt-0 corner-up-right
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='cpu')
+                                                h5.mt-0 cpu
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='credit-card')
+                                                h5.mt-0 credit-card
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='crop')
+                                                h5.mt-0 crop
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='crosshair')
+                                                h5.mt-0 crosshair
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item
+                                                i(data-feather='database')
+                                                h5.mt-0 database
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='delete')
+                                                h5.mt-0 delete
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='disc')
+                                                h5.mt-0 disc
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item  
+                                                i(data-feather='dollar-sign')
+                                                h5.mt-0 dollar-sign
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='download-cloud')
+                                                h5.mt-0 download-cloud
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='download')
+                                                h5.mt-0 download
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='droplet')
+                                                h5.mt-0 droplet
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='edit-2')
+                                                h5.mt-0 edit-2
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='edit-3')
+                                                h5.mt-0 edit-3
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item  
+                                                i(data-feather='eye')
+                                                h5.mt-0 eye
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='facebook')
+                                                h5.mt-0 facebook
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='fast-forward')
+                                                h5.mt-0 fast-forward
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='feather')
+                                                h5.mt-0 feather
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='file-minus')
+                                                h5.mt-0 file-minus
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='file-plus')
+                                                h5.mt-0 file-plus
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='file-text')
+                                                h5.mt-0 file-text
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='file')
+                                                h5.mt-0 file
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='film')
+                                                h5.mt-0 film
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='filter')
+                                                h5.mt-0 filter
+                                            .col-12.col-xxl-2.col-lg-4.col-md-6.icons-item 
+                                                i(data-feather='youtube')
+                                                h5.mt-0 youtube
+                include ../../components/footer  
+        .icon-hover-bottom.position-fixed.fa-fa-icon-show-div.opecity-0
+          .container-fluid
+            .row
+              .icon-popup
+                .close-icon
+                  i.fa-solid.fa-xmark
+                .icon-first
+                  i#icon_main
+                .icon-class
+                  label.icon-title data-feather
+                  span#fclass1
+                .icon-last.icon-last
+                  label.icon-title Markup
+                  .form-inline
+                    .form-group
+                      input#input_copy.inp-val.form-control.m-r-10(type='text', value='', readonly='readonly')
+                      button.btn.btn-primary.notification(onclick='myFunction()') Copy text 
+        include ../../components/footer-files

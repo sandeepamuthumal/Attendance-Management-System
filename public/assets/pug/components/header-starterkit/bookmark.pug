@@ -1,0 +1,50 @@
+-
+    var BOOKMARK_ITEM =[
+        {
+            url: 'cube',
+            title: 'Dashboard',
+            altContent: 'Dashboard',
+            bgClass: 'btn-activity-primary',
+            iconClass: 'svg-color',
+            link: '../template/index.html'
+        },
+        {
+            url: 'check',
+            title: 'To-do',
+            altContent: 'To-do',
+            bgClass: 'btn-activity-secondary',
+            iconClass: 'svg-color',
+            link: '../template/to-do.html'
+        },
+        {
+            url: 'pie',
+            title: 'Chart',
+            altContent: 'Chart',
+            bgClass: 'btn-activity-danger',
+            iconClass: 'svg-color',
+            link: '../template/apex_chart.html'
+        }
+    ]
+mixin BookmarkContent(items)
+
+    each item in items 
+        li.d-flex.align-items-center
+            .flex-shrink-0.me-2(class=item.bgClass)
+                a(href=item.link)
+                    +IconlySprite(item.url, item.iconClass)
+            .d-flex.justify-content-between.align-items-center.w-100
+                a(href=item.link)=item.title
+                +IconlySprite('star', 'svg-color icon-star')
+li.custom-dropdown
+    a(href="javascript:void(0)")
+        +IconlySprite('bookmark', '')
+    .custom-menu.bookmark-dropdown.py-0.overflow-hidden
+        h3.title.bg-primary-light.dropdown-title Bookmark
+        ul 
+            li 
+                form.mb-0
+                    .input-group
+                        input.form-control(type='text' placeholder='Search Bookmark...')
+                        span.input-group-text
+                            +IconlySprite('Search', 'svg-color')
+            +BookmarkContent(BOOKMARK_ITEM)

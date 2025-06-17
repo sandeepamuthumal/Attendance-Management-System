@@ -1,0 +1,96 @@
+-var form_wizard_four = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/taptop
+        include ../../components/loader
+        // login page start
+        .container-fluid.wizard-4
+          .row
+            .col-lg-3.col-md-4.position-relative.bg-color
+              ul.anchor
+                li
+                  a.logo.text-start.ps-0(href='index.html')
+                    img.img-fluid.for-light.m-auto(src='../assets/images/logo/logo1.png' alt='looginpage')
+                    img.img-fluid.for-dark(src="../assets/images/logo/logo-dark.png" alt="logo")
+                li
+                    .progresscont
+                      .circleblocks
+                        .user-profile
+                            .aboutblock
+                              .circulo.activecirculo.text-center
+                                i.fas.fa-user
+                              .user-content
+                                h4.font-primary About
+                                h6 Add personal details
+                            .addressblock
+                              .circulo.text-center
+                                i.fas.fa-location-arrow
+                              .user-content
+                                h4.font-primary Address
+                                h6 Add additional info
+                            .verifyblock
+                              .circulo.text-center
+                                i.far.fa-id-card
+                              .user-content
+                                h4.font-primary Verify
+                                h6 Complete.. !
+                li
+                  img.img-fluid.w-100(src='../assets/images/login/icon.png' alt='looginpage')
+            .col-lg-9.col-md-8.p-0
+              .step-container.login-card
+                div
+                  .wizard-title.text-center
+                    h2 Sign up to account
+                    h5.text-muted.mb-4 Enter your email &amp; password to login
+                  .login-main
+                    .progress(style='height: 5px;')
+                      #progresswizard.progress-bar(role='progressbar' style='width: 15%;' aria-valuemin='0' aria-valuemax='100')
+                    form.theme-form
+                      input(type='hidden' name='_token' value='iJquRbgH4Np4OcWzjk8Bd03CaexHzse7gz2vHrml')
+                      .registration-content
+                        #aboutcont(data-progress='15%')
+                          .form-group
+                            label.col-form-label(for='firstname') First Name
+                            input#firstname.form-control(type='text' name='firstname' required='' placeholder="Johan")
+                          .form-group
+                            label.col-form-label(for='lastname') Last Name 
+                            input#lastname.form-control(type='text' name='lastname' required='' placeholder="Deo")
+                          .form-group
+                            label.col-form-label(for='phone') phone
+                            input#phone.form-control(type='text' name='phone' required='' placeholder="123456745")
+                        #addrescont(data-progress='50%')
+                          .form-group
+                            label.col-form-label(for='email') Email address
+                            input#email.form-control(type='text' name='email' required='' placeholder="name@example.com")
+                            small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+                          .form-group
+                            label.col-form-label(for='password') Password
+                            input#password.form-control(type='text' name='password' required='' placeholder="password")
+                          .form-group
+                            label.col-form-label(for='repassword') Confirm Password
+                            input#repassword.form-control(type='text' name='repassword' required='' placeholder="Enter again")
+                        #verifycont(data-progress='85%')
+                          .form-group
+                            label.col-form-label(for='birthday') Birthday:
+                            input#birthday.form-control(type='date')
+                          .form-group
+                            label.col-form-label(for='state') State
+                            input#state.form-control(type='text' name='state' value='Ontario' required='')
+                          .form-group
+                            label.col-form-label Country 
+                            select.selectpicker.countrypicker.form-control(name='country_residence')
+                              option(value='') Canada
+                              option(value='') United States
+                              option(value='') United Kingdom
+                              option(value='') Germany
+                              option(value='') France
+                      .mb-3.wizard-navigation
+                        .p-2
+                          button#prevbtn.btn.m-1.btn-outline-primary.btn-lg(type='button') Previous
+                        div
+                          button#nextbtn.btn.m-1.btn-primary.btn-lg.btn-lg.text-center(type='button') Next
+                          button#submitForm.btn.btn-primary.btn-lg(name='submitForm' style='' type='submit') Finish
+          include ../../components/footer-files

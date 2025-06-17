@@ -1,0 +1,682 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var feather                = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper   
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        |  Project list 
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Application
+                                        li.breadcrumb-item.active Project list
+                    // Container-fluid starts
+                    .container-fluid
+                      .row.project-cards 
+                        .col-md-12.project-list
+                            .card
+                                .row
+                                  .col-md-6 
+                                    ul#top-tab.nav.nav-tabs.border-tab(role='tablist')
+                                      li.nav-item
+                                        a#top-home-tab.nav-link.active(data-bs-toggle='tab', href='#top-home', role='tab', aria-controls='top-home', aria-selected='true')
+                                          i(data-feather='target')
+                                          | All
+                                      li.nav-item
+                                        a#profile-top-tab.nav-link(data-bs-toggle='tab', href='#top-profile', role='tab', aria-controls='top-profile', aria-selected='false')
+                                          i(data-feather='info')
+                                          | Doing
+                                      li.nav-item
+                                        a#contact-top-tab.nav-link(data-bs-toggle='tab', href='#top-contact', role='tab', aria-controls='top-contact', aria-selected='false')
+                                          i(data-feather='check-circle')
+                                          | Done
+                                  .col-md-6.d-md-block.d-none
+                                      .form-group.mb-0.me-0 
+                                      a.btn.btn-primary.d-flex.align-items-center(href="projectcreate.html") 
+                                        i(data-feather='plus-square')
+                                        | Create New Project 
+                        .col-sm-12 
+                            .card
+                              .card-body 
+                                #top-tabContent.tab-content
+                                  #top-home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='top-home-tab')
+                                    .row
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-danger
+                                          span.badge.badge-danger Doing
+                                          h5.f-w-500.mb-2.text-danger Cutting-Edge Design 
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/4.jpg' alt='' data-original-title='' title='') 
+                                            p.font-light Themeforest, australia
+                                          p Responsive Layout: The design is responsive and tablets, and mobile devices
+                                          .row.details 
+                                            .col-6  
+                                              span Issues 
+                                            .col-6.font-danger 12    
+                                            .col-6
+                                              span Resolved
+                                            .col-6.font-danger 5
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-danger 7
+                                          .customers 
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/3.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +10 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 70% 
+                                              span Done
+                                            .progress.bg-light-danger(style="height: 5px")
+                                              .progress-bar-animated.bg-danger.progress-bar-striped( role="progressbar" style="width: 70%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Customization Options
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/3.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p Consistency and Branding: The design maintains consistency , color scheme, and typography. 
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-success 24
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 24
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-success 40
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/2.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +3 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Mobile-Friendly
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/4.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia 
+                                          p Error Handling and Feedback: The design incorporates  and feedback mechanisms.
+                                          .row.details
+                                            .col-6 
+                                              span Issues 
+                                            .col-6.font-success 40
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 40
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-success 20
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/4.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +2 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100%
+                                              span Done
+                                            .progress(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Universal admin Design
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p Customization Options: Depending on It is designed to be responsive options.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-success 24
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 24
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-success 40
+                                          .customers
+                                            ul
+                                              li.d-inline-block 
+                                                img.img-30.rounded-circle(src='../assets/images/user/6.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +3 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-danger
+                                          span.badge.badge-danger Doing
+                                          h5.f-w-500.mb-2.text-danger Modular Structure
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Themeforest, australia
+                                          p Customization Options: Poco admin offers Attention is given to readability  a visually extensive.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-danger 12 
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-danger 5
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-danger 7
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/6.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +10 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 70% 
+                                              span Done
+                                            .progress.bg-light-danger(style="height: 5px")
+                                              .progress-bar-animated.bg-danger.progress-bar-striped( role="progressbar" style="width: 70%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Dazzling Admin Design 
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p User-friendly Navigation:Dazzling organized categories and subcategories of a sidebar menu.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-success 40
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 40
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-success 20
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/4.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +2 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                  #top-profile.tab-pane.fade(role='tabpanel', aria-labelledby='profile-top-tab')
+                                    .row
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-danger
+                                          span.badge.badge-danger Doing
+                                          h5.f-w-500.mb-2.text-danger Endless admin Design
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/10.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Themeforest, australia
+                                          p The design incorporates clear It focuses on simplicity error handling mechanisms.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-danger 12 
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-danger 5
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-danger 7
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/6.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +10 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 70% 
+                                              span Done
+                                            .progress.bg-light-danger(style="height: 5px")
+                                              .progress-bar-animated.bg-danger.progress-bar-striped( role="progressbar" style="width: 70%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-danger
+                                          span.badge.badge-danger Doing
+                                          h5.f-w-500.mb-2.text-danger Data Visualization
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p Customization Options: Depending   It strives to create an interface requirements, options.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-danger 24
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-danger 24
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-danger 40
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/6.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/8.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +3 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress.bg-light-danger(style="height: 5px")
+                                              .progress-bar-animated.bg-danger.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-danger
+                                          span.badge.badge-danger Doing
+                                          h5.f-w-500.mb-2.text-danger Poco admin Design
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/4.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p   Poco admin design embraces  uses ample white space a clean and minimalistic visual style.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-danger 22
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-danger 88
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-danger 20
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/6.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/7.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +2 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress.bg-light-danger(style="height: 5px")
+                                              .progress-bar-animated.bg-danger.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-danger
+                                          span.badge.badge-danger Doing
+                                          h5.f-w-500.mb-2.text-danger Universal admin Design
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/9.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p Attention is given to  visual style and layout across different sections readability to enhance the user experience.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-danger 29
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-danger 88
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-danger 40
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/9.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/10.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +3 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress(style="height: 5px")
+                                              .progress-bar-animated.bg-danger.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-danger
+                                          span.badge.badge-danger Doing
+                                          h5.f-w-500.mb-2.text-danger Forms and Inputs
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Themeforest, australia
+                                          p Admin design pays attention to  incorporating these principles form design and input elements. 
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-danger 12 
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-danger 5
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-danger 7
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/2.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/3.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +10 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 70% 
+                                              span Done
+                                            .progress.bg-light-danger(style="height: 5px")
+                                              .progress-bar-animated.bg-danger.progress-bar-striped( role="progressbar" style="width: 70%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-danger
+                                          span.badge.badge-danger Doing
+                                          h5.f-w-500.mb-2.text-danger Poco admin Design
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/9.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p Poco admin includes a user-friendly  elements like dropdowns system  of a sidebar menu.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-danger 28
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-danger 9
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-danger 26
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/8.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/9.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/10.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +2 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress.bg-light-danger(style="height: 5px")
+                                              .progress-bar-animated.bg-danger.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                  #top-contact.tab-pane.fade(role='tabpanel', aria-labelledby='contact-top-tab')
+                                    .row
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Iconography
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Themeforest, australia
+                                          p The design incorporates clear  highlight important elements  error and feedback mechanisms.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-success 12 
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 5
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-success 7
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/10.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +10 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 70% 
+                                              span Done
+                                            .progress.bg-light-success(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 70%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Universal admin Design
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/9.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p Attention is given to readability follows a modular approach to enhance the user experience.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-success 66
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 20
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-success 40
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/9.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/10.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +3 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Poco admin Design
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/8.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p The grid system allows for and utilizes a grid system arrangement of elements.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-success 40
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 93
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-success 20
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/10.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/9.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/7.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +2 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress.bg-light-success(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Universal admin Design
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/7.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p Admin design recognizes streamlined and uncluttered user importance of accessibility
+                                          .row.details
+                                            .col-6
+                                              span Issues   
+                                            .col-6.font-success 71
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 10
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-success 40
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/4.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +3 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress.bg-light-success(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                        .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Consistency and Modularity
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='') 
+                                            p.font-light Themeforest, australia
+                                          p  Consistency and Branding: The design appropriate font sizes focusing  and typography.
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-success 12 
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 5
+                                            .col-6  
+                                              span Comment
+                                            .col-6.font-success 7
+                                          .customers
+                                            ul
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +10 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 70% 
+                                              span Done
+                                            .progress.bg-light-success(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 70%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                                      .col-xxl-4.col-md-6
+                                         .project-box.font-dark.bg-light-success
+                                          span.badge.badge-success Done
+                                          h5.f-w-500.mb-2.text-success Poco admin Design
+                                          .d-flex.mb-2.align-items-center
+                                            img.img-20.me-1.rounded-circle(src='../assets/images/user/9.jpg' alt='' data-original-title='' title='')
+                                            p.font-light Envato, australia
+                                          p Responsive Layout: The design is responsive and tablets, and mobile devices
+                                          .row.details
+                                            .col-6
+                                              span Issues 
+                                            .col-6.font-success 40
+                                            .col-6 
+                                              span Resolved
+                                            .col-6.font-success 40
+                                            .col-6 
+                                              span Comment
+                                            .col-6.font-success 20 
+                                          .customers
+                                            ul
+                                              li.d-inline-block 
+                                                img.img-30.rounded-circle(src='../assets/images/user/9.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/5.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block
+                                                img.img-30.rounded-circle(src='../assets/images/user/1.jpg' alt='' data-original-title='' title='')
+                                              li.d-inline-block.ms-2
+                                                p.f-12 +2 More
+                                          .project-status.mt-4
+                                            .d-flex.align-items-center.gap-1.mb-2
+                                              p.mb-0 100% 
+                                              span Done
+                                            .progress.bg-light-success(style="height: 5px")
+                                              .progress-bar-animated.bg-success.progress-bar-striped( role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100")
+                    // Container-fluid starts  
+                include ../../components/footer          
+        include ../../components/footer-files

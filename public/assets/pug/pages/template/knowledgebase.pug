@@ -1,0 +1,559 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var feather                = true;
+include ../../components/mixin 
+doctype html 
+html(lang='en')
+  include ../../components/header-files
+  body
+    // page-wrapper Start
+    include ../../components/taptop
+    include ../../components/loader
+    #pageWrapper.page-wrapper.compact-wrapper  
+      include ../../components/header/header
+      // Page Body Start
+      .page-body-wrapper 
+        include ../../components/sidebar 
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6.col-12 
+                  h2
+                    | Knowledgebase
+                .col-sm-6.col-12
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                        a(href='index.html')
+                            i.iconly-Home.icli.svg-color
+                    li.breadcrumb-item Knowledgebase
+                    li.breadcrumb-item.active Knowledgebase
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-12.position-relative
+                .knowledgebase-bg
+                  img.bg-img-cover.bg-center(src="../assets/images/knowledgebase/bg_1.jpg" alt="looginpage" )
+                .knowledgebase-search
+                  div
+                    h3 How Can I help you?
+                    form.form-inline(action="#" method="get")
+                      .form-group.w-100
+                        i(data-feather='search')
+                        input.form-control-plaintext.w-100(type="text" placeholder="Type question here" title="")  
+              .col-xl-4.col-sm-6
+                .card.bg-primary
+                  .card-body
+                    .d-flex.faq-widgets
+                      .flex-grow-1
+                        h5 Articles
+                        p
+                          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      i(data-feather='book-open')
+              .col-xl-4.col-sm-6
+                .card.bg-primary
+                  .card-body
+                    .d-flex.faq-widgets
+                      .flex-grow-1
+                        h5 Knowledgebase
+                        p
+                          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      i(data-feather='aperture')
+              .col-xl-4
+                .card.bg-primary
+                  .card-body
+                    .d-flex.faq-widgets
+                      .flex-grow-1
+                        h5 Support
+                        p
+                          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      i(data-feather='file-text')
+              .col-sm-12
+                .header-faq
+                  h3.mb-0 Browse articles by category
+                .row
+                  .col-sm-12
+                    .card
+                      .card-header.card-no-border.pb-0
+                        h3 Browse Articles
+                      .card-body
+                        .row.browse.g-sm-4.g-3
+                          .col-xl-4.xl-50.col-md-6
+                            .browse-articles
+                              h6
+                                span
+                                  i(data-feather='archive')
+                                | Quick Questions are answered
+                              ul
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Lorem Ipsum is simply dummy text of the printing
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Lorem Ipsum has been the industry's standard dummy 
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span When an unknown printer took a galley 
+                                    span.badge.badge-primary.pull-right New
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span But also the leap into electronic typesetting, 
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='arrow-right')
+                                    span See More (40)
+                          .col-xl-4.xl-50.col-md-6
+                            .browse-articles
+                              h6
+                                span
+                                  i(data-feather='archive')
+                                |  Integrating WordPress with Your Website
+                              ul
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span It was popularised in the 1960s with the release
+                                    span.badge.badge-primary.pull-right Review
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Etraset sheets containing Lorem Ipsum passages
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Desktop publishing software like Aldus PageMaker 
+                                    span.badge.badge-primary.pull-right Articles
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Making this the first true generator on the Internet.
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='arrow-right')
+                                    span See More (90)
+                          .col-xl-4.xl-50.col-md-6
+                            .browse-articles
+                              h6
+                                span
+                                  i(data-feather='archive')
+                                | WordPress Site Maintenance
+                              ul
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Lorem, ipsum dolor sit amet consectetur adipisicing
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Normal distribution of letters, as opposed to using 
+                                    span.badge.badge-primary.pull-right Closed
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Lorem Ipsum, you need to be sure there isn't anything  
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Repetition, injected humour, or non words etc
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='arrow-right')
+                                    span See More (50)
+                          .col-xl-4.xl-50.col-md-6
+                            .browse-articles.browse-bottom
+                              h6
+                                span
+                                  i(data-feather='archive')
+                                  |  Meta Tags in WordPress
+                              ul
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Nemo enim ipsam voluptatem quia voluptas sit  
+                                    span.badge.badge-primary.pull-right Popular
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Ipsum quia dolor sit amet, consectetur
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Sed quia non numquam eius modi tempora incidunt
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Lorem eum fugiat quo voluptas nulla pariatu
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='arrow-right')
+                                    span See More (90)
+                          .col-xl-4.xl-50.col-md-6
+                            .browse-articles.browse-bottom
+                              h6
+                                span
+                                  i(data-feather='archive')
+                                | WordPress in Your Language
+                              ul
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Desktop publishing software like Aldus PageMaker
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Etraset sheets containing Lorem Ipsum passages
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span It was popularised in the 1960s with the release
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Making this the first true generator on the Internet
+                                    span.badge.badge-primary.pull-right Closed
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='arrow-right')
+                                    span See More (50)
+                          .col-xl-4.xl-50.col-md-6
+                            .browse-articles.browse-bottom
+                              h6
+                                span
+                                  i(data-feather='archive')
+                                | Know Your Sources
+                              ul
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span The point of using Lorem Ipsum 
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span It has a more-or-less normal distribution of letters
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Et harum quidem rerum facilis est et expedita
+                                    span.badge.badge-primary.pull-right Article
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Nam libero tempore, cum soluta nobis est eligendi 
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='arrow-right')
+                                    span See More (26)
+                          .col-xl-4.xl-50.col-md-6
+                            .browse-articles.browse-bottom
+                              h6
+                                span
+                                  i(data-feather='archive')
+                                | Validating a Website
+                              ul
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span When our power of choice is untrammelled 
+                                    span.badge.badge-primary.pull-right Review
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span It will frequently occur that pleasures  
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span who fail in their duty through weakness 
+                                    span.badge.badge-primary.pull-right Closed
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span  At vero eos et accusamus et iusto 
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='arrow-right')
+                                    span See More (10)
+                          .col-xl-4.xl-50.col-md-6
+                            .browse-articles.browse-bottom
+                              h6
+                                span
+                                  i(data-feather='archive')
+                                | Quick Questions are answered
+                              ul
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Quis autem vel eum iure reprehenderit  
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Ducimus  blanditiis praesentium voluptatum
+                                    span.badge.badge-primary.pull-right Popular
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Omnis voluptas assumenda est
+                                    span.badge.badge-primary.pull-right Review
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Produces no resultant pleasure
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='arrow-right')
+                                    span See More (21)
+                          .col-xl-4.xl-100
+                            .browse-articles.browse-bottom
+                              h6
+                                span
+                                  i(data-feather='archive')
+                                | Integrating WordPress with Your Website
+                              ul
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Lorem Ipsum passage, and going through
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span The first line of Lorem Ipsum,  Lorem ipsum 
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span Thus comes from a line in section
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='file-text')
+                                    span First true generator on the Internet
+                                    span.badge.badge-primary.pull-right On hold
+                                li
+                                  a(href='#')
+                                    span
+                                      i(data-feather='arrow-right')
+                                    span See More (34)
+              .col-lg-12
+                .header-faq
+                  h3.mb-0 Featured Tutorials
+                .row
+                  .col-xl-3.xl-50.col-md-6.box-col-6
+                    .card.features-faq.product-box
+                      .faq-image.product-img
+                        img.img-fluid(src='../assets/images/faq/1.jpg', alt='')
+                        .product-hover
+                          ul
+                            li
+                              i.icon-link
+                            li
+                              i.icon-import
+                      .card-body
+                        h5  Web Design
+                        p
+                          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      .card-footer
+                        span Dec 15, 2024
+                        span.pull-right
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                  .col-xl-3.xl-50.col-md-6.box-col-6
+                    .card.features-faq.product-box
+                      .faq-image.product-img
+                        img.img-fluid(src='../assets/images/faq/2.jpg', alt='')
+                        .product-hover
+                          ul
+                            li
+                              i.icon-link
+                            li
+                              i.icon-import
+                      .card-body
+                        h5 Web Development
+                        p
+                          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      .card-footer
+                        span Dec 15, 2024
+                        span.pull-right
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                  .col-xl-3.xl-50.col-md-6.box-col-6
+                    .card.features-faq.product-box
+                      .faq-image.product-img
+                        img.img-fluid(src='../assets/images/faq/3.jpg', alt='')
+                        .product-hover
+                          ul
+                            li
+                              i.icon-link
+                            li
+                              i.icon-import
+                      .card-body
+                        h5 UI Design
+                        p
+                          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      .card-footer
+                        span Dec 15, 2024
+                        span.pull-right
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                  .col-xl-3.xl-50.col-md-6.box-col-6
+                    .card.features-faq.product-box
+                      .faq-image.product-img
+                        img.img-fluid(src='../assets/images/faq/4.jpg', alt='')
+                        .product-hover
+                          ul
+                            li
+                              i.icon-link
+                            li
+                              i.icon-import
+                      .card-body
+                        h5 UX Design
+                        p
+                          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      .card-footer
+                        span Dec 15, 2024
+                        span.pull-right
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+                          i.fa-solid.fa-star.font-primary
+              .col-lg-12
+                .header-faq
+                  h3.mb-0 Latest articles and videos
+                .row
+                  .col-xl-4.col-md-6
+                    .row
+                      .col-sm-12
+                        .card
+                          .card-body
+                            .d-flex.articles-icons
+                              i.m-r-20(data-feather='codepen')
+                              .flex-grow-1
+                                h5.f-w-700 Using Video
+                                p Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                      .col-sm-12
+                        .card
+                          .card-body
+                            .d-flex.articles-icons
+                              i.m-r-20(data-feather='codepen')
+                              .flex-grow-1
+                                h5.f-w-700 Vel illum qu
+                                p Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                      .col-sm-12
+                        .card
+                          .card-body
+                            .d-flex.articles-icons
+                              i.m-r-20(data-feather='codepen')
+                              .flex-grow-1
+                                h5.f-w-700 Cum sociis natoqu
+                                p Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
+                  .col-xl-4.col-md-6
+                    .row
+                      .col-sm-12
+                        .card
+                          .card-body
+                            .d-flex.articles-icons
+                              i.m-r-20(data-feather='file-text')
+                              .flex-grow-1
+                                h5.f-w-700 Donec pede justo
+                                p  Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
+                      .col-sm-12
+                        .card
+                          .card-body
+                            .d-flex.articles-icons
+                              i.m-r-20(data-feather='file-text')
+                              .flex-grow-1
+                                h5.f-w-700 Nam quam nunc
+                                p  Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                      .col-sm-12
+                        .card
+                          .card-body
+                            .d-flex.articles-icons
+                              i.m-r-20(data-feather='file-text')
+                              .flex-grow-1
+                                h5.f-w-700 Using Video 
+                                p Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                  .col-xl-4
+                    .row
+                      .col-xl-12.col-md-6
+                        .card
+                          .card-body
+                            .d-flex.articles-icons
+                              i.m-r-20(data-feather='youtube')
+                              .flex-grow-1
+                                h5.f-w-700 Vel illum qu
+                                p Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                      .col-xl-12.col-md-6
+                        .card
+                          .card-body
+                            .d-flex.articles-icons
+                              i.m-r-20(data-feather='youtube')
+                              .flex-grow-1
+                                h5.f-w-700 Cum sociis natoqu
+                                p Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                      .col-xl-12
+                        .card
+                          .card-body
+                            .d-flex.articles-icons
+                              i.m-r-20(data-feather='youtube')
+                              .flex-grow-1
+                                h5.f-w-700 Donec pede justo
+                                p Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

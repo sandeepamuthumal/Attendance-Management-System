@@ -1,0 +1,430 @@
+/**=====================
+     Reset css start
+==========================**/
+::selection {
+  background-color: var(--theme-default);
+  color: var(--white);
+}
+::-moz-selection {
+  background-color: var(--theme-default);
+  color: var(--white);
+}
+/*====== Font-weight css starts ======*/
+$i: 100,
+300,
+500,
+400,
+600,
+700,
+900;
+@each $val in $i {
+  .f-w-#{$val} {
+    font-weight: $val !important;
+  }
+}
+/*====== Font-weight css ends ======*/
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--theme-default);
+}
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--white);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--theme-default);
+  border-radius: 10px;
+}
+.text-primary {
+  color: var(--theme-default) !important;
+}
+.text-secondary {
+  color: var(--theme-secondary) !important;
+}
+.badge-primary {
+  background-color: var(--theme-default);
+}
+.custom-scroll {
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--gray-200);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($primary-color, 0.2);
+    border-radius: 3px;
+    border: 1px solid var(--light-gray);
+  }
+}
+.chat-page {
+  .uk-h1,
+  .uk-h2,
+  .uk-h3,
+  .uk-h4,
+  .uk-h5,
+  .uk-h6,
+  .uk-heading-2xxlarge,
+  .uk-heading-large,
+  .uk-heading-medium,
+  .uk-heading-small,
+  .uk-heading-xxlarge,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  html {
+    font-family: $body-font;
+  }
+}
+.datatable-wrapper {
+  &.no-footer {
+    .datatable-container {
+      border-bottom: none;
+    }
+  }
+}
+.form-label {
+  font-weight: 600;
+}
+.datatable-selector {
+  color: var(--gray-700);
+}
+.form-control {
+  &:focus {
+    border-color: var(--theme-default);
+  }
+}
+.list-circle {
+  list-style: circle;
+}
+.popover {
+  z-index: 3;
+}
+.page-link {
+  &:focus {
+    background-color: var(--white);
+  }
+}
+.swal2-styled {
+  &.swal2-confirm {
+    background-color: var(--theme-default) !important;
+    &:focus {
+      box-shadow: unset !important;
+    }
+  }
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  &.flex-column {
+    align-items: flex-start !important;
+  }
+}
+.product-filter {
+  .owl-carousel {
+    display: block !important;
+  }
+}
+.p-20 {
+  padding: 20px;
+}
+.btn-fb,
+.btn-twitter,
+.btn-google,
+.btn-linkedin {
+  color: var(--white);
+  width: 100%;
+  &:hover {
+    color: var(--white);
+  }
+}
+.btn-fb {
+  background-color: var(--fb);
+  &:hover {
+    background-color: var(--fb);
+  }
+}
+.btn-twitter {
+  background-color: var(--twitter);
+  &:hover {
+    background-color: var(--twitter);
+  }
+}
+.btn-google {
+  background-color: var(--google-plus);
+  &:hover {
+    background-color: var(--google-plus);
+  }
+}
+.btn-linkedin {
+  background-color: var(--linkedin);
+  &:hover {
+    background-color: var(--linkedin);
+  }
+}
+input {
+  &:focus {
+    border-color: none;
+  }
+}
+.ace-editor {
+  height: 400px;
+  width: 100%;
+}
+.ace_gutter {
+  z-index: 1 !important;
+}
+/**====== theme scrollbar css start ======**/
+.theme-scrollbar,
+.datatable-container {
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--gray-200);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($primary-color, 0.2);
+    border-radius: 3px;
+    border: 1px solid var(--light-gray);
+  }
+}
+/**====== theme scrollbar css end ======**/
+/**==tap_top==**/
+.tap-top {
+  text-align: center;
+  cursor: pointer;
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 5;
+  color: var(--white);
+  background: var(--theme-default);
+  border: none;
+  padding: 7px;
+  box-shadow: 0 0 10px var(--theme-default);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  &:hover {
+    transition: all 0.3s ease;
+    opacity: 1;
+  }
+  i {
+    line-height: 1.9;
+  }
+}
+$b-name: primary,
+secondary,
+success,
+danger,
+warning,
+info,
+light,
+dark;
+$b-color: var(--theme-default),
+var(--theme-secondary),
+var(--success-color),
+var(--danger-color),
+var(--warning-color),
+var(--info-color),
+var(--light-color),
+var(--body-font-color);
+@each $var in $b-name {
+  $i: index($b-name, $var);
+  .b-#{$var} {
+    border: 1px solid nth($b-color, $i) !important;
+  }
+  .border-#{$var} {
+    border: 1px solid nth($b-color, $i) !important;
+  }
+  .b-t-#{$var} {
+    border-top: 1px solid nth($b-color, $i) !important;
+  }
+  .border-t-#{$var} {
+    border-top: 1px solid nth($b-color, $i) !important;
+  }
+  .b-b-#{$var} {
+    border-bottom: 1px solid nth($b-color, $i) !important;
+  }
+  .border-b-#{$var} {
+    border-bottom: 1px solid nth($b-color, $i) !important;
+  }
+  .b-l-#{$var} {
+    border-left: 1px solid nth($b-color, $i) !important;
+  }
+  .border-l-#{$var} {
+    border-left: 1px solid nth($b-color, $i) !important;
+  }
+  .b-r-#{$var} {
+    border-right: 1px solid nth($b-color, $i) !important;
+  }
+  .border-r-#{$var} {
+    border-right: 1px solid nth($b-color, $i) !important;
+  }
+}
+/*====== Border width css starts ======*/
+$i: 1;
+@while $i<=10 {
+  .border-#{$i} {
+    border-width:#{$i}px !important;
+  }
+  $i: $i+1;
+}
+/*======= Background-color css starts  ======= */
+$background-name: primary,
+secondary,
+success,
+danger,
+warning,
+info,
+light,
+dark;
+$background-color: var(--theme-default),
+var(--theme-secondary),
+var(--success-color),
+var(--danger-color),
+var(--warning-color),
+var(--info-color),
+var(--light-color),
+var(--body-font-color);
+@each $var in $background-name {
+  $i: index($background-name, $var);
+  .bg-#{$var} {
+    background-color: nth($background-color, $i) !important;
+    color: var(--white) !important;
+  }
+}
+/*======= Background-color css end  ======= */
+/*======= Bg-light css starts  ======= */
+$bg-light-color: primary,
+secondary,
+success,
+danger,
+warning,
+info,
+light,
+dark;
+$background-color: rgba($primary-color, 0.1),
+rgba($secondary-color, 0.1),
+rgba($success-color, 0.1),
+rgba($danger-color, 0.1),
+rgba($warning-color, 0.1),
+rgba($info-color, 0.1),
+rgba($light-color, 0.1),
+rgba($body-font-color, 0.1);
+@each $var in $bg-light-color {
+  $i: index($bg-light-color, $var);
+  .bg-light-#{$var} {
+    background-color: nth($background-color, $i) !important;
+  }
+}
+$bg-light-color: primary,
+secondary,
+success,
+danger,
+warning,
+info,
+light,
+dark;
+$text-color: var(--theme-default),
+var(--theme-secondary),
+var(--success-color),
+var(--danger-color),
+var(--warning-color),
+var(--info-color),
+var(--light-color),
+var(--body-font-color);
+@each $var in $bg-light-color {
+  $i: index($bg-light-color, $var);
+  .bg-light-#{$var} {
+    color: nth($text-color, $i) !important;
+  }
+}
+@each $var in $bg-light-color {
+  $i: index($bg-light-color, $var);
+  .line-#{$var} {
+    &:before {
+      content: '';
+      height: 29px;
+      width: 3px;
+      background-color: nth($text-color, $i) !important;
+      border-radius: 10px;
+    }
+  }
+}
+.m-r-10 {
+  margin-right: 10px;
+}
+@media screen and (max-width: 1399.98px) and (min-width: 1200px) {
+  .proorder-xxl-1 {
+    order: 1;
+  }
+  .proorder-xxl-2 {
+    order: 2;
+  }
+  .proorder-xxl-3 {
+    order: 3;
+  }
+  .proorder-xxl-4 {
+    order: 4;
+  }
+  .proorder-xxl-5 {
+    order: 5;
+  }
+  .proorder-xxl-6 {
+    order: 6;
+  }
+  .proorder-xxl-7 {
+    order: 7;
+  }
+  .proorder-xxl-8 {
+    order: 8;
+  }
+  .proorder-xxl-9 {
+    order: 9;
+  }
+  .proorder-xxl-10 {
+    order: 10;
+  }
+  .proorder-xxl-11 {
+    order: 11;
+  }
+  .proorder-xxl-12 {
+    order: 12;
+  }
+}
+@each $var in $bg-light-color {
+  $i: index($bg-light-color, $var);
+  .line-#{$var} {
+    &:before {
+      content: '';
+      height: 29px;
+      width: 3px;
+      background-color: nth($text-color, $i) !important;
+      border-radius: 10px;
+    }
+  }
+}
+.m-r-10 {
+  margin-right: 10px;
+}
+/*======= Bg-light css end  ======= */
+/**=====================
+     Reset css end
+==========================**/

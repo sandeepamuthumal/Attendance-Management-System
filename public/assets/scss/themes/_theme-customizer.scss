@@ -1,0 +1,281 @@
+.sidebar-pannle-main {
+  position: fixed;
+  bottom: 80px;
+  z-index: 9;
+  right: 30px;
+  @media (max-width: 575px) {
+    display: none;
+  }
+  ul {
+    .icon-btn {
+      transition: all 1s;
+      cursor: pointer;
+      margin-bottom: 10px;
+      height: calc(1.4rem + 1.5em + 2px);
+      width: calc(1.4rem + 1.5em + 2px);
+      border-radius: 100%;
+      font-weight: 800;
+      align-items: center;
+      justify-content: center;
+      display: inline-flex;
+      border: 0 !important;
+      box-shadow: 0 0 10px var(--theme-default);
+      i {
+        font-size: 22px;
+        color: var(--white);
+      }
+    }
+  }
+}
+.setting-sidebar {
+  background-color: var(--white);
+  width: 370px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  z-index: 999;
+  box-shadow: $sidebar-shadow;
+  border-left: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  &.open {
+    right: 0;
+    transition: all 0.3s ease;
+  }
+  h4 {
+    font-weight: 600;
+  }
+  p {
+    color: var(--light-gray-color);
+  }
+  .customizer-header {
+    padding: 10px 20px;
+    background: var(--theme-default);
+    .theme-title {
+      display: flex;
+      align-items: center;
+      h3 {
+        color: var(--white);
+      }
+      p {
+        color: var(--white);
+      }
+      .flex-grow-1 {
+        .icon-btn {
+          &.btn-outline-light {
+            cursor: pointer;
+            transition: 1s ease all;
+            color: var(--theme-default);
+            background-color: #eff1f2 !important;
+            height: 37px;
+            width: 37px;
+            border-radius: 100%;
+            font-weight: 800;
+            align-items: center;
+            justify-content: center;
+            display: inline-flex;
+            border: 0 !important;
+            &:hover {
+              transform: rotate(360deg);
+            }
+            i {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .customizer-body {
+    padding: 20px;
+    max-height: calc(100vh - 125px);
+    overflow-y: scroll;
+    >div {
+      background-color: rgba(241, 242, 242, 0.5);
+      box-shadow: 0px 0px 4px 3px rgba(186, 186, 187, 0.3);
+    }
+    .color-body {
+      input {
+        &:focus {
+          border-color: var(--theme-default);
+        }
+      }
+      .color-img {
+        position: relative;
+        border: 5px solid rgba($primary-color, 0.3);
+        border-radius: 10px;
+        img {
+          left: 0;
+          border-radius: 5px;
+          transition: all 1s;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        .customizer-overlay {
+          position: absolute;
+          border-radius: 5px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba($black, 0);
+          transition: background 0.5s ease;
+        }
+        .color-btn {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          transition: opacity .35s ease;
+          a {
+            padding: 3px 6px;
+            text-align: center;
+            color: var(--white);
+            font-size: 12px;
+            border: solid 2px var(--white);
+            z-index: 1;
+          }
+        }
+        &:hover {
+          .customizer-overlay {
+            display: block;
+            background: rgba($black, 0.3);
+          }
+          .color-btn {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .radio-form {
+      gap: 0px;
+      align-items: center;
+      justify-content: space-evenly;
+      display: flex;
+    }
+    .sidebar-body {
+      .radio-wrapper {
+        li {
+          width: unset;
+          height: unset;
+          padding: 8px 15px;
+          max-width: unset;
+          .form-check-input:checked[type=radio] {
+            --bs-form-check-bg-image: none;
+            background-image: none;
+          }
+          .form-check-input {
+            cursor: pointer;
+            &:checked {
+              ~ {
+                .form-check-label {
+                  .stroke-icon {
+                    stroke: var(--theme-default);
+                  }
+                  .fill-icon {
+                    fill: var(--theme-default);
+                  }
+                  span {
+                    color: var(--theme-default);
+                  }
+                }
+              }
+            }
+          }
+          .form-check-label {
+            margin-bottom: 0 !important;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            svg {
+              height: 18px;
+              width: 18px;
+            }
+            .stroke-icon {
+              stroke: var(--light-text);
+            }
+            .fill-icon {
+              fill: var(--light-text);
+            }
+            span {
+              color: var(--light-text);
+            }
+          }
+        }
+      }
+    }
+    .customizer-color {
+      ul {
+        .color-layout {
+          height: 35px;
+          width: 35px;
+          border-radius: 6px;
+          display: inline-block;
+          margin-right: 3px;
+          border: 1px solid #b8b8b8;
+          padding: 3px;
+          position: relative;
+          cursor: pointer;
+          opacity: 0.9;
+          >div {
+            background-color: #134D80;
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+          }
+          &[data-attr="color-2"] {
+            div {
+              background-color: #57375D;
+            }
+          }
+          &[data-attr="color-3"] {
+            div {
+              background-color: #0766AD;
+            }
+          }
+          &[data-attr="color-4"] {
+            div {
+              background-color: #025464;
+            }
+          }
+          &[data-attr="color-5"] {
+            div {
+              background-color: #884A39;
+            }
+          }
+          &[data-attr="color-6"] {
+            div {
+              background-color: #0C356A;
+            }
+          }
+        }
+      }
+    }
+  }
+  .customizer-footer {
+    padding: 10px 20px;
+    border-top: 1px solid #cccbcb;
+    .btn {
+      align-items: center;
+      display: flex;
+      gap: 6px;
+      box-shadow: 0 3px 3px 0 rgba(52, 71, 103, .15), 0 3px 1px -2px rgba(52, 71, 103, .2), 0 1px 5px 0 rgba(52, 71, 103, .15);
+      &:hover {
+        animation: pulse 1s infinite;
+        transition: .3s;
+        svg {
+          animation: swing ease-in-out 0.5s 1 alternate;
+        }
+      }
+      svg {
+        transition: color 0.3s;
+      }
+    }
+  }
+}

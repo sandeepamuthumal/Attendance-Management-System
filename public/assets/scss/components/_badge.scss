@@ -1,0 +1,134 @@
+/**=====================
+     Badge CSS start
+==========================**/
+.badge-spacing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  .badge {
+    padding: 6px 12px;
+    font-size: 12px;
+    &.badge {
+      svg {
+        padding-top: 0px;
+      }
+    }
+    &.rounded-circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 33px;
+      width: 33px;
+    }
+    &+.badge {
+      margin-left: 0px;
+    }
+    &.btn-p-space {
+      padding: 8px 10px;
+    }
+  }
+  .modal {
+    .modal-body {
+      p {
+        font-size: 14px;
+        color: var(--font-color);
+      }
+    }
+  }
+  .modal-content {
+    display: block;
+  }
+}
+.badge {
+  padding: 0.44em 0.7em;
+  font-weight: 500;
+  &+.badge {
+    margin-left: 5px;
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+    padding-top: 3px;
+  }
+}
+@each $pill-badge-name,
+$pill-badge-color in (primary, var(--theme-default)),
+(secondary, var(--theme-secondary)),
+(success, var(--success-color)),
+(danger, var(--danger-color)),
+(warning, var(--warning-color)),
+(info, var(--info-color)),
+(light, var(--light-color)),
+(dark, var(--body-font-color)) {
+  .pill-badge-#{$pill-badge-name} {
+    background-color: $pill-badge-color;
+    color: var(--white);
+    border-radius: 0;
+  }
+}
+@each $badge-name,
+$badge-color in (primary, var(--theme-default)),
+(secondary, var(--theme-secondary)),
+(success, var(--success-color)),
+(danger, var(--danger-color)),
+(warning, var(--warning-color)),
+(info, var(--info-color)),
+(light, var(--light-color)),
+(dark, var(--body-font-color)) {
+  .badge-#{$badge-name} {
+    background-color: $badge-color;
+    color: var(--white);
+    border-color: $badge-color;
+    &:hover {
+      background-color: $badge-color;
+      color: var(--white);
+    }
+  }
+}
+@each $badge-name,
+$badge-color in (primary, rgba($primary-color, 0.2)),
+(secondary, rgba($secondary-color, 0.2)),
+(success, rgba($success-color, 0.2)),
+(danger, rgba($danger-color, 0.2)),
+(warning, rgba($warning-color, 0.2)),
+(info, rgba($light-color, 0.2)),
+(light, rgba($light-color, 0.2)),
+(dark, rgba($body-font-color, 0.2)) {
+  .badge-light-#{$badge-name} {
+    background-color: $badge-color;
+  }
+}
+@each $badge-name,
+$badge-color in (primary, var(--theme-default)),
+(secondary, var(--theme-secondary)),
+(success, var(--success-color)),
+(danger, var(--danger-color)),
+(warning, var(--warning-color)),
+(info, var(--info-color)),
+(light, var(--light-color)),
+(dark, var(--body-font-color)) {
+  .badge-light-#{$badge-name} {
+    color: $badge-color;
+    font-weight: 800;
+    &:hover {
+      background-color: $badge-color;
+      color: var(--white);
+    }
+  }
+}
+@each $stroke-name,
+$stroke-color in (primary, var(--theme-default)),
+(secondary, var(--theme-secondary)),
+(success, var(--success-color)),
+(danger, var(--danger-color)),
+(warning, var(--warning-color)),
+(info, var(--info-color)),
+(light, var(--light-color)),
+(dark, var(--body-font-color)) {
+  .stroke-#{$stroke-name} {
+    stroke: $stroke-color !important;
+  }
+}
+/**=====================
+    Badge CSS Ends
+==========================**/

@@ -1,0 +1,173 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var counter                = true;
+- var print                  = true;
+include ../../components/mixin
+doctype html 
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12 
+                                    h2
+                                        | Invoice-6
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Ecommerce
+                                        li.breadcrumb-item.active Invoice-6
+                    // Container-fluid starts
+                    .container
+                      .row
+                        .col-sm-12
+                          .card
+                            .card-body
+                              .invoice
+                                div
+                                  div
+                                    .row
+                                      .col-sm-6
+                                        .d-flex
+                                          .media-left
+                                            img.media-object.for-light.img-80(src='../assets/images/other-images/logo-login.png', alt='')
+                                            img.media-object.for-dark.img-80(src='../assets/images/other-images/dark-logo-login.png', alt='')
+                                          .text-start.m-l-20.text-right
+                                            p
+                                              | hello@Admiro.in
+                                              br
+                                              span 289-335-6503
+                                        // End Info
+                                      .col-sm-6
+                                        .text-md-end.text-xs-center
+                                          h3
+                                            | Invoice #
+                                            span#count1.counter 1069
+                                          p
+                                            | Issued: May
+                                            span  27, 2015
+                                            br
+                                            |  Payment Due: June 
+                                            span 27, 2015
+                                        // End Title
+                                  hr
+                                  // End InvoiceTop
+                                  .row
+                                    .col-md-4
+                                      .d-flex
+                                        .media-left
+                                          img.media-object.rounded-circle.img-60(src='../assets/images/user/1.jpg', alt='')
+                                        .m-l-20.text-start
+                                          h4.media-heading Johan Deo
+                                          p
+                                            | JohanDeo@gmail.com
+                                            br
+                                            span 555-555-5555
+                                    .col-md-8
+                                      #project.text-md-end
+                                        h6 Project Description
+                                        p
+                                          | You're Only As Good As Your Last Collection, Which Is An Enormous Pressure. Jeans Represent Democracy In Fashion.Fashion Is About Dressing According To What's Fashionable.
+                                  // End Invoice Mid
+                                  div
+                                    #table.table-responsive.invoice-table
+                                      table.table.table-bordered.table-striped
+                                        tbody
+                                          tr
+                                            td.item.text-start
+                                              h6.p-2.mb-0 Item Description
+                                            td.Hours
+                                              h6.p-2.mb-0 Hours
+                                            td.Rate
+                                              h6.p-2.mb-0 Rate
+                                            td.subtotal
+                                              h6.p-2.mb-0 Sub-total
+                                          tr
+                                            td.text-start
+                                              label.f-w-600 Brown Dress
+                                              p.m-0 Aask - Brown Polyester Blend Women's Fit & Flare Dress.
+                                            td
+                                              p.itemtext 5
+                                            td
+                                              p.itemtext $75
+                                            td
+                                              p.itemtext $375.00
+                                          tr
+                                            td.text-start
+                                              label.f-w-600 Red Shirt
+                                              p.m-0 Wild West - Red Cotton Blend Regular Fit Men's Formal Shirt.
+                                            td
+                                              p.itemtext 3
+                                            td
+                                              p.itemtext $75
+                                            td
+                                              p.itemtext $225.00
+                                          tr
+                                            td.text-start
+                                              label.f-w-600 Flower Dress
+                                              p.m-0 Skyblue Flower Printed Sleevless Strappy Dress.
+                                            td
+                                              p.itemtext 10
+                                            td
+                                              p.itemtext $75
+                                            td
+                                              p.itemtext $750.00
+                                          tr
+                                            td.text-start
+                                              label.f-w-600 Red Skirt
+                                              p.m-0 R L F - Red Cotton Blend Women's A-Line Skirt.
+                                            td
+                                              p.itemtext 10
+                                            td
+                                              p.itemtext $75
+                                            td
+                                              p.itemtext $750.00
+                                          tr
+                                            td.text-start
+                                              p.itemtext
+                                            td
+                                              p.m-0 HST
+                                            td
+                                              p.m-0 13%
+                                            td
+                                              p.m-0 $419.25
+                                          tr
+                                            td.text-start
+                                            td
+                                            td.Rate
+                                              h6.mb-0.p-2 Total
+                                            td.payment
+                                              h6.mb-0.p-2 $3,644.25
+                                    // End Table
+                                    .row
+                                      .col-md-8
+                                        div
+                                          p.legal.text-start
+                                            strong Thank you for your business!
+                                            |   Payment is expected within 31 days; please process this invoice within that time. There will be a 5% interest charge per month on late invoices.
+                                      .col-md-4
+                                        form.text-end
+                                          input(type='image', src='../assets/images/other-images/paypal.png', name='submit', alt='PayPal - The safer, easier way to pay online!')
+                                  // End InvoiceBot
+                                .col-sm-12.text-center.mt-3
+                                  button.btn.btn.btn-primary.me-2(type='button', onclick='myFunction()') Print
+                                  button.btn.btn-secondary(type='button') Cancel
+                                // End Invoice
+                                // End Invoice Holder                         
+                    // Container-fluid ends
+                include ../../components/footer
+        include ../../components/footer-files

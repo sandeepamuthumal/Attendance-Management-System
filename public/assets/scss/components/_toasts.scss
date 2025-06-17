@@ -1,0 +1,48 @@
+.toasts-section {
+    .position-relative {
+        button {
+            width: unset;
+            height: unset;
+        }
+    }
+}
+.toast {
+    .btn-close {
+        width: 5px !important;
+        height: 5px !important;
+    }
+}
+.placement-toast {
+    .bd-example-toasts {
+        min-height: 200px;
+        .toast {
+            &:not(.showing) {
+                &:not(.show) {
+                    opacity: 1;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+.toast-icons {
+    margin-right: 6px;
+    width: 20px;
+    height: 20px;
+}
+.toast-container {
+    position: unset;
+}
+.toast-img {
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
+.bd-example-toasts {
+    min-height: 400px;
+}
+.toast-body{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

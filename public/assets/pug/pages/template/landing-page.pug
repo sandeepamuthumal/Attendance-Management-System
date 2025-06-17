@@ -1,0 +1,483 @@
+- var landing_font           = true;
+- var wow                    = true;
+- var animate                = true;
+- var slick                  = true;
+doctype html
+html(lang='en') 
+  include ../../components/landing-header
+  body.landing-page
+    include ../../components/taptop
+    // page-wrapper Start
+    div.landing-page
+      // Page Body Start
+      // header start
+      header.landing-header
+        .container-fluid.fluid-space
+          .row
+            .col-12
+              nav#navbar-example2.navbar.navbar-light.p-0
+                a.navbar-brand(href='javascript:void(0)')
+                  img.img-fluid(src='../assets/images/landing/logo/logo.png' alt='')
+                ul.landing-menu.nav.nav-pills
+                  li.nav-item.menu-back
+                    | back
+                    i.fa-solid.fa-angle-right
+                  li.nav-item
+                    a.nav-link(href='#home') Home
+                  li.nav-item
+                    a.nav-link(href='#layout') Layout
+                  li.nav-item
+                    a.nav-link(href='#applications') Applications
+                  li.nav-item
+                    a.nav-link(href='#core-feature') Core Feature 
+                  li.nav-item
+                    a.nav-link(href='https://docs.pixelstrap.net/admin/admiro/document/' target='_blank') Documentation
+                  li.nav-item
+                    a.nav-link(href='https://docs.google.com/forms/d/e/1FAIpQLSe6hKUXw_By-pg7yabL0FxoTM02ZPTxoXy8PE3yboRuUCuyeA/viewform' target='_blank') Hire Us
+                .buy-block
+                  a.btn-header.btn.btn-primary(href='https://themeforest.net/user/pixelstrap/portfolio' target='_blank') Buy Now
+                  .toggle-menu
+                    i.fa-solid.fa-bars
+      // header end
+      //home-section-start
+      section#home.landing-home
+        .container
+          .landing-center.landing-center-responsive.title-padding
+            .main-content-home
+              .title-content
+                h1
+                  | The most effective 
+                  span.animation-line Customer 
+                  |  dashboard
+                p
+                  | The amazing and user-friendly HTML was made using adaptable, modern, and strong unique elements.
+              .main-buttons
+                a.btn.btn-primary(href='index.html' target='_blank') View Demo
+                a.btn.btn-secondary(href='https://docs.pixelstrap.net/admin/admiro/document/' target='_blank') Documentation
+            .container-fluid
+              .landing_first_section_img
+                .img-set1
+                  img.img-fluid(src='../assets/images/landing/screen2.png' alt='')
+                .img-set2
+                  img.img-fluid(src='../assets/images/landing/screen3.png' alt='')
+                .img-set3
+                  img.img-fluid(src='../assets/images/landing/screen1.png' alt='')
+            .bottom-img-1
+            .bottom-img-2
+          a.tap-down(href='#layout')
+            i.icon-angle-double-down  
+        .round-tringle
+          .bg_circle1
+            img.img-fluid(src='../assets/images/landing/shape/shape1.png' alt='')
+          .bg_circle2
+            img.img-fluid(src='../assets/images/landing/shape/shape2.png' alt='')
+          .bg_circle3
+            .d-flex
+              img.img-fluid(src='../assets/images/landing/shape/shape3.png' alt='')
+              h4 Trendy
+          .bg_circle4
+            img.img-fluid(src='../assets/images/landing/shape/shape4.png' alt='')
+          .bg_circle5
+            img.img-fluid(src='../assets/images/landing/shape/shape5.png' alt='')
+          .bg_circle6
+            img.img-fluid(src='../assets/images/landing/shape/shape6.png' alt='')
+          .bg_circle7
+            img.img-fluid(src='../assets/images/landing/shape/shape7.png' alt='')
+      //home-section-end
+      //page-section-start
+      section#layout.section-py-space.landing-page-design
+        .title-style.wow.pulse
+          h5.main-title Trending & Clean Design Collection
+            span.description-title Creative & Unique Admin Layout
+        .container-fluid.fluid-space
+          .row.justify-content-center
+            .col-lg-4.col-sm-6.wow.fadeInLeft.animated(data-wow-delay='0.1s' style='visibility: visible;-webkit-animation-delay: 0.1s; -moz-animation-delay: 0.1s; animation-delay: 0.1s;')
+              .layout-box
+                .layout-name
+                  .dot-img
+                    ul.dot-group 
+                      li
+                      li
+                      li
+                  a(href="index.html" target='_blank') Default Dashboard
+                .img-wrraper
+                  a(href="index.html" target='_blank')
+                    img.img-fluid(src="../assets/images/landing/layout/1.png" alt="")
+            .col-lg-4.col-sm-6.wow.fadeInLeft.animated(data-wow-delay='0.2s' style='visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;')
+              .layout-box.mt-4.mt-sm-0
+                .layout-name
+                  .dot-img
+                    ul.dot-group 
+                      li
+                      li
+                      li
+                  a(href="dashboard-02.html" target='_blank') Ecommerce Dashboard
+                .img-wrraper
+                  a(href="dashboard-02.html" target='_blank')
+                    img.img-fluid(src="../assets/images/landing/layout/2.png" alt="")
+            .col-lg-4.col-sm-6.wow.fadeInLeft.animated(data-wow-delay='0.3s' style='visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;')
+              .layout-box.mt-4.mt-lg-0
+                .layout-name
+                  .dot-img
+                    ul.dot-group 
+                      li
+                      li
+                      li
+                  a(href="dashboard-03.html" target='_blank') Education Dashboard
+                .img-wrraper
+                  a(href="dashboard-03.html" target='_blank')
+                    img.img-fluid(src="../assets/images/landing/layout/3.png" alt="")
+      //page-section-end
+      // frameworks-section-start
+      section#frameworks.section-py-space.framework-section
+        .container-fluid.fluid-space
+          .title-style.wow.pulse
+            h5.main-title Trending & Clean Design Collection
+              span.description-title Top Frameworks
+        .container
+          .row  
+            .col-sm-12.framworks 
+              #pills-tabContent.tab-content
+                #pills-home-tab.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-home-tab')
+                  ul.framework-list
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.15s' style='visibility: visible; animation-duration: 0.15s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/bootstrap.png' alt='')
+                      h4 Bootstrap 5
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.16s' style='visibility: visible; animation-duration: 0.16s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/css.png' alt='')
+                      h4 CSS 
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.17s' style='visibility: visible; animation-duration: 0.17s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/sass.png' alt='')
+                      h4 Sass
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.18s' style='visibility: visible; animation-duration: 0.18s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/pug.png' alt='')
+                      h4 Pug
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.19s' style='visibility: visible; animation-duration: 0.19s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/npm.png' alt='')
+                      h4 NPM
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.20s' style='visibility: visible; animation-duration: 0.20s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/charts.png' alt='')
+                      h4 Charts
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.21s' style='visibility: visible; animation-duration: 0.21s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/gulp.png' alt='')
+                      h4 Gulp
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.22s' style='visibility: visible; animation-duration: 0.22s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/kit.png' alt='')
+                      h4 Starter Kit
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.23s' style='visibility: visible; animation-duration: 0.23s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/uikits.png' alt='')
+                      h4 40+ UI Kits
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.25s' style='visibility: visible; animation-duration: 0.25s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/builders.png' alt='')
+                      h4 Builders
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.26s' style='visibility: visible; animation-duration: 0.26s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/iconset.png' alt='')
+                      h4 11 Icon Sets
+                    li.wow.pulse(data-wow-iteration='5' data-wow-duration='0.27s' style='visibility: visible; animation-duration: 0.27s; animation-iteration-count: 5;')
+                      .framework-bg
+                        img(src='../assets/images/landing/icon/html/forms.png' alt='')
+                      h4 Forms
+      //frameworks-section-end
+      // application-section-start
+      section#applications.section-py-space.application-section
+        .container-fluid.fluid-space
+          .row 
+            .col-sm-12.wow.pulse
+              .title-style.wow.pulse
+                h5.main-title Usefull Application
+                  span.description-title Fast & Powerful Applications
+            .col-sm-12.application
+              .row.application-block.g-xl-5.g-4
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='social-app.html' target='_blank') Social App
+                    .img-wrraper
+                      a(href='social-app.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/1.png' alt='')
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='knowledgebase.html' target='_blank') Knowledgebase
+                    .img-wrraper
+                      a(href='knowledgebase.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/2.png' alt='')
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='support-ticket.html' target='_blank') Support Ticket
+                    .img-wrraper
+                      a(href='support-ticket.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/3.png' alt='')
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='letter-box.html' target='_blank') Letter Box
+                    .img-wrraper
+                      a(href='letter-box.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/4.png' alt='')   
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='to-do.html' target='_blank') To-Do
+                    .img-wrraper
+                      a(href='to-do.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/5.png' alt='')
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='job-cards-view.html' target='_blank') Job Search
+                    .img-wrraper
+                      a(href='job-cards-view.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/6.png' alt='')
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='product.html' target='_blank') Ecommerce
+                    .img-wrraper
+                      a(href='product.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/7.png' alt='')
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='kanban-board.html' target='_blank') Kanban
+                    .img-wrraper
+                      a(href='kanban-board.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/8.png' alt='')
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='file-manager.html' target='_blank') File Manager 
+                    .img-wrraper
+                      a(href='file-manager.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/9.png' alt='') 
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='project-list.html' target='_blank') Project 
+                    .img-wrraper
+                      a(href='project-list.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/10.png' alt='')
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='contacts.html' target='_blank') Contacts 
+                    .img-wrraper
+                      a(href='contacts.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/11.png' alt='')
+                .col-lg-4.col-sm-6.wow.pulse
+                  .layout-box
+                    .layout-name
+                      .dot-img
+                        ul.dot-group
+                          li
+                          li
+                          li
+                      a(href='private-chat.html' target='_blank') Chat 
+                    .img-wrraper
+                      a(href='private-chat.html' target='_blank')
+                        img.img-fluid(src='../assets/images/landing/application/12.png' alt='')
+      // application-section-end
+      // features-section-start
+      section#core-feature.section-py-space.features-section
+        .container-fluid.fluid-space
+          .row 
+            .col-sm-12.wow.pulse
+              .title-style.wow.pulse
+                h5.main-title Why you choose Admiro
+                  span.description-title Unique Features
+          .row.g-4.g-md-5.feature-content 
+            .col-xl-3.col-lg-4.col-sm-6.wow.fadeInUp.animated(data-wow-duration='0.1s' style='visibility: visible;-webkit-animation-duration: 0.1s; -moz-animation-duration: 0.1s; animation-duration: 0.1s;')
+              .feature-box.common-card.bg-feature
+                .feature-icon.bg-white
+                  div
+                    img(src="../assets/images/landing/feature-icon/1.svg" alt="feature-icon")
+                h5 Quality & Clean Code
+                p.mb-0 All you need to know of using clean code as a manager to make your team and your software awesome.
+            .col-xl-3.col-lg-4.col-sm-6.wow.fadeInUp.animated(data-wow-duration='0.2s' style='visibility: visible;-webkit-animation-duration: 0.0.2s; -moz-animation-duration: 0.0.2s; animation-duration: 0.0.2s;')
+              .feature-box.common-card.bg-feature
+                .feature-icon.bg-white
+                  div
+                    img(src="../assets/images/landing/feature-icon/2.svg" alt="feature-icon")
+                h5 Bootstrap v5.0 
+                p.mb-0 Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system
+            .col-xl-3.col-lg-4.col-sm-6.wow.fadeInUp.animated(data-wow-duration='0.3s' style='visibility: visible;-webkit-animation-duration: 0.3s; -moz-animation-duration: 0.3s; animation-duration: 0.3s;')  
+              .feature-box.common-card.bg-feature
+                .feature-icon.bg-white 
+                  div
+                    img(src="../assets/images/landing/feature-icon/3.svg" alt="feature-icon")
+                h5 Handmade Icons
+                p.mb-0 let’s learn how to use our own svg icons in riho admin template. icon system with svg sprites
+            .col-xl-3.col-lg-4.col-sm-6.wow.fadeInUp.animated(data-wow-duration='0.4s' style='visibility: visible;-webkit-animation-duration: 0.4s; -moz-animation-duration: 0.4s; animation-duration: 0.4s;') 
+              .feature-box.common-card.bg-feature
+                .feature-icon.bg-white 
+                  div
+                    img(src="../assets/images/landing/feature-icon/4.svg" alt="feature-icon")
+                h5 Limitless Components
+                p.mb-0 The limitless layout collection and ui kit library is the biggest collection of layout for web design
+            .col-xl-3.col-lg-4.col-sm-6.wow.fadeInUp.animated(data-wow-duration='0.5s' style='visibility: visible;-webkit-animation-duration: 0.5s; -moz-animation-duration: 0.5s; animation-duration: 0.5s;') 
+              .feature-box.common-card.bg-feature
+                .feature-icon.bg-white 
+                  div
+                    img(src="../assets/images/landing/feature-icon/5.svg" alt="feature-icon")
+                h5 Easy Customizable
+                p.mb-0 For novices, this is a simple step-by-step approach. alter the layout, settings, and content
+            .col-xl-3.col-lg-4.col-sm-6.wow.fadeInUp.animated(data-wow-duration='0.6s' style='visibility: visible;-webkit-animation-duration: 0.6s; -moz-animation-duration: 0.6s; animation-duration: 0.6s;') 
+              .feature-box.common-card.bg-feature
+                .feature-icon.bg-white 
+                  div
+                    img(src="../assets/images/landing/feature-icon/6.svg" alt="feature-icon")
+                h5 Responsive
+                p.mb-0 Use responsive design to connect with all device users start designing your website for mobile devices.
+            .col-xl-3.col-lg-4.col-sm-6.wow.fadeInUp.animated(data-wow-duration='0.7s' style='visibility: visible;-webkit-animation-duration: 0.7s; -moz-animation-duration: 0.7s; animation-duration: 0.7s;')
+              .feature-box.common-card.bg-feature
+                .feature-icon.bg-white
+                  div
+                    img(src="../assets/images/landing/feature-icon/7.svg" alt="feature-icon")
+                h5 Premium Support
+                p.mb-0 we are always be their for your support and you are facing some issues you can create ticket.
+            .col-xl-3.col-lg-4.col-sm-6.wow.fadeInUp.animated(data-wow-duration='0.8s' style='visibility: visible;-webkit-animation-duration: 8s; -moz-animation-duration: 8s; animation-duration: 8s;')  
+              .feature-box.common-card.bg-feature
+                .feature-icon.bg-white
+                  div
+                    img(src="../assets/images/landing/feature-icon/8.svg" alt="feature-icon")
+                h5 Colors Options
+                p.mb-0 Admiro provide unlimited main color option other colors can change easily using sass variables
+      // features-section-end
+      // support-section-start
+      section.section-py-space.support-section
+        .support-title
+          h2.text-end we give it as we think that excellent support is needed
+          p.text-end “fast issue resolution, and dedicated experts for a seamless experience”
+          div.text-end 
+            a(href='https://support.pixelstrap.com/' target="_blank").btn.bg-primary.f-w-700.support-button
+              | Premium Support
+        div.pricing-section
+          .container
+            .row
+              .col-12.support-img
+                h3 Our License
+                img.img-fluid(src='../assets/images/landing/unique.png' alt='')  
+                h4 Premium Support
+        .marquee
+          .marquee-name 
+            p.big-title Premium Support.Our License 
+            p.big-title Premium Support.Our License 
+            p.big-title Premium Support.Our License 
+      // support-section-end
+      // footer-section-start
+      #footer.footer.landing-footer.section-py-space   
+        .container-fluid.fluid-space
+          .landing-center
+            .feature-content
+              div 
+                h2 The Admiro Bootstrap admin theme trusted by many developers world wide.
+                .footer-rating
+                  i.fa-solid.fa-star
+                  i.fa-solid.fa-star
+                  i.fa-solid.fa-star
+                  i.fa-solid.fa-star
+                  i.fa-regular.fa-star
+              a.btn.btn-primary.footer-btn(href='https://themeforest.net/user/pixelstrap/portfolio' target='_blank') Buy Now
+          .sub-footer.row.g-md-2.g-3
+            .col-md-6
+              .left-subfooter
+                img.img-fluid(src='../assets/images/landing/logo/footer.png' alt='logo')
+                p.mb-0 Copyright 2024 &copy; Admiro theme by pixelstrap
+            .col-md-6
+              .right-subfooter
+                h3 If You Like Our Theme So Please Rate Us
+                ul
+                  li
+                    a(href='https://support.pixelstrap.com/' target='_blank') Get Support
+                  li
+                    a(href='https://docs.pixelstrap.net/admin/admiro/document/' target='_blank') Documentation
+                  li
+                    a(href='https://docs.google.com/forms/d/e/1FAIpQLSe6hKUXw_By-pg7yabL0FxoTM02ZPTxoXy8PE3yboRuUCuyeA/viewform' target='_blank') Hire Us
+        ul.shape
+          li.shape1
+            img.img-fluid(src='../assets/images/landing/footer/shape1.png' alt='')
+          li.shape2
+            img.img-fluid(src='../assets/images/landing/footer/shape2.png' alt='')
+          li.shape3
+            img.img-fluid(src='../assets/images/landing/footer/shape3.png' alt='')
+          li.shape4
+            img.img-fluid(src='../assets/images/landing/footer/shape4.png' alt='')
+          li.shape5
+            img.img-fluid(src='../assets/images/landing/footer/shape5.png' alt='')
+          li.shape7
+            img.img-fluid(src='../assets/images/landing/footer/shape1.png' alt='')
+          li.shape8
+            img.img-fluid(src='../assets/images/landing/footer/shape1.png' alt='')
+          li.shape9
+            img.img-fluid(src='../assets/images/landing/footer/shape7.png' alt='')
+          li.shape10
+            img.img-fluid(src='../assets/images/landing/footer/shape7.png' alt='')
+      // footer-section-end
+    include ../../components/landing-footer-files

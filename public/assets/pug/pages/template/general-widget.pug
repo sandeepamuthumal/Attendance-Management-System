@@ -1,0 +1,403 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var config                 = true;
+- var general_widget         = true;
+- var apex                   = true;
+- var swiper                 = true;
+- var date_picker            = true;
+include ../../components/mixin
+doctype html 
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12 
+                                    h2
+                                        | General
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Widgets
+                                        li.breadcrumb-item.active General
+                    // Container-fluid starts
+                    .container-fluid.general-widget
+                        .row
+                            .col-xl-3.col-sm-6.box-col-6
+                                .row 
+                                    .col-md-12.col-xl-12.col-lg-12
+                                      .card.value-chart
+                                        .card-body
+                                          .row
+                                            .col-6
+                                              #sales-chart.sales-chart
+                                            .col-6
+                                              .valuechart-detail
+                                                .text-center        
+                                                  .badge.badge-primary 80%
+                                                  h2 $3,76,793
+                                                  p Our Sale Value
+                                    .col-md-12.col-xl-12.col-lg-12
+                                      .card.value-chart
+                                        .card-body
+                                          .row
+                                            .col-6
+                                              #visitor-chart.visitor-chart
+                                            .col-6
+                                              .valuechart-detail
+                                                .text-center
+                                                  .badge.badge-secondary 60%
+                                                  h2 $4,26,876   
+                                                  p Today Stock Value  
+                            .col-xl-3.col-sm-6.box-col-6
+                              .card
+                                .card-header.card-no-border.pb-0
+                                  .header-top
+                                    h3 Total Investment
+                                    .dropdown.icon-dropdown
+                                      button#userdropdown1.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                        i.fa-solid.fa-ellipsis
+                                      .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown1')
+                                        a.dropdown-item(href='#') Weekly
+                                        a.dropdown-item(href='#') Monthly
+                                        a.dropdown-item(href='#') Yearly
+                                .card-body.investment-card.pt-0
+                                  #investment
+                            .col-xl-3.col-sm-6.box-col-6
+                              .card
+                                .card-body
+                                  .items-slider
+                                    .swiper.mySwiper1
+                                      .swiper-wrapper
+                                        .swiper-slide
+                                          .slider-box.bg-light-primary
+                                            .header-top
+                                              .badge.badge-primary.rated-product-badge Hot
+                                              img.img-fluid(src='../assets/images/dashboard-2/1.png' alt="")
+                                              .i.fa-regular.fa-heart
+                                          .slider-content.text-center
+                                            h4.text-primary Special Offer
+                                            p.mb-0 Smart Design Watch Multi Color
+                                            h6 $26.00
+                                              span &nbsp;$30.00
+                                            .input-group 
+                                                span.input-group-text.decrement-touchspin 
+                                                    +IconlySprite('minus', 'svg-color')
+                                                input.form-control.bg-light-primary.input-touchspin(type="text" value="1")
+                                                span.input-group-text.increment-touchspin 
+                                                    +IconlySprite('plus', 'svg-color')
+                                        .swiper-slide
+                                          .slider-box.bg-light-secondary
+                                            .header-top
+                                              .badge.badge-secondary.rated-product-badge Hot
+                                              img.img-fluid(src='../assets/images/dashboard-2/2.png' alt="")
+                                              .i.fa-regular.fa-heart
+                                          .slider-content.text-center
+                                            h4.text-secondary Weekend Sale
+                                            p.mb-0 AirPods 3rd Generation Silicone Skin
+                                            h6 $16.00
+                                              span &nbsp;$30.00
+                                            .input-group 
+                                                span.input-group-text.decrement-touchspin  
+                                                    +IconlySprite('minus', 'svg-color')
+                                                input.form-control.bg-light-secondary.input-touchspin(type="text" value="1")
+                                                span.input-group-text.increment-touchspin  
+                                                    +IconlySprite('plus', 'svg-color')
+                                      .swiper-button-next
+                                      .swiper-button-prev
+                            .col-xl-3.col-sm-6.box-col-6
+                              .card
+                                .card-body
+                                  .items-slider
+                                    .swiper.mySwiper2
+                                      .swiper-wrapper
+                                        .swiper-slide
+                                          .slider-box.bg-light-secondary
+                                            .header-top
+                                              .badge.badge-secondary.rated-product-badge Hot
+                                              img.img-fluid(src='../assets/images/dashboard-2/2.png' alt="")
+                                              .i.fa-regular.fa-heart
+                                          .slider-content.text-center
+                                            h4.text-secondary Weekend Sale
+                                            p.mb-0 AirPods 3rd Generation Silicone Skin
+                                            h6 $16.00
+                                              span &nbsp;$30.00
+                                            .input-group 
+                                                span.input-group-text.decrement-touchspin 
+                                                    +IconlySprite('minus', 'svg-color')
+                                                input.form-control.bg-light-secondary.input-touchspin(type="text" value="1")
+                                                span.input-group-text.increment-touchspin  
+                                                    +IconlySprite('plus', 'svg-color')
+                                        .swiper-slide
+                                          .slider-box.bg-light-primary
+                                            .header-top
+                                              .badge.badge-primary.rated-product-badge Hot
+                                              img.img-fluid(src='../assets/images/dashboard-2/1.png' alt="")
+                                              .i.fa-regular.fa-heart
+                                          .slider-content.text-center
+                                            h4.text-primary Special Offer
+                                            p.mb-0 Smart Design Watch Multi Color
+                                            h6 $26.00
+                                              span &nbsp;$30.00
+                                            .input-group 
+                                                span.input-group-text.decrement-touchspin 
+                                                    +IconlySprite('minus', 'svg-color')
+                                                input.form-control.bg-light-primary.input-touchspin(type="text" value="1")
+                                                span.input-group-text.increment-touchspin  
+                                                    +IconlySprite('plus', 'svg-color')
+                                      .swiper-button-next
+                                      .swiper-button-prev
+                            .col-sm-6.col-xl-3.box-col-6
+                              .card.widget-1
+                                .card-body
+                                  .widget-content
+                                    .widget-round.danger
+                                      .bg-round
+                                        svg.svg-fill
+                                            use(href="../assets/svg/icon-sprite.svg#cart")
+                                        svg.half-circle.svg-fill
+                                            use(href="../assets/svg/icon-sprite.svg#halfcircle")
+                                    div
+                                      h4 10,000
+                                      span.f-light Purchase
+                                  .font-danger.f-w-500
+                                    i.icon-arrow-up.icon-rotate.me-1
+                                    span +50%
+                            .col-sm-6.col-xl-3.box-col-6
+                              .card.widget-1
+                                .card-body
+                                  .widget-content
+                                    .widget-round.primary
+                                      .bg-round
+                                        svg.svg-fill
+                                            use(href="../assets/svg/icon-sprite.svg#tag")
+                                        svg.half-circle.svg-fill
+                                            use(href="../assets/svg/icon-sprite.svg#halfcircle")
+                                    div
+                                      h4 4,200
+                                      span.f-light Sales
+                                  .font-primary.f-w-500
+                                    i.icon-arrow-up.icon-rotate.me-1
+                                    span +70%
+                            .col-sm-6.col-xl-3.box-col-6
+                              .card.widget-1
+                                .card-body
+                                  .widget-content
+                                    .widget-round.secondary
+                                      .bg-round
+                                        svg.svg-fill
+                                          use(href="../assets/svg/icon-sprite.svg#return-box")
+                                        svg.half-circle.svg-fill
+                                          use(href="../assets/svg/icon-sprite.svg#halfcircle")
+                                    div
+                                      h4 7000
+                                      span.f-light Sales return
+                                  .font-secondary.f-w-500
+                                    i.icon-arrow-down.icon-rotate.me-1
+                                    span -20%
+                            .col-sm-6.col-xl-3.box-col-6
+                              .card.widget-1
+                                .card-body
+                                  .widget-content
+                                    .widget-round.success
+                                      .bg-round
+                                        svg.svg-fill
+                                          use(href="../assets/svg/icon-sprite.svg#rate")
+                                        svg.half-circle.svg-fill
+                                          use(href="../assets/svg/icon-sprite.svg#halfcircle")
+                                    div
+                                      h4 5700
+                                      span.f-light Purchase rate
+                                  .font-success.f-w-500
+                                    i.icon-arrow-up.icon-rotate.me-1
+                                    span +70%
+                            .col-xxl-6.col-xl-5.box-col-12
+                              .card.radial-card
+                                .card-body
+                                  .row 
+                                    .col-xl-6.col-lg-6.col-md-6.radial-chart
+                                      #salesStatsRadialChart.salesStatsRadialChart
+                                      div.content-label
+                                        p.mb-0.font-primary As From 
+                                        h4 25 March
+                                    .col-xl-6.col-lg-6.col-md-6.radial-text
+                                      .radial-content
+                                        .text-center
+                                          h4 Total Goal
+                                          h3 $92,000.30
+                                          hr
+                                          h5.progress-widget Goal Archive : 
+                                            span $81,000.000
+                                          .progress.sm-progress-bar.progress-animate
+                                            .progress-gradient-primary(role='progressbar' style='width: 65%' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100')
+                                          h5.progress-widget Duration: 
+                                            span 9 Month
+                                          .progress.sm-progress-bar.progress-animate
+                                            .progress-gradient-primary(role='progressbar' style='width: 65%' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100')
+                                          a(href="general-widget.html" download='').btn.btn-pill.btn-primary Download Details
+                            .col-xxl-6.col-xl-7.box-col-12
+                              .row.g-sm-3.height-equal-2.widget-charts
+                                .col-sm-6
+                                  .card.small-widget.mb-sm-0
+                                    .card-body.primary
+                                      span.f-light New Orders
+                                      .d-flex.align-items-end.gap-1
+                                        h4 2,435
+                                        span.font-primary.f-12.f-w-500
+                                          i.icon-arrow-up
+                                          span +50%
+                                      .bg-gradient
+                                        svg.stroke-icon.svg-fill
+                                          use(href="../assets/svg/icon-sprite.svg#new-order")
+                                .col-sm-6
+                                  .card.small-widget.mb-sm-0
+                                    .card-body.warning
+                                      span.f-light New Customers
+                                      .d-flex.align-items-end.gap-1
+                                        h4 2,908
+                                        span.font-warning.f-12.f-w-500
+                                          i.icon-arrow-up
+                                          span +20%
+                                      .bg-gradient
+                                        svg.stroke-icon.svg-fill
+                                          use(href="../assets/svg/icon-sprite.svg#customers")
+                                .col-sm-6
+                                  .card.small-widget.mb-sm-0
+                                    .card-body.secondary
+                                      span.f-light Average Sale
+                                      .d-flex.align-items-end.gap-1
+                                        h4 $389k
+                                        span.font-secondary.f-12.f-w-500
+                                          i.icon-arrow-down
+                                          span -10%
+                                      .bg-gradient
+                                        svg.stroke-icon.svg-fill
+                                          use(href="../assets/svg/icon-sprite.svg#sale")
+                                .col-sm-6
+                                  .card.small-widget.mb-sm-0
+                                    .card-body.success
+                                      span.f-light Gross Profit
+                                      .d-flex.align-items-end.gap-1
+                                        h4 $3,908
+                                        span.font-success.order-chartf-12.f-w-500
+                                          i.icon-arrow-up
+                                          span +80%
+                                      .bg-gradient
+                                        svg.stroke-icon.svg-fill
+                                          use(href="../assets/svg/icon-sprite.svg#profit")
+                                .col-sm-6
+                                  .card.widget-1.widget-with-chart.mb-xl-0
+                                    .card-body
+                                      div
+                                        h4.mb-1 1,80k
+                                        span.f-light Orders
+                                      .order-chart
+                                        #orderchart1
+                                .col-sm-6
+                                  .card.widget-1.widget-with-chart.mb-xl-0
+                                    .card-body
+                                      div
+                                        h4.mb-1 6,90k
+                                        span.f-light Profit
+                                      .profit-chart
+                                        #profitchart1
+                            .col-sm-6.col-xl-3.d-xxl-block.d-xl-none.box-col-none
+                                .card.overflow-hidden
+                                    .card-header.card-no-border.pb-0
+                                        .header-top
+                                            h3 Schedule a lesson
+                                            .dropdown.icon-dropdown
+                                              button#userdropdown2.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                i.fa-solid.fa-ellipsis
+                                              .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown2')
+                                                a.dropdown-item(href='#') Weekly
+                                                a.dropdown-item(href='#') Monthly
+                                                a.dropdown-item(href='#') Yearly
+                                    .card-body.p-0
+                                        .default-datepicker
+                                          .datepicker-here(data-language='en') 
+                            .col-sm-6.col-xxl-3.box-col-6
+                              .card
+                                .card-header.card-no-border.pb-0
+                                  .header-top
+                                    h3 Upcoming Classes
+                                    .dropdown.icon-dropdown
+                                      button#userdropdown3.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                        i.fa-solid.fa-ellipsis
+                                      .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown3')
+                                        a.dropdown-item(href='#') Weekly
+                                        a.dropdown-item(href='#') Monthly
+                                        a.dropdown-item(href='#') Yearly
+                                .card-body.upcoming-class.pt-0
+                                  .activity-day
+                                    h6 15 march
+                                  ul
+                                    li.d-flex.align-items-center.gap-2
+                                      .flex-shrink-0
+                                        h5 09:00
+                                      .flex-grow-1.border-2.b-l-primary
+                                        h6 GDM 2nd semester
+                                        p One-line Drawing Method
+                                      i.fa-solid.fa-circle.circle-dot-primary.pull-right
+                                    li.d-flex.align-items-center.gap-2
+                                      .flex-shrink-0
+                                        h5 10:00
+                                      .flex-grow-1.border-2.b-l-secondary
+                                        h6 GDM 2nd semester
+                                        p Continuous Line Drawing
+                                      i.fa-solid.fa-circle.circle-dot-secondary.pull-right
+                                  .activity-day
+                                    h6 17 march
+                                  ul
+                                    li.d-flex.align-items-center.gap-2
+                                      .flex-shrink-0
+                                        h5 12:00
+                                      .flex-grow-1.border-2.b-l-primary
+                                        h6 GDM 2nd semester
+                                        p One-line Drawing Method
+                                      i.fa-solid.fa-circle.circle-dot-primary.pull-right
+                                    li.d-flex.align-items-center.gap-2
+                                      .flex-shrink-0
+                                        h5 08:00
+                                      .flex-grow-1.border-2.b-l-secondary
+                                        h6 GDM 2nd semester
+                                        p Continuous Line Drawing
+                                      i.fa-solid.fa-circle.circle-dot-secondary.pull-right
+                                    li.d-flex.align-items-center.gap-2
+                                      .flex-shrink-0
+                                        h5 11:00
+                                      .flex-grow-1.border-2.b-l-primary
+                                        h6 GDM 2nd semester
+                                        p Continuous Line Drawing
+                                      i.fa-solid.fa-circle.circle-dot-primary.pull-right
+                            .col-xl-6.box-col-6.growth-card
+                              .card
+                                .card-header.card-no-border.pb-0
+                                  .header-top
+                                    h3 Monthly Revenue Growth
+                                    ul.simple-wrapper#myTab.nav.nav-pills.box-col-none(role='tablist')
+                                      li.nav-item
+                                        a#home-tab.nav-link(data-bs-toggle='tab' href='#yearly' role='tab'  aria-selected='true') Yearly
+                                      li.nav-item
+                                        a#profile-tabs.nav-link(data-bs-toggle='tab' href='#monthly' role='tab'  aria-selected='false') Monthly
+                                      li.nav-item
+                                        a#contact-tab.nav-link.active(data-bs-toggle='tab' href='#weekly' role='tab'  aria-selected='false') Weekly
+                                .card-body.pb-0
+                                  #growth-chart.growth-chart
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

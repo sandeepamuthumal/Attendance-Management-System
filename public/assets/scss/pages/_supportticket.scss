@@ -1,0 +1,51 @@
+.ecommerce-widget {
+    box-shadow: none;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 5px;
+    .total-num {
+        color: var(--body-font-color);
+        margin: 0;
+        letter-spacing: 1px;
+        @media (max-width: 1366px) {
+            font-size: 23px;
+            letter-spacing: 0px;
+        }
+        span {
+            color: var(--black);
+        }
+    }
+    .row {
+        align-items: center;
+    }
+    .progress-showcase {
+        margin-top: 30px;
+        @include media-breakpoint-down(lg) {
+            margin-top: 20px;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-top: 15px;
+        }
+    }
+    span {
+        color: var(--black);
+        margin: 0;
+        cursor: pointer;
+    }
+    .icon {
+        color: var(--light-gray);
+        font-size: 40px;
+    }
+    .flot-chart-container {
+        height: 100px;
+        padding: 0;
+        margin: 0;
+        border: transparent;
+    }
+    .morris-default-style {
+        display: none !important;
+    }
+    svg {
+        -webkit-filter: drop-shadow(12px 12px 7px rgba($black, 0.3));
+        filter: drop-shadow(12px 12px 7px rgba($black, 0.3));
+    }
+}

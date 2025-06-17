@@ -1,0 +1,65 @@
+-var password_show    = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/taptop
+        include ../../components/loader
+        // login page start
+        .container-fluid.p-0 
+          .row.m-0
+            .col-xl-7.login_bs_validation.p-0
+              img.bg-img-cover.bg-center(src="../assets/images/login/1.jpg" alt="looginpage" )
+            .col-xl-5.p-0 
+              .login-card.login-dark.login-bg
+                div
+                  div
+                    a.logo.text-center(href="index.html")
+                      img.img-fluid.for-light.m-auto(src="../assets/images/logo/logo1.png" alt="looginpage" )  
+                      img.img-fluid.for-dark(src="../assets/images/logo/logo-dark.png" alt="logo")                
+                  .login-main 
+                    form.theme-form
+                      h2 Create your account
+                      p Enter your personal details to create account
+                      .form-group
+                        label.col-form-label.pt-0 Your Name
+                        .row.g-2
+                          .col-6
+                            input.form-control(type='text', required='' placeholder='First name')
+                          .col-6
+                            input.form-control(type='text', required='' placeholder='Last name')
+                      .form-group
+                        label.col-form-label Email Address
+                        input.form-control(type='email', required='' placeholder='Test@gmail.com')
+                      .form-group
+                        label.col-form-label Password
+                        .form-input.position-relative
+                          input.form-control(type='password', name='login[password]', required='' placeholder="*********")
+                          .show-hide
+                            span.show
+                      .form-group.mb-0.checkbox-checked
+                        .form-check.checkbox-solid-info
+                            input#solid6.form-check-input(type='checkbox')
+                            label.form-check-label(for='solid6') Agree with
+                            a.ms-3.link(href='forget-password.html') Privacy Policy
+                        button.btn.btn-primary.btn-block.w-100.mt-3(type='submit') unlock
+                      .login-social-title
+                        h6 Or Sign in with                 
+                      .form-group
+                        ul.login-social
+                          li
+                            a(href='https://www.linkedin.com' target='_blank')
+                                i.icon-linkedin
+                          li
+                            a(href='https://twitter.com' target='_blank')
+                                i.icon-twitter
+                          li
+                            a(href='https://www.facebook.com' target='_blank')
+                                i.icon-facebook
+                          li
+                            a(href='https://www.instagram.com' target='_blank')
+                                i.icon-instagram
+                      p.mt-4.mb-0.text-center Already have an account?
+                        a.ms-2(href="login.html") Sign in
+          include ../../components/footer-files

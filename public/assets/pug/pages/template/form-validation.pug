@@ -1,0 +1,224 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var form_validation_custom = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Form Validation
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Form Controls
+                                        li.breadcrumb-item.active Form Validation
+                    // Container-fluid starts
+                    .container-fluid
+                        .row
+                            .col-sm-12
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Tooltip form validation
+                                        p.mt-1.mb-0 
+                                            | If your form layout allows it, you can swap the 
+                                            code .{valid|invalid}
+                                            | -feedback classes for
+                                    .card-body
+                                        form.row.g-3.needs-validation.custom-input(novalidate='').tooltip-valid.validation-forms
+                                            .col-md-4.position-relative
+                                                label.form-label(for='validationTooltip01') First name
+                                                input#validationTooltip01.form-control(type='text' placeholder="Mark" required='')
+                                                .valid-tooltip
+                                                    | Looks good!
+                                            .col-md-4.position-relative
+                                                label.form-label(for='validationTooltip02') Last name
+                                                input#validationTooltip02.form-control(type='text' placeholder="Otto" required='')
+                                                .valid-tooltip  
+                                                    | Looks good!
+                                            .col-md-4.position-relative
+                                                label.form-label(for='validationTooltipUsername') Username
+                                                .input-group.has-validation
+                                                    span#validationTooltipUsernamePrepend.input-group-text @
+                                                    input#validationTooltipUsername.form-control(type='text' aria-describedby='validationTooltipUsernamePrepend' required='')
+                                                    .invalid-tooltip
+                                                        | Please choose a unique and valid username.
+                                            .col-md-6.position-relative
+                                                label.form-label(for='validationTooltip03') City
+                                                input#validationTooltip03.form-control(type='text' required='')
+                                                .invalid-tooltip
+                                                    | Please provide a valid city.
+                                            .col-md-3.position-relative
+                                                label.form-label(for='validationTooltip04') State
+                                                select#validationTooltip04.form-select(required='')
+                                                    option(selected='' disabled='' value='') Choose...
+                                                    option U.S 
+                                                    option Thailand
+                                                    option India 
+                                                    option U.K
+                                                .invalid-tooltip
+                                                    | Please select a valid state.
+                                            .col-md-3.position-relative
+                                                label.form-label(for='validationTooltip05') Zip
+                                                input#validationTooltip05.form-control(type='text' required='')
+                                                .invalid-tooltip
+                                                    | Please provide a valid zip.
+                                            .col-12
+                                                button.btn.btn-primary(type='submit') Submit form   
+                            .col-xl-6.mb-lg-3
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Browser defaults
+                                        p.mt-1.mb-0 
+                                            | Not interested in custom validation feedback messages or writing JavaScript to change form behaviors?
+                                    .card-body.custom-input.form-validation
+                                        form.row.g-3
+                                            .col-12
+                                                label.form-label(for='first-name') First name
+                                                input#first-name.form-control(type='text' placeholder='First name' aria-label='First name' required)               
+                                            .col-12
+                                                label.form-label(for='exampleFormControlInput1') Email address
+                                                input#exampleFormControlInput1.form-control(type='email' placeholder='pesamof475@saeoil.com' required)
+                                            .col-12
+                                                label.col-sm-12.col-form-label(for='inputPassword2') Password
+                                                input#inputPassword2.form-control(type='password' required)
+                                            .col-12
+                                                label.form-label(for='validationDefault04') State
+                                                select#validationDefault04.form-select(required='')
+                                                    option(selected='' disabled='' value='') Choose...
+                                                    option U.K 
+                                                    option Thailand
+                                                    option India
+                                                    option U.S
+                                            .col-12
+                                                label.form-label(for='formFile') Choose file
+                                                input#formFile.form-control(type='file' required)
+                                            .col-12 
+                                                .card-wrapper.border.rounded-3.checkbox-checked 
+                                                    h6.sub-title Select your payment method
+                                                    .radio-form
+                                                        .form-check
+                                                            input#flexRadioDefault1.form-check-input(type='radio' name='flexRadioDefault' required='')
+                                                            label.form-check-label(for='flexRadioDefault1')
+                                                                | Visa
+                                                        .form-check
+                                                            input#flexRadioDefault2.form-check-input(type='radio' name='flexRadioDefault' checked='' required='')
+                                                            label.form-check-label(for='flexRadioDefault2')
+                                                                | MasterCard
+                                                        .form-check
+                                                            input#flexRadioDefault3.form-check-input(type='radio' name='flexRadioDefault' checked='' required='')
+                                                            label.form-check-label(for='flexRadioDefault3')
+                                                                | Paypal
+                                            .col-12
+                                                label.form-label(for='exampleFormControlTextarea1') Description
+                                                textarea#exampleFormControlTextarea1.form-control(rows='3')
+                                            .col-12.checkbox-checked
+                                                input#flexCheckDefault.form-check-input(type='checkbox' value='')
+                                                label.form-check-label(for='flexCheckDefault')
+                                                    | I agree to the policies
+                                            .col-12.mt-2 
+                                                .form-check.form-switch
+                                                    input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch' required)
+                                                    label.form-check-label(for='flexSwitchCheckDefault') Are you sure above information are true
+                                            .col-1.mt-2
+                                                button.btn.btn-primary(type='submit') Submit        
+                            .col-xl-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Validation form
+                                        p.mt-1.mb-0 
+                                            | Custom feedback styles apply custom colors, borders and background icons to better communicate feedback.
+                                    .card-body
+                                        form.row.g-3.needs-validation.custom-input(novalidate='').validation-forms
+                                            .col-12
+                                                label.form-label(for='validationCustom01') First name
+                                                input#validationCustom01.form-control(type='text' placeholder="Mark" required='')
+                                                .invalid-feedback
+                                                    | Please enter your valid                 
+                                                .valid-feedback 
+                                                    | Looks's Good! 
+                                            .col-12
+                                                label.col-sm-12.col-form-label(for='inputPassword1') Password
+                                                input#inputPassword1.form-control(type='password' required='')
+                                                .invalid-feedback
+                                                    | Please enter your valid password
+                                            .col-12
+                                                label.form-label(for='validationCustom04') State
+                                                select#validationCustom04.form-select(required='')
+                                                    option(selected='' disabled='' value='') Choose...
+                                                    option U.K 
+                                                    option India
+                                                    option Thailand
+                                                    option Newyork
+                                                .invalid-feedback
+                                                    | Please select a valid state.
+                                                .valid-feedback 
+                                                    | Looks's Good!
+                                            .col-md-6
+                                                label.form-label(for='validationCustom03') City
+                                                input#validationCustom03.form-control(type='text' required='')
+                                                .invalid-feedback
+                                                    | Please provide a valid city.
+                                                .valid-feedback 
+                                                    | Looks's Good!
+                                            .col-md-6
+                                                label.form-label(for='validationCustom05') Zip
+                                                input#validationCustom05.form-control(type='text' required='')
+                                                .invalid-feedback
+                                                    | Please provide a valid zip.
+                                                .valid-feedback 
+                                                    | Looks's Good!
+                                            .col-12
+                                                .card-wrapper.border.rounded-3.checkbox-checked
+                                                    h6.sub-title Select your payment method
+                                                    .radio-form
+                                                        .form-check
+                                                            input#validationFormCheck25.form-check-input(type='radio' name='radio-stacked' required='')
+                                                            label.form-check-label(for='validationFormCheck25') MaterCard
+                                                        .form-check
+                                                            input#validationFormCheck23.form-check-input(type='radio' name='radio-stacked' required='')
+                                                            label.form-check-label(for='validationFormCheck23') VISA
+                                            .col-12
+                                                select.form-select(required='' aria-label='select example')
+                                                    option(value='') Select Your Favorite Pixelstrap theme
+                                                    option(value='1') Admiro
+                                                    option(value='2') Tivo
+                                                    option(value='3') Wingo
+                                                .invalid-feedback Invalid select feedback
+                                            .col-12 
+                                                label.form-label(for='formFile1') Choose File
+                                                input#formFile1.form-control(type='file' aria-label='file example' required='')
+                                                .invalid-feedback Invalid form file selected
+                                            .col-12 
+                                                label.form-label(for='validationTextarea') Description
+                                                textarea#validationTextarea.form-control(placeholder='Enter your comment' required='')
+                                                .invalid-feedback
+                                                    | Please enter a message in the textarea.
+                                            .col-12
+                                                .form-check.valid-form
+                                                    input#invalidCheck.form-check-input(type='checkbox' value='' required='')
+                                                    label.form-check-label(for='invalidCheck')
+                                                        | Agree to terms and conditions
+                                                    .invalid-feedback
+                                                        | You must agree before submitting.
+                                            .col-12.mt-2
+                                                button.btn.btn-primary(type='submit') Submit form
+                include ../../components/footer 
+        include ../../components/footer-files

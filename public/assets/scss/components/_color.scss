@@ -1,0 +1,15 @@
+/**=====================
+     color css start
+==========================**/
+@each $font-name, $font-color in (primary, var(--theme-default)),
+  (secondary, var(--theme-secondary)), (success, var(--success-color)),
+  (danger, var(--danger-color)), (warning, var(--warning-color)),
+  (info, var(--info-color)), (light, var(--light-color)),(dark, var(--body-font-color))
+{
+  .font-#{$font-name} {
+    color: $font-color !important;
+  }
+}
+/**=====================
+     color css end
+==========================**/

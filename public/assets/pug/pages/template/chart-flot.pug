@@ -1,0 +1,153 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var config                 = true;
+- var flotchart              = true;
+- var page_flotchart         = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper  
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar    
+                .page-body   
+                    .container-fluid
+                        .page-title   
+                            .row 
+                                .col-sm-6.col-12
+                                    h2   
+                                        | Flot Chart
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item 
+                                            a(href='index.html')   
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Charts 
+                                        li.breadcrumb-item.active Flot Chart
+                    // Container-fluid starts
+                    .container-fluid
+                      .row.all-chart
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Real-Time Updates
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #real-time-update.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Multiple Real-Time Updates
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #multiple-real-timeupdate.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Error chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #error-flot-chart.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Adding Annotations chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #annotations-chart.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Basic chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #flot-basic-chart.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Categories Chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #flot-categories.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Toggling Series Chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #toggling-series-flot.flot-chart-placeholder.float-start
+                                p#choices.float-end
+                        .col-sm-12.col-xl-6.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Stacking chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #stacking-flot-chart.flot-chart-placeholder          
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Default pie chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #default-pie-flot-chart.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Default pie chart (Interactive)
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #default-pie-flot-chart-hover.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Default pie chart without legend
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #default-pie-legend-flot-chart.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Custom Label Formatter
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #custom-label1pie.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Label Radius chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #label-radius-flot-chart.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Hidden Labels chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #hidden-label-radius-flot-chart.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Tilted Pie chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #title-pie-flot-chart.flot-chart-placeholder
+                        .col-sm-12.col-xl-6.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Donut Hole chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #dount-hole-flot-chart.flot-chart-placeholder
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files    

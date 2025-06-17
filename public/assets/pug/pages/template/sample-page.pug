@@ -1,0 +1,52 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body 
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Sample Page
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Pages
+                                        li.breadcrumb-item.active Sample Page
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-sm-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3.mb-0 Sample Card
+                              p.mt-1.mb-0 Here you can enter a sub-title for your card.
+                            .card-body
+                              p
+                                strong Web Design Trends: 
+                                |  Stay up-to-date with the latest trends in web design, such as the use of animations, micro-interactions, dark mode, and unique navigation techniques.Keep your website's navigation simple and intuitive, allowing users to find what they need easily without overwhelming them with options.
+                              p
+                                strong Design Tools: 
+                                |  Information on popular design software like Adobe Photoshop, Sketch, Figma, or Adobe XD, along with tips and tricks for efficient workflow and collaboration.Compress and optimize images to improve website loading speed and overall performance, providing a better user experience.
+                              p
+                                strong Front-End Development: 
+                                |  A basic understanding of HTML, CSS, and JavaScript can enhance your web design skills, enabling you to create interactive and dynamic elements.Ensure sufficient contrast between text and background colors to enhance readability and accessibility, especially for users with visual impairments.
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

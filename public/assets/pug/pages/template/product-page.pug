@@ -1,0 +1,253 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var feather                = true;
+- var ecommerce              = true;
+- var owlcarousel            = true;
+- var page_owlcarousel       = true;
+include ../../components/mixin
+doctype html 
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12 
+                                    h2
+                                        | Product Page
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item ECommerce
+                                        li.breadcrumb-item.active Product Page
+                    // Container-fluid starts
+                    .container-fluid
+                        div
+                            .row.product-page-main.p-0
+                                .col-xxl-4.col-md-6.box-col-6
+                                    .card
+                                        .card-body
+                                            #sync1.product-slider.owl-carousel.owl-theme
+                                                .item
+                                                    img(src='../assets/images/ecommerce/01.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/02.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/03.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/04.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/05.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/06.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/07.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/08.jpg', alt='')
+                                            #sync2.owl-carousel.owl-theme
+                                                .item
+                                                    img(src='../assets/images/ecommerce/01.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/02.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/03.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/04.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/05.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/06.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/07.jpg', alt='')
+                                                .item
+                                                    img(src='../assets/images/ecommerce/08.jpg', alt='')
+                                .col-xxl-5.box-col-6.order-xxl-0.order-1
+                                    .card
+                                        .card-body
+                                            .product-page-details
+                                                h3 Women Pink shirt.
+                                            .product-price
+                                                | $26.00  
+                                                del $350.00 
+                                            ul.product-color
+                                                li.bg-primary
+                                                li.bg-secondary
+                                                li.bg-success
+                                                li.bg-info
+                                                li.bg-warning
+                                            hr
+                                            p
+                                                | Rock Paper Scissors Various Dots Half Sleeves Girl’s Regular Fit T-Shirt I 100% Cotton T Shirt with Half Sleeve Round Neck I Regular Wear Solid Kids Tees and Black Sleeve.
+                                            hr
+                                            div
+                                                table.product-page-width
+                                                    tbody
+                                                        tr
+                                                            td 
+                                                                b Brand &nbsp;&nbsp;&nbsp;:
+                                                            td Pixelstrap
+                                                        tr
+                                                            td 
+                                                                b Availability &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;
+                                                            td.font-success In stock
+                                                        tr
+                                                            td 
+                                                                b Seller &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;
+                                                            td ABC
+                                                        tr
+                                                            td 
+                                                                b Fabric &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;
+                                                            td Cotton
+                                            hr
+                                            .row
+                                                .col-md-4
+                                                    h5.f-w-700.product-title share it
+                                                .col-md-8
+                                                    .product-icon   
+                                                        ul.product-social
+                                                            li.d-inline-block
+                                                                a(href='https://www.facebook.com/' target="_blank")
+                                                                    i.fa-brands.fa-facebook-f
+                                                            li.d-inline-block
+                                                                a(href='https://accounts.google.com/' target="_blank")
+                                                                    i.fa-brands.fa-google-plus-g
+                                                            li.d-inline-block
+                                                                a(href='https://twitter.com/' target="_blank")
+                                                                    i.fa-brands.fa-twitter
+                                                            li.d-inline-block
+                                                                a(href='https://www.instagram.com/' target="_blank")
+                                                                    i.fa-brands.fa-instagram
+                                                            li.d-inline-block
+                                                                a(href='https://rss.app/' target="_blank")
+                                                                    i.fa-solid.fa-rss
+                                            hr
+                                            .row
+                                                .col-md-4
+                                                    h5.f-w-700.product-title Rate Now
+                                                .col-md-8
+                                                    .d-flex.product-rating
+                                                        ul.d-flex.align-items-center 
+                                                            li 
+                                                                i.fa-solid.fa-star
+                                                            li 
+                                                                i.fa-solid.fa-star
+                                                            li 
+                                                                i.fa-solid.fa-star
+                                                            li 
+                                                                i.fa-regular.fa-star
+                                                            li 
+                                                                i.fa-regular.fa-star
+                                                        span (250 review)
+                                            hr
+                                            .m-t-15.btn-showcase
+                                                a.btn.btn-primary(href="cart.html", title='') 
+                                                    i.fa-solid.fa-basket-shopping.me-1
+                                                    | Add To Cart
+                                                a.btn.btn-success(href="checkout.html", title='') 
+                                                    i.fa-solid.fa-cart-shopping.me-1
+                                                    | Buy Now
+                                                a.btn.btn-secondary(href="list-wish.html") 
+                                                    i.fa-solid.fa-heart.me-1
+                                                    | Add To WishList
+                                .col-xxl-3.col-md-6.box-col-6
+                                    .card
+                                        .card-body
+                                            // side-bar colleps block stat
+                                            .filter-block
+                                                h4 Brand
+                                                ul
+                                                    li Clothing
+                                                    li Bags
+                                                    li Footwear
+                                                    li Watches
+                                                    li ACCESSORIES
+                                    .card
+                                        .card-body
+                                            .collection-filter-block
+                                                ul.pro-services
+                                                    li
+                                                        .d-flex
+                                                            i(data-feather='truck')
+                                                            .flex-grow-1
+                                                                h5 Free Shipping                                    
+                                                                p Free Shipping World Wide
+                                                    li
+                                                        .d-flex
+                                                            i(data-feather='clock')
+                                                            .flex-grow-1
+                                                                h5 24 X 7 Service                                    
+                                                                p Online Service For New Customer
+                                                    li
+                                                        .d-flex
+                                                            i(data-feather='gift')
+                                                            .flex-grow-1
+                                                                h5 Festival Offer                                 
+                                                                p New Online Special Festival
+                                                    li
+                                                        .d-flex
+                                                            i(data-feather='credit-card')
+                                                            .flex-grow-1
+                                                                h5 Online Payment                                  
+                                                                p Contrary To Popular Belief.                                   
+                                        // silde-bar colleps block end here
+                                .card
+                                    .row.product-page-main
+                                        .col-sm-12
+                                            ul#top-tab.nav.nav-tabs.border-tab.nav-primary.mb-0(role='tablist')
+                                                li.nav-item
+                                                    a#top-home-tab.nav-link.active(data-bs-toggle='tab', href='#top-home', role='tab', aria-controls='top-home', aria-selected='false')
+                                                        | Febric
+                                                    .material-border
+                                                li.nav-item
+                                                    a#profile-top-tab.nav-link(data-bs-toggle='tab', href='#top-profile', role='tab', aria-controls='top-profile', aria-selected='false') Video
+                                                    .material-border
+                                                li.nav-item
+                                                    a#contact-top-tab.nav-link(data-bs-toggle='tab', href='#top-contact', role='tab', aria-controls='top-contact', aria-selected='true')
+                                                        | Details
+                                                    .material-border
+                                                li.nav-item
+                                                    a#brand-top-tab.nav-link(data-bs-toggle='tab', href='#top-brand', role='tab', aria-controls='top-brand', aria-selected='true')
+                                                        | Brand
+                                                    .material-border
+                                            #top-tabContent.tab-content
+                                                #top-home.tab-pane.fade.active.show(role='tabpanel', aria-labelledby='top-home-tab')
+                                                    p.mb-0.mt-3
+                                                        | Refresh your wardrobe with this chic top. With an eye-catching square neck, this top also features pretty puff sleeves. Stunning pink colour Classic solid pattern Square neck Elasticated puff sleeves Belt included, Polyester fabric, machine wash.."
+                                                    p.mb-0.mt-2
+                                                        | Tee Stores is an Indian contemporary clothing brand. The product pages display a fine quality fabric with colorful description. We offer many vivid designs, art, styles that "combine heritage with modernity, simplicity, playfulness and street style"."
+                                                #top-profile.tab-pane.fade(role='tabpanel', aria-labelledby='profile-top-tab')
+                                                  p.mb-0.mt-3
+                                                    iframe.me-3(width='200', height='100', src='https://www.youtube.com/embed/CJnfAXlBRTE')
+                                                #top-contact.tab-pane.fade(role='tabpanel', aria-labelledby='contact-top-tab')
+                                                    p.mb-0.mt-3
+                                                        |Rock Paper Scissors Various Dots Half Sleeves Girl’s Regular Fit T-Shirt I 100% Cotton
+                                                        br
+                                                        | T Shirt with Half Sleeve Round Neck I Regular Wear Solid Kids Tees and Black Sleeve.
+                                                #top-brand.tab-pane.fade(role='tabpanel', aria-labelledby='brand-top-tab')
+                                                    p.mb-0.mt-3
+                                                        b Product Dimensions :
+                                                        | 18 x 18 x 4 cm
+                                                        br
+                                                        b Date First Available :
+                                                        | 31 March 2024
+                                                        br
+                                                        b Manufacturer :
+                                                        | Tee Stores
+                                                        br
+                                                        b Item part number :
+                                                        | TS-WT721-XS-WHITE
+                include ../../components/footer
+        include ../../components/footer-files

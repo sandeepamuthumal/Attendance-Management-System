@@ -1,0 +1,60 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var datamaps               = true;
+- var config                 = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12 
+                                    h2
+                                        | Data map 
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item 
+                                            a(href='index.html')  
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Map
+                                        li.breadcrumb-item.active Data Map 
+                    // Container-fluid starts
+                    .container-fluid
+                        .row
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Basic Map
+                                    .card-body
+                                        .data-map#map-1
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Choropleth Map
+                                    .card-body
+                                        .data-map#basic_choropleth
+                            .col-sm-12
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Bubble Map
+                                    .card-body 
+                                        .data-map#bubbles
+                            .col-sm-12
+                                .card 
+                                    .card-header.card-no-border.pb-0
+                                        h3 Projection Map
+                                    .card-body
+                                        .data-map-glob#projection_map
+                include ../../components/footer 
+        include ../../components/footer-files 

@@ -1,0 +1,91 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var dropzone               = true;
+- var filepond               = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files 
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid 
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Dropzone
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Bonus Ui
+                                        li.breadcrumb-item.active Dropzone
+                    // Container-fluid starts   
+                    .container-fluid
+                        .row.g-3
+                            .col-lg-6   
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Default File Upload
+                                        p.mt-1.mb-0
+                                            | We use the create method to turn a
+                                            code [https://pqina.nl/filepond/]
+                                    .card-body
+                                        input(type='file' class="no-preview")
+                            .col-lg-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Image Preview
+                                        p.mt-1.mb-0
+                                            | We use the create method to turn a
+                                            code [https://pqina.nl/filepond/]
+                                    .card-body
+                                        input(type='file' class="show-preview")
+                            .col-lg-6.mb-lg-3
+                                .card
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Single File Upload
+                                        p.mt-1.mb-0
+                                            | Use the 
+                                            code .dropzone 
+                                            |  class through create upload files.
+                                    .card-body
+                                        form#singleFileUpload.dropzone(action='/upload.php')
+                                            .dropzone-wrapper
+                                                .dz-message.needsclick
+                                                    i.fa-solid.fa-cloud-arrow-up
+                                                    h6.f-w-600 Drop files here or click to upload.
+                                                    span.note.needsclick
+                                                        | (This is just a demo dropzone. Selected files are 
+                                                        strong not
+                                                        |  actually uploaded.)
+                            .col-lg-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Multi File Upload
+                                        p.mt-1.mb-0
+                                            | Use the
+                                            code .dropzone 
+                                            |  class through create upload files.
+                                    .card-body
+                                        form#multiFileUpload.dropzone.dropzone-secondary(action='/upload.php')
+                                            .dz-message.needsclick    
+                                                i.fa-solid.fa-cloud-arrow-up
+                                                h6 Drop files here or click to upload.
+                                                span.note.needsclick
+                                                    | (This is just a demo dropzone. Selected files are 
+                                                    strong not
+                                                    |  actually uploaded.)
+                include ../../components/footer
+        include ../../components/footer-files

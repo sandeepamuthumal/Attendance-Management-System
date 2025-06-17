@@ -1,0 +1,284 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var alert                  = true;
+- var feather                = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start 
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Alert
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                          a(href='index.html')     
+                                            i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Ui Kits
+                                        li.breadcrumb-item.active Alert
+                    // Container-fluid starts 
+                    .container-fluid
+                        .row
+                            .col-xl-12.alert-theme
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Link Color In Dark Theme
+                                        p.mt-1.mb-0
+                                            | Use the 
+                                            code .alert-link
+                                            |  utility class to quickly provide matching colored links within any alert
+                                    .card-body
+                                        .row
+                                            .col-xl-6
+                                                p.mb-1 Primary Alert
+                                                .alert.alert-primary.dark(role='alert')
+                                                    p.text-white
+                                                        | This is a    
+                                                        a.alert-link.text-white(href='#') primary alert
+                                                        |  with an example link.Check it out.
+                                                p.mb-1 Secondary Alert
+                                                .alert.alert-secondary.dark(role='alert')
+                                                    p.text-white
+                                                        | This is a 
+                                                        a.alert-link.text-white(href='#') secondary alert
+                                                        |   with an example link. Check it out.
+                                                p.mb-1 Info Alert
+                                                .alert.alert-info.dark(role='alert')
+                                                    p.text-white 
+                                                       | This is a  
+                                                       a.alert-link.text-white(href='#') info alert
+                                                       |   with an example link. Check it out.
+                                                p.mb-1 Success Alert
+                                                .alert.alert-success.dark.mb-0(role="alert")
+                                                    p.text-white 
+                                                        | This is a 
+                                                        a.alert-link.text-white(href='#') success alert 
+                                                        |   with an example link. Check it out.    
+                                            .col-xl-6  
+                                                p.mb-1 Warning Alert
+                                                .alert.alert-warning.dark(role="alert")
+                                                    p.text-white 
+                                                        |  This is a  
+                                                        a.alert-link.text-white(href='#') warning alert 
+                                                        |   with an example link. Check it out.    
+                                                p.mb-1 Danger Alert
+                                                .alert.alert-danger.dark(role="alert")
+                                                    p.text-white 
+                                                        | This is a  
+                                                        a.alert-link.text-white(href="#") danger alert 
+                                                        |   with an example link. click it out.
+                                                p.mb-1 Light Alert
+                                                .alert.alert-light.dark.text-dark(role="alert")
+                                                    p.text-black 
+                                                        |  This is a  
+                                                        a.alert-link.text-dark(href="#") light alert 
+                                                        |   with an example link. click it out.  
+                                                p.mb-1 Dark Alert 
+                                                .alert.alert-dark.dark.mb-0(role="alert")
+                                                    p.text-white 
+                                                        | This is a    
+                                                        a.alert-link.text-white(href="#") dark alert
+                                                        |   with an example link. click it out.
+                            .col-xl-12.alert-theme
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Link color in light theme
+                                        p.mt-1.mb-0
+                                            | Use the 
+                                            code .alert-link
+                                            |  utility class to quickly provide matching colored links within any alert.
+                                    .card-body
+                                        .row
+                                            .col-xl-6
+                                                p.mb-1 Primary Light Alert  
+                                                .alert.alert-light-primary(role='alert')
+                                                    p.text-primary
+                                                        | This is a  
+                                                        a.alert-link.text-primary(href='#') primary alert
+                                                        |  with an example link.Check it out.
+                                                p.mb-1 Secondary Light Alert
+                                                .alert.alert-light-secondary(role="alert")
+                                                    p.text-secondary    
+                                                        | This is a 
+                                                        a.alert-link.text-secondary(href="#") secondary alert 
+                                                        | with an example link. check it out.
+                                                p.mb-1 Success Light Alert
+                                                .alert.alert-light-success(role="alert")
+                                                    p.text-success 
+                                                        | This is a  
+                                                        a.alert-link.text-success(href="#") success alert
+                                                        | with an example link. check it out.
+                                                p.mb-0 Info Light Alert
+                                                .alert.alert-light-info.mb-0(role="alert")
+                                                    p.text-info     
+                                                        | This is a  
+                                                        a.alert-link.text-info(href="#") info alert
+                                                        | with an example link. check it out.
+                                            .col-xl-6
+                                                p.mb-1 Warning Light Alert
+                                                .alert.alert-light-warning(role="alert")
+                                                    p.text-warning 
+                                                        | This is a  
+                                                        a.alert-link.text-warning(href="#") warning alert 
+                                                        | with an example link. check it out.
+                                                p.mb-1 Danger Light Alert 
+                                                .alert.alert-light-danger(role="alert")
+                                                    p.text-danger 
+                                                        | This is a  
+                                                        a.alert-link.text-danger
+                                                        | with an example link. check it out.
+                                                p.mb-1 White Light alert 
+                                                .alert.alert-light-light(role="alert")  
+                                                    p.text-dark   
+                                                        | This is a  
+                                                        a.alert-link.text-dark
+                                                        |  with an example link. check it out.
+                                                p.mb-1 Dark Light Alert 
+                                                .alert.alert-light-dark.mb-0(role="alert")
+                                                    p.text-dark 
+                                                        | This is a  
+                                                        a.alert-link.text-light 
+                                                        | with an example link. check it out.
+                            .col-sm-12.col-xl-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Outline Alert
+                                        p.mt-1.mb-0
+                                            | Use the 
+                                            code .border-*  
+                                            | utility class to quickly provide matching border and border-width within any alert.
+                                    .card-body 
+                                        .alert.text-primary.border-primary.alert-dismissible.fade.show(role='alert')
+                                            i.fa-regular.fa-clock
+                                            p.mb-0  
+                                                | One of 
+                                                strong YouTube's 
+                                                | most crucial ranking factors is watch Time.
+                                            button.btn-close(type='button', data-bs-dismiss='alert', aria-label='Close') 
+                                        .alert.text-success.border-success.outline-2x.alert-dismissible.fade.show.alert-icons.mb-0(role='alert')
+                                            i.fa-regular.fa-thumbs-up
+                                            p.mb-0
+                                                b Well done! 
+                                                | You successfully read this important message.
+                                            button.btn-close(type='button', data-bs-dismiss='alert', aria-label='Close')
+                            .col-sm-12.col-xl-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Alert with Icons     
+                                        p.mt-1.mb-0
+                                            | Use the 
+                                            code .dismiss-text  
+                                            | class to add dismiss text instead of icon
+                                    .card-body.text-dark 
+                                        .alert.border-warning.alert-dismissible.fade.show.p-0(role='alert')
+                                            .alert-arrow.bg-warning 
+                                                i.fa-regular.fa-clock 
+                                            p.mb-0
+                                                | Your time over after 
+                                                strong.text-dark 5  
+                                                | minute
+                                            button.p-0.border-0.me-2.ms-auto(type='button' data-bs-dismiss='alert' aria-label='Close') 
+                                                span.bg-warning.text-white.px-3.py-1(aria-hidden='true') Check
+                                        .alert.border-danger.alert-dismissible.fade.show.p-0.mb-0(role='alert')
+                                            .alert-arrow.bg-danger 
+                                                i.fa-regular.fa-heart
+                                            p.mb-0
+                                                | Oh snap! change a few things 
+                                                strong.text-dark Notification check 
+                                            button.p-0.border-0.me-2.ms-auto(type='button' data-bs-dismiss='alert' aria-label='close')
+                                                span.bg-danger.text-white.px-3.py-1(aria-hidden='true') Alert 
+                            .col-sm-12.col-xl-6 
+                                .card 
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Dismissing Dark alert
+                                        p.mt-1.mb-0
+                                            | Use the 
+                                            code .alert-dismissible  
+                                            | utility class to quickly remove the alerts.
+                                    .card-body  
+                                        .alert.alert-secondary.alert-dismissible.fade.show.mb-0(role='alert')
+                                            i.fa-regular.fa-heart                     
+                                            p.mb-0 Check your update! You should check in on some of those fields below.
+                                            button.btn-close(type='button', data-bs-dismiss='alert', aria-label='Close')
+                            .col-sm-12.col-xl-6
+                                .card  
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Dismissing Light Alert 
+                                        p.mt-1.mb-0
+                                            | Use  
+                                            code .alert-dismissible 
+                                            | utility class to quickly remove the alerts.
+                                    .card-body
+                                        .alert.alert-warning.alert-dismissible.fade.show.mb-0(role='alert')
+                                            i.fa-regular.fa-bell 
+                                            p.mb-0 Hidden content You should check in on some of those fields below.
+                                            button.btn-close(type='button', data-bs-dismiss='alert', aria-label='Close')
+                            .col-xl-6
+                                .card
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Live Alert
+                                        p.mt-1.mb-0
+                                            | Click the button below to show an alert,then dismiss it with the built-in close button. 
+                                    .card-body.live-dark 
+                                        #liveAlertPlaceholder
+                                        button#liveAlertBtn.btn.btn-dark(type='button') Show live alert 
+                            .col-xl-6 
+                                .card 
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Left Border Alert
+                                        p.mt-1.mb-0
+                                            | Use the 
+                                            code .border-left-wrapper 
+                                            | to change border-left radius.
+                                    .card-body.live-dark 
+                                        .alert.alert-light-dark.light.alert-dismissible.fade.show.text-dark.border-left-wrapper.mb-0(role='alert')
+                                            i.fa-solid.fa-circle-info 
+                                            p.mb-0 You can check in on some of those fields below.   
+                                            button.btn-close(type='button', data-bs-dismiss='alert', aria-label='Close')
+                            .col-sm-12
+                                .card
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Additional Content 
+                                        p.mt-1.mb-0 
+                                            | Use the 
+                                            code .alert  
+                                            | utility class to quickly provide additional content within any alerts.
+                                    .card-body.dark-alert 
+                                        .alert.alert-light-primary(role='alert')
+                                            h3.alert-heading.pb-2.text-primary Please! Check your notifications 
+                                            p   
+                                                | The duty of notification is imposed upon the head of the family, and also upon the medical practitioner who may be in attendance on the patient.
+                                            hr
+                                            p.mb-0 
+                                                | The emergancy notification system is free and is available in all 50 states.
+                                        .alert.alert-light-secondary(role='alert')
+                                            h3.alert-heading.pb-2.text-secondary Something went wrong! Please, chrome update.
+                                            p 
+                                                | The duty of notificaion is imposed upon the head of the family, and also upon the medical practitioner who may be in attendance on the patient.
+                                            hr
+                                            p.mb-0 
+                                                | whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+                                        .alert.alert-light-success.mb-0(role='alert')
+                                            h3.alert-heading.pb-2.text-success Please! Hidden cameras were not installed.
+                                            p
+                                                | Due to increasingly accessible technology, hidden cameras have grown in popularity amoung regular people in recent years.
+                                            hr
+                                            p.mb0
+                                                | Consider moving clocks and plush animals from your area if you think they mey be concealing cameras because they are both portable items.
+                include ../../components/footer
+        include ../../components/footer-files  

@@ -1,0 +1,188 @@
+/**=====================
+     buttons css start
+==========================**/
+.btn {
+  font-size: 14px;
+  font-weight: 600;
+}
+$colors: (primary: var(--theme-default),
+  secondary: var(--theme-secondary),
+  info: var(--info-color),
+  success: var(--success-color),
+  warning: var(--warning-color),
+  danger: var(--danger-color),
+  light: var(--light-color),
+  dark: var(--dark));
+@each $key,
+$val in $colors {
+  .btn-#{$key} {
+    background-color: $val !important;
+    border: 1px solid $val;
+    color: $white;
+    &:hover,
+    &:focus,
+    &.active,
+    &:active:focus,
+    &.show {
+      background-color: $val;
+      border-color: $val;
+    }
+  }
+}
+@each $key,
+$val in $colors {
+  .btn-outline-#{$key} {
+    background-color: var(--white);
+    border: 1px solid $val;
+    color: $val;
+    &:hover,
+    &:focus,
+    &.active,
+    &:active:focus,
+    &.show {
+      background-color: $val;
+      border-color: $val;
+      color: var(--white);
+    }
+  }
+}
+.button-group {
+  .btn-outline-primary,
+  .btn-primary {
+    border-radius: 30px;
+  }
+}
+.btn-sm {
+  font-size: 12px;
+}
+.btn-lg {
+  font-size: 18px;
+}
+.btn-showcase {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.text-dark {
+  .btn {
+    &:active {
+      color: var(--dark);
+    }
+  }
+}
+.btn-warning,
+.btn-outline-warning {
+  &.btn {
+    &:active {
+      background-color: var(--warning-color);
+      border-color: rgba($warning-color, 2);
+    }
+    &:hover {
+      color: var(--light-color)
+    }
+  }
+}
+.btn-primary {
+  &.btn {
+    &.disabled {
+      background-color: var(--theme-default);
+      border-color: var(--theme-default);
+    }
+  }
+}
+.btn-secondary {
+  &.btn {
+    &.disabled {
+      background-color: var(--theme-secondary);
+      border-color: var(--theme-secondary);
+    }
+  }
+}
+.btn-light {
+  &.btn {
+    &.disabled {
+      background-color: var(--light-color);
+      border-color: var(--light-color);
+    }
+  }
+}
+.btn-outline-primary {
+  &.btn {
+    &.disabled {
+      color: var(--theme-default);
+      border-color: var(--theme-default);
+    }
+  }
+}
+.btn-outline-secondary {
+  &.btn {
+    &.disabled {
+      color: var(--theme-secondary);
+      border-color: var(--theme-secondary);
+    }
+  }
+}
+@each $btn-name,
+$btn-color in (primary, var(--theme-default)),
+(secondary, var(--theme-secondary)),
+(success, var(--success-color)),
+(danger, var(--danger-color)),
+(warning, var(--warning-color)),
+(info, var(--info-color)),
+(light, var(--light-color)),
+(dark, var(--body-font-color)) {
+  .btn-outline-#{$btn-name}-2x {
+    border-width: 2px;
+    border-color: $btn-color;
+    color: $btn-color;
+    background-color: transparent;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: var(--white);
+      background-color: $btn-color !important;
+      border-color: $btn-color !important;
+      box-shadow: none;
+    }
+  }
+}
+.btn-square {
+  border-radius: 0px;
+}
+.btn-pill {
+  border-radius: 60px;
+}
+.wizard-footer {
+  .btn {
+    &:disabled {
+      background-color: var(--theme-default);
+      border: 1px solid var(--theme-default);
+      opacity: unset;
+    }
+  }
+}
+.btn-group-showcase {
+  .btn-group {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .btn {
+    padding: 0.375rem 1.75rem;
+    @media (max-width:420px) {
+      padding: 0.375rem 0.75rem;
+    }
+  }
+}
+.btn-light {
+  &:hover {
+    color: var(--dark);
+  }
+}
+.btn-xs {
+  padding: 0.05rem 0.4rem;
+  font-size: 11px;
+}
+/**=====================
+     buttons css end
+==========================**/

@@ -1,0 +1,46 @@
+// Page sidebar start
+aside.page-sidebar
+    div.main-sidebar#main-sidebar
+        ul.sidebar-menu#simple-bar
+            li.pin-title.sidebar-main-title    
+                div 
+                    h6.sidebar-title Pinned
+            li.sidebar-list 
+                i.fa-solid.fa-thumbtack
+                a.sidebar-link(href="../template/index.html")
+                    +IconlySprite('Home-dashboard', 'stroke-icon')
+                    h6.f-w-600 Dashboards
+            li.sidebar-list 
+                i.fa-solid.fa-thumbtack
+                a.sidebar-link(href="javascript:void(0)")
+                    +IconlySprite('Star-kit', 'stroke-icon')
+                    h6.f-w-600 Starter kit
+                    i.iconly-Arrow-Right-2.icli  
+                ul.sidebar-submenu
+                    li
+                        a.submenu-title(href="javascript:void(0)") color version
+                            i.iconly-Arrow-Right-2.icli 
+                        ul.according-submenu
+                            li 
+                                a(href="index.html") Layout Light
+                            li 
+                                a(href="layout-dark.html") Layout Dark
+                    li
+                        a.submenu-title(href="javascript:void(0)") Page layout
+                            i.iconly-Arrow-Right-2.icli 
+                        ul.according-submenu
+                            li 
+                                a(href="boxed.html") Boxed
+                            li 
+                                a(href="layout-rtl.html") Rtl
+            li.sidebar-list 
+                i.fa-solid.fa-thumbtack
+                a.sidebar-link(href="https://support.pixelstrap.com/")
+                    +IconlySprite('Camera', 'stroke-icon') 
+                    h6.f-w-600 Raise Support
+            li.sidebar-list 
+                i.fa-solid.fa-thumbtack
+                a.sidebar-link(href="https://docs.pixelstrap.net/admin/admiro/document/")
+                    +IconlySprite('Document', 'stroke-icon') 
+                    h6.f-w-600 Documentation
+// Page sidebar end

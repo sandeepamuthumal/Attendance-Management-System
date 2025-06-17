@@ -1,0 +1,762 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var apex                   = true;
+- var dashboard_2            = true;
+- var config                 = true;
+- var page_datatable         = true;
+- var data_table             = true;
+- var page_datatable1        = true;
+- var swiper                 = true;
+- var touchspin_2            = true;
+include ../../components/mixin
+doctype html 
+html(lang='en')
+  include ../../components/header-files
+  body
+    // page-wrapper Start
+    include ../../components/taptop
+    include ../../components/loader
+    #pageWrapper.page-wrapper.compact-wrapper 
+      include ../../components/header/header
+      // Page Body Start
+      .page-body-wrapper 
+        include ../../components/sidebar 
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6.col-12 
+                  h2
+                    | Ecommerce dashboard
+                  p.mb-0.text-title-gray "Welcome back! Continue your journey."
+                .col-sm-6.col-12
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')
+                        i.iconly-Home.icli.svg-color
+                    li.breadcrumb-item Dashboard
+                    li.breadcrumb-item.active Ecommerce
+          // Container-fluid starts
+          .container-fluid.dashboard-2
+            .row
+              .col-xxl-5.col-xl-7.col-lg-12.box-col-7
+                .card.analytics-card
+                  .card-header.card-no-border.pb-0
+                    .header-top
+                      h3 Sales Analytics
+                      ul.simple-wrapper#myTab.nav.nav-pills(role='tablist')
+                        li.nav-item
+                          a#home-tab.nav-link(data-bs-toggle='tab' href='#yearly' role='tab' aria-selected='true') Yearly
+                        li.nav-item
+                          a#profile-tabs.nav-link(data-bs-toggle='tab' href='#monthly' role='tab' aria-selected='false') Monthly
+                        li.nav-item
+                          a#contact-tab.nav-link.active(data-bs-toggle='tab' href='#weekly' role='tab' aria-selected='false') Weekly
+                  .card-body.sale-chart-box
+                    ul.d-flex
+                      li.statistic-icon
+                        div
+                          div
+                            .statistic-content
+                              span.primary-dot 
+                              | Pending
+                          .statistic-num.ms-auto.text-end.font-danger.d-flex.align-items-center
+                            h5 $4,875
+                            div
+                              span 28%
+                              i.fa-solid.fa-chevron-up.ms-1
+                      li.statistic-icon
+                        div
+                          div
+                            .statistic-content
+                              span.secondary-dot 
+                              | Complete
+                          .statistic-num.ms-auto.text-end.font-primary.d-flex.align-items-center
+                            h5 $1,320
+                            div
+                              span 36.28%
+                              i.fa-solid.fa-chevron-down.ms-1
+                    #chart-school-performance
+              .col-xxl-4.col-xl-5.col-md-7.box-col-5
+                .card
+                  .card-header.card-no-border.pb-0
+                    .header-top
+                      h3 User Status
+                      .dropdown.icon-dropdown
+                        button#userdropdown1.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                          i.fa-solid.fa-ellipsis
+                        .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown1')
+                          a.dropdown-item(href='#') Weekly
+                          a.dropdown-item(href='#') Monthly
+                          a.dropdown-item(href='#') Yearly
+                  .card-body.pt-0.user-status
+                    .table-responsive.theme-scrollbar
+                      table#user-status.table.display.table-bordernone(style='width:100%')
+                        thead
+                          tr 
+                            th Customer
+                            th country
+                            th.text-center Popular
+                        tbody
+                          tr
+                            td 
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/01.png' alt='')
+                                .flex-grow-1
+                                  a(href='product-page.html')
+                                    h6 John Deo 
+                                      span (14+ Online)
+                            td
+                              h3 USA
+                            td 
+                              .progress.bg-light-success
+                                .progress-bar.bg-success(role='progressbar' style='width: 60%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                          tr
+                            td 
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/02.png' alt='')
+                                .flex-grow-1
+                                  a(href='product-page.html')
+                                    h6 Smith Lovell 
+                                      span (250+ Online)
+                            td
+                              h3 Angola
+                            td 
+                              .progress.bg-light-warning
+                                .progress-bar.bg-warning(role='progressbar' style='width: 40%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                          tr
+                            td 
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/03.png' alt='')
+                                .flex-grow-1
+                                  a(href='product-page.html')
+                                    h6 Jones Brooks 
+                                      span (130+ Online)
+                            td
+                              h3 America
+                            td 
+                              .progress.bg-light-danger
+                                .progress-bar.bg-danger(role='progressbar' style='width: 80%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                          tr
+                            td 
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/04.png' alt='')
+                                .flex-grow-1
+                                  a(href='product-page.html')
+                                    h6 Brown Acum 
+                                      span (214+ Online)
+                            td
+                              h3 England
+                            td 
+                              .progress.bg-success
+                                .progress-bar.bg-success(role='progressbar' style='width: 60%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                          tr
+                            td 
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/05.png' alt='')
+                                .flex-grow-1
+                                  a(href='product-page.html')
+                                    h6 Evans Mayo 
+                                      span (250+ Online)
+                            td
+                              h3 London
+                            td 
+                              .progress.bg-light-warning
+                                .progress-bar.bg-warning(role='progressbar' style='width: 60%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                          tr
+                            td 
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/06.png' alt='')
+                                .flex-grow-1
+                                  a(href='product-page.html')
+                                    h6 Wilson Pipes 
+                                      span (213+ Online)
+                            td
+                              h3 Austealia
+                            td 
+                              .progress.bg-light-warning
+                                .progress-bar.bg-warning(role='progressbar' style='width: 60%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+              .col-xxl-3.col-xl-4.col-md-5.col-sm-6.box-col-4
+                .card.sale-card.overflow-hidden
+                  .card-header.card-no-border.pb-0
+                    .header-top
+                      div
+                        h3 $1500.89K
+                        span Sales last 5 Months
+                      .dropdown.icon-dropdown
+                        button#userdropdown2.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                          i.fa-solid.fa-ellipsis
+                        .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown2')
+                          a.dropdown-item(href='#') Weekly
+                          a.dropdown-item(href='#') Monthly
+                          a.dropdown-item(href='#') Yearly
+                  .card-body.p-0
+                    .current-sale-container.order-container
+                      #orderoverview.overview-wrapper  
+                      .back-bar-container
+                        #order-bar
+              .col-xxl-3.col-xl-4.col-md-7.col-sm-6.box-col-4
+                .card.selling-product
+                  .card-header.card-no-border.pb-0
+                    .header-top
+                      h3 Top Selling Products
+                      .dropdown.icon-dropdown
+                        button#userdropdown3.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                          i.fa-solid.fa-ellipsis
+                        .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown3')
+                          a.dropdown-item(href='#') Weekly
+                          a.dropdown-item(href='#') Monthly
+                          a.dropdown-item(href='#') Yearly
+                  .card-body
+                    ul
+                      li.d-flex.align-items-center.gap-2
+                        .flex-shrink-0.bg-light-primary.border-light-primary
+                          svg.stroke-icon.stroke-primary
+                            use(href='../assets/svg/icon-sprite.svg#headphone')
+                        .flex-grow-1
+                          a(href='product-page.html')
+                            h6 Headphones JBL JR 310 BT
+                          p Art.23879088
+                        .recent-text
+                          h5 $260.00
+                          p 900 Sales
+                      li.d-flex.align-items-center.gap-2
+                        .flex-shrink-0.bg-light-warning.border-light-warning
+                          svg.stroke-icon.stroke-warning
+                            use(href='../assets/svg/icon-sprite.svg#samsung-mobile')
+                        .flex-grow-1
+                          a(href='product-page.html')
+                            h6 Samsung SM-G99B5
+                          p Art.72636892
+                        .recent-text
+                          h5 $340.00
+                          p 20 Sales
+                      li.d-flex.align-items-center.gap-2
+                        .flex-shrink-0.bg-light-danger.border-light-danger
+                          svg.stroke-icon.stroke-danger
+                            use(href='../assets/svg/icon-sprite.svg#tv')
+                        .flex-grow-1
+                          a(href='product-page.html')
+                            h6 4K UHD TV Samsung
+                          p Art.63987987
+                        .recent-text
+                          h5 $750.00
+                          p 300 Sales
+                      li.d-flex.align-items-center.gap-2
+                        .flex-shrink-0.bg-light-primary.border-light-primary
+                          svg.stroke-icon.stroke-primary
+                            use(href='../assets/svg/icon-sprite.svg#laptop')
+                        .flex-grow-1
+                          a(href='product-page.html')
+                            h6 16.5” Gaming Laptop 29...
+                          p Art.73497990
+                        .recent-text
+                          h5 $2370.00
+                          p 300 Sales
+                      li.d-flex.align-items-center.gap-2
+                        .flex-shrink-0.bg-light-warning.border-light-warning
+                          svg.stroke-icon.stroke-warning
+                            use(href='../assets/svg/icon-sprite.svg#filmcamera')
+                        .flex-grow-1
+                          a(href='product-page.html')
+                            h6 Fujifilm x-s10 Kit 18-55mm
+                          p Art.37489799
+                        .recent-text
+                          h5 $2370.00
+                          p 300 Sales
+                      li.d-flex.align-items-center.gap-2
+                        .flex-shrink-0.bg-light-danger.border-light-danger
+                          svg.stroke-icon.stroke-danger
+                            use(href='../assets/svg/icon-sprite.svg#smartphone')
+                        .flex-grow-1
+                          a(href='product-page.html')
+                            h6 Apple iphone 11 PRO MAX
+                          p Art.27389799
+                        .recent-text
+                          h5 $2370.00
+                          p 300 Sales
+                      li.d-flex.align-items-center.gap-2
+                        .flex-shrink-0.bg-light-primary.border-light-primary
+                          svg.stroke-icon.stroke-primary
+                            use(href='../assets/svg/icon-sprite.svg#bulb')
+                        .flex-grow-1
+                          a(href='product-page.html')
+                            h6 Phillip Lightbulb
+                          p Art.74383789
+                        .recent-text
+                          h5 $2370.00
+                          p 300 Sales
+              .col-xxl-3.col-xl-4.col-md-5.box-col-4
+                .row 
+                  .col-sm-6.col-md-12
+                    .card.value-chart
+                      .card-body
+                        .row
+                          .col-6
+                            #sales-chart.sales-chart
+                          .col-6
+                            .valuechart-detail
+                              .text-center        
+                                .badge.badge-primary 80%
+                                h2 $3,76,793
+                                p Our Sale Value
+                  .col-sm-6.col-md-12
+                    .card.value-chart
+                      .card-body
+                        .row
+                          .col-6
+                            #visitor-chart.visitor-chart
+                          .col-6
+                            .valuechart-detail
+                              .text-center
+                                .badge.badge-secondary 60%
+                                h2 $4,26,876   
+                                p Today Stock Value   
+              .col-xxl-6.col-xl-7.order-xl-1.order-xxl-0.box-col-12
+                .card.best-sell
+                  .card-header.card-no-border.pb-0
+                    h3 Best Seller
+                  .card-body.pt-0
+                    .table-responsive.theme-scrollbar
+                      table#best-sell.table.display.table-bordernone.mt-0(style='width:100%')
+                        thead
+                          tr 
+                            th Customer
+                            th Date
+                            th Product
+                            th Country
+                            th Total
+                            th.text-center Status
+                        tbody
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/07.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Evans Mayo
+                                  p 2019
+                            td  05 Aug
+                            td  Cap
+                            td
+                              img.img-fluid(src='../assets/images/dashboard-2/flag/1.png' alt="")
+                            td $5,08,653
+                            td.text-end
+                              .btn.bg-light-success.border-light-success.text-success Completed
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/08.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Smith Lovell
+                                  p 2020
+                            td  21 March
+                            td  Branded Shoes
+                            td
+                              img.img-fluid(src='../assets/images/dashboard-2/flag/2.png' alt="")
+                            td $37,2870
+                            td.text-end
+                              .btn.bg-light-success.border-light-success.text-success Completed
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/09.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Jones Brooks
+                                  p 2021
+                            td  09 March
+                            td  Headphone
+                            td
+                              img.img-fluid(src='../assets/images/dashboard-2/flag/3.png' alt="")
+                            td $3,12,233
+                            td.text-end
+                              .btn.bg-light-warning.border-light-warning.text-warning Pending
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/10.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Brown Acum
+                                  p 2021
+                            td  15 Aug
+                            td  Cell Phone
+                            td
+                              img.img-fluid(src='../assets/images/dashboard-2/flag/4.png' alt="")
+                            td $7,48,123
+                            td.text-end
+                              .btn.bg-light-danger.border-light-danger.text-danger Canceled
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/11.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Evans Mayo
+                                  p 2024
+                            td 05 Feb
+                            td Earings
+                            td
+                              img.img-fluid(src='../assets/images/dashboard-2/flag/5.png' alt="")
+                            td $45,8,653
+                            td.text-end
+                              .btn.bg-light-success.border-light-success.text-success Completed
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/12.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Wilson Pipes
+                                  p 2024
+                            td  12 Jan
+                            td  Iphone 11
+                            td
+                              img.img-fluid(src='../assets/images/dashboard-2/flag/1.png' alt="")
+                            td $5,08,653
+                            td.text-end
+                              .btn.bg-light-success.border-light-success.text-success Completed
+              .col-xxl-6.col-xl-4.col-md-12.box-col-12
+                .card.radial-card
+                  .card-body
+                    .row 
+                      .col-sm-6.radial-chart
+                        #salesStatsRadialChart.salesStatsRadialChart
+                        div.content-label
+                          p.mb-0.font-primary As From 
+                          h4 25 March
+                      .col-sm-6.radial-text
+                        .radial-content
+                          .text-center
+                            h4 Total Goal
+                            h3 $92,000.30
+                            hr
+                            h5.progress-widget Goal Archive : 
+                              span $81,000.000
+                            .progress.sm-progress-bar.progress-animate
+                              .progress-gradient-primary(role='progressbar' style='width: 65%' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100')
+                            h5.progress-widget Duration: 
+                              span 9 Month
+                            .progress.sm-progress-bar.progress-animate
+                              .progress-gradient-primary(role='progressbar' style='width: 65%' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100')
+                            a(href="general-widget.html" download='').btn.btn-pill.btn-primary Download Details
+              .col-xxl-3.col-xl-4.col-sm-6.box-col-6
+                .card
+                  .card-body
+                    .items-slider
+                      .swiper.mySwiper1
+                        .swiper-wrapper
+                          .swiper-slide
+                            .slider-box.bg-light-primary
+                              .header-top
+                                .badge.badge-primary.rated-product-badge Hot
+                                img.img-fluid(src='../assets/images/dashboard-2/1.png' alt="")
+                                .i.fa-regular.fa-heart
+                            .slider-content.text-center
+                              h4.text-primary Special Offer
+                              p.mb-0 Smart Design Watch Multi Color
+                              h6 $26.00
+                                span &nbsp;$30.00
+                              .input-group 
+                                span.input-group-text.decrement-touchspin 
+                                  +IconlySprite('minus', 'svg-color')
+                                input.form-control.bg-light-primary.input-touchspin(type="text" value="1")
+                                span.input-group-text.increment-touchspin 
+                                  +IconlySprite('plus', 'svg-color')
+                          .swiper-slide
+                            .slider-box.bg-light-secondary
+                              .header-top
+                                .badge.badge-secondary.rated-product-badge Hot
+                                img.img-fluid(src='../assets/images/dashboard-2/5.png' alt="")
+                                .i.fa-regular.fa-heart
+                            .slider-content.text-center
+                              h4.text-secondary Weekend Sale
+                              p.mb-0 HeadPhone 3rd Generation
+                              h6 $36.00
+                                span &nbsp;$70.00
+                              .input-group 
+                                span.input-group-text.decrement-touchspin  
+                                  +IconlySprite('minus', 'svg-color')
+                                input.form-control.bg-light-secondary.input-touchspin(type="text" value="1")
+                                span.input-group-text.increment-touchspin  
+                                  +IconlySprite('plus', 'svg-color')
+                        .swiper-button-next
+                        .swiper-button-prev
+              .col-xxl-3.col-xl-4.col-sm-6.box-col-6
+                .card
+                  .card-body
+                    .items-slider
+                      .swiper.mySwiper2
+                        .swiper-wrapper
+                          .swiper-slide
+                            .slider-box.bg-light-secondary
+                              .header-top
+                                .badge.badge-secondary.rated-product-badge Hot
+                                img.img-fluid(src='../assets/images/dashboard-2/2.png' alt="")
+                                .i.fa-regular.fa-heart
+                            .slider-content.text-center
+                              h4.text-secondary Weekend Sale
+                              p.mb-0 AirPods 3rd Generation Silicone Skin
+                              h6 $16.00
+                                span &nbsp;$30.00
+                              .input-group 
+                                span.input-group-text.decrement-touchspin 
+                                  +IconlySprite('minus', 'svg-color')
+                                input.form-control.bg-light-secondary.input-touchspin(type="text" value="1")
+                                span.input-group-text.increment-touchspin  
+                                  +IconlySprite('plus', 'svg-color')
+                          .swiper-slide
+                            .slider-box.bg-light-primary
+                              .header-top
+                                .badge.badge-primary.rated-product-badge Hot
+                                img.img-fluid(src='../assets/images/dashboard-2/6.png' alt="")
+                                .i.fa-regular.fa-heart
+                            .slider-content.text-center
+                              h4.text-primary Special Offer
+                              p.mb-0 Smart Design Phone Multi Color
+                              h6 $86.00
+                                span &nbsp;$60.00
+                              .input-group 
+                                span.input-group-text.decrement-touchspin 
+                                  +IconlySprite('minus', 'svg-color')
+                                input.form-control.bg-light-primary.input-touchspin(type="text" value="1")
+                                span.input-group-text.increment-touchspin  
+                                  +IconlySprite('plus', 'svg-color')
+                        .swiper-button-next
+                        .swiper-button-prev
+              .col-xxl-3.col-xl-5.col-sm-6.box-col-6
+                .card
+                  .card-header.card-no-border.pb-0
+                    .header-top
+                      h3 Activity Timeline
+                      .dropdown.icon-dropdown
+                        button#userdropdown5.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                          i.fa-solid.fa-ellipsis
+                        .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown5')
+                          a.dropdown-item(href='#') Weekly
+                          a.dropdown-item(href='#') Monthly
+                          a.dropdown-item(href='#') Yearly
+                  .card-body.timeline-card
+                    .activity-timeline
+                      .d-flex.align-items-start
+                        .activity-line
+                        .activity-dot-primary
+                        .flex-grow-1
+                          p.mt-0.todo-font
+                            span.font-primary 30-06-2024
+                            | &nbsp;Today
+                          span.f-w-700 Updated Product
+                          p.mb-0.activity-text Quisque a consequat ante sit amet magna at volutapt.
+                        i.fa-solid.fa-circle.circle-dot-primary.pull-right
+                      .d-flex.align-items-start
+                        .activity-dot-secondary
+                        .flex-grow-1
+                          p.mt-0.todo-font
+                            span.font-secondary 30-06-2024
+                            | &nbsp;Today
+                          span.f-w-700 Jihan Doe Just like your product
+                          p.mb-0.activity-text Vestibulum nec mi suscipit, dapibus purus ane.
+                        i.fa-solid.fa-circle.circle-dot-secondary.pull-right
+                      .d-flex.align-items-start
+                        .activity-dot-primary
+                        .flex-grow-1
+                          p.mt-0.todo-font
+                            span.font-primary 25-06-2024
+                            | &nbsp;Today
+                            span.badge.badge-primary.ms-2 New
+                          span.f-w-700 James just like your product
+                          p.mb-0.activity-text Vestibulum nec mi suscipit, dapibus purus ane.
+                          ul.img-wrapper
+                            li
+                              img.img-fluid(src='../assets/images/dashboard-2/timeline/5.png' alt='')
+                            li
+                              img.img-fluid(src='../assets/images/dashboard-2/timeline/6.png' alt='')
+                        i.fa-solid.fa-circle.circle-dot-primary.pull-right
+                      .d-flex.align-items-start
+                        .activity-dot-secondary
+                        .flex-grow-1
+                          p.mt-0.todo-font
+                            span.font-secondary 25-06-2024 
+                            | &nbsp; Tomorrow
+                          span.f-w-700 Today Total Revenue
+                          p.mb-0.activity-text Quisque a consequat ante sit amet magna at volutapt.
+                        i.fa-solid.fa-circle.circle-dot-secondary.pull-right
+              .col-xxl-3.col-xl-5.order-xl-2.order-xxl-0.col-sm-6.box-col-6
+                .card.target-card.overflow-hidden
+                  .card-header.card-no-border
+                    ul
+                      li.bg-light-primary.text-center
+                        h3 Our Target
+                        p.mb-0 Completed
+                        h6.font-primary $638.930
+                      li.bg-primary.text-center
+                        h3 We Archieve
+                        p.mb-0 Completed 2 Hours
+                        h6 $638.930
+                  .card-body.p-0 
+                    .main-img
+                      img.img-fluid.img-banner(src='../assets/images/dashboard-2/4.png' alt="")
+                      ul.animate-img
+                        li.right-1 
+                          img.img-fluid(src='../assets/images/dashboard-2/animate/1.png' alt="")
+                        li.right-2 
+                          img.img-fluid(src='../assets/images/dashboard-2/animate/2.png' alt="")
+                        li.right-3 
+                          img.img-fluid(src='../assets/images/dashboard-2/animate/3.png' alt="")
+                        li.right-4 
+                          img.img-fluid(src='../assets/images/dashboard-2/animate/4.png' alt="")
+                        li.right-5 
+                          img.img-fluid(src='../assets/images/dashboard-2/animate/5.png' alt="")          
+              .col-xxl-6.col-xl-7.box-col-12
+                .card
+                  .card-header.card-no-border.pb-0
+                    h3 Recent Orders
+                  .card-body.pt-0.recent-order
+                    .table-responsive.theme-scrollbar
+                      table#recent-order.table.display.table-bordernone.mt-0(style='width:100%')
+                        thead
+                          tr 
+                            th Customer
+                            th Product
+                            th amount
+                            th vendor
+                            th status
+                            th.text-center rating
+                        tbody
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/13.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Alice Goodwin
+                                  p 2019
+                            td.f-w-600 Nike Tshirt
+                            td.font-primary.f-w-600 $49.00
+                            td.f-w-600 Palestine
+                            td
+                              .status-showcase
+                                p 65%
+                                .progress.bg-light-success
+                                  .progress-bar.bg-success(role='progressbar' style='width: 65%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                            td.text-end
+                              h6 3.6
+                                span (45 votes)
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/14.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Herry Venter
+                                  p 2019
+                            td.f-w-600 Adidas Hat
+                            td.font-primary.f-w-600 $30.00
+                            td.f-w-600 Serbia
+                            td
+                              .status-showcase
+                                p 45%
+                                .progress.bg-light-warning
+                                  .progress-bar.bg-warning(role='progressbar' style='width: 45%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                            td.text-end
+                              h6 2.7
+                                span (35 votes)
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/15.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Loain Deo
+                                  p 2019
+                            td.f-w-600 Wu Sneakers
+                            td.font-primary.f-w-600 $54.00
+                            td.f-w-600 Islamic
+                            td
+                              .status-showcase
+                                p 85%
+                                .progress.bg-light-danger
+                                  .progress-bar.bg-danger(role='progressbar' style='width: 85%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                            td.text-end
+                              h6 9.2
+                                span (62 votes)
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/16.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Horen Hors
+                                  p 2019
+                            td.f-w-600 Puma Shorts
+                            td.font-primary.f-w-600 $73.00
+                            td.f-w-600 Greece
+                            td
+                              .status-showcase
+                                p 75%
+                                .progress.bg-light-success
+                                  .progress-bar.bg-success(role='progressbar' style='width: 75%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                            td.text-end
+                              h6 6.6
+                                span (83 votes)
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/17.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Fenter Jessy
+                                  p 2019
+                            td.f-w-600 Nike Glove
+                            td.font-primary.f-w-600 $98.00
+                            td.f-w-600 Central
+                            td
+                              .status-showcase
+                                p 65%
+                                .progress.bg-light-warning
+                                  .progress-bar.bg-warning(role='progressbar' style='width: 75%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                            td.text-end
+                              h6 5.0 
+                                span (12 votes)
+                          tr
+                            td
+                              .d-flex.align-items-center.gap-3
+                                .flex-shrink-0.comman-round
+                                  img(src='../assets/images/dashboard-2/user/18.png' alt="")
+                                .flex-grow-1
+                                  a(href="product-page.html")
+                                    h6 Alice Venter
+                                  p 2019
+                            td.f-w-600 Nike Hat
+                            td.font-primary.f-w-600 $26.00
+                            td.f-w-600 Palestine
+                            td
+                              .status-showcase
+                                p 75%
+                                .progress.bg-light-warning
+                                  .progress-bar.bg-warning(role='progressbar' style='width: 75%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                            td.text-end 
+                              h6 3.0 
+                                span (86 votes)
+        include ../../components/footer
+    include ../../components/footer-files

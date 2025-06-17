@@ -1,0 +1,160 @@
+.company-logo {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+.company-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.login-card {
+    align-items: center;
+    background: linear-gradient(to bottom, #134D80, #3C7D83);
+}
+
+.user-img img {
+    background-color: var(--theme-default);
+    border: 1px solid var(--shape-border);
+    border-radius: 50%;
+    height: 38px;
+    padding: 3px 3px 0;
+    width: 38px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.select2-container--default .select2-selection--single {
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+}
+
+.select2-container .select2-selection--single {
+    border-radius: .375rem !important;
+    height: 39px !important;
+    padding: 6px;
+}
+
+.toast-success {
+    color: #fff !important;
+}
+
+.toast-warning {
+    color: #fff !important;
+}
+
+.sign-in-btn {
+    background: linear-gradient(to right, #134D80, #3C7D83);
+}
+
+.sidebar-pannle-main {
+    top: 22rem;
+    position: fixed;
+    right: 2px;
+    z-index: 9;
+}
+
+.product-box .event-details {
+    padding: 15px 25px;
+}
+
+.product-img {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    border-radius: 1.5rem 1.5rem 0rem 0rem;
+}
+
+.cardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    backdrop-filter: blur(5px);
+}
+
+.product-wrapper .product-grid .feature-products form .form-group input {
+    height: 55px;
+}
+
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background-color: var(--background-color);
+    transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    visibility: visible;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#preloader:before,
+#preloader:after {
+    content: "";
+    position: absolute;
+    background-size: contain;
+    background-image: url('../../images/favicon.png');
+    animation: animate-preloader 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+#preloader:after {
+    animation-delay: -0.5s;
+}
+
+@keyframes animate-preloader {
+    0% {
+        width: 10px;
+        height: 10px;
+        top: calc(50% - 5px);
+        left: calc(50% - 5px);
+        opacity: 1;
+    }
+    100% {
+        width: 72px;
+        height: 72px;
+        top: calc(50% - 36px);
+        left: calc(50% - 36px);
+        opacity: 0;
+    }
+}
+
+.ck-content ol {
+    list-style-type: decimal !important;
+    /* Use numbers for ordered lists */
+    padding-left: 20px !important;
+    /* Add padding for alignment */
+}
+
+.ck-content ol li {
+    list-style: decimal !important;
+}
+
+.ck-content ul {
+    list-style-type: disc !important;
+    /* Use bullets for unordered lists */
+    padding-left: 20px !important;
+    /* Add padding for alignment */
+}
+
+.ck-content ul li {
+    list-style: disc !important;
+}

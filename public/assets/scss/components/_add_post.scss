@@ -1,0 +1,81 @@
+/**=====================
+    5.6 add-post CSS Start
+==========================**/
+.toolbar-box {
+    .ql-toolbar {
+        &.ql-snow {
+            border: 0;
+        }
+    }
+    .ql-container {
+        &.ql-snow {
+            border: 0;
+            min-height: 100px;
+        }
+    }
+    .ql-editor {
+        p {
+            &:nth-child(3) {
+                margin: 12px 0;
+            }
+            &:nth-child(8),
+            &:nth-child(9) {
+                margin: 12px 0;
+            }
+        }
+    }
+    .ql-bold,
+    .ql-italic,
+    .ql-underline,
+    .ql-list,
+    .ql-link,
+    .ql-image {
+        &:hover {
+            color: var(--theme-default);
+            svg {
+                .ql-stroke,
+                .ql-fill {
+                    stroke: var(--theme-default);
+                }
+            }
+        }
+        button {
+            &.ql-active {
+                .ql-stroke {
+                    stroke: var(--theme-default);
+                }
+            }
+        }
+    }
+}
+.add-post {
+    .btn-showcase {
+        margin-bottom: -10px;
+        justify-content: end;
+        margin-top: 20px;
+    }
+}
+.add-post {
+    form {
+        .m-checkbox-inline {
+            label {
+                &:last-child {
+                    @media only screen and (max-width: 360px) {
+                        margin-bottom: 0;
+                    }
+                }
+                @include media-breakpoint-down(sm) {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+.ql-editor.ql-blank {
+    &::before {
+        color: var(--font-color) !important;
+    }
+}
+/**=====================
+      5.6 add-post CSS Ends
+  ==========================**/

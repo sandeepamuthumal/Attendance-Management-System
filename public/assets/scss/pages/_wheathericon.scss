@@ -1,0 +1,62 @@
+/* VARIABLES */
+/* Applies a stroke to the icons. Can use percentage for responsive */
+/* SVG GLOBAL */
+/* DRIZZLE */
+.climacon_component-stroke_drizzle {
+    fill-opacity: 0;
+    animation-name: drizzleFall, fillOpacity2;
+    animation-timing-function: ease-in;
+    animation-duration: 1.5s;
+}
+.climacon_component-stroke_drizzle:nth-child(1) {
+    animation-delay: 0s;
+}
+.climacon_component-stroke_drizzle:nth-child(2) {
+    animation-delay: 0.9s;
+}
+.climacon_component-stroke_drizzle:nth-child(3) {
+    animation-delay: 1.8s;
+}
+svg.climacon {
+    display: inline-block;
+    shape-rendering: geometricPrecision;
+    width: 22px !important;
+}
+g,
+path,
+circle,
+rect {
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 50% 50%;
+    animation-duration: 18s;
+    animation-direction: normal;
+}
+.climacon_component-stroke {
+    fill: $white;
+    stroke-width: 2px;
+    stroke: $white;
+}
+/* ANIMATIONS */
+@keyframes drizzleFall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(21px);
+    }
+}
+@keyframes fillOpacity2 {
+    0% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+    50% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
+    100% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+}

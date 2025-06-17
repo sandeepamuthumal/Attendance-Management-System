@@ -1,0 +1,169 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header 
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Breadcrumb
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Bonus Ui
+                                        li.breadcrumb-item.active Breadcrumb
+                    // Container-fluid starts
+                    .container-fluid.breadcrumb-page
+                        .row
+                            // Basic Breadcrumb
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Default Breadcrumb
+                                        p.mt-1.mb-0
+                                            | You can set breadcrumb using
+                                            code .breadcrumb
+                                            |  class.
+                                    .card-body
+                                        nav(aria-label="breadcrumb").mb-2
+                                            ol.breadcrumb.mb-0
+                                                li.breadcrumb-item Home
+                                                li.breadcrumb-item.active Ui Kits
+                                        nav(aria-label="breadcrumb").mb-0
+                                            ol.breadcrumb.mb-0
+                                                li.breadcrumb-item Home
+                                                li.breadcrumb-item Ui Kits 
+                                                li.breadcrumb-item.active Alert
+                            // default breadcrumb ends
+                            // Dividers Breadcrumbs
+                            .col-sm-6   
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Divider Breadcrumb
+                                        p.mt-1.mb-0
+                                            | You can set breadcrumb using 
+                                            code .breadcrumb-icon
+                                            |  class.
+                                    .card-body
+                                        nav(aria-label="breadcrumb").breadcrumb-icon.mb-2
+                                            ol.breadcrumb.breadcrumb-style2.mb-0
+                                                li.breadcrumb-item Home 
+                                                li.breadcrumb-item.active Bonus Ui 
+                                        nav(aria-label="breadcrumb").breadcrumb-icon.mb-0
+                                            ol.breadcrumb.breadcrumb-style2.mb-0
+                                                li.breadcrumb-item Home 
+                                                li.breadcrumb-item Ui kits 
+                                                li.breadcrumb-item.active Grid 
+                            // Dividers Breadcrumbs ends
+                            .col-sm-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 With Icons Breadcrumb
+                                        p.mb-0
+                                            | You can set icons breadcrumb using 
+                                            code .breadcrumb 
+                                            | class.
+                                    .card-body  
+                                        nav(aria-label="breadcrumb").breadcrumb-icon.mb-3
+                                            ol.breadcrumb.bg-white.p-l-0.mb-0
+                                                li.breadcrumb-item
+                                                    a(href='javascript:void(0)')
+                                                        i.iconly-Home.icli
+                                                li.breadcrumb-item.active Ui Kits
+                                        nav(aria-label="breadcrumb").breadcrumb-icon.breadcrumb-style4.mb-0
+                                            ol.breadcrumb.bg-white.m-b-0.p-b-0.p-l-0.mb-0
+                                                li.breadcrumb-item
+                                                    a(href='javascript:void(0)')
+                                                        i.iconly-Home.icli
+                                                li.breadcrumb-item Ui Kits
+                                                li.breadcrumb-item.active Avatars
+                            //simple breadcrumb
+                            .col-sm-6
+                                .card 
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Simple Breadcrumb 
+                                        p.mt-1.mb-0 
+                                            | Breadcrumb with page name 
+                                    .card-body 
+                                        nav(aria-label="breadcrumb").mb-0
+                                            ol.breadcrumb.mb-1 
+                                                li.breadcrumb-item
+                                                    a(href="javascript:void(0)")
+                                                        i.iconly-Home.icli.pe-1 
+                                                    |   Home
+                                                li.breadcrumb-item Bonus Ui 
+                                                li.breadcrumb-item Reting
+                                        nav(aria-label="breadcrumb").mb-0
+                                            ol.breadcrumb.breadcrumb-style3.mb-0 
+                                                li.breadcrumb-item
+                                                    a(href="javascript:void(0)")
+                                                        i.iconly-Home.icli.pe-1 
+                                                    |   Home
+                                                li.breadcrumb-item
+                                                    a(href="javascript:void(0)")
+                                                        i.iconly-Info-Circle.icli
+                                                    |   FAQ
+                            // breadcrumb alignment
+                            .col-sm-6   
+                                .card 
+                                    .card-header.card-no-border.pb-0    
+                                        h3 Breadcrumb Alignment 
+                                        p.mt-1.mb-0
+                                            | Breadcrumb alignment 
+                                            code .justify-content-*   
+                                            | class.
+                                    .card-body 
+                                        nav.mb-0(aria-label='breadcrumb')
+                                            ol.breadcrumb.justify-content-start.breadcrumb-primary.mb-1 
+                                                li.breadcrumb-item Home 
+                                                li.breadcrumb-item Ui Kits 
+                                                li.breadcrumb-item Grid 
+                                        nav.mb-0(aria-label='breadcrumb')
+                                            ol.breadcrumb.justify-content-center.breadcrumb-danger.mb-1 
+                                                li.breadcrumb-item Home
+                                                li.breadcrumb-item Ui Kits 
+                                                li.breadcrumb-item Grid  
+                                        nav.mb-0(aria-label='breadcrumb')
+                                            ol.breadcrumb.justify-content-end.breadcrumb-success.mb-0
+                                                li.breadcrumb-item Home 
+                                                li.breadcrumb-item Ui Kits
+                                                li.breadcrumb-item Grid 
+                            //color breadcrumb
+                            .col-sm-6
+                                .card 
+                                    .card-header.card-no-border.pb-0 
+                                        h3  Colored Breadcrumb 
+                                        p.mt-1.mb-0 
+                                            | Breadcrumb class and set background 
+                                            code bg-* 
+                                            | class.
+                                    .card-body.color-breadcrumb
+                                        nav(aria-label="breadcrumb").mb-0
+                                            ol.breadcrumb.bg-primary.mb-1 
+                                                li.breadcrumb-item Home 
+                                                li.breadcrumb-item Ui Kits 
+                                                li.breadcrumb-item Avatars      
+                                        nav(aria-label="breadcrumb").mb-0
+                                            ol.breadcrumb.bg-secondary.mb-0
+                                                li.breadcrumb-item Home 
+                                                li.breadcrumb-item Ui Kits 
+                                                li.breadcrumb-item Dropdown
+                include ../../components/footer 
+        include ../../components/footer-files

@@ -1,0 +1,100 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var clipboard              = true;
+- var page_clipboard         = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Clipboard
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Form Widgets
+                                        li.breadcrumb-item.active Clipboard 
+                    // Container-fluid starts
+                    .container-fluid
+                        .row
+                            .col-sm-12.col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Clipboard on text input
+                                    .card-body
+                                        .clipboaard-container
+                                            p.card-description.mb-2 Cut/copy from text input
+                                            input#clipboardExample1.form-control(type='text', placeholder='type some text to copy / cut')
+                                            .mt-3.text-end
+                                                button.btn.btn-primary.btn-clipboard(type='button', data-clipboard-action='copy', data-clipboard-target='#clipboardExample1')
+                                                    i.fa-solid.fa-copy
+                                                    |  Copy
+                                                button.btn.btn-secondary.btn-clipboard-cut(type='button', data-clipboard-action='cut', data-clipboard-target='#clipboardExample1')
+                                                    i.fa-solid.fa-scissors
+                                                    |  Cut
+                            .col-sm-12.col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Clipboard on textarea
+                                    .card-body
+                                        .clipboaard-container
+                                            p.card-description.mb-2 Cut/copy from textarea
+                                            textarea#clipboardExample2.form-control.f-14(rows='1', spellcheck='false')
+                                                | They clash. Even if the argument appears to be different, it is actually always the same.
+                                            .mt-3.text-end
+                                                button.btn.btn-warning.btn-clipboard.text-light(type='button', data-clipboard-action='copy', data-clipboard-target='#clipboardExample2')
+                                                    i.fa-solid.fa-copy
+                                                    |  Copy
+                                                button.btn.btn-success.btn-clipboard-cut(type='button', data-clipboard-action='cut', data-clipboard-target='#clipboardExample2')
+                                                    i.fa-solid.fa-scissors
+                                                    |  Cut
+                            .col-sm-12.col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Clipboard on paragraph
+                                    .card-body
+                                        .clipboaard-container
+                                            p.card-description.mb-2 Copy from paragraph                    
+                                            h6#clipboardExample3.border.rounded.card-body.f-w-400
+                                                | On that day, hopes and dreams were crushed.
+                                                |  Even though it should have been anticipated, it nonetheless
+                                                |  surprised me. The warning indicators have been disregarded in favour of the slim chance that it would actually occur.
+                                                |  at which point all of the aspirations and dreams collapsed.
+                                            .mt-3.text-end
+                                                button.btn.btn-info.btn-clipboard.text-light(type='button', data-clipboard-action='copy', data-clipboard-target='#clipboardExample3')
+                                                    i.fa-solid.fa-copy        
+                                                    |  Copy
+                            .col-sm-12.col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Copy portion from paragraph
+                                    .card-body
+                                        .clipboaard-container
+                                            p.card-description.mb-2 Copy portion from paragraph
+                                            h6.border.rounded.card-body.f-w-300
+                                                span#clipboardExample4.bg-primary.text-white.p-1 Web design is the process of creating websites 
+                                                |  that are visible online. Take a website design course to learn how to 
+                                                | create an appealing and responsive website. In the discipline of web design,
+                                                |  there are degree, diploma, postgraduate degree, and certificate programmes.
+                                                |  A web designer is responsible for a website's look, feel, and occasionally even content.
+                                            .mt-3.text-end
+                                                button.btn.btn-secondary.btn-clipboard.text-ligth(type='button', data-clipboard-action='copy', data-clipboard-target='#clipboardExample4')
+                                                    i.fa-solid.fa-copy 
+                                                    |  Copy highlighted text
+                include ../../components/footer
+        include ../../components/footer-files                                               

@@ -1,0 +1,444 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var prism                  = true;
+- var clipboard              = true;
+- var customcard             = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    // page-wrapper Start
+    include ../../components/taptop
+    include ../../components/loader
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+                .row
+                  .col-sm-6.col-12
+                    h2
+                      | Avatars
+                  .col-sm-6.col-12
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='index.html')     
+                          i.iconly-Home.icli.svg-color
+                      li.breadcrumb-item Ui Kits
+                      li.breadcrumb-item.active Avatars
+          // Container-fluid starts
+          .container-fluid
+            .user-profile
+              .row
+                .col-xl-4.col-sm-6
+                  .card   
+                    .card-header.card-no-border.pb-0
+                      h3.mb-0 Sizes
+                      p.mb-0.mt-1
+                        | Set the size of avatars using 
+                        code .img-*(70/80/90/100)
+                        |  class.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-ellipsis
+                          li
+                            i.fa-solid.fa-code.view-html
+                          li
+                            i.fa-solid.fa-maximize.full-card
+                          li
+                            i.fa-solid.fa-minus.minimize-card
+                          li
+                            i.fa-solid.fa-rotate-right.reload-card
+                          li
+                            i.fa-solid.fa-xmark.close-card
+                    .card-body.avatar-showcase
+                      .avatars
+                        div.avatar
+                          img.img-100.rounded-circle(src='../assets/images/avtar/3.jpg', alt='avatar')
+                        div.avatar
+                          img.img-90.rounded-circle(src='../assets/images/avtar/4.jpg', alt='avatar')
+                        div.avatar
+                          img.img-80.rounded-circle(src='../assets/images/avtar/7.jpg', alt='avatar')
+                        div.avatar
+                          img.img-70.rounded-circle(src='../assets/images/avtar/11.jpg', alt='avatar')  
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#avatar-showcase', title='Copy')
+                          i.fa-regular.fa-copy
+                        pre
+                          code.language-html#avatar-showcase
+                            |&lt;div class="avatars"&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-100 rounded-circle" src="../assets/images/avtar/3.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-90 rounded-circle" src="../assets/images/avtar/4.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-80 rounded-circle" src="../assets/images/avtar/7.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-70 rounded-circle" src="../assets/images/avtar/11.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                .col-xl-4.col-sm-6
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3.mb-0 Status Indicator
+                      p.mb-0.mt-1
+                        | Add 
+                        code  .status-*(online/offline/dnd)
+                        |  class to set the status. 
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-ellipsis
+                          li
+                            i.fa-solid.fa-code.view-html
+                          li
+                            i.fa-solid.fa-maximize.full-card
+                          li
+                            i.fa-solid.fa-minus.minimize-card
+                          li
+                            i.fa-solid.fa-rotate-right.reload-card
+                          li
+                            i.fa-solid.fa-xmark.close-card       
+                    .card-body.avatar-showcase
+                      .avatars
+                        div.avatar
+                          img.img-100.rounded-circle(src='../assets/images/user/1.jpg', alt='avatar')
+                          div.status.status-online
+                        div.avatar
+                          img.img-90.rounded-circle(src='../assets/images/avtar/16.jpg', alt='avatar')
+                          div.status.status-dnd
+                        div.avatar
+                          img.img-80.rounded-circle(src='../assets/images/avtar/7.jpg', alt='avatar')
+                          div.status.status-offline
+                        div.avatar
+                          img.img-70.rounded-circle(src='../assets/images/avtar/11.jpg', alt='avatar')
+                          div.status.status-online
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#avatar-showcase2', title='Copy')
+                          i.fa-regular.fa-copy
+                        pre
+                          code.language-html#avatar-showcase2
+                            |&lt;div class="avatars"&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-100 rounded-circle" src="../assets/images/user/1.jpg" alt="avatar"&gt;
+                            |&lt;div class="status status-online"&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-90 rounded-circle" src="../assets/images/avtar/16.jpg" alt="avatar"&gt;
+                            |&lt;div class="status status-dnd"&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-80 rounded-circle" src="../assets/images/avtar/7.jpg" alt="avatar"&gt;
+                            |&lt;div class="status status-offline"&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-70 rounded-circle" src="../assets/images/avtar/11.jpg" alt="avatar"&gt;
+                            |&lt;div class="status status-online"&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                            |&lt;/div&gt;
+                .col-xl-4
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3 Shapes
+                      p.mb-0.mt-1
+                        | Use 
+                        code .b-r-*(8/30/35/25)
+                        |  class shapes of avatar.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-ellipsis
+                          li
+                            i.fa-solid.fa-code.view-html
+                          li
+                            i.fa-solid.fa-maximize.full-card
+                          li
+                            i.fa-solid.fa-minus.minimize-card
+                          li
+                            i.fa-solid.fa-rotate-right.reload-card
+                          li
+                            i.fa-solid.fa-xmark.close-card
+                    .card-body.avatar-showcase
+                      .avatars
+                        div.avatar
+                          img.img-100.b-r-8(src='../assets/images/avtar/4.jpg', alt='avatar') 
+                        div.avatar
+                          img.img-90.b-r-30(src='../assets/images/avtar/16.jpg', alt='avatar')
+                        div.avatar
+                          img.img-80.b-r-35(src='../assets/images/avtar/3.jpg', alt='avatar')
+                        div.avatar
+                          img.img-70.rounded-circle(src='../assets/images/avtar/11.jpg', alt='avatar')
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#avatar-showcase3', title='Copy')
+                          i.fa-regular.fa-copy
+                        pre
+                          code.language-html#avatar-showcase3
+                            |&lt;div class="avatars"&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-100 b-r-8" src="../assets/images/avtar/4.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-90 b-r-30" src="../assets/images/avtar/16.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-80 b-r-35" src="../assets/images/avtar/3.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-70 rounded-circle" src="../assets/images/avtar/11.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                .col-xl-6
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3 Ratio
+                      p.mb-0.mt-1
+                        | Give the shape to avatar using 
+                        code .ratio
+                        |  and 
+                        code  img-*(50/70/80/90/100)
+                        |  class.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-ellipsis
+                          li
+                            i.fa-solid.fa-code.view-html
+                          li
+                            i.fa-solid.fa-maximize.full-card
+                          li
+                            i.fa-solid.fa-minus.minimize-card
+                          li
+                            i.fa-solid.fa-rotate-right.reload-card
+                          li
+                            i.fa-solid.fa-xmark.close-card
+                    .card-body.avatar-showcase
+                      .avatars
+                        div.avatar.ratio
+                          img.b-r-8.img-100(src='../assets/images/avtar/11.jpg', alt='avatar') 
+                        div.avatar.ratio
+                          img.b-r-8.img-90(src='../assets/images/avtar/4.jpg', alt='avatar')
+                        div.avatar.ratio
+                          img.b-r-8.img-80(src='../assets/images/user/1.jpg', alt='avatar')
+                        div.avatar.ratio
+                          img.b-r-8.img-70(src='../assets/images/avtar/16.jpg', alt='avatar')
+                        div.avatar.ratio
+                          img.b-r-8.img-50(src='../assets/images/avtar/7.jpg', alt='avatar')  
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#avatar-showcase5', title='Copy')
+                          i.fa-regular.fa-copy
+                        pre
+                          code.language-html#avatar-showcase5
+                            |&lt;div class="avatars"&gt;
+                            |&lt;div class="avatar ratio"&gt;&lt;img class="b-r-8 img-100" src="../assets/images/avtar/11.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar ratio"&gt;&lt;img class="b-r-8 img-90" src="../assets/images/avtar/4.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar ratio"&gt;&lt;img class="b-r-8 img-80" src="../assets/images/user/1.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar ratio"&gt;&lt;img class="b-r-8 img-70" src="../assets/images/avtar/16.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;div class="avatar ratio"&gt;&lt;img class="b-r-8 img-50" src="../assets/images/avtar/7.jpg" alt="avatar"&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                .col-xl-6
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3 Grouping  
+                      p.mb-0.mt-1 
+                        | Use set the group of avatars using    
+                        code .img-*(40/50/60/80/100) 
+                        | & 
+                        code .b-r-*(8/30/35) 
+                        | class.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-ellipsis
+                          li
+                            i.fa-solid.fa-code.view-html
+                          li
+                            i.fa-solid.fa-maximize.full-card
+                          li
+                            i.fa-solid.fa-minus.minimize-card
+                          li
+                            i.fa-solid.fa-rotate-right.reload-card
+                          li
+                            i.fa-solid.fa-xmark.close-card
+                    .card-body.avatar-showcase
+                      .avatars
+                        .customers.d-inline-block.avatar-group
+                          ul
+                            li.d-inline-block
+                              img.img-100.b-r-8(src='../assets/images/avtar/4.jpg', alt='avatar') 
+                            li.d-inline-block
+                              img.img-80(src='../assets/images/avtar/16.jpg', alt='avatar')
+                            li.d-inline-block
+                              img.img-50.b-r-35(src='../assets/images/avtar/3.jpg', alt='avatar')
+                        .customers.d-inline-block.avatar-group
+                          ul
+                            li.d-inline-block
+                              img.img-60.rounded-circle(src='../assets/images/avtar/16.jpg', alt='avatar')
+                            li.d-inline-block
+                              img.b-r-8.img-80(src='../assets/images/user/1.jpg', alt='avatar')
+                            li.d-inline-block
+                              img.img-60.rounded-circle(src='../assets/images/avtar/16.jpg', alt='avatar')
+                        .customers.d-inline-block.avatar-group
+                          ul
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src='../assets/images/user/3.jpg', alt='avatar')
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src='../assets/images/user/5.jpg', alt='avatar')
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src='../assets/images/user/1.jpg', alt='avatar') 
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#avatar-showcase6', title='Copy')
+                          i.fa-regular.fa-copy
+                        pre
+                          code.language-html#avatar-showcase6
+                            |&lt;div class="avatars"&gt;
+                            |&lt;div class="customers d-inline-block avatar-group"&gt;
+                            |&lt;ul&gt;
+                            |&lt;li class="d-inline-block"&gt;&lt;img class="img-100 b-r-8" src="../assets/images/avtar/4.jpg" alt="avatar"&gt;&lt;/li&gt;
+                            |&lt;li class="d-inline-block"&gt;&lt;img class="img-80" src="../assets/images/avtar/16.jpg" alt="avatar"&gt;&lt;/li&gt;
+                            |&lt;li class="d-inline-block"&gt;&lt;/li&gt;&lt;img class="img-50 b-r-35" src="../assets/images/avtar/3.jpg" alt="avatar"&gt;
+                            |&lt;/ul&gt;
+                            |&lt;/div&gt;
+                            |&lt;div class="customers d-inline-block avatar-group"&gt;
+                            |&lt;ul&gt;
+                            |&lt;li class="d-inline-block"&gt;&lt;img class="img-60 rounded-circle" src="../assets/images/avtar/16.jpg" alt="avatar"&gt;&lt;/li&gt;
+                            |&lt;li class="d-inline-block"&gt;&lt;img class="b-r-8 img-80" src="../assets/images/user/1.jpg" alt="avatar"&gt;&lt;/li&gt;
+                            |&lt;li class="d-inline-block"&gt;&lt;img class="img-60 rounded-circle" src="../assets/images/avtar/16.jpg" alt="avatar"&gt;&lt;/li&gt;
+                            |&lt;/ul&gt;
+                            |&lt;/div&gt;
+                            |&lt;div class="customers d-inline-block avatar-group"&gt;
+                            |&lt;ul&gt;
+                            |&lt;li class="d-inline-block"&gt;&lt;img class="img-40 rounded-circle" src="../assets/images/user/3.jpg" alt="avatar"&gt;&lt;/li&gt;
+                            |&lt;li class="d-inline-block"&gt;&lt;img class="img-40 rounded-circle" src="../assets/images/user/5.jpg" alt="avatar"&gt;&lt;/li&gt;
+                            |&lt;li class="d-inline-block"&gt;&lt;img class="img-40 rounded-circle" src="../assets/images/user/1.jpg" alt="avatar"&gt;&lt;/li&gt;
+                            |&lt;ul&gt;
+                            |&lt;/div&gt;
+                .col-xl-4.col-sm-12
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3 Avatar Initial
+                      p.mb-0.mt-1 Use initial letter to set avatars.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-ellipsis
+                          li
+                            i.fa-solid.fa-code.view-html
+                          li
+                            i.fa-solid.fa-maximize.full-card
+                          li
+                            i.fa-solid.fa-minus.minimize-card
+                          li
+                            i.fa-solid.fa-rotate-right.reload-card
+                          li
+                            i.fa-solid.fa-xmark.close-card
+                    .card-body.avatar-showcase
+                      .avatars
+                        div.avatar-intial.img-80.bg-light-primary
+                          span.fs-1 A
+                        div.avatar-intial.img-70.bg-light-secondary
+                          span.fs-2 D
+                        div.avatar-intial.img-60.bg-light-danger
+                          span.fs-3 M
+                        div.avatar-intial.img-50.bg-light-primary
+                          span.fs-4 I
+                        div.avatar-intial.img-40.bg-light-secondary
+                          span.fs-5 R
+                        div.avatar-intial.img-30.bg-light-danger
+                          span.fs-6 O
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#avatar-showcase7', title='Copy')
+                          i.fa-regular.fa-copy
+                        pre
+                          code.language-html#avatar-showcase7
+                            |&lt;div class="avatars"&gt;
+                            |&lt;div class="avatar-intial img-80 bg-light-primary"&gt;&lt;span class="fs-1"&gt;A&lt;/span&gt;&lt;/div&gt;
+                            |&lt;div class="avatar-intial img-70 bg-light-secondary"&gt;&lt;span class="fs-2"&gt;D&lt;/span&gt;&lt;/div&gt;
+                            |&lt;div class="avatar-intial img-60 bg-light-danger"&gt;&lt;span class="fs-3"&gt;M&lt;/span&gt;&lt;/div&gt;
+                            |&lt;div class="avatar-intial img-50 bg-light-primary"&gt;&lt;span class="fs-4"&gt;I&lt;/span&gt;&lt;/div&gt;
+                            |&lt;div class="avatar-intial img-40 bg-light-secondary"&gt;&lt;span class="fs-5"&gt;R&lt;/span&gt;&lt;/div&gt;
+                            |&lt;div class="avatar-intial img-30 bg-light-danger"&gt;&lt;span class="fs-6"&gt;O&lt;/span&gt;&lt;/div&gt;
+                .col-xl-4.col-sm-6
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3 Avatar Ping
+                      p.mb-0.mt-1
+                        | To set ping animation use
+                        code  .ping     
+                        |  class. 
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-ellipsis
+                          li
+                            i.fa-solid.fa-code.view-html
+                          li
+                            i.fa-solid.fa-maximize.full-card
+                          li
+                            i.fa-solid.fa-minus.minimize-card
+                          li
+                            i.fa-solid.fa-rotate-right.reload-card
+                          li
+                            i.fa-solid.fa-xmark.close-card
+                    .card-body.avatar-showcase
+                      .avatars
+                        div.avatar
+                          img.img-80.rounded-circle(src='../assets/images/avtar/11.jpg', alt='avatar') 
+                          div.ping.status-offline.status  
+                        div.avatar  
+                          img.img-70.rounded-circle(src='../assets/images/avtar/4.jpg', alt='avatar') 
+                          div.ping.status-online.status
+                        div.avatar
+                          img.img-60.rounded-circle(src='../assets/images/user/1.jpg', alt='avatar')     
+                          div.ping.status-dnd.status 
+                        div.avatar
+                          img.img-50.rounded-circle(src='../assets/images/avtar/3.jpg', alt='avatar') 
+                          div.ping.status-offline.status
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#avatar-showcase8', title='Copy')
+                          i.fa-regular.fa-copy
+                        pre
+                          code.language-html#avatar-showcase8
+                            |&lt;div class="avatars"&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-80 rounded-circle" src="../assets/images/avtar/11.jpg" alt="avatar"&gt;
+                            |&lt;div class="ping status-offline status"&gt; &lt;/div&gt;
+                            |&lt;/div&gt;
+                            |&lt;div class="avatar"&gt; &lt;img class="img-70 rounded-circle" src="../assets/images/avtar/4.jpg" alt="avatar"&gt;
+                            |&lt;div class="ping status-online status"&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-60 rounded-circle" src="../assets/images/user/1.jpg" alt="avatar"&gt;
+                            |&lt;div class="ping status-dnd status"&gt; &lt;/div&gt;
+                            |&lt;/div&gt;
+                            |&lt;div class="avatar"&gt;&lt;img class="img-50 rounded-circle" src="../assets/images/avtar/3.jpg" alt="avatar"&gt;
+                            |&lt;div class="ping status-offline status"&gt;&lt;/div&gt;
+                .col-xl-4.col-sm-6
+                  .card.avatar-profile-card
+                    .card-header.card-no-border.pb-0
+                      h3 Avatar profile
+                      p.mb-0.mt-1  Use icon and images as avatars profile.
+                      .card-header-right
+                        ul.list-unstyled.card-option
+                          li
+                            i.fa-solid.fa-ellipsis
+                          li
+                            i.fa-solid.fa-code.view-html
+                          li
+                            i.fa-solid.fa-maximize.full-card
+                          li
+                            i.fa-solid.fa-minus.minimize-card
+                          li
+                            i.fa-solid.fa-rotate-right.reload-card
+                          li
+                            i.fa-solid.fa-xmark.close-card
+                    .card-body.avatar-showcase
+                      .avatars
+                        .user-img
+                          img(src="../assets/images/profile.png" alt="user")     
+                          .setting-icon   
+                              i.iconly-Setting.icli                  
+                        div.avatar-intial.img-60.bg-light-primary.avatar-profile
+                          img(src="../assets/images/users/6.png" alt="users")
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#avatar-showcase9', title='Copy')
+                          i.fa-regular.fa-copy
+                        pre
+                          code.language-html#avatar-showcase9
+                            |&lt;!-- You can use status-* Use icon and images as avatars profile. --&gt;
+                            |&lt;div class="avatars"&gt;
+                            |&lt;div class="user-img"&gt;&lt;img src="../assets/images/profile.png" alt="user"&gt;
+                            |&lt;div class="setting-icon"&gt; &lt;i class="iconly-Setting icli"&gt; &lt;/i&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                            |&lt;div class="avatar-intial img-60 bg-light-primary avatar-profile"&gt;&lt;img src="../assets/images/users/6.png" alt="users"&gt;&lt;/div&gt;
+                            |&lt;/div&gt;
+                            |&lt;/div&gt;
+        include ../../components/footer    
+    include ../../components/footer-files

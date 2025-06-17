@@ -1,0 +1,135 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var sweetalert             = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body    
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        |  Sweetalert2
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Bonus Ui
+                                        li.breadcrumb-item.active Sweetalert2
+                    // Container-fluid starts
+                    .container-fluid    
+                        .row
+                            .col-xl-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Basic Example
+                                        p.mt-1.mb-0      
+                                            | Print the basic message.
+                                    .card-body
+                                        .common-flex
+                                            button.btn.btn-primary.sweet-1(type='button',  onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-1']);") Click it!
+                                            button.btn.btn-secondary.sweet-2(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-2']);") Title with text!
+                                            button.btn.btn-info.text-light.sweet-4(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-4']);") Informational
+                                            button.btn.btn-warning.text-light.sweet-5(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-5']);") Warning alert!
+                            .col-xl-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Advance Sweetalert
+                                        p.mt-1.mb-0 
+                                            | Print the title with text.
+                                    .card-body      
+                                        .common-flex
+                                            button.btn.btn-warning.text-light.sweet-12(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-12']);") Questions state
+                                            button.btn.btn-secondary.sweet-13(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-13']);") Toast Alert
+                            .col-xl-6
+                                .card 
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Unique Sweetalert 
+                                        p.mt-1.mb-0 
+                                            | Print the informational message.
+                                    .card-body
+                                        .common-flex
+                                            button.btn.btn-danger.sweet-7(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-7']);") Danger mode
+                                            button.btn.btn-warning.text-light.sweet-6(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-6']);") Animation Alert
+                                            button.btn.btn-primary.sweet-14(type='button', onclick="_gaq.push(['_trackEvent', 'sweet-14']);") Timer
+                            .col-xl-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Direction Sweetalert
+                                        p.mt-1.mb-0 
+                                            | Warning for imaginary files.  
+                                    .card-body
+                                        .common-flex
+                                            button.btn.btn-info.text-light.sweet-17(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-17']);") Top Left
+                                            button.btn.btn-primary.sweet-16(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-16']);") Top Right
+                                            button.btn.btn-secondary.sweet-18(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-18']);") Bottom Left
+                                            button.btn.btn-warning.text-light.sweet-19(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-19']);") Bottom Right
+                            .col-xl-12
+                                .card 
+                                    .card-header.card-no-border.pb-0 
+                                        h3 Input sweetalert
+                                        p.mt-1.mb-0 
+                                            | catch the pokeball.
+                                    .card-body  
+                                        .common-flex
+                                            button.btn.btn-success.sweet-22(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-22']);") Text Input
+                                            button.btn.btn-warning.text-light.sweet-8(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-8']);") Login Email
+                                            button.btn.btn-info.text-light.sweet-23(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-23']);") URL
+                                            button.btn.btn-danger.sweet-24(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-24']);") Password
+                                            button.btn.btn-warning.text-light.sweet-25(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-25']);") Textarea
+                                            button.btn.btn-primary.sweet-26(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-26']);") Select Input
+                                            button.btn.btn-secondary.sweet-27(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-27']);") Radio Input
+                                            button.btn.btn-dark.sweet-28(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-28']);") Checkbox Input
+                                            button.btn.btn-light.font-dark.sweet-29(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-29']);") Range
+                            .col-xl-3
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Github Avatar
+                                        p.mt-1.mb-0 
+                                            | Print the questionary and give answers.
+                                    .card-body
+                                        .common-flex
+                                            button.btn.btn-primary.sweet-11(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-11']);") Ajax alert
+                            .col-xl-3
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 RTL Support
+                                        p.mt-1.mb-0
+                                            | Print the basic sweet-alert
+                                    .card-body
+                                        .common-flex
+                                            button.btn.btn-secondary.sweet-15(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-1']);") RTL Alert
+                            .col-xl-3
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h4 Success Message
+                                        p.mt-1.mb-0 
+                                            | Print the success message.
+                                    .card-body
+                                        .common-flex
+                                            button.btn.btn-danger.sweet-20(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-20']);") Message Timer
+                            .col-xl-3
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h4 Danger Alert       
+                                        p.mt-1.mb-0
+                                            | Print the danger message.  
+                                    .card-body
+                                        .common-flex
+                                            button.btn.btn-info.text-light.sweet-21(type='button', onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-21']);") Modal with Images
+                include ../../components/footer 
+        include ../../components/footer-files

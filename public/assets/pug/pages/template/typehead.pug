@@ -1,0 +1,160 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var choice                 = true; 
+- var typeahead              = true;
+include ../../components/mixin
+doctype html
+html(lang='en') 
+    include ../../components/header-files 
+    body
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Typeahead
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Form Widgets
+                                        li.breadcrumb-item.active Typehead
+                    // Container-fluid starts
+                    .container-fluid.typeahead-page
+                        .typeahead
+                            .row
+                                .col-sm-12.col-md-6
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Basic typeahead
+                                            p.mt-1.mb-0 
+                                                |  This is the simple demo for Typeahead.
+                                        .card-body
+                                            #the-basics
+                                                form.theme-form        
+                                                    div
+                                                        select#cities.form-control(name='cities')
+                                                            option(value='') Choose a city
+                                                            option(value='Leeds') Leeds
+                                                            option(value='Manchester') Manchester
+                                                            option(value='London') London
+                                                            option(value='Sheffield') Sheffield
+                                                            option(value='Newcastle') Newcastle
+                                .col-sm-12.col-md-6  
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Prefetch
+                                            p.mt-1.mb-0
+                                                | Prefetched data is fetched and processed on initialization
+                                        .card-body
+                                            #prefetch   
+                                                form.theme-form 
+                                                    div
+                                                        select#choices-single-no-search.form-control(name='choices-single-no-search')
+                                                          option(value='0') Zero
+                                .col-sm-12.col-md-6
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Multiple select input
+                                            p.mt-1.mb-0 
+                                                | Bloodhound offers advanced functionalities such as prefetching and backfilling with remote data.
+                                        .card-body
+                                            #bloodhound
+                                                form.theme-form
+                                                    div
+                                                        select#choices-multiple-remove-button.form-control(name='choices-multiple-remove-button' multiple='')
+                                                            option(value='Choice 1' selected='') India
+                                                            option(value='Choice 2') USA
+                                                            option(value='Choice 3') Australia
+                                                            option(value='Choice 4') UEA
+                                .col-sm-12.col-md-6
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Select one inputs
+                                            p.mt-1.mb-0 
+                                                | Remote data is only used when the data provided by local and prefetch is insufficient
+                                        .card-body
+                                            #remote
+                                                form.theme-form 
+                                                    div(data-test-hook='scrolling-dropdown')
+                                                        select#choices-scrolling-dropdown.form-control(name='choices-scrolling-dropdown')
+                                                            option(value='Choice 1') Choice 1
+                                                            option(value='Choice 2') Choice 2
+                                                            option(value='Choice 3') Choice 3
+                                                            option(value='Choice 4') Choice 4
+                                                            option(value='Choice 5') Choice 5
+                                                            option(value='Choice 6') Choice 6
+                                                            option(value='Choice 7') Choice 7
+                                                            option(value='Choice 8') Choice 8
+                                                            option(value='Choice 9') Choice 9
+                                                            option(value='Choice 10') Choice 10
+                                                            option(value='Choice 11') Choice 11
+                                                            option(value='Choice 12') Choice 12
+                                                            option(value='Choice 13') Choice 13
+                                                            option(value='Choice 14') Choice 14
+                                                            option(value='Choice 15') Choice 15
+                                .col-sm-12.col-md-6
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 Multiple Sections With Headers
+                                            p.mt-1.mb-0 
+                                                | Custom templates give you full control over how suggestions get rendered
+                                        .card-body
+                                            #multiple-datasets
+                                                form.theme-form
+                                                    div
+                                                        select#choices-multiple-groups.form-control(name='choices-multiple-groups' multiple='')
+                                                            option(value='') Choose a city
+                                                            optgroup(label='UK')
+                                                                option(value='London') London
+                                                                option(value='Manchester') Manchester
+                                                                option(value='Liverpool') Liverpool
+                                                            optgroup(label='FR')
+                                                                option(value='Paris') Paris
+                                                                option(value='Lyon') Lyon
+                                                                option(value='Marseille') Marseille
+                                                            optgroup(label='DE' disabled='')
+                                                                option(value='Hamburg') Hamburg
+                                                                option(value='Munich') Munich
+                                                                option(value='Berlin') Berlin
+                                                            optgroup(label='US')
+                                                                option(value='New York') New York
+                                                                option(value='Washington' disabled='') Washington
+                                                                option(value='Michigan') Michigan
+                                                            optgroup(label='SP')
+                                                                option(value='Madrid') Madrid
+                                                                option(value='Barcelona') Barcelona
+                                                                option(value='Malaga') Malaga
+                                                            optgroup(label='CA')
+                                                                option(value='Montreal') Montreal
+                                                                option(value='Toronto') Toronto
+                                                                option(value='Vancouver') Vancouver 
+                                .col-sm-12.col-md-6
+                                    .card
+                                        .card-header.card-no-border.pb-0
+                                            h3 RTL Support
+                                            p.mt-1.mb-0 
+                                                | Two datasets that are prefetched, stored, and searched on the client. Highlighting is enabled.
+                                        .card-body
+                                            #rtl-support 
+                                                form.theme-form
+                                                    div
+                                                        select#rtl.form-control(name='rtl' dir='rtl')
+                                                            option(value='') Choose a city
+                                                            option(value='Leeds') Leeds
+                                                            option(value='Manchester') Manchester
+                                                            option(value='London') London
+                                                            option(value='Sheffield') Sheffield
+                                                            option(value='Newcastle') Newcastle
+                include ../../components/footer 
+        include ../../components/footer-files

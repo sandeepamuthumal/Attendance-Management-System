@@ -1,0 +1,85 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var input_mask             = true;  
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper  
+            include ../../components/header/header
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Input Mask
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Form Controls
+                                        li.breadcrumb-item.active Input Mask
+                    // Container-fluid starts
+                    .container-fluid
+                        .row 
+                            .col-12
+                                .card.masks-input
+                                    .card-header.card-no-border.pb-0
+                                        h3 Input masks
+                                        p.mt-1.mb-0
+                                            | Input mask used in form-validations,forms,card-details,and etc.
+                                    .card-body
+                                        .row.g-3 
+                                            .col-sm-6 
+                                                .card-wrapper.border.rounded-3.light-card.checkbox-checked
+                                                    h6.sub-title Date Format
+                                                    form.row.g-3
+                                                        .col-12.mt-2
+                                                            label.col-form-label(for='cleave-date1') Date
+                                                            input#cleave-date1.form-control(type='text' placeholder='DD-MM-YYYY')
+                                                        .col-12.mt-2
+                                                            label.col-form-label(for='cleave-date2') Date format type
+                                                            input#cleave-date2.form-control(type='text' placeholder='MM-YYYY')
+                                            .col-sm-6 
+                                                .card-wrapper.border.rounded-3.light-card.checkbox-checked
+                                                    h6.sub-title Time Format
+                                                    form.row.g-3
+                                                        .col-12.mt-2
+                                                            label.col-form-label(for='cleave-time1') Time format type
+                                                            input#cleave-time1.form-control(type='text' placeholder='hh:mm:ss')
+                                                        .col-12.mt-2
+                                                            label.col-form-label(for='cleave-time2') Hour/month type
+                                                            input#cleave-time2.form-control(type='text' placeholder='hh:mm')
+                                            .col-12
+                                                .card-wrapper.border.rounded-3.light-card.checkbox-checked
+                                                    h6.sub-title Default Input Mask
+                                                    form.row.g-3
+                                                        .col-xxl-4.col-sm-6.mt-2
+                                                            label.col-form-label(for='cleave-number-format') Currency
+                                                            input#cleave-number-format.form-control(type='text' placeholder='Enter number')
+                                                        .col-xxl-4.col-sm-6.mt-2
+                                                            label.col-form-label(for='cleave-type-prefix') Prefix
+                                                            input#cleave-type-prefix.form-control(type='text' placeholder='Prefix-xxxx-xxxx-xxxx')
+                                                        .col-xxl-4.col-sm-6.mt-2
+                                                            label.col-form-label(for='cleave-type-delimiter') Delimiter
+                                                            input#cleave-type-delimiter.form-control(type='text' placeholder='xxx·xxx·xxx')
+                                                        .col-xxl-4.col-sm-6.mt-4
+                                                            label.form-label(for='cleave-phone-number') Phone Number
+                                                            input#cleave-phone-number.form-control(type='text' placeholder='(xxx)xxx-xxxx')
+                                                        .col-xxl-4.col-sm-6.mt-4
+                                                            label.form-label(for='cleave-card-number') Card Number
+                                                            input#cleave-card-number.form-control(type='text' placeholder='xxxx xxxx xxxx xxxx')
+                                                        .col-xxl-4.col-sm-6.mt-4
+                                                            label.form-label(for='tailprefix') Tailprefix
+                                                            input#tailprefix.form-control(type='text' placeholder='0000.00€')
+                include ../../components/footer 
+        include ../../components/footer-files

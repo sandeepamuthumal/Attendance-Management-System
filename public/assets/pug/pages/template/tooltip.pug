@@ -1,0 +1,254 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var tooltip                = true;
+- var prism                  = true;
+- var clipboard              = true;
+- var customcard             = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Tooltip
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Ui Kits
+                                        li.breadcrumb-item.active Tooltip
+                    // Container-fluid starts
+                    .container-fluid
+                        .row
+                            .col-sm-12
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Basic Tooltip
+                                        p.mt-1.mb-0
+                                            | Use 
+                                            code data-bs-toggle="tooltip"
+                                            |  to set the tooltip.
+                                        .card-header-right
+                                          ul.list-unstyled.card-option
+                                            li
+                                              i.fa-solid.fa-ellipsis
+                                            li
+                                              i.fa-solid.fa-code.view-html
+                                            li
+                                              i.fa-solid.fa-maximize.full-card
+                                            li
+                                              i.fa-solid.fa-minus.minimize-card
+                                            li
+                                              i.fa-solid.fa-rotate-right.reload-card
+                                            li
+                                              i.fa-solid.fa-xmark.close-card
+                                    .card-body
+                                        button.example-popover.btn.btn-primary.mb-0.me-0(type='button', data-container='body', data-bs-toggle='tooltip', data-bs-placement='top', title='Surprise!!! Thank you for hovering...')
+                                            | It's magic please hover me... 
+                                        h5.mb-1.py-4.pb-0 Inline Tooltip Content
+                                        p
+                                            | Here, is some content about tooltips that you can set the
+                                            a.text-primary.fw-bold(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='tooltip' data-bs-original-title='popover text')   tooltip                
+                                            |   inside the content with help of tooltip and also you can add
+                                            button.btn.btn-success.text-white.border-0.px-3.py-1.me-0.mb-0(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='button')
+                                                | button 
+                                            |  .Tooltips helps you to add more and more content. A tooltip is often used to specify extra information about something when the user moves the mouse pointer over an element
+                                        .code-box-copy
+                                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                            i.fa-regular.fa-copy
+                                          pre
+                                            code.language-html#example-head
+                                                |&lt;div class="card-body"&gt;
+                                                |&lt;button class="example-popover btn btn-primary mb-0 me-0" type="button" data-container="body" data-bs-toggle="tooltip" data-bs-placement="top" title="Surprise!!! Thank you for hovering..."&gt;It's magic please hover me... &lt;/button&gt;
+                                                |&lt;h5 class="mb-1 py-4 pb-0"&gt;Inline Tooltip Content&lt;/h5&gt;
+                                                |&lt;p&gt;Here, is some content about tooltips that you can set the&lt;a class="text-primary fw-bold" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="tooltip" data-bs-original-title="popover text"&gt; tooltip &lt;/a&gt; inside the content with help of tooltip and also you can add
+                                                |&lt;button class="btn btn-success text-white border-0 px-3 py-1 me-0 mb-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="button"&gt;button &lt;/button&gt; .Tooltips helps you to add more and more content. A tooltip is often used to specify extra information about something when the user moves the mouse pointer over an element
+                                                |&lt;/p&gt;
+                                                |&lt;/div&gt;
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Colored Tooltip 
+                                        p.mt-1.mb-0
+                                            | Add 
+                                            code btn- *
+                                            |  class to set the colored tooltip.
+                                        .card-header-right
+                                          ul.list-unstyled.card-option
+                                            li
+                                              i.fa-solid.fa-ellipsis
+                                            li
+                                              i.fa-solid.fa-code.view-html
+                                            li
+                                              i.fa-solid.fa-maximize.full-card
+                                            li
+                                              i.fa-solid.fa-minus.minimize-card
+                                            li
+                                              i.fa-solid.fa-rotate-right.reload-card
+                                            li
+                                              i.fa-solid.fa-xmark.close-card
+                                    .card-body 
+                                        .common-flex
+                                            button.mb-0.me-0.btn.btn-primary(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Primary') Primary
+                                            button.mb-0.me-0.btn.btn-secondary(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Secondary') Secondary
+                                            button.mb-0.me-0.btn.btn-success(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Success') Success
+                                            button.mb-0.me-0.btn.btn-warning.text-white(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Warning') Warning
+                                            button.mb-0.me-0.btn.btn-danger(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Danger') Danger
+                                        .code-box-copy
+                                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#tooltip', title='Copy')
+                                            i.fa-regular.fa-copy
+                                          pre
+                                            code.language-html#tooltip
+                                                |&lt;div class="common-flex"&gt;
+                                                |&lt;button class="mb-0 me-0 btn btn-primary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Primary"&gt;Primary&lt;/button&gt;
+                                                |&lt;button class="mb-0 me-0 btn btn-secondary" type=" button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Secondary"&gt;Secondary&lt;/button&gt;
+                                                |&lt;button class="mb-0 me-0 btn btn-success" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Success"&gt;Success&lt;/button&gt;
+                                                |&lt;button class="mb-0 me-0 btn btn-warning text-white" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Warning"&gt;Warning&lt;/button&gt;
+                                                |&lt;button class="mb-0 me-0 btn btn-danger" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Danger"&gt;Danger&lt;/button&gt;
+                                                |&lt;/div&gt;
+                            .col-md-6
+                                .card 
+                                    .card-header.card-no-border.pb-0
+                                        h3 Tooltip  Directions
+                                        p.mt-1.mb-0 
+                                            | To set different direction use  
+                                            code data-bs-placement="top/right/bottom/left".
+                                        .card-header-right
+                                          ul.list-unstyled.card-option
+                                            li
+                                              i.fa-solid.fa-ellipsis
+                                            li
+                                              i.fa-solid.fa-code.view-html
+                                            li
+                                              i.fa-solid.fa-maximize.full-card
+                                            li
+                                              i.fa-solid.fa-minus.minimize-card
+                                            li
+                                              i.fa-solid.fa-rotate-right.reload-card
+                                            li
+                                              i.fa-solid.fa-xmark.close-card
+                                    .card-body
+                                        .common-flex
+                                            button.btn.btn-primary.mb-0.me-0(type='button', data-bs-toggle='tooltip', data-bs-placement='top', title='Tooltip on top')
+                                                | Top Tooltip
+                                            button.btn.btn-secondary.mb-0.me-0(type='button', data-bs-toggle='tooltip', data-bs-placement='right', title='Tooltip on right')
+                                                | Right Tooltip
+                                            button.btn.btn-success.mb-0.me-0(type='button', data-bs-toggle='tooltip', data-bs-placement='bottom', title='Tooltip on bottom')
+                                                | Bottom Tooltip
+                                            button.btn.btn-warning.mb-0.me-0.text-white(type='button', data-bs-toggle='tooltip', data-bs-placement='left', title='Tooltip on left')
+                                                | Left Tooltip
+                                        .code-box-copy
+                                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#colored-tooltip', title='Copy')
+                                            i.fa-regular.fa-copy
+                                          pre
+                                            code.language-html#colored-tooltip
+                                                |&lt;div class="common-flex"&gt;
+                                                |&lt;button class="btn btn-primary mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"&gt;Top Tooltip&lt;/button&gt;
+                                                |&lt;button class="btn btn-secondary mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"&gt;Right Tooltip&lt;/button&gt;
+                                                |&lt;button class="btn btn-success mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom"&gt;Bottom Tooltip&lt;/button&gt;
+                                                |&lt;button class="btn btn-warning mb-0 me-0 text-white" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left"&gt;Left Tooltip&lt;/button&gt;
+                                                |&lt;/div&gt;
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 HTML Elements With Tooltip 
+                                        p.mt-1.mb-0
+                                            | Use html element with the help of 
+                                            code data-bs-title="".
+                                        .card-header-right
+                                          ul.list-unstyled.card-option
+                                            li
+                                              i.fa-solid.fa-ellipsis
+                                            li
+                                              i.fa-solid.fa-code.view-html
+                                            li
+                                              i.fa-solid.fa-maximize.full-card
+                                            li
+                                              i.fa-solid.fa-minus.minimize-card
+                                            li
+                                              i.fa-solid.fa-rotate-right.reload-card
+                                            li
+                                              i.fa-solid.fa-xmark.close-card
+                                    .card-body
+                                        .common-flex.tooltip-effect
+                                            button.btn.bg-primary.mb-0.me-0(type='button' data-bs-toggle='tooltip' data-bs-html='true' data-bs-placement='top' data-bs-title='<em>Thank</em> <u>you</u>')                
+                                                | Notifications Received
+                                            button.btn.bg-warning.mb-0.me-0.text-white(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' data-bs-title='<b>Thank</b> <em>you</em>')
+                                                | Last Warning
+                                            button.btn.bg-danger.mb-0.me-0(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' data-bs-title='<em>Thank</em> <u>you</u>')
+                                                | It's Danger
+                                            button.btn.bg-info.mb-0.me-0(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' data-bs-title='<b>Thank</b> <em>you</em>')
+                                                | Coming soon
+                                        .code-box-copy
+                                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#dark-tooltip', title='Copy')
+                                            i.fa-regular.fa-copy
+                                          pre
+                                            code.language-html#dark-tooltip
+                                                |&lt;div class="common-flex tooltip-effect"&gt;
+                                                |&lt;button class="btn bg-primary mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="top" data-bs-title="&amp;lt;em&amp;gt;Thank&amp;lt;/em&amp;gt; &amp;lt;u&amp;gt;you&amp;lt;/u&amp;gt;"&gt;
+                                                |Notifications Received&lt;/button&gt;
+                                                |&lt;button class="btn bg-warning mb-0 me-0 text-white" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-bs-title="&amp;lt;b&amp;gt;Thank&amp;lt;/b&amp;gt; &amp;lt;em&amp;gt;you&amp;lt;/em&amp;gt;"&gt;Last Warning&lt;/button&gt;
+                                                |&lt;button class="btn bg-danger mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-bs-title="&amp;lt;em&amp;gt;Thank&amp;lt;/em&amp;gt; &amp;lt;u&amp;gt;you&amp;lt;/u&amp;gt;"&gt;It's Danger&lt;/button&gt;
+                                                |&lt;button class="btn bg-info mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-bs-title="&amp;lt;b&amp;gt;Thank&amp;lt;/b&amp;gt; &amp;lt;em&amp;gt;you&amp;lt;/em&amp;gt;"&gt;Coming soon&lt;/button&gt;
+                                                |&lt;/div&gt;
+                            .col-md-6
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Filled Tooltip
+                                        p.mt-1.mb-0
+                                            | Fill the btn on the hover effect with the help of 
+                                            code .btn-outline 
+                                            | class.
+                                        .card-header-right
+                                          ul.list-unstyled.card-option
+                                            li
+                                              i.fa-solid.fa-ellipsis
+                                            li
+                                              i.fa-solid.fa-code.view-html
+                                            li
+                                              i.fa-solid.fa-maximize.full-card
+                                            li
+                                              i.fa-solid.fa-minus.minimize-card
+                                            li
+                                              i.fa-solid.fa-rotate-right.reload-card
+                                            li
+                                              i.fa-solid.fa-xmark.close-card
+                                    .card-body.fill-tooltip
+                                        .common-flex
+                                            button.btn.btn-outline-primary.mb-0.me-0(type='button' data-bs-toggle='tooltip' data-bs-html='true' data-bs-placement='top' data-bs-title='Tooltip Primary')
+                                                | Tooltip Primary
+                                            button.btn.btn-outline-secondary.mb-0.me-0(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' data-bs-title='Tooltip Secondary')
+                                                | Tooltip Secondary
+                                            button.btn.btn-outline-success.mb-0.me-0(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' data-bs-title='Tooltip Success')
+                                                | Tooltip Success
+                                            button.btn.btn-outline-info.mb-0.me-0(type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-html='true' data-bs-title='Tooltip Info')
+                                                | Tooltip Info
+                                        .code-box-copy
+                                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#hover-tooltip', title='Copy')
+                                            i.fa-regular.fa-copy
+                                          pre
+                                            code.language-html#hover-tooltip
+                                                |&lt;div class="common-flex"&gt;
+                                                |&lt;button class="btn btn-outline-primary mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="top" data-bs-title="Tooltip Primary"&gt;Tooltip Primary&lt;/button&gt;
+                                                |&lt;button class="btn btn-outline-secondary mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-bs-title="Tooltip Secondary"&gt;Tooltip Secondary&lt;/button&gt;
+                                                |&lt;button class="btn btn-outline-success mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-bs-title="Tooltip Success"&gt;Tooltip Success&lt;/button&gt;
+                                                |&lt;button class="btn btn-outline-info mb-0 me-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-bs-title="Tooltip Info"&gt;Tooltip Info&lt;/button&gt;
+                                                |&lt;/div&gt;
+                include ../../components/footer
+        include ../../components/footer-files

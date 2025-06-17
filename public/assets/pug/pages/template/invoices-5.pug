@@ -1,0 +1,202 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+include ../../components/mixin
+doctype html 
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12 
+                                    h2
+                                        | Invoice-5
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Ecommerce
+                                        li.breadcrumb-item.active Invoice-5
+                    // Container-Fluid Starts
+                    .container
+                      .row 
+                        .col-sm-12.invoice-2
+                          .card 
+                            .card-body
+                              table.table-wrapper.table-responsive.table-borderless.theme-scrollbar
+                                tbody 
+                                  tr 
+                                    td 
+                                      table.table-responsive.table-borderless(style='width: 100%;')
+                                        tbody 
+                                          tr(style="padding: 28px 0 5px; display: flex; justify-content: space-between; align-items: center;") 
+                                              td
+                                                img.for-light(src="../assets/images/logo/logo-dark.png" alt="logo")
+                                                img.for-dark(src="../assets/images/logo/logo1.png" alt="logo")
+                                              td
+                                                  ul(style="list-style: none; display: flex; background: linear-gradient(291deg, #134D80 21.2%, #134D80 83.92%); padding: 31px 80px; border-bottom-left-radius: 100px; gap:28px;")
+                                                      li 
+                                                          svg.stroke-icon(style="height:14px; width: 14px; fill:#fff; margin-right: 10px;")
+                                                              use(href="../assets/svg/iconly-sprite.svg#call")
+                                                          span(style="color: #FFFFFF;") (239) 555-0108
+                                                      li(style="border-left: 1px dashed rgba(48, 142, 135, 0.3); border-right: 1px dashed rgba(48, 142, 135, 0.3); padding: 0 22px;")
+                                                          svg.stroke-icon(style="height:16px; width: 16px; fill:#fff; margin-right: 10px;") 
+                                                              use(href="../assets/svg/iconly-sprite.svg#email-box")
+                                                          span(style="color: #FFFFFF;") Admiro@themesforest.com
+                                                      li 
+                                                          svg.stroke-icon(style="height:16px; width: 16px; fill:#fff; margin-right: 10px;") 
+                                                              use(href="../assets/svg/iconly-sprite.svg#web")
+                                                          span(style="color: #FFFFFF;") Website: www.Admirothemes.com
+                                          tr(style="display: flex; justify-content: space-between;")
+                                              td.text-start
+                                                  span(style="font-size: 16px; display:block; font-weight: 600; color:rgba(48, 142, 135, 1); margin-bottom: 14px;") Invoice to :
+                                                  span(style="font-size: 16px; display:block; font-weight: 600; color:#134D80; margin-bottom: 8px;") Brooklyn Simmons
+                                                  span(style="font-size: 16px; display:block;  opacity: 0.8; margin-bottom: 8px; width: 72%; line-height: 1.4;") 2972 Westheimer Rd. Santa Ana, Illinois 85486 
+                                                  span(style="font-size: 16px; display:block;  opacity: 0.8; margin-bottom: 8px;") Phone : (219) 555-0114
+                                                  span(style="font-size: 16px; display:block;  opacity: 0.8; margin-bottom: 8px;") Email : yourmail@themesforest.com
+                                                  span(style="font-size: 16px; display:block;  opacity: 0.8; margin-bottom: 8px;") Website: www.websites.com
+                                              td.text-start
+                                                  h4(style="font-size:42px; font-weight: 600;color: #134D80; margin:0 0 12px 0;") INVOICE
+                                                  span(style="font-size: 16px;color: #134D80; display: block; font-weight: 600; margin-bottom: 20px;") Bank Transfer
+                                                  span(style="color: #134D80; display: block; margin-bottom: 12px; font-weight: 600;") Leslie Alexander
+                                                  span(style="display: block;  font-size: 16px; margin-bottom: 12px;") Bank Account : 0981234098765
+                                                  span(style="display: block;  font-size: 16px; margin-bottom: 12px;") Code : LEF098756
+                                  tr 
+                                      td 
+                                          table.table-responsive.table-borderless(style='width: 100%; border-spacing: 4px; margin-bottom: 20px;')
+                                              tbody
+                                                  tr 
+                                                      td.text-start(style="background: rgba(48, 142, 135 , 0.1);padding: 15px 25px;")
+                                                          p(style="font-size:16px; font-weight:500; color:#134D80; opacity:0.8; margin:0;line-height: 2;") Date :
+                                                          span(style="font-size: 16px; font-weight: 600;") 10 Mar, 2023
+                                                      td.text-start(style="background: rgba(48, 142, 135 , 0.1);padding: 15px 25px;") 
+                                                          p(style="font-size:16px; font-weight:500; color:#134D80; opacity:0.8; margin:0;line-height: 2;") Invoice No :
+                                                          span(style="font-size: 16px; font-weight: 600;") #VL25000365
+                                                      td.text-start(style="background: rgba(48, 142, 135 , 0.1);padding: 15px 25px;") 
+                                                          p(style="font-size:16px; font-weight:500; color:#134D80; opacity:0.8; margin:0;line-height: 2;") Account No :
+                                                          span(style="font-size: 16px; font-weight: 600;") 0981234098765
+                                                      td.text-start(style="background: rgba(48, 142, 135 , 0.1);padding: 15px 25px;") 
+                                                          p(style="font-size:16px; font-weight:500; color:#134D80; opacity:0.8; margin:0;line-height: 2;") Due Amount :
+                                                          span(style="font-size: 16px; font-weight: 600;") $7860.00 
+                                  tr 
+                                    td 
+                                      table.table-responsive.table-borderless(style='width: 100%; border-spacing:0;')
+                                        thead 
+                                          tr(style="background: #134D80;") 
+                                            th(style="padding: 18px 15px;text-align: center; position: relative; border-top-left-radius: 10px;")
+                                              span(style="color: #fff; font-size: 16px; font-weight: 600;") No.
+                                            th(style="padding: 18px 16px;text-align: left;")
+                                              span(style="color: #fff; font-size: 16px; font-weight: 600;") Description
+                                            th(style="padding: 18px 15px;text-align: center")
+                                              span(style="color: #fff; font-size: 16px; font-weight: 600;") Unite Price
+                                            th(style="padding: 18px 15px;text-align: center")
+                                              span(style="color: #fff; font-size: 16px; font-weight: 600;") Quantity
+                                            th(style="padding: 18px 15px;text-align: center;position: relative; border-top-right-radius: 10px;")
+                                              span(style="color: #fff; font-size: 16px; font-weight: 600;") Subtotal
+                                        tbody
+                                          tr
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);") 
+                                              span(style="opacity: 0.8; font-weight: 600;") 1
+                                            td.text-start(style="padding: 16px; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);")
+                                              h4(style="font-weight:600; margin:4px 0px; font-size: 16px; color: #134D80;") Proposal & Brochure Design
+                                              span(style="opacity: 0.8; font-size: 16px;") Regular License
+                                            td(style="width: 12%; text-align: center;border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);")
+                                              span(style="font-weight: 600;") $300.00
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);") 
+                                              span(style="font-weight: 600;") 1
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);") 
+                                              span(style="color: #134D80; font-weight: 600;opacity: 0.9;") $300.00
+                                          tr
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);") 
+                                              span(style="opacity: 0.8;font-weight: 600;") 2
+                                            td.text-start(style="padding: 16px;border-bottom: 1px dashed rgba(82, 82, 108, 0.2);")
+                                              h4(style="font-weight:600; margin:4px 0px; font-size: 16px; color: #134D80;") Web design and development
+                                              span(style="opacity: 0.8; font-size: 16px;") Regular License
+                                            td(style="width: 12%; text-align: center;border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);")
+                                              span(style="font-weight: 600;") $400.00
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);") 
+                                              span(style="font-weight: 600;") 2
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);") 
+                                              span(style="color: #134D80; font-weight: 600;opacity: 0.9;") $800.00
+                                          tr
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);") 
+                                              span(style="opacity: 0.8;font-weight: 600;") 3
+                                            td.text-start(style="padding: 16px;border-bottom: 1px dashed rgba(82, 82, 108, 0.2);")
+                                              h4(style="font-weight:600; margin:4px 0px; font-size: 16px; color: #134D80;") Logo & Brand  design
+                                              span(style="opacity: 0.8; font-size: 16px;") Regular License
+                                            td(style="width: 12%; text-align: center;border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);")
+                                              span(style="font-weight: 600;") $240.00
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);") 
+                                              span(style="font-weight: 600;") 2
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);") 
+                                              span(style="color: #134D80; font-weight: 600;opacity: 0.9;") $4800.00
+                                          tr
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);") 
+                                              span(style="opacity: 0.8;font-weight: 600;") 4
+                                            td.text-start(style="padding: 16px;border-bottom: 1px dashed rgba(82, 82, 108, 0.2);")
+                                              h4(style="font-weight:600; margin:4px 0px; font-size: 16px; color: #134D80;") Stationary Design
+                                              span(style="opacity: 0.8; font-size: 16px;") Regular License
+                                            td(style="width: 12%; text-align: center;border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);")
+                                              span(style="font-weight: 600;") $100.00
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);") 
+                                              span(style="font-weight: 600;") 1
+                                            td(style="width: 12%; text-align: center; border-bottom: 1px dashed rgba(82, 82, 108, 0.2);background: rgba(48, 142, 135 , 0.1);") 
+                                              span(style="color: #134D80; font-weight: 600;opacity: 0.9;") $100.00
+                                          tr 
+                                              td 
+                                              td 
+                                              td 
+                                              td(style="text-align: center; padding:35px 0 18px;") 
+                                                  span(style="opacity: 0.8;font-weight: 600;") Subtotal            
+                                              td(style=" text-align: center;background: rgba(48, 142, 135 , 0.1); display: block; padding:35px 0 18px;") 
+                                                  span(style="color: #134D80; font-weight: 600;opacity: 0.9;") $6100.00
+                                          tr 
+                                              td 
+                                              td 
+                                              td 
+                                              td(style="width: 12%; text-align: center;") 
+                                                  span(style="opacity: 0.8;font-weight: 600;") VAT / Tax 15%           
+                                              td(style=" text-align: center;background: rgba(48, 142, 135 , 0.1); display:block; padding-bottom: 18px;") 
+                                                  span(style="color: #134D80; font-weight: 600;opacity: 0.9;") $50.00
+                                          tr 
+                                              td
+                                              td
+                                              td 
+                                              td(style="width: 12%; text-align: center;") 
+                                                  span(style="opacity: 0.8;font-weight: 600;") Discount         
+                                              td(style="text-align: center;background: rgba(48, 142, 135 , 0.1); display: block; padding-bottom: 18px;") 
+                                                  span(style="color: #134D80; font-weight: 600;opacity: 0.9;") $30.00
+                                          tr 
+                                              td 
+                                              td 
+                                              td
+                                              td(style="width: 12%; text-align: center;") 
+                                                  span(style="opacity: 0.8;font-weight: 600;") Total Due     
+                                              td(style="text-align: center;background: rgba(48, 142, 135 , 0.1);") 
+                                                  span(style="color: #ffffff; font-weight: 600;opacity: 0.9;background: #134D80; padding: 12px 37px; margin-top: 0px; display: block;") $6120.00
+                                  tr(style="width: 100%; display: flex; justify-content: space-between; margin-top: 36px;")
+                                      td 
+                                          img(src="../assets/images/email-template/invoice-3/sign.png" alt="sign")
+                                          span(style="color: #134D80;display: block;font-size: 16px;font-weight: 600;") Laurine T. Ebbert
+                                          span(style=" display: block; font-size: 14px; padding-top: 5px;") ( Designer )
+                                      td 
+                                        span(style="display: flex; justify-content: end; gap: 15px;")
+                                          a(style="background: rgba(48, 142, 135, 1); color:rgba(255, 255, 255, 1);border-radius: 10px;padding: 18px 27px;font-size: 16px;font-weight: 600;outline: 0;border: 0; text-decoration: none;" href="#!" onclick="window.print();") Print Invoice
+                                            i.icon-arrow-right(style="font-size:13px;font-weight:bold; margin-left: 10px;")
+                                          a(style="background: rgba(48, 142, 135, 0.1);color: rgba(48, 142, 135, 1);border-radius: 10px;padding: 18px 27px;font-size: 16px;font-weight: 600;outline: 0;border: 0; text-decoration: none;" href="../template/invoice-1.html" download='') Download
+                                            i.icon-arrow-right(style="font-size:13px;font-weight:bold; margin-left: 10px;")
+                    // Container-Fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

@@ -1,0 +1,28 @@
+.swal-modal {
+    .swal-title {
+        font-size: 24px;
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+        &:first-child {
+            margin-top: 15px;
+        }
+    }
+    .swal-text {
+        font-size: 17px;
+    }
+    .swal-footer {
+        margin-top: 0;
+        padding: 20px 14px;
+    }
+    &.alert-light-dark {
+        background-color: var(--white);
+    }
+}
+.swal-icon--warning {
+    &.swal-icon {
+        &:first-child {
+            margin-top: 25px;
+        }
+    }
+}

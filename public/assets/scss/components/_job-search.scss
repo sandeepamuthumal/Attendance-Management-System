@@ -1,0 +1,270 @@
+/**=====================
+    3.22 Job-search CSS Start
+==========================**/
+.filter-cards-view {
+    .job-filter {
+        &:first-child {
+            margin-bottom: 30px;
+        }
+    }
+    .checkbox-animated {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        label {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+.job-accordion {
+    &.default-according {
+        .card {
+            .btn-link {
+                border: none;
+                font-size: 16px;
+                font-weight: 700;
+                border-bottom: 1px solid var(--light-gray);
+            }
+            +.card {
+                margin-top: 30px;
+            }
+        }
+    }
+    @media (max-width: 1199px) {
+        &.default-according {
+            .card {
+                .btn-link {
+                    border: 1px solid var(--light-semi-gray)
+                }
+                .card-body {
+                    border: 1px solid var(--light-semi-gray);
+                    border-top: none;
+                }
+            }
+        }
+    }
+    .card {
+        margin-bottom: 30px;
+    }
+}
+.location-checkbox {
+    span {
+        color: #999999;
+        padding-left: 33px;
+    }
+    label {
+        margin-bottom: 0.5rem;
+    }
+}
+.animate-chk {
+    label {
+        margin-bottom: 0.5rem;
+    }
+}
+.job-search {
+    .d-flex {
+        align-items: flex-start;
+        @media (max-width: 575px) {
+            display: block !important;
+            text-align: center;
+        }
+        img {
+            margin-bottom: 10px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 15px;
+            }
+        }
+        h5 {
+            display: unset;
+            align-content: unset;
+            justify-content: unset;
+        }
+        p {
+            margin-top: 5px;
+        }
+        span {
+            margin-left: 5px;
+        }
+        .flex-grow-1 {
+            p {
+                margin-top: 0;
+                color: var(--light-gray-color);
+            }
+            h5 {
+                a {
+                    @include media-breakpoint-down(sm) {
+                        display: block;
+                    }
+                }
+                .pull-right {
+                    @include media-breakpoint-down(sm) {
+                        float: none;
+                        margin-top: 3px;
+                        display: block;
+                    }
+                }
+            }
+            h5 {
+                a {
+                    @include media-breakpoint-down(sm) {
+                        display: block;
+                    }
+                }
+                .pull-right {
+                    @include media-breakpoint-down(sm) {
+                        float: none;
+                        margin-top: 3px;
+                        display: block;
+                    }
+                }
+            }
+        }
+        .m-r-20 {
+            @include media-breakpoint-down(sm) {
+                margin-right: 0;
+                [dir="rtl"] & {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    p {
+        margin-top: 10px;
+        line-height: 1.7;
+    }
+    h5 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    @media (max-width: 576px) {
+        p {
+            margin-top: 10px;
+        }
+    }
+    .job-description {
+        ul {
+            list-style-type: disc;
+            list-style-position: inside;
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+.m-r-20 {
+    margin-right: 20px
+}
+.job-pagination {
+    margin-bottom: 30px;
+    nav {
+        ul {
+            justify-content: center;
+        }
+    }
+    .pagination {
+        .disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+            a {
+                background-color: var(--light-semi-gray);
+            }
+        }
+    }
+}
+.job-description {
+    margin-top: 30px;
+    @include media-breakpoint-down(sm) {
+        margin-top: 15px;
+    }
+    h4 {
+        font-weight: 700;
+    }
+}
+.job-search {
+    .job-description {
+        .theme-form {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            @include media-breakpoint-down(sm) {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            .xs-mt-period {
+                @include media-breakpoint-down(sm) {
+                    margin-top: 15px;
+                }
+            }
+            .row {
+                div[class^=col-] {
+                    + {
+                        div[class^=col-] {
+                            .select2-container {
+                                margin-top: 21px;
+                                @include media-breakpoint-down(sm) {
+                                    margin-top: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.xl-mt-job {
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 15px;
+    }
+    @media (max-width: 1366px) {
+        margin-bottom: 20px;
+    }
+}
+.select2-container {
+    .select2-selection--single {
+        border-radius: 0.375rem !important;
+        height: 46px !important;
+        padding: 12px;
+    }
+}
+.select2-container--default {
+    .select2-selection--single {
+        border: 1px solid var(--border-color);
+    }
+}
+.select-date {
+    .select2-container--default {
+        .select2-selection--single {
+            .select2-selection__arrow {
+                top: 9px;
+                right: 12px;
+            }
+        }
+    }
+}
+.select2-container--default {
+    .select2-selection--single {
+        .select2-selection__rendered {
+            line-height: 21px;
+        }
+    }
+}
+.job-search {
+    .job-description {
+        .theme-form {
+            .row {
+                div[class^=col-] {
+                    .job-select2 {
+                        ~ {
+                            .select2-container {
+                                margin-top: 0 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**=====================
+    3.22 Job-search CSS End
+==========================**/

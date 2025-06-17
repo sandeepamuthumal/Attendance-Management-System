@@ -1,0 +1,103 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var range                  = true;
+include ../../components/mixin
+doctype html
+html(lang='en') 
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header         
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Range Slider  
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Bonus Ui
+                                        li.breadcrumb-item.active Range slider    
+                    // Container-fluid starts
+                    .container-fluid
+                        .row
+                            .col-xl-9.col-12
+                                .row
+                                    .col-lg-6
+                                        .card
+                                            .card-header.card-no-border.pb-0
+                                                h3 Basic
+                                                p.mt-1.mb-0 
+                                                    | Use the 
+                                                    code .range-slider 
+                                                    | class.
+                                            .card-body.slider-range
+                                                div#range-slider-1.range-slider
+                                    .col-lg-6
+                                        .card 
+                                            .card-header.card-no-border.pb-0 
+                                                h3 Single Value Slider
+                                                p.mt-1.mb-0 
+                                                    | Use the 
+                                                    code .range-slider 
+                                                    | class.   
+                                            .card-body.slider-range
+                                                div#range-slider-2.range-slider
+                                    .col-lg-6
+                                        .card 
+                                            .card-header.card-no-border.pb-0
+                                                h3 Custom slider-2 
+                                                p.mt-1.mb-0 
+                                                    | Use the
+                                                    code .range-slider          
+                                                    | class. 
+                                            .card-body.slider-range
+                                                div#range-slider-5.range-slider   
+                                    .col-lg-6
+                                        .card 
+                                            .card-header.card-no-border.pb-0 
+                                                h3 Custom Slider-1
+                                                p.mt-1.mb-0 
+                                                    | Use the 
+                                                    code .range-slider 
+                                                    | class. 
+                                            .card-body.slider-range     
+                                                div#range-slider-4.range-slider
+                            .col-xl-3.col-12
+                                .row 
+                                    .col-lg-12 
+                                        .card 
+                                            .card-header.card-no-border.pb-0 
+                                                h3 Vartical Slider
+                                                p.mt-1.mb-0 
+                                                    | Use the
+                                                    code .range-slider 
+                                                    | class. 
+                                            .card-body.vartical-slider
+                                                div#range-slider-3.range-slider
+                            .col-12
+                                .row 
+                                    .col-lg-12
+                                        .card 
+                                            .card-header.card-no-border.pb-0 
+                                                h3 Custom slider-3 
+                                                p.mt-1.mb-0
+                                                        | Use the
+                                                        code .range-slider 
+                                                        | class. 
+                                            .card-body.slider-range
+                                                div#range-slider-7.range-slider   
+                include ../../components/footer
+        include ../../components/footer-files

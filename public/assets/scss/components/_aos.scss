@@ -1,0 +1,21 @@
+.my-gallery {
+    img {
+        width: 100%;
+    }
+}
+.grid-item {
+    img {
+        max-width: 100%;
+        padding: 0.25rem;
+        background-color: var(--white);
+        border: 1px solid #dee2e6;
+    }
+    .img-thumbnail {
+        height: auto;
+        border-radius: 0.25rem;
+    }
+}
+.comment {
+    color: var(--font-color);
+    font-size: italic;
+}

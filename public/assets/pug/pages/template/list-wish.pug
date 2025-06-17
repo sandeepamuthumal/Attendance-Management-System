@@ -1,0 +1,343 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var feather                = true;
+include ../../components/mixin 
+doctype html 
+html(lang='en')
+  include ../../components/header-files
+  body
+    // page-wrapper Start
+    include ../../components/taptop
+    include ../../components/loader
+    #pageWrapper.page-wrapper.compact-wrapper 
+      include ../../components/header/header
+      // Page Body Start
+      .page-body-wrapper 
+        include ../../components/sidebar 
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-sm-6.col-12 
+                  h2
+                    | Wishlist
+                .col-sm-6.col-12
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                        a(href='index.html')
+                            i.iconly-Home.icli.svg-color
+                    li.breadcrumb-item ECommerce
+                    li.breadcrumb-item.active Wishlist
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-sm-12
+                .card
+                  .card-header.card-no-border.pb-0
+                    h3 Wishlist
+                  .card-body
+                    .row.g-sm-4.g-3
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box                                  
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-6.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Women Top
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-5.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Womem shorts
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-4.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Cyclamen 
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-3.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Men Solid Denim Jacket
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-2.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Blue shirt
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-1.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Red shirt
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-1.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Red Shirt
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box                                  
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-6.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Women Top
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-5.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Women shorts
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-4.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Cyclamen
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-3.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Men Solid Denim Jacket
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-3.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Men Solid Denim Jacket
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-2.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Blue shirt
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box                                  
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-6.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Women Top
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart
+                      .col-xl-4.col-md-6
+                        .prooduct-details-box 
+                          .d-flex
+                            img.align-self-center.img-fluid.img-60(src='../assets/images/ecommerce/product-table-5.png', alt='#')
+                            .flex-grow-1
+                              .product-name
+                                h6
+                                  a(href='#') Women Short
+                              .rating
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                              .price.d-flex.p-0.border-0 
+                                .text-muted.me-2 Price
+                                | : 210$
+                              .avaiabilty
+                                .text-success In stock
+                              a.btn.btn-primary.btn-xs(href="#") Move to Cart   
+        include ../../components/footer
+    include ../../components/footer-files

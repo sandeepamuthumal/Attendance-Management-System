@@ -1,0 +1,53 @@
+/**=====================
+  GRID CSS Start
+==========================**/
+.grid-showcase {
+    margin-bottom: -10px;
+    span {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        background-color: var(--bg-light);
+    }
+}
+.horizontal-align {
+    &.grid-showcase {
+        span {
+            background-color: var(--white);
+        }
+    }
+}
+.grid-align {
+    .row {
+        padding: 15px 0;
+        min-height: 7rem;
+    }
+}
+.grid-vertical {
+    min-height: 150px;
+    padding: 10px;
+    color: var(--black);
+}
+.table-striped {
+    >tbody {
+        >tr:nth-of-type(odd) {
+            background-color: var(--bg-light);
+            >* {
+                --bs-table-accent-bg: unset !important;
+            }
+        }
+    }
+}
+.table-bordered {
+    &.table-striped {
+        td,
+        th,
+        tr {
+            border-color: var(--border-color);
+        }
+    }
+}
+/**=====================
+  GRID CSS end
+==========================**/

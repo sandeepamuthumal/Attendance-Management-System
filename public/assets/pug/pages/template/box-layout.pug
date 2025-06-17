@@ -1,0 +1,79 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var prism                  = true;
+- var clipboard              = true;
+- var customcard             = true;
+include ../../components/mixin
+doctype html 
+html(lang='en')
+    include ../../components/header-files
+    body.box-layout
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper 
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar 
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12 
+                                    h2
+                                        | Box Layout
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Page Layout
+                                        li.breadcrumb-item.active Box Layout
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-sm-12
+                          .card.alert.alert-primary(role='alert')
+                            h4.alert-heading Tip!
+                            p
+                              | Add class="box-layout" attribute to get this layout. The boxed layout is helpful when working on
+                              | large screens because it prevents the site from stretching very wide.
+                        .col-sm-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Title
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                    li
+                                      i.fa-solid.fa-ellipsis
+                                    li
+                                      i.fa-solid.fa-code.view-html
+                                    li
+                                      i.fa-solid.fa-maximize.full-card
+                                    li
+                                      i.fa-solid.fa-minus.minimize-card
+                                    li
+                                      i.fa-solid.fa-rotate-right.reload-card
+                                    li
+                                      i.fa-solid.fa-xmark.close-card
+                            .card-body
+                              span Start creating your amazing application!
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                  i.fa-regular.fa-copy
+                                pre
+                                  code.language-html#example-head
+                                    | &lt;!-- Cod Box Copy begin --&gt;
+                                    | &lt;div class=&quot;card-body&quot;&gt;
+                                    | &lt;span&gt;Start creating your amazing application!
+                                    | &lt;/span&gt;
+                                    | &lt;/div&gt;
+                                    | &lt;!-- Cod Box Copy end --&gt;
+                            .card-footer
+                              h6.mb-0 Card Footer
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files   

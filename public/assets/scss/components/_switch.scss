@@ -1,0 +1,580 @@
+.form-switch {
+    .form-check-input {
+        @each $switch-name,
+        $switch-color in (primary, var(--theme-default)),
+        (secondary, var(--theme-secondary)),
+        (success, var(--success-color)),
+        (danger, var(--danger-color)),
+        (warning, var(--warning-color)),
+        (info, var(--info-color)),
+        (light, var(--light-color)),
+        (dark, var(--body-font-color)) {
+            &.switch-#{$switch-name} {
+                &:checked {
+                    background-color: $switch-color;
+                    border: 1px solid $switch-color;
+                }
+            }
+        }
+    }
+}
+.switch-outline {
+    .switch-state.bg-primary {
+        border: 1px solid var(--theme-default);
+        background-color: transparent !important;
+    }
+    .switch {
+        input {
+            &:checked+.switch-state.bg-primary {
+                background-color: transparent !important;
+                border: 1px solid var(--theme-default);
+                &:before {
+                    background-color: var(--theme-default);
+                    bottom: 3px;
+                }
+                &:after {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    .switch-state.bg-dark {
+        border: 1px solid var(--dark);
+        background-color: transparent !important;
+    }
+    .switch {
+        input {
+            &:checked+.switch-state.bg-dark {
+                background-color: transparent !important;
+                border: 1px solid var(--dark);
+                &:before {
+                    background-color: var(--dark);
+                    bottom: 3px;
+                }
+                &:after {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    .switch-state.bg-warning {
+        border: 1px solid var(--warning-color);
+        background-color: transparent !important;
+    }
+    .switch {
+        input {
+            &:checked+.switch-state.bg-warning {
+                background-color: transparent !important;
+                border: 1px solid var(--warning-color);
+                &:before {
+                    background-color: var(--warning-color);
+                    bottom: 3px;
+                }
+                &:after {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    .switch-state.bg-success {
+        border: 1px solid var(--success-color);
+        background-color: transparent !important;
+    }
+    .switch {
+        input {
+            &:checked+.switch-state.bg-success {
+                background-color: transparent !important;
+                border: 1px solid var(--success-color);
+                &:before {
+                    background-color: var(--success-color);
+                    bottom: 3px;
+                }
+                &:after {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    .switch-state.bg-info {
+        border: 1px solid var(--info-color);
+        background-color: transparent !important;
+    }
+    .switch {
+        input {
+            &:checked+.switch-state.bg-info {
+                background-color: transparent !important;
+                border: 1px solid var(--info-color);
+                &:before {
+                    background-color: var(--info-color);
+                    bottom: 3px;
+                }
+                &:after {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    .switch-state.bg-danger {
+        border: 1px solid var(--danger-color);
+        background-color: transparent !important;
+    }
+    .switch {
+        input {
+            &:checked+.switch-state.bg-danger {
+                background-color: transparent !important;
+                border: 1px solid var(--danger-color);
+                &:before {
+                    background-color: var(--danger-color);
+                    bottom: 3px;
+                }
+                &:after {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    .switch-state.bg-primary {
+        border: 1px solid var(--theme-default);
+        background-color: transparent !important;
+    }
+    .switch {
+        input {
+            &:checked+.switch-state.bg-primary {
+                background-color: transparent !important;
+                border: 1px solid var(--theme-default);
+                &:before {
+                    background-color: var(--theme-default);
+                    bottom: 3px;
+                }
+                &:after {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    .switch-state.bg-secondary {
+        border: 1px solid var(--theme-secondary);
+        background-color: transparent !important;
+    }
+    .switch {
+        input {
+            &:checked+.switch-state.bg-secondary {
+                background-color: transparent !important;
+                border: 1px solid var(--theme-secondary);
+                &:before {
+                    background-color: var(--theme-secondary);
+                    bottom: 3px;
+                }
+                &:after {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}
+.switch-outline {
+    .switch-state {
+        &:before {
+            background-color: var(--light-gray);
+            bottom: 3px;
+            color: var(--white);
+        }
+    }
+}
+.form-check-size {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    flex-wrap: wrap;
+    .form-check-inline {
+        margin: 0;
+        min-height: 0;
+        .check-size {
+            width: 36px;
+            height: 18px;
+            margin-top: 0;
+        }
+    }
+}
+.radius-none {
+    .form-check-input {
+        border-radius: 3px;
+    }
+}
+.default-square {
+    .form-switch {
+        .form-check-input {
+            background-image: url(../images/switch/square-gray.png);
+            &:checked {
+                background-image: url(../images/switch/square.svg);
+            }
+        }
+    }
+}
+.switch-state {
+    border-radius: 20px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+    &:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: var(--white);
+        transition: 0.4s;
+        border-radius: 20px;
+    }
+}
+.icon-state {
+    input {
+        &:checked {
+            + {
+                .switch-state {
+                    &:after {
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        content: "\f00c";
+                        left: 36px;
+                        opacity: 1;
+                        transition: 0.4s;
+                        position: absolute;
+                        top: 11px;
+                        color: var(--dark);
+                    }
+                }
+            }
+        }
+    }
+}
+.icon-state {
+    .switch-state {
+        &:after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f00d";
+            left: 12px;
+            position: absolute;
+            top: 11px;
+            color: var(--dark);
+            transition: 0.4s;
+            opacity: 0.3;
+        }
+    }
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    input {
+        display: none;
+        &:checked {
+            + {
+                .switch-state {
+                    &:before {
+                        transform: translateX(26px);
+                    }
+                }
+            }
+        }
+    }
+}
+.d-flex {
+    display: flex;
+    align-items: center;
+    .flex-grow-1 {
+        flex: unset;
+    }
+}
+.switch-wrapper {
+    .d-flex {
+        .col-form-label {
+            padding: 0;
+        }
+    }
+}
+.tg-list {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.tgl-skewed {
+    &:checked {
+        + {
+            .tgl-btn {
+                background: var(--theme-default);
+            }
+        }
+    }
+}
+.tgl-skewed {
+    + {
+        .tgl-btn {
+            overflow: hidden;
+            transform: skew(-10deg);
+            backface-visibility: hidden;
+            transition: all 0.2s ease;
+            background: var(--danger-color);
+            &:before {
+                left: 0;
+                content: attr(data-tg-off);
+                transform: skew(10deg);
+                display: inline-block;
+                transition: all 0.2s ease;
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                line-height: 2em;
+                font-weight: bold;
+                color: var(--white);
+                text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+            }
+            &:after {
+                transform: skew(10deg);
+                display: inline-block;
+                transition: all 0.2s ease;
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                line-height: 2em;
+                font-weight: bold;
+                color: var(--white);
+                text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+                content: attr(data-tg-on);
+                left: 100%;
+            }
+        }
+    }
+    &:checked {
+        + {
+            .tgl-btn {
+                &:before {
+                    left: -100%;
+                }
+                &:after {
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+.tgl {
+    display: none;
+    + {
+        .tgl-btn {
+            outline: 0;
+            display: block;
+            width: 4em;
+            height: 2em;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+}
+.tgl-flip {
+    + {
+        .tgl-btn {
+            padding: 2px;
+            transition: all 0.2s ease;
+            perspective: 100px;
+            &:before {
+                background: var(--danger-color);
+                content: attr(data-tg-off);
+                display: inline-block;
+                transition: all 0.4s ease;
+                width: 100%;
+                text-align: center;
+                line-height: 2em;
+                font-weight: bold;
+                color: var(--white);
+                position: absolute;
+                top: 0;
+                left: 0;
+                backface-visibility: hidden;
+                border-radius: 4px;
+            }
+            &:after {
+                display: inline-block;
+                transition: all 0.4s ease;
+                width: 100%;
+                text-align: center;
+                line-height: 2em;
+                font-weight: bold;
+                color: var(--white);
+                top: 0;
+                left: 0;
+                backface-visibility: hidden;
+                border-radius: 4px;
+                content: attr(data-tg-on);
+            }
+            &:active {
+                &:after {
+                    transform: rotateY(20deg);
+                }
+            }
+        }
+    }
+    &:checked {
+        + {
+            .tgl-btn {
+                &:before {
+                    transform: rotateY(180deg);
+                }
+                &:after {
+                    transform: rotateY(0);
+                    left: 0;
+                    background-color: var(--success-color);
+                }
+            }
+        }
+    }
+}
+.tg-list {
+    .tg-list-item {
+        .square-checked {
+            .switch-state {
+                &::before {
+                    content: "";
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+}
+.switch {
+    input {
+        &:checked {
+            + {
+                .switch-state {
+                    background-color: var(--theme-default);
+                }
+            }
+        }
+    }
+}
+.switch-sm {
+    input {
+        &:checked {
+            + {
+                .switch-state {
+                    &:before {
+                        left: -13px;
+                    }
+                }
+            }
+        }
+    }
+    .switch {
+        width: 25px;
+        height: 16px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        .switch-state {
+            background-color: var(--light-gray);
+            &:before {
+                height: 8px;
+                width: 8px;
+                left: 4px;
+                bottom: 4px;
+            }
+        }
+    }
+    &.icon-state {
+        .switch {
+            input {
+                &:checked {
+                    + {
+                        .switch-state {
+                            &:after {
+                                left: 15px;
+                                top: 5px;
+                                font-size: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+            .switch-state {
+                &:after {
+                    top: 4px;
+                    left: 6px;
+                    font-size: 7px;
+                }
+            }
+        }
+    }
+}
+.switch-size {
+    .switch-state {
+        background-color: #80808033;
+    }
+}
+.switch-lg {
+    .switch {
+        width: 75px;
+        height: 40px;
+        .switch-state {
+            &:before {
+                height: 30px;
+                width: 30px;
+                left: 5px;
+                bottom: 5px;
+                top: 5px;
+            }
+        }
+    }
+    input {
+        &:checked {
+            + {
+                .switch-state {
+                    &:before {
+                        left: 15px;
+                    }
+                }
+            }
+        }
+    }
+    &.icon-state {
+        .switch {
+            input {
+                &:checked {
+                    + {
+                        .switch-state {
+                            &:after {
+                                left: 47px;
+                                top: 11px;
+                            }
+                        }
+                    }
+                }
+            }
+            .switch-state {
+                &:after {
+                    left: 13px;
+                    font-size: 18px;
+                    top: 11px;
+                }
+            }
+        }
+    }
+}
+.icon-switch {
+    .switch {
+        .switch-state {
+            background-color: var(--light-gray);
+        }
+    }
+}
+.switch-componet {
+    .switch-state {
+        background-color: var(--light-gray);
+    }
+}

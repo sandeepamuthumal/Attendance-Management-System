@@ -1,0 +1,82 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var config                 = true;
+- var sparkline              = true;
+- var page_sparkline         = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper  
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar    
+                .page-body   
+                    .container-fluid
+                        .page-title   
+                            .row 
+                                .col-sm-6.col-12
+                                    h2   
+                                        | Sparkline Chart
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item 
+                                            a(href='index.html')   
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Charts 
+                                        li.breadcrumb-item.active Sparkline Chart 
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-4.col-md-6.col-sm-12.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Mouse Speed Chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #mouse-speed-chart-sparkline.flot-chart-placeholder
+                        .col-xl-4.col-md-6.col-sm-12.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Simple Bar Charts
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #custom-line-chart.flot-chart-placeholder
+                        .col-xl-4.col-md-6.col-sm-12.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Line Chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #line-chart-sparkline.flot-chart-placeholder.line-chart-sparkline
+                        .col-xl-4.col-md-6.col-sm-12.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Simple Line Chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #simple-line-chart-sparkline.flot-chart-placeholder
+                        .col-xl-4.col-md-6.col-sm-12.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Bar Chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #bar-chart-sparkline.flot-chart-placeholder
+                        .col-xl-4.col-md-6.col-sm-12.box-col-6
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Pie chart
+                            .card-body.chart-block
+                              .flot-chart-container
+                                #pie-sparkline-chart.flot-chart-placeholder
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files    

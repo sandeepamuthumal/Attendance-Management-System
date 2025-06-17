@@ -1,0 +1,220 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var feather                = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper  
+            include ../../components/header/header  
+            // Page Body Start
+            .page-body-wrapper 
+                include ../../components/sidebar  
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | File manager
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item App 
+                                        li.breadcrumb-item.active File manager
+                    // Container-fluid starts
+                    .container-fluid.manager-card
+                        .row 
+                            .col-xl-3.box-col-6
+                                .md-sidebar.job-sidebar   
+                                    a.btn.btn-primary.md-sidebar-toggle(href="javascript:void(0)")
+                                        | file filter  
+                                    .md-sidebar-aside.custom-scrollbar 
+                                        .file-sidebar    
+                                            .card
+                                                .card-body
+                                                    ul
+                                                        li  
+                                                            .btn.btn-primary
+                                                                i(data-feather='home')
+                                                                | Home
+                                                        li
+                                                            .btn.bg-light.font-dark
+                                                                i(data-feather='folder')
+                                                                | All 
+                                                        li 
+                                                            .btn.bg-light.font-dark
+                                                                i(data-feather='clock')
+                                                                | Recent 
+                                                        li 
+                                                            .btn.bg-light.font-dark  
+                                                                i(data-feather='star')
+                                                                | starred
+                                                        li 
+                                                            .btn.bg-light.font-dark
+                                                                i(data-feather='alert-circle')
+                                                                | Recovery 
+                                                        li 
+                                                            .btn.bg-light.font-dark 
+                                                                i(data-feather='trash-2') 
+                                                                | Deleted 
+                                                    hr
+                                                    ul
+                                                        li
+                                                            button.btn.btn-outline-primary
+                                                                    i(data-feather='database')
+                                                                    | Storage
+                                                        li.m-t-15  
+                                                            .progress.sm-progress-bar.mb-3
+                                                                .progress-bar.bg-primary(role='progressbar' style='width: 25%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                                                            h6.f-w-500 25 GB of 100 GB used
+                                                    hr
+                                                    ul
+                                                        li
+                                                            button.btn.btn-outline-primary
+                                                                i(data-feather='grid')
+                                                                | Pricing plan 
+                                                        li
+                                                            .pricing-plan
+                                                                h6 Trial Version
+                                                                h5 FREE
+                                                                p 100 GB Space
+                                                                .btn.btn-outline-primary.btn-xs
+                                                                    | Selected
+                                                                img.bg-img(src='../assets/images/file-manager/folder.png', alt='') 
+                            .col-xl-9.col-md-12.box-col-12
+                                .file-content 
+                                    .card
+                                        .card-header.d-md-block.d-none.card-no-border.pb-0
+                                            .d-md-flex.d-sm-block.align-items-center
+                                                form.form-inline.basic-form(action='#' method='get')
+                                                    .form-group.d-flex.mb-0.align-items-center
+                                                        i.fa-solid.fa-magnifying-glass
+                                                        input.form-control-plaintext(type='text' placeholder='Search...')
+                                                .flex-grow-1.text-end
+                                                    form.d-inline-flex
+                                                        button.btn.btn-primary.plus-square
+                                                            i(data-feather="plus-square")
+                                                            | Add New
+                                                        div(style='height: 0px;width: 0px; overflow:hidden;')
+                                                            input#upfile(type='file', onchange='sub(this)')
+                                                        button.btn.btn-outline-primary.ms-2.upload
+                                                            i(data-feather="upload")
+                                                            | Upload
+                                        .card-body.file-manager
+                                            h4.mb-2 Quick Access
+                                            ul.quick-file.d-flex.flex-row 
+                                                li
+                                                    .quick-box
+                                                        i.fa-brands.fa-youtube.text-danger
+                                                    h6.mb-2 Videos
+                                                li
+                                                    .quick-box
+                                                        i.fa-solid.fa-table-cells.text-info
+                                                    h6.mb-2 Apps
+                                                li
+                                                    .quick-box
+                                                        i.fa-solid.fa-file.text-secondary
+                                                    h6.mb-2 Document
+                                                li
+                                                    .quick-box
+                                                        i.fa-solid.fa-music.text-warning 
+                                                    h6.mb-2 Music
+                                                li 
+                                                    .quick-box
+                                                        i.fa-solid.fa-download.text-primary
+                                                    h6.mb-2 Download
+                                                li
+                                                    .quick-box
+                                                        i.fa-solid.fa-folder.text-info 
+                                                    h6.mb-2 Folder
+                                                li
+                                                    .quick-box
+                                                        i.fa-solid.fa-file-zipper.text-secondary
+                                                    h6.mb-2 Zip 
+                                                li 
+                                                    .quick-box
+                                                        i.fa-solid.fa-trash.text-danger
+                                                    h6.mb-2 Trash
+                                            h4.mt-4.mb-2 Folders
+                                            ul.folder
+                                                li.folder-box
+                                                    .d-block
+                                                        i.fa-solid.fa-file-zipper.text-secondary.fs-1
+                                                        i.fa-solid.fa-ellipsis-vertical.ellips.me-0
+                                                        .mt-3   
+                                                            h6.mb-2 Tivo admin
+                                                            p 20 file
+                                                                span.pull-right 
+                                                                    i.fa-solid.fa-clock
+                                                                    |  2 Hour ago
+                                                li.folder-box
+                                                    .d-block
+                                                        i.fa-solid.fa-folder.text-secondary.fs-1
+                                                        i.fa-solid.fa-ellipsis-vertical.ellips.me-0
+                                                        .mt-3
+                                                            h6.mb-2 Viho admin
+                                                            p 14 file
+                                                                span.pull-right
+                                                                    i.fa-solid.fa-clock
+                                                                    |  3 Hour ago
+                                                li.folder-box
+                                                    .d-block
+                                                        i.fa-solid.fa-file-zipper.text-secondary.fs-1
+                                                        i.fa-solid.fa-ellipsis-vertical.ellips.me-0
+                                                        .mt-3   
+                                                            h6.mb-2 Unice admin
+                                                            p 15 file
+                                                                span.pull-right 
+                                                                    i.fa-solid.fa-clock
+                                                                    |  3 Day ago
+                                                li.folder-box
+                                                    .d-block
+                                                        i.fa-solid.fa-folder.text-secondary.fs-1
+                                                        i.fa-solid.fa-ellipsis-vertical.ellips.me-0
+                                                        .mt-3   
+                                                            h6.mb-2 koho admin
+                                                            p 10 file
+                                                                span.pull-right 
+                                                                    i.fa-solid.fa-clock
+                                                                    |  1 Day ago
+                                            h4.mt-4.mb-2.mb-2.mb-2 Files
+                                            ul.d-flex.flex-row.files-content
+                                                li.folder-box.d-flex.align-items-center
+                                                    .d-flex.align-items-center.files-list
+                                                        .flex-shrink-0.file-left         
+                                                            i.fa-solid.fa-folder.text-info.fs-4
+                                                        .flex-grow-1.ms-3
+                                                            h5.f-w-600 Logo.psd
+                                                            p 7 Hour ago, 2.0 MB
+                                                li.folder-box.d-flex.align-items-center
+                                                    .d-flex.align-items-center.files-list
+                                                        .flex-shrink-0.file-left
+                                                            i.fa-solid.fa-file-excel.text-success.fs-4
+                                                        .flex-grow-1.ms-3
+                                                            h5.f-w-600 Backend.xls
+                                                            p 2 Day ago, 3.0 GB
+                                                li.folder-box.d-flex.align-items-center
+                                                    .d-flex.align-items-center.files-list   
+                                                        .flex-shrink-0.file-left
+                                                            i.fa-solid.fa-file-zipper.text-secondary.fs-4
+                                                        .flex-grow-1.ms-3
+                                                            h5.f-w-600 Project.zip
+                                                            p 1 Day ago, 1.9 GB
+                                                li.folder-box.d-flex.align-items-center
+                                                    .d-flex.align-items-center.files-list
+                                                        .flex-shrink-0.file-left
+                                                            i.fa-solid.fa-folder.text-info.fs-4
+                                                        .flex-grow-1.ms-3
+                                                            h5.f-w-600 Report.font
+                                                            p 1 Day ago, 0.9 KB 
+                include ../../components/footer
+        include ../../components/footer-files

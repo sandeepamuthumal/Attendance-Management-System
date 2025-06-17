@@ -1,0 +1,114 @@
+/**=====================
+    Loader CSS Start
+==========================**/
+.loader-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: $white;
+    z-index: 12;
+    top: 0;
+}
+.loader {
+    width: 300px;
+    height: 100px;
+    position: relative;
+}
+.loader span {
+    background-color: var(--light-gray-color);
+    height: 8px;
+    width: 8px;
+    border-radius: 80px;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 52.5%;
+    left: 150px;
+    transition: all 0.15s ease-in-out;
+}
+.loader span:nth-child(1) {
+    left: 120px;
+    animation: waveUp 2s, smallExtend 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.loader span:nth-child(2) {
+    left: 135px;
+    animation: waveUp 2s, largeExtend 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 0.15s;
+}
+.loader span:nth-child(3) {
+    animation: waveUp 2s, smallExtend 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
+}
+.loader span:nth-child(4) {
+    left: 165px;
+    animation: waveUp 2s, largeExtend 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 0.45s;
+}
+.loader span:nth-child(5) {
+    left: 180px;
+    animation: waveUp 2s, smallExtend 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 0.6s;
+}
+@keyframes waveUp {
+    0%,
+    15% {
+        top: 50%;
+    }
+    45%,
+    65% {
+        top: 42.5%;
+    }
+    85%,
+    100% {
+        top: 50%;
+    }
+}
+@keyframes smallExtend {
+    0%,
+    8% {
+        background-color: var(--light-gray-color);
+        height: 8px;
+    }
+    14%,
+    34% {
+        background-color: var(--theme-default);
+        height: 40.5px;
+    }
+    46%,
+    100% {
+        background-color: var(--light-gray-color);
+        height: 8px;
+    }
+}
+@keyframes largeExtend {
+    0%,
+    8% {
+        background-color: var(--light-gray-color);
+        height: 8px;
+    }
+    14%,
+    34% {
+        background-color: var(--theme-default);
+        height: 60.5px;
+    }
+    46%,
+    100% {
+        background-color: var(--light-gray-color);
+        height: 8px;
+    }
+}
+/**=====================
+    Loader CSS End
+==========================**/

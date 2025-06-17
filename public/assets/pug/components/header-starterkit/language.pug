@@ -1,0 +1,33 @@
+-
+  var LANGUAGE_ITEMS = [
+    { 
+      title: 'English',
+      icon: 'us',
+      dataValue: 'English'
+    },
+    {
+      title: 'Français',
+      icon: 'fr',
+      dataValue: 'fr'
+    },
+    {
+      title: 'Español',
+      icon: 'es',
+      dataValue: 'es'
+    },
+  ]
+mixin LanguageContent(items)
+
+  each item, index in items
+    li.d-block
+        a.lang(href="#", data-value=item.dataValue)
+            i.flag-icon(class=`flag-icon-${item.icon}`)
+            .lang-txt= item.title
+li.custom-dropdown
+  .translate_wrapper
+    .current_lang
+      a.lang(href="javascript:void(0)")
+          i.flag-icon.flag-icon-us
+          h6.lang-txt.f-w-700 ENG
+    ul.custom-menu.profile-menu.language-menu.py-0.more_lang
+        +LanguageContent(LANGUAGE_ITEMS)

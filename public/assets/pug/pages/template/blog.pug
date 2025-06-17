@@ -1,0 +1,132 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        | Blog details
+                                .col-sm-6.col-12
+                                    ol.breadcrumb 
+                                        li.breadcrumb-item   
+                                            a(href='index.html')    
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Blog 
+                                        li.breadcrumb-item.active Blog details
+                    // Container-fluid starts
+                    .container-fluid
+                        .row
+                            .col-xl-6.set-col-12.box-col-12
+                                .card
+                                    .blog-box.blog-shadow
+                                        img.img-fluid(src='../assets/images/blog/blog.jpg', alt='')
+                                        .blog-details
+                                            p 25 July 2018
+                                            h4 Accusamus et iusto odio dignissimos ducimus qui blanditiis.
+                                            ul.blog-social
+                                                li
+                                                    i.fa-solid.fa-user
+                                                    | Mark Jecno
+                                                li
+                                                    i.fa-solid.fa-thumbs-up
+                                                    | 02 Hits
+                                                li
+                                                    i.fa-solid.fa-comments
+                                                    | 598 Comments
+                            .col-xl-6.set-col-12.box-col-12
+                              .card
+                                .blog-box.blog-list.row
+                                  .col-sm-5
+                                    img.img-fluid.sm-100-w(src='../assets/images/blog/blog-2.jpg', alt='')
+                                  .col-sm-7
+                                    .blog-details
+                                      .blog-date
+                                        span 02
+                                        |  January 2024
+                                      h6 Perspiciatis unde omnis iste natus
+                                      .blog-bottom-content
+                                        ul.blog-social
+                                          li by: Admin
+                                          li 0 Hits
+                                        hr
+                                        p.mt-0
+                                          | inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.
+                              .card
+                                .blog-box.blog-list.row
+                                  .col-sm-5
+                                    img.img-fluid.sm-100-w(src='../assets/images/blog/blog-3.jpg', alt='')
+                                  .col-sm-7
+                                    .blog-details
+                                      .blog-date
+                                        span 03
+                                        |  January 2024
+                                      h6 Perspiciatis unde omnis iste natus
+                                      .blog-bottom-content
+                                        ul.blog-social
+                                          li by: Admin
+                                          li 02 Hits
+                                        hr
+                                        p.mt-0
+                                          | inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.
+                            .col-md-6.col-xxl-3.box-col-6
+                                .card   
+                                    .blog-box.blog-grid.text-center
+                                        img.img-fluid.top-radius-blog(src='../assets/images/blog/blog-5.jpg', alt='')
+                                        .blog-details-main
+                                            ul.blog-social
+                                                li 9 April 2018
+                                                li by: Admin
+                                                li 0 Hits
+                                            hr
+                                            h6.blog-bottom-details Perspiciatis unde omnis iste natus error sit.Dummy text     
+                            .col-md-6.col-xxl-3.box-col-6
+                                .card
+                                    .blog-box.blog-grid.text-center    
+                                        img.img-fluid.top-radius-blog(src='../assets/images/blog/blog-6.jpg', alt='')
+                                        .blog-details-main
+                                            ul.blog-social
+                                                li 9 April 2018
+                                                li by: Admin
+                                                li 0 Hits
+                                            hr
+                                            h6.blog-bottom-details Perspiciatis unde omnis iste natus error sit.Dummy text
+                            .col-md-6.col-xxl-3.box-col-6
+                                .card
+                                    .blog-box.blog-grid.text-center
+                                        img.img-fluid.top-radius-blog(src='../assets/images/blog/blog-5.jpg', alt='')
+                                        .blog-details-main
+                                            ul.blog-social
+                                                li 9 April 2018
+                                                li by: Admin
+                                                li 0 Hits
+                                            hr
+                                            h6.blog-bottom-details Perspiciatis unde omnis iste natus error sit.Dummy text
+                            .col-md-6.col-xxl-3.box-col-6
+                                .card
+                                    .blog-box.blog-grid.text-center
+                                        img.img-fluid.top-radius-blog(src='../assets/images/blog/blog-6.jpg', alt='')
+                                        .blog-details-main
+                                            ul.blog-social
+                                                li 9 April 2018
+                                                li by: Admin
+                                                li 0 Hits
+                                            hr
+                                            h6.blog-bottom-details Perspiciatis unde omnis iste natus error sit.Dummy text
+                include ../../components/footer
+        include ../../components/footer-files

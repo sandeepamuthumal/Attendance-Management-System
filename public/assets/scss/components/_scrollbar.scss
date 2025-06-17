@@ -1,0 +1,38 @@
+/**=====================
+    Scrollbar Css Start
+==========================**/
+.vertical-scroll {
+    .main-lists-content {
+        .list-group-item.active {
+            .list-wrapper {
+                .list-content {
+                    p {
+                        color: var(--body-font-color) !important;
+                    }
+                }
+            }
+        }
+    }
+}
+.visible-wrapper {
+    img {
+        width: calc(230px + 100 * (100vw - 320px) / 1600) !important;
+        height: calc(230px + 100 * (100vw - 320px) / 1600);
+        object-fit: contain;
+    }
+}
+.horizontal-scroll {
+    .horz-scroll-content {
+        .horizontal-img {
+            height: 100%;
+            max-width: 240px;
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+/**=====================
+    Scrollbar Css End
+==========================**/

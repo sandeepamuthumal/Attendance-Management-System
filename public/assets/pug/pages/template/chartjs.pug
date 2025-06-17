@@ -1,0 +1,76 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var config                 = true;
+- var chartjs                = true;
+- var page_chartjs           = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper  
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar    
+                .page-body   
+                    .container-fluid
+                        .page-title   
+                            .row 
+                                .col-sm-6.col-12
+                                    h2   
+                                        | ChartJS Chart
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item 
+                                            a(href='index.html')   
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Charts 
+                                        li.breadcrumb-item.active ChartJS Chart
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-6.col-md-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Bar Chart
+                            .card-body.chart-block
+                              canvas#myBarGraph
+                        .col-xl-6.col-md-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Line Graph
+                            .card-body.chart-block
+                              canvas#myGraph
+                        .col-xl-6.col-md-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Radar Graph
+                            .card-body.chart-block
+                              canvas#myRadarGraph
+                        .col-xl-6.col-md-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Line Chart
+                            .card-body.chart-block
+                              canvas#myLineCharts
+                        .col-xl-6.col-md-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Doughnut Chart
+                            .card-body.chart-block.chart-vertical-center
+                              canvas#myDoughnutGraph
+                        .col-xl-6.col-md-12.box-col-12
+                          .card
+                            .card-header.card-no-border.pb-0
+                              h3 Polar Chart
+                            .card-body.chart-block.chart-vertical-center
+                              canvas#myPolarGraph
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files    

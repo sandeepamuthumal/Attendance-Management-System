@@ -1,0 +1,62 @@
+-
+    var NOTIFICATION_ITEM =[
+        {
+            dotClass: 'activity-dot-secondary',
+            title: '28-06-2024',
+            titleClass: 'font-secondary',
+            spanName: '1 hour ago',
+            Name: 'Herry Venter',
+            dot: 'circle-dot-secondary',
+            subClass: 'I am convinced that there can be luxury in simplicity.'
+        },
+        {
+            dotClass: 'activity-dot-primary',
+            title: '04-08-2024',
+            titleClass: 'font-primary',
+            spanName: 'Today',
+            Name: 'Loain Deo',
+            dot: 'circle-dot-primary',
+            subClass: 'I feel that things happen for open new opportunities.'
+        },
+        {
+            dotClass: 'activity-dot-secondary',
+            title: '12-11-2024',
+            titleClass: 'font-secondary',
+            spanName: 'Yesterday',
+            Name: 'Fenter Jessy',
+            dot: 'circle-dot-secondary',
+            subClass: 'Sometimes the simplest things are the most profound.'
+        },
+    ]
+
+mixin Notification(items)
+
+    each item in items
+        li.d-flex.align-items-start
+            div(class=item.dotClass)
+            .flex-grow-1
+                h6.f-w-600(class=item.titleClass)=item.title
+                    span=item.spanName
+                    span.float-end(class=item.dot)
+                        +IconlySprite('circle', 'circle-color')
+                h5=item.Name
+                p=item.subClass
+li.custom-dropdown
+    a(href="javascript:void(0)")
+        +IconlySprite('notification', '')
+    span.badge.rounded-pill.badge-primary 4
+    .custom-menu.notification-dropdown.py-0.overflow-hidden
+        h3.title.bg-primary-light.dropdown-title Notification 
+            span.font-primary View all
+        ul.activity-timeline
+            li.d-flex.align-items-start
+                .activity-line
+                .activity-dot-primary
+                .flex-grow-1
+                    h6.f-w-600.font-primary 30-04-2024
+                        span Today
+                        span.circle-dot-primary.float-end
+                            +IconlySprite('circle', 'circle-color')
+                    h5 Alice Goodwin
+                    p.mb-0 Fashion should be fun. It shouldn't be labelled intellectual.
+            +Notification(NOTIFICATION_ITEM)

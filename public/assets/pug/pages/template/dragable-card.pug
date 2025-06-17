@@ -1,0 +1,136 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+- var draggable_page         = true;
+include ../../components/mixin
+doctype html
+html(lang='en')
+    include ../../components/header-files 
+    body
+        // page-wrapper Start
+        include ../../components/taptop
+        include ../../components/loader
+        #pageWrapper.page-wrapper.compact-wrapper
+            include ../../components/header/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar   
+                .page-body
+                    .container-fluid
+                        .page-title
+                            .row
+                                .col-sm-6.col-12
+                                    h2
+                                        |  Dragable card
+                                .col-sm-6.col-12
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                            a(href='index.html')
+                                                i.iconly-Home.icli.svg-color
+                                        li.breadcrumb-item Bonus Ui  
+                                        li.breadcrumb-item.active Dragable card
+                    // Container-fluid starts     
+                    .container-fluid.dragable
+                        .row#dragable
+                            .col-lg-4.col-md-12
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Basic Card   
+                                        p.mt-1.mb-0
+                                            | You can draggable cards anywhere.  
+                                    .card-body
+                                        ul.list-group
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | Logo Design
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | Web Designer
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | E-Commerce
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | UX Designer
+                            .col-lg-4.col-md-12
+                                .card   
+                                    .card-header.card-no-border.pb-0
+                                        h3 Active lists
+                                        p.mt-1.mb-0 
+                                            | You can draggable cards anywhere.
+                                    .card-body    
+                                        ul.list-group
+                                            li.list-group-item.active.bg-warning-light(aria-current='true')
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | UI Kits
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | Wow Animations
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                |Apex Charts
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | Starter Kits
+                            .col-lg-4.col-md-12
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3 Flat Card
+                                        p.mt-1.mb-0 
+                                            | You can draggable cards anywhere.
+                                    .card-body
+                                        ul.list-group.list-group-flush
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | PRODUCT
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | PRODUCT DETAILS 
+                                            li.list-group-item
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | CART
+                                            li.list-group-item.pb-0
+                                                i.fa-solid.fa-arrow-right.me-2
+                                                | CHECKOUT
+                            .col-sm-12.col-xxl-6.mb-lg-3
+                                .card.shadow-none
+                                    .card-header.card-no-border.pb-0
+                                        h3 Without Shadow Card
+                                        p.mt-1.mb-0   
+                                            | You can draggable cards anywhere.
+                                    .card-body
+                                        .alert.text-success.border-success.alert-dismissible.fade.show(role='alert')
+                                            i.fa-regular.fa-clock 
+                                            p.mb-0
+                                                |One of  
+                                                strong YouTube's        
+                                                | most crucial ranking factors is Watch Time.
+                                            button.btn-close(type='button', aria-label='Close')
+                                        .alert.text-secondary.border-secondary.outline-2x.alert-dismissible.fade.show.alert-icons.mb-0(role='alert')
+                                            i.fa-solid.fa-thumbs-up 
+                                            p.mb-0
+                                                b  Well done !     
+                                                | You successfully read this important message.
+                                            button.btn-close(type='button', aria-label='Close')
+                            .col-sm-12.col-xxl-6.mb-lg-3
+                                .card
+                                    .card-header.card-no-border.pb-0
+                                        h3
+                                            i.fa-solid.fa-arrows-up-down-left-right
+                                            |  Icon In Heading
+                                        p.mt-1.mb-0 
+                                            | You can draggable cards anywhere.
+                                    .card-body
+                                        .alert.border-warning.alert-dismissible.fade.show.p-0(role='alert')
+                                            .alert-arrow.bg-warning
+                                                i.fa-regular.fa-clock.me-0
+                                            p
+                                                | Your time Over after 5 minute
+                                        .alert.border-danger.alert-dismissible.fade.show.p-0.mb-0(role='alert')
+                                            .alert-arrow.bg-danger
+                                                i.fa-regular.fa-heart.me-0
+                                            p
+                                                | Oh snap! Change a few things up notification check
+                include ../../components/footer 
+        include ../../components/footer-files

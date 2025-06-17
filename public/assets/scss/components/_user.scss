@@ -1,0 +1,89 @@
+/**=====================
+     user css start
+==========================**/
+.avatar-profile-card {
+    .user-img {
+        display: inline-block;
+        position: relative;
+        img {
+            border-radius: 50%;
+            padding: 8px 10px 0;
+            background-color: var(--theme-secondary);
+            width: unset;
+            height: unset;
+            border: none;
+        }
+        .setting-icon {
+            line-height: 0;
+            position: absolute;
+            top: 75%;
+            right: 0;
+            cursor: pointer;
+            [dir="rtl"] & {
+                right: unset;
+                left: 0;
+            }
+            i {
+                padding: 5px;
+                background-color: var(--theme-default);
+                border-radius: 50%;
+                color: var(--white);
+                border: 1px solid var(--white);
+                font-size: 12px;
+            }
+        }
+    }
+}
+.user-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .user-content {
+        margin-left: 10px;
+        h6 {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        p {
+            font-size: 12px;
+            color: var(--light-gray-color);
+            line-height: 1;
+            i {
+                color: var(--light-gray-color);
+                font-size: 12px;
+                margin-left: 4px;
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: 4px;
+                }
+            }
+        }
+        @media (max-width: 991px) {
+            display: none;
+        }
+        [dir="rtl"] & {
+            margin-left: unset;
+            margin-right: 10px;
+        }
+    }
+}
+.user-img {
+    display: inline-block;
+    position: relative;
+    img {
+        width: 38px;
+        height: 38px;
+        border: 1px solid var(--shape-border);
+        border-radius: 50%;
+        background-color: var(--theme-secondary);
+        padding: 3px 3px 0px 3px;
+        @include media-breakpoint-down(md) {
+            width: 35px;
+            height: 35px;
+        }
+        @include media-breakpoint-down(sm) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}

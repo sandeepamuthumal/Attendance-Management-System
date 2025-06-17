@@ -1,0 +1,52 @@
+li.custom-dropdown
+    a(href="javascript:void(0)")
+      +IconlySprite('cart-icon', '')
+    span.badge.rounded-pill.badge-primary 2
+    .custom-menu.cart-dropdown.py-0.overflow-hidden
+      h3.title.dropdown-title Cart
+      ul.pb-0
+        li
+          .d-flex
+            img.img-fluid.b-r-5.me-3.img-60(src='../assets/images/dashboard-2/1.png', alt='')
+            .flex-grow-1
+              span.f-w-600 Watch multicolor
+              .qty-box
+                .input-group
+                  span.input-group-prepend
+                    button.btn.quantity-left-minus(type='button' data-type='minus' data-field='')
+                      | -
+                  input.form-control.input-number(type='text' name='quantity' value='1')
+                  span.input-group-prepend
+                    button.btn.quantity-right-plus(type='button' data-type='plus' data-field='')
+                      | +
+              h6.font-primary $500
+            .close-circle
+              a.bg-danger(href='#')
+                i(data-feather='x')
+        li
+          .d-flex
+            img.img-fluid.b-r-5.me-3.img-60(src='../assets/images/dashboard-2/2.png', alt='')
+            .flex-grow-1
+              span.f-w-600 Airpods
+              .qty-box
+                .input-group
+                  span.input-group-prepend
+                    button.btn.quantity-left-minus(type='button' data-type='minus' data-field='')
+                      | -
+                  input.form-control.input-number(type='text' name='quantity' value='1')
+                  span.input-group-prepend
+                    button.btn.quantity-right-plus(type='button' data-type='plus' data-field='')
+                      | +
+              h6.font-primary $500.00
+            .close-circle
+              a.bg-danger(href='#')
+                i(data-feather='x')
+        li.total
+          h6.mb-0
+            | Order Total : 
+            span.f-w-600 $1000.00
+        li.text-center
+          a.d-block.mb-3.view-cart.f-w-700.text-primary(href='../template/cart.html')
+            | Go to your cart
+          a.btn.btn-primary.view-checkout.text-white(href='../template/checkout.html')
+            | Checkout

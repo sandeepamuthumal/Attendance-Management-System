@@ -1,0 +1,339 @@
+- var sidebar                = true;
+- var theme_customizer       = true;
+- var slick                  = true;
+- var scrollbar              = true;
+include ../../components/mixin
+doctype html
+html(lang='en') 
+  include ../../components/header-files
+  body
+    include ../../components/taptop
+    include ../../components/loader
+    #pageWrapper.page-wrapper.compact-wrapper
+        include ../../components/header/header
+        .page-body-wrapper
+          include ../../components/sidebar                          
+          .page-body
+            .container-fluid               
+                .page-title
+                    .row
+                        .col-sm-6.col-12
+                          h2
+                              | Typography
+                        .col-sm-6.col-12
+                          ol.breadcrumb
+                              li.breadcrumb-item
+                                a(href='index.html')                                        
+                                  i.iconly-Home.icli.svg-color
+                              li.breadcrumb-item Ui Kits
+                              li.breadcrumb-item.active Typography  
+            .container-fluid 
+              .row
+                .col-xxl-8.col-xl-12
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3.mb-0 Headings
+                      p.mt-1.mb-0
+                        | All HTML headings, 
+                        code &lt;h1&gt;
+                        |  through 
+                        code &lt;h6&gt;
+                        |  are available.
+                    .card-body
+                      .table-responsive.custom-scroll
+                        table.table.mb-0.typography-table
+                          thead
+                            tr
+                              th.pt-0 Code
+                              th.pt-0 Font-Size
+                              th.pt-0 Heading
+                          tbody
+                            tr
+                              td
+                                code &lt;h1&gt;&lt;/h1&gt;
+                              td
+                                h2.display-h1.mb-0 2.5rem
+                              td
+                                h1
+                                  span  Heading 1 (MEGA)
+                            tr
+                              td
+                                code &lt;h2&gt;&lt;/h2&gt;
+                              td
+                                h2.mb-0 2rem
+                              td
+                                h2
+                                  span  Heading 2 (XL)
+                            tr
+                              td
+                                code &lt;h3&gt;&lt;/h3&gt;
+                              td
+                                h3.mb-0 1.75rem
+                              td
+                                h3
+                                  span  Heading 3 (LARGE)
+                            tr
+                              td
+                                code &lt;h4&gt;&lt;/h4&gt;
+                              td
+                                h4.mb-0 1.5rem
+                              td
+                                h4
+                                  span  Heading 4 (MEDIUM)
+                            tr
+                              td
+                                code &lt;h5&gt;&lt;/h5&gt;
+                              td
+                                h5.mb-0 1.25rem
+                              td
+                                h5
+                                  span  Heading 5 (SMALL)
+                            tr
+                              td.pb-0
+                                code &lt;h6&gt;&lt;/h6&gt;
+                              td.pb-0
+                                h6.mb-0 1rem
+                              td.pb-0
+                                h6
+                                  span  Heading 6 
+                .col-xxl-4.col-xl-12
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3.mb-0 Colored Headings
+                      p.mt-1.mb-0
+                        | All HTML headings, 
+                        code &lt;h1&gt;
+                        |  through 
+                        code &lt;h6&gt;
+                        |  are available.
+                    .card-body
+                      .table-responsive.custom-scroll
+                        table.table.mb-0.typography-table
+                          thead
+                            tr
+                              th.pt-0 Code
+                              th.pt-0 Heading
+                          tbody
+                            tr
+                              td
+                                code &lt;h1&gt;&lt;/h1&gt;
+                              td
+                                h2.display-h1
+                                  span.text-primary  Heading 1
+                                  |  Sub Heading
+                            tr
+                              td
+                                code &lt;h2&gt;&lt;/h2&gt;
+                              td
+                                h2
+                                  span.text-secondary  Heading 2
+                                  |  Sub Heading
+                            tr
+                              td
+                                code &lt;h3&gt;&lt;/h3&gt;
+                              td
+                                h3
+                                  span.text-success  Heading 3
+                                  |  Sub Heading
+                            tr
+                              td
+                                code &lt;h4&gt;&lt;/h4&gt;
+                              td
+                                h4
+                                  span.text-info  Heading 4
+                                  |  Sub Heading
+                            tr
+                              td
+                                code &lt;h5&gt;&lt;/h5&gt;
+                              td
+                                h5
+                                  span.text-warning  Heading 5
+                                  |  Sub Heading
+                            tr
+                              td.pb-0
+                                code &lt;h6&gt;&lt;/h6&gt;
+                              td.pb-0
+                                h6
+                                  span.text-danger  Heading 6
+                                  |  Sub Heading
+                .col-xl-12
+                    .card
+                      .card-header.card-no-border.pb-0
+                        h3.mb-0 Font Weight
+                        p.mt-1.mb-0
+                          | Using 
+                          code f-w-*
+                          |  class, you can change the font weight.
+                      .card-body.d-flex.flex-column.gap-3
+                        h2.f-w-700
+                          | You can set bolder font weight Heading 1 using
+                          code  f-w-700
+                        h2.f-w-600
+                          | You can set bold font weight Heading 2 using
+                          code  f-w-600
+                        h2.f-w-500
+                          | You can set medium font weight Heading 3 using
+                          code  f-w-500
+                        h2.f-w-400
+                          | You can set normal font weight Heading 4 using
+                          code  f-w-400
+                        h2.f-w-300
+                          | You can set light font weight Heading 5 using
+                          code  f-w-300
+                .col-xl-12.listing
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3.mb-0 Listing Typography
+                      p.mt-1.mb-0
+                          | All typography list:- 
+                          code &lt;ul&gt; 
+                          | , 
+                          code &lt;ol&gt; 
+                          |  &amp; 
+                          code &lt;dl&gt;
+                          | .
+                    .card-body
+                      .row.g-3
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.rounded-3.h-100.bg-light-primary
+                            h6.sub-title.f-w-600 Unorder list
+                            ul
+                              li One who looks on the bright side of things
+                              li One who does something not professionally but for pleasure
+                              li A handwriting that cannot be read
+                              li One who looks on the bright side of things
+                              li The study of ancient writing and scriptures
+                              li Creates more sophisticated capabilities for a web page to use coding language.
+                              li
+                                | Maintaining contact and communicating clearly are also essential. possess abilities for a designer
+                        .col-md-6.col-xxl-4
+                          .card-wrapper.rounded-3.h-100.bg-light-secondary
+                            h6.sub-title.f-w-600 Order list
+                            ol.mb-0
+                              li UI Kits
+                              li Bonus Ui
+                              li Animations
+                              li
+                                ol
+                                  li Typography
+                                  li Avatars
+                                  li Grid
+                                  li Tag &amp; pills
+                                  li Alert
+                              li Dropdown
+                              li Tabs
+                              li Accordion
+                        .col-md-12.col-xxl-4
+                          .card-wrapper.rounded-3.bg-light-warning.h-100
+                            h6.sub-title.f-w-600 Description list
+                            dl.mb-0
+                              dt The way to get started is to quit talking and begin doing.
+                              dd -Walt Disney
+                              dt Life is what happens when you&apos;re busy making other plans.
+                              dd -John Lennon
+                              dt Whoever is happy will make others happy too. 
+                              dd -Anne Frank
+                              dt Life is either a daring adventure or nothing at all.
+                              dd -Helen Keller
+                              dt The purpose of our lives is to be happy.
+                              dd.mb-0 -Dalai Lama
+                .col-xl-12
+                  // Display Heading Card
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3 Display Heading
+                      p.desc.mb-0.mt-1
+                        span
+                          | Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a
+                        code display heading
+                        span - a larger, slightly more opinionated heading style.
+                    .card-body.d-flex.flex-column.gap-2
+                      h2.display-1 Display 1
+                      h2.display-2 Display 2
+                      h2.display-3 Display 3
+                      h2.display-4 Display 4
+                .col-xxl-6.col-xl-12
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3 Inline Text Elements
+                      p.mt-1.mb-0 Styling for common inline HTML5 elements.
+                    .card-body
+                        .d-flex.flex-column.gap-2
+                          p.mb-0
+                            | You can use the mark tag to 
+                            mark highlight
+                            |  text.
+                          p.mb-0
+                            del This line of text is meant to be treated as deleted text.
+                          p.mb-0
+                            s This line of text is meant to be treated as no longer accurate.
+                          p.mb-0
+                            u This line of text will render as underlined
+                          p.mb-0
+                            small This line of text is meant to be treated as fine print.
+                          p.mb-0
+                            strong This line rendered as bold text.
+                          p.mb-0
+                            em This line rendered as italicized text.
+                .col-xxl-6.col-xl-12
+                  .card
+                    .card-header.card-no-border.pb-0
+                      h3.mb-0 Text Color
+                      p.mt-1.mb-0
+                        | You can Give text color by using 
+                        code txt-*
+                        |  class.
+                    .card-body
+                        .d-flex.flex-column.gap-2
+                          p.text-primary.mb-0
+                            | This is Primary text You can archive this adding
+                            code .text-primary
+                            |  class.
+                          p.text-secondary.mb-0
+                            | This is Secondary text You can archive this adding
+                            code .text-secondary
+                            |  class.
+                          p.text-success.mb-0
+                            | This is Success text You can archive this adding
+                            code .text-success
+                            |  class.
+                          p.text-info.mb-0
+                            | This is Info text You can archive this adding
+                            code .text-info
+                            |  class.
+                          p.text-warning.mb-0
+                            | This is Warning text You can archive this adding
+                            code .text-warning
+                            |  class.
+                          p.text-danger.mb-0
+                            | This is Danger text You can archive this adding
+                            code .text-danger
+                            |  class.
+                          p.text-dark.mb-0
+                            | This is Dark text You can archive this adding
+                            code .text-dark
+                            |  class.
+                .col-xl-12
+                  .card.overflow-hidden
+                    .card-header.card-no-border.pb-0
+                      h3.mb-0 Blockquotes
+                      p.mt-1.mb-0
+                          | The 
+                          code &lt;blockquote&gt;
+                          |  tag specifies a section that is quoted from another source.
+                    .card-body
+                      .figure.d-block.dark-blockquote.text-start
+                        blockquote.blockquote.mb-2.b-l-primary.bg-light-primary
+                          p.mb-0.f-16 The only impossible journey is the one you never begin.
+                          span.blockquote-footer Tony Robbins
+                      .figure.d-block.dark-blockquote.text-center
+                        blockquote.blockquote.mb-2.bg-light-secondary
+                          p.mb-0.f-16
+                            | In this life we cannot do great things. We can only do small things with great love.
+                          span.blockquote-footer Mother Teresa
+                      .figure.d-block.dark-blockquote.text-end
+                        blockquote.blockquote.mb-0.b-r-warning.bg-light-warning
+                          p.mb-0.f-16 Live in the sunshine, swim the sea, drink the wild air.
+                          span.blockquote-footer Ralph Waldo Emerson
+          include ../../components/footer   
+    include ../../components/footer-files
