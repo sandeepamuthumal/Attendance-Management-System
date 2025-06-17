@@ -26,21 +26,19 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login/process', [AuthController::class, 'loginProcess'])->name('login.process');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-//User Management
-Route::controller(UserController::class)->group(function () {
-    Route::get('/active-users', 'activeUsers')->name('active.users');
-    Route::get('/deactive-users', 'deactiveUsers')->name('deactive.users');
-    Route::get('/load/active-users', 'loadActiveUsers');
-    Route::get('/load/deactive-users', 'loadDeactiveUsers');
-    Route::get('/load/cities', 'loadCities');
-    Route::post('/users/store', 'storeUsers');
-    Route::get('/users/edit', 'editUsers');
-    Route::post('/users/update', 'updateUsers');
-    Route::post('/users/delete/{id}', 'updateStatus')->name('delete.user');
-    Route::post('/user/reset-password', 'resetPassword');
-    Route::get('/event-managers', 'eventManagers')->name('event.managers');
-    Route::post('/city/store', 'storeCity');
-});
+
+// User Management Routes
+Route::get('/admin/users/admins', [UserController::class, 'admins'])->name('admin.users.admins');
+Route::get('/admin/users/teachers', [UserController::class, 'teachers'])->name('admin.users.teachers');
+Route::get('/load/users', [UserController::class, 'loadUsers'])->name('load.users');
+Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+Route::get('/users/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::post('/users/update', [UserController::class, 'update'])->name('users.update');
+Route::post('/users/deactivate/{id}', [UserController::class, 'deactivate'])->name('users.deactivate');
+Route::post('/users/activate/{id}', [UserController::class, 'activate'])->name('users.activate');
+Route::post('/users/reset-password', [UserController::class, 'resetPassword'])->name('users.reset-password');
+
+
 
 Route::get('clear_cache', function () {
     \Artisan::call('config:cache');
@@ -48,5 +46,3 @@ Route::get('clear_cache', function () {
     \Artisan::call('route:clear');
     \Artisan::call('config:clear');
 });
-
-
