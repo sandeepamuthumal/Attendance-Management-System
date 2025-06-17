@@ -158,3 +158,8 @@
 .ck-content ul li {
     list-style: disc !important;
 }
+
+.btn-xs {
+    font-size: 11px !important;
+    padding: .2rem .4rem !important;
+}

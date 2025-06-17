@@ -9,7 +9,7 @@
             </li>
 
             <li class="sidebar-list"> <i class="fa-solid fa-thumbtack"></i>
-                <a class="sidebar-link" href="{{ url('admin-dashboard') }}">
+                <a class="sidebar-link" href="{{ url('/') }}">
                     <svg class="stroke-icon">
                         <use href="{{ asset('assets/svg/iconly-sprite.svg#Home-dashboard') }}"></use>
                     </svg>
@@ -25,8 +25,8 @@
                     <h6>Manage Users</h6><i class="iconly-Arrow-Right-2 icli"></i>
                 </a>
                 <ul class="sidebar-submenu">
-                    <li> <a href="{{ route('active.users') }}">Admins</a></li>
-                    <li><a href="{{ route('deactive.users') }}">Teachers </a></li>
+                    <li> <a href="{{ route('admin.users.admins') }}">Admins</a></li>
+                    <li><a href="{{ route('admin.users.teachers') }}">Teachers </a></li>
                 </ul>
             </li>
         </ul>
