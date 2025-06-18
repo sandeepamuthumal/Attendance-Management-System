@@ -85,4 +85,9 @@ class User extends Authenticatable
     {
         return $this->status === 1 ? 'active' : 'inactive';
     }
+
+    public function userTypeName()
+    {
+        return $this->userType ? $this->userType->user_type : 'Unknown';
+    }
 }

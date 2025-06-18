@@ -5,11 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Tickets Director Event Manager Dashboard" />
-    <meta name="keywords" content="Tickets Director Event Manager Dashboard" />
-    <meta name="author" content="ticketsdirector" />
+    <meta name="description" content="Bright Educational Center Dashboard" />
+    <meta name="keywords" content="Bright Educational Center Dashboard" />
+    <meta name="author" content="brightedu" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title') - Tickets Director</title>
+    <title>@yield('title') - Bright Educational Center</title>
     <!-- Favicon icon-->
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon" />
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon" />
@@ -21,7 +21,7 @@
 
     {{-- styles --}}
     @include('libraries.styles')
-    @livewireStyles
+
 </head>
 
 <body>
@@ -64,7 +64,7 @@
     {{-- scripts --}}
     @include('libraries.scripts')
     @yield('scripts')
-    @livewireScripts
+
 </body>
 
 </html>
