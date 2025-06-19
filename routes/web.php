@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,25 @@ Route::middleware(['auth', 'is.admin'])->group(function () {
     Route::post('/users/deactivate/{id}', [UserController::class, 'deactivate'])->name('users.deactivate');
     Route::post('/users/activate/{id}', [UserController::class, 'activate'])->name('users.activate');
     Route::post('/users/reset-password', [UserController::class, 'resetPassword'])->name('users.reset-password');
+});
+
+// Class Management Routes (Add to web.php)
+Route::middleware(['auth', 'is.admin'])->prefix('admin')->group(function () {
+    // Class Management
+    Route::get('/classes', [ClassController::class, 'index'])->name('classes.index');
+    Route::get('/classes/load', [ClassController::class, 'loadClasses'])->name('classes.load');
+    Route::post('/classes/store', [ClassController::class, 'store'])->name('classes.store');
+    Route::get('/classes/edit', [ClassController::class, 'edit'])->name('classes.edit');
+    Route::post('/classes/update', [ClassController::class, 'update'])->name('classes.update');
+    Route::post('/classes/activate/{id}', [ClassController::class, 'activate'])->name('classes.activate');
+    Route::post('/classes/deactivate/{id}', [ClassController::class, 'deactivate'])->name('classes.deactivate');
+    Route::delete('/classes/delete/{id}', [ClassController::class, 'deactivate'])->name('classes.destroy');
+    Route::get('/classes/teacher-classes', [ClassController::class, 'getTeacherClasses'])->name('classes.teacher-classes');
+});
+
+// Teacher Routes (for viewing their classes)
+Route::middleware(['auth', 'active', 'teacher'])->prefix('teacher')->name('teacher.')->group(function () {
+    Route::get('/my-classes', [ClassController::class, 'teacherClasses'])->name('my-classes');
 });
 
 

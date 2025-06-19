@@ -29,6 +29,15 @@
                     <li><a href="{{ route('admin.users.teachers') }}">Teachers </a></li>
                 </ul>
             </li>
+
+            <li class="sidebar-list"> <i class="fa-solid fa-thumbtack"></i>
+                <a class="sidebar-link" href="{{ url('admin/classes') }}">
+                    <div class="stroke-icon">
+                       <i class="bi bi-building"></i>
+                    </div>
+                    <h6 class="f-w-600">Manage Classes</h6>
+                </a>
+            </li>
         </ul>
     </div>
     <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
