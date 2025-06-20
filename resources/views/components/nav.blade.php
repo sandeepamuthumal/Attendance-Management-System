@@ -1,7 +1,6 @@
 <header class="page-header row">
     <div class="logo-wrapper d-flex align-items-center col-auto">
-        <a href="index.html"><img class="light-logo img-fluid" src="{{ asset('images/logo.png') }}" alt="logo" /><img
-                class="dark-logo img-fluid" src="{{ asset('images/logo.png') }}" alt="logo" /></a>
+        <a href="index.html" style="color:#fff"><h3 class="text-center">Bright Educational Center</h3></a>
         <a class="close-btn toggle-sidebar" href="javascript:void(0)">
             <svg class="svg-color">
                 <use href="{{ asset('assets/svg/iconly-sprite.svg#Category') }}"></use>

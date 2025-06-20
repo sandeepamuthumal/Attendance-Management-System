@@ -60,7 +60,7 @@
                             <form class="theme-form" action="{{ route('login.process') }}" method="POST">
                                 @csrf
                                 <div class="company-logo">
-                                    <img src="{{ asset('images/login_logo.png') }}" alt="logo">
+                                    <img src="{{ asset('images/logo.png') }}" alt="logo">
                                 </div>
                                 <h2 class="text-center">Sign in to account</h2>
                                 <p class="text-center">Enter your email &amp; password to login</p>
