@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,7 +48,6 @@ Route::middleware(['auth', 'is.admin'])->group(function () {
     Route::post('/users/reset-password', [UserController::class, 'resetPassword'])->name('users.reset-password');
 });
 
-// Class Management Routes (Add to web.php)
 Route::middleware(['auth', 'is.admin'])->prefix('admin')->group(function () {
     // Class Management
     Route::get('/classes', [ClassController::class, 'index'])->name('classes.index');
@@ -55,10 +55,27 @@ Route::middleware(['auth', 'is.admin'])->prefix('admin')->group(function () {
     Route::post('/classes/store', [ClassController::class, 'store'])->name('classes.store');
     Route::get('/classes/edit', [ClassController::class, 'edit'])->name('classes.edit');
     Route::post('/classes/update', [ClassController::class, 'update'])->name('classes.update');
-    Route::post('/classes/activate/{id}', [ClassController::class, 'activate'])->name('classes.activate');
-    Route::post('/classes/deactivate/{id}', [ClassController::class, 'deactivate'])->name('classes.deactivate');
     Route::delete('/classes/delete/{id}', [ClassController::class, 'deactivate'])->name('classes.destroy');
     Route::get('/classes/teacher-classes', [ClassController::class, 'getTeacherClasses'])->name('classes.teacher-classes');
+
+    Route::name('admin.')->group(function () {
+        // Student Management Routes
+        Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+        Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
+        Route::post('/students/store', [StudentController::class, 'store'])->name('students.store');
+        Route::get('/students/edit/{id}', [StudentController::class, 'edit'])->name('students.edit');
+        Route::post('/students/update', [StudentController::class, 'update'])->name('students.update');
+        Route::get('/students/profile/{id}', [StudentController::class, 'profile'])->name('students.profile');
+
+        // AJAX Routes
+        Route::get('/students/load', [StudentController::class, 'loadStudents'])->name('students.load');
+        Route::get('/students/search', [StudentController::class, 'search'])->name('students.search');
+        Route::delete('/students/delete/{id}', [StudentController::class, 'deactivate'])->name('students.destroy');
+
+        // QR Code & Classes
+        Route::get('/students/download-qr/{id}', [StudentController::class, 'downloadQR'])->name('students.download-qr');
+        Route::get('/students/available-classes', [StudentController::class, 'getAvailableClasses'])->name('students.available-classes');
+    });
 });
 
 // Teacher Routes (for viewing their classes)

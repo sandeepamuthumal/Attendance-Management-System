@@ -9,7 +9,7 @@
             </li>
 
             <li class="sidebar-list"> <i class="fa-solid fa-thumbtack"></i>
-                <a class="sidebar-link" href="{{ url('/') }}">
+                <a class="sidebar-link" href="{{ route('admin.dashboard') }}">
                     <svg class="stroke-icon">
                         <use href="{{ asset('assets/svg/iconly-sprite.svg#Home-dashboard') }}"></use>
                     </svg>
@@ -37,6 +37,19 @@
                     </div>
                     <h6 class="f-w-600">Manage Classes</h6>
                 </a>
+            </li>
+
+            <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i>
+                <a class="sidebar-link" href="javascript:void(0)">
+                    <div class="stroke-icon">
+                        <i class="bi bi-person-bounding-box"></i>
+                    </div>
+                    <h6>Students</h6><i class="iconly-Arrow-Right-2 icli"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li> <a href="{{ route('admin.students.create') }}">Create Student</a></li>
+                    <li><a href="{{ route('admin.students.index') }}">All Students </a></li>
+                </ul>
             </li>
         </ul>
     </div>
