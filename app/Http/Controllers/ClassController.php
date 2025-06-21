@@ -102,23 +102,6 @@ class ClassController extends Controller
         }
     }
 
-    public function activate(int $id): JsonResponse
-    {
-        try {
-            $this->classService->activateClass($id);
-
-            return response()->json([
-                'success' => true,
-                'message' => 'Class activated successfully'
-            ]);
-        } catch (Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage()
-            ], 500);
-        }
-    }
-
     public function deactivate(int $id): JsonResponse
     {
         try {
