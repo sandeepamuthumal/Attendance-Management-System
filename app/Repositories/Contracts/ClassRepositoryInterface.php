@@ -17,4 +17,6 @@ interface ClassRepositoryInterface
     public function getClassesByTeacher(int $teacherId);
     public function getClassesByGrade(int $gradeId);
     public function getClassesByYear(int $year);
+
+    public function getAllWithRelations();
 }

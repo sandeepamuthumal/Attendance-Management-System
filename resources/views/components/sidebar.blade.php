@@ -52,13 +52,16 @@
                 </ul>
             </li>
 
-            <li class="sidebar-list"> <i class="fa-solid fa-thumbtack"></i>
-                <a class="sidebar-link" href="{{ route('attendance.scanner') }}">
+            <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i>
+                <a class="sidebar-link" href="javascript:void(0)">
                     <div class="stroke-icon">
                         <i class="bi bi-qr-code-scan"></i>
                     </div>
-                    <h6 class="f-w-600">Attendances</h6>
+                    <h6>Attendances</h6><i class="iconly-Arrow-Right-2 icli"></i>
                 </a>
+                <ul class="sidebar-submenu">
+                    <li> <a href="{{ route('attendance.scanner') }}">Scanner</a></li>
+                </ul>
             </li>
         </ul>
     </div>

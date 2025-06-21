@@ -123,4 +123,11 @@ class ClassRepository implements ClassRepositoryInterface
             ->active()
             ->get();
     }
+
+      public function getAllWithRelations()
+    {
+        return $this->model
+            ->with(['subject', 'teacher.user', 'grade'])
+            ->get();
+    }
 }
