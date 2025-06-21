@@ -3,8 +3,7 @@
 <!-- bootstrap js-->
 <script src="{{ asset('assets/js/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}" defer=""></script>
 <script src="{{ asset('assets/js/vendors/bootstrap/dist/js/popper.min.js') }}" defer=""></script>
-<!--fontawesome-->
-<script src="{{ asset('assets/js/vendors/font-awesome/fontawesome-min.js') }}"></script>
+
 <!-- feather-->
 <script src="{{ asset('assets/js/vendors/feather-icon/feather.min.js') }}"></script>
 <script src="{{ asset('assets/js/vendors/feather-icon/custom-script.js') }}"></script>
