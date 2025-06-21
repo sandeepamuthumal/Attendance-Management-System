@@ -15,5 +15,7 @@ interface StudentRepositoryInterface
     public function changeStatus(int $id, bool $status);
     public function getStudentWithClasses(int $id);
     public function searchStudents(string $search, int $limit = 50);
+
     public function getStudentsByClass(int $classId);
+    public function findActiveByStudentId(string $studentId);
 }

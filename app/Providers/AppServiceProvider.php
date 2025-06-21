@@ -23,7 +23,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(TeacherRepositoryInterface::class, TeacherRepository::class);
         $this->app->bind(ClassRepositoryInterface::class, ClassRepository::class);
-        // Student Management Repository Bindings
         $this->app->bind(StudentRepositoryInterface::class, StudentRepository::class);
         $this->app->bind(StudentClassRepositoryInterface::class, StudentClassRepository::class);
     }
