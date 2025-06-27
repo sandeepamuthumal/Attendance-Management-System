@@ -119,4 +119,21 @@ class StudentClassRepository implements StudentClassRepositoryInterface
             ->orderBy('enrolled_date', 'desc')
             ->get();
     }
+
+    public function findEnrollment(int $studentId, int $classId)
+    {
+        return $this->model
+            ->where('students_id', $studentId)
+            ->where('classes_id', $classId)
+            ->where('status', 1)
+            ->first();
+    }
+
+    public function getActiveStudentsCountByClass(int $classId)
+    {
+        return $this->model
+            ->where('classes_id', $classId)
+            ->where('status', 1)
+            ->count();
+    }
 }

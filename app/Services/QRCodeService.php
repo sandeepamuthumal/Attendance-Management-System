@@ -9,18 +9,10 @@ class QRCodeService
 {
     public static function generateStudentQR($student): bool
     {
-        $qrData = json_encode([
-            'type' => 'student',
-            'student_id' => $student->student_id,
-            'name' => $student->full_name,
-            'email' => $student->email,
-            'generated_at' => now()->toISOString()
-        ]);
-
         $qrCode = QrCode::format('png')
             ->size(300)
             ->margin(2)
-            ->generate($qrData);
+            ->generate($student->student_id);
 
         $filename = $student->student_id . '.png';
 
@@ -39,17 +31,9 @@ class QRCodeService
 
     public static function generateStudentQRBase64($student): string
     {
-        $qrData = json_encode([
-            'type' => 'student',
-            'student_id' => $student->student_id,
-            'name' => $student->full_name,
-            'email' => $student->email,
-            'generated_at' => now()->toISOString()
-        ]);
-
         return QrCode::format('png')
             ->size(300)
             ->margin(2)
-            ->generate($qrData);
+            ->generate($student->student_id);
     }
 }

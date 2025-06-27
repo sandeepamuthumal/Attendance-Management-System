@@ -42,6 +42,16 @@ class ClassService
         }
     }
 
+    public function getAllClasses()
+    {
+        try {
+            return $this->classRepository->getAllActive();
+        } catch (Exception $e) {
+            Log::error('Error fetching all classes: ' . $e->getMessage());
+            throw new Exception('Failed to fetch classes');
+        }
+    }
+
     public function createClass(array $data)
     {
         try {

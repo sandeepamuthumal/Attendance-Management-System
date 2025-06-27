@@ -33,7 +33,7 @@
             <li class="sidebar-list"> <i class="fa-solid fa-thumbtack"></i>
                 <a class="sidebar-link" href="{{ url('admin/classes') }}">
                     <div class="stroke-icon">
-                       <i class="bi bi-building"></i>
+                        <i class="bi bi-building"></i>
                     </div>
                     <h6 class="f-w-600">Manage Classes</h6>
                 </a>
@@ -49,6 +49,22 @@
                 <ul class="sidebar-submenu">
                     <li> <a href="{{ route('admin.students.create') }}">Create Student</a></li>
                     <li><a href="{{ route('admin.students.index') }}">All Students </a></li>
+                </ul>
+            </li>
+
+            <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i>
+                <a class="sidebar-link" href="javascript:void(0)">
+            <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i>
+                <a class="sidebar-link" href="javascript:void(0)">
+                    <div class="stroke-icon">
+                        <i class="bi bi-qr-code-scan"></i>
+                    </div>
+                    <h6>Attendances</h6><i class="iconly-Arrow-Right-2 icli"></i>
+                    <h6>Attendances</h6><i class="iconly-Arrow-Right-2 icli"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li> <a href="{{ route('attendance.scanner') }}">Scanner</a></li>
+                    <li> <a href="{{ route('attendance.reports') }}">Reports</a></li>
                 </ul>
             </li>
         </ul>

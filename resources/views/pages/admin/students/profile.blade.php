@@ -117,7 +117,7 @@
                                                 <td>{{ $enrollment->class->class_name }}</td>
                                                 <td>{{ $enrollment->class->subject->subject }}</td>
                                                 <td>{{ $enrollment->class->teacher->user->full_name }}</td>
-                                                <td>{{ $enrollment->class->grade->grade_name }}</td>
+                                                <td>{{ $enrollment->class->grade->grade }}</td>
                                                 <td>{{ $enrollment->class->year }}</td>
                                                 <td>{{ $enrollment->enrolled_date->format('M d, Y') }}</td>
                                                 <td>

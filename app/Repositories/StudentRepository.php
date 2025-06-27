@@ -98,4 +98,12 @@ class StudentRepository implements StudentRepositoryInterface
             $query->where('classes.id', $classId);
         })->active()->get();
     }
+
+    public function findActiveByStudentId(string $studentId)
+    {
+        return $this->model
+            ->where('student_id', $studentId)
+            ->where('status', 1)
+            ->first();
+    }
 }

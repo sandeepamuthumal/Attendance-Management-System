@@ -11,4 +11,8 @@ interface StudentClassRepositoryInterface
     public function updateEnrollmentStatus(int $studentId, int $classId, bool $status);
     public function bulkEnroll(int $studentId, array $classData);
     public function getEnrollmentHistory(int $studentId);
+
+    public function findEnrollment(int $studentId, int $classId);
+
+    public function getActiveStudentsCountByClass(int $classId);
 }
