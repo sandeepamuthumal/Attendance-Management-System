@@ -5,8 +5,7 @@
  <link rel="stylesheet" href="{{ asset('assets/css/bulk-style.css') }}" />
  <!-- iconly-icon-->
  <link rel="stylesheet" href="{{ asset('assets/css/themify.css') }}" />
- <!--fontawesome-->
- <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-min.css') }}" />
+
  <!-- Whether Icon css-->
  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/weather-icons/weather-icons.min.css') }}" />
  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/scrollbar.css') }}" />
@@ -25,6 +24,10 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
      integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
      crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- Font Awesome 6.x (Recommended) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Font Awesome 5.x -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
  <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
- 
+
  @stack('css')

@@ -10033,7 +10033,7 @@ var _;
             }, e.lastMatch = function(e) {
                 return "Last Match: " + e
             }, e.codeScannerTitle = function() {
-                return "Event Tickets Scanner"
+                return "Attendance Scanner"
             }, e.cameraPermissionTitle = function() {
                 return "Request Camera Permissions"
             }, e.cameraPermissionRequesting = function() {

@@ -18,9 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'user_types_id',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'status'
     ];
 
     /**
@@ -42,4 +45,49 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function userType()
+    {
+        return $this->belongsTo(UserType::class, 'user_types_id');
+    }
+
+    public function teacher()
+    {
+        return $this->hasOne(Teacher::class, 'users_id');
+    }
+
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function isAdmin()
+    {
+        return $this->userType->user_type === 'Admin';
+    }
+
+    public function isTeacher()
+    {
+        return $this->userType->user_type === 'Teacher';
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 1);
+    }
+
+    public function scopeByUserType($query, $userTypeId)
+    {
+        return $query->where('user_types_id', $userTypeId);
+    }
+
+    public function status()
+    {
+        return $this->status === 1 ? 'active' : 'inactive';
+    }
+
+    public function userTypeName()
+    {
+        return $this->userType ? $this->userType->user_type : 'Unknown';
+    }
 }

@@ -5,11 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Tickets Director Admin Panel" />
-    <meta name="keywords" content="Tickets Director Admin Panel" />
-    <meta name="author" content="Tickets Director" />
+    <meta name="description" content="Bright Educational Center Login" />
+    <meta name="keywords" content="Bright Educational Center Login" />
+    <meta name="author" content="Bright Educational Center" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Tickets Director - Login</title>
+    <title>Login - Bright Educational Center</title>
     <!-- Favicon icon-->
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon" />
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon" />
@@ -60,7 +60,7 @@
                             <form class="theme-form" action="{{ route('login.process') }}" method="POST">
                                 @csrf
                                 <div class="company-logo">
-                                    <img src="{{ asset('images/login_logo.png') }}" alt="logo">
+                                    <img src="{{ asset('images/logo.png') }}" alt="logo">
                                 </div>
                                 <h2 class="text-center">Sign in to account</h2>
                                 <p class="text-center">Enter your email &amp; password to login</p>

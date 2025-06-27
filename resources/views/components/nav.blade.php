@@ -1,7 +1,6 @@
 <header class="page-header row">
     <div class="logo-wrapper d-flex align-items-center col-auto">
-        <a href="index.html"><img class="light-logo img-fluid" src="{{ asset('images/logo.png') }}" alt="logo" /><img
-                class="dark-logo img-fluid" src="{{ asset('images/logo.png') }}" alt="logo" /></a>
+        <a href="index.html" style="color:#fff"><h3 class="text-center">Bright Educational Center</h3></a>
         <a class="close-btn toggle-sidebar" href="javascript:void(0)">
             <svg class="svg-color">
                 <use href="{{ asset('assets/svg/iconly-sprite.svg#Category') }}"></use>
@@ -27,7 +26,7 @@
                         echo 'Good Morning ';
                     }
                 @endphp
-                {{-- {{ Auth::user()->first_name }} --}}
+                {{ Auth::user()->first_name }}
             </h3>
         </div>
         <div class="nav-right">
@@ -81,8 +80,8 @@
                                 width="20" alt="" />
                         </div>
                         <div class="user-content">
-                            {{-- <h6>{{ Auth::user()->first_name }}</h6> --}}
-                            <p class="mb-0">{{ Session::get('tickets_director_user_type') }}<i
+                            <h6>{{ Auth::user()->first_name }}</h6>
+                            <p class="mb-0">{{ Auth::user()->userTypeName() }}<i
                                     class="fa-solid fa-chevron-down"></i></p>
                         </div>
                     </div>
