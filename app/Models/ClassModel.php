@@ -40,6 +40,11 @@ class ClassModel extends Model
         return $this->belongsTo(Grade::class, 'grades_id');
     }
 
+    public function enrollments()
+    {
+        return $this->hasMany(StudentHasClass::class, 'classes_id');
+    }
+
     // Accessors
     public function getFullClassNameAttribute()
     {

@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\DashboardService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    protected $dashboardService;
+
+    public function __construct(DashboardService $dashboardService)
+    {
+        $this->dashboardService = $dashboardService;
+    }
     public function index()
     {
         if(Auth::user()->user_types_id == 1){
@@ -22,12 +29,13 @@ class DashboardController extends Controller
 
     public function adminDashboard()
     {
-       
-        return view('pages.admin.dashboard');
+        $stats = $this->dashboardService->getDashboardStats();
+        return view('pages.admin.dashboard',compact('stats'));
     }
 
     public function teacherDashboard()
     {
-        return view('pages.teacher.dashboard');
+        $stats = $this->dashboardService->getDashboardStats();
+        return view('pages.teacher.dashboard', compact('stats'));
     }
 }

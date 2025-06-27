@@ -77,7 +77,9 @@ Route::middleware(['auth', 'is.admin'])->prefix('admin')->group(function () {
         Route::get('/students/download-qr/{id}', [StudentController::class, 'downloadQR'])->name('students.download-qr');
         Route::get('/students/available-classes', [StudentController::class, 'getAvailableClasses'])->name('students.available-classes');
     });
+});
 
+Route::middleware(['auth'])->group(function () {
     //Attendance Management
     Route::get('/attendance-scanner', [AttendanceController::class, 'attendanceScanner'])->name('attendance.scanner');
     Route::get('/attendance-reports', [AttendanceController::class, 'attendanceReports'])->name('attendance.reports');
@@ -85,8 +87,13 @@ Route::middleware(['auth', 'is.admin'])->prefix('admin')->group(function () {
 });
 
 // Teacher Routes (for viewing their classes)
-Route::middleware(['auth', 'active', 'teacher'])->prefix('teacher')->name('teacher.')->group(function () {
-    Route::get('/my-classes', [ClassController::class, 'teacherClasses'])->name('my-classes');
+Route::middleware(['auth', 'teacher'])->prefix('teacher')->name('teacher.')->group(function () {
+    Route::get('/my-classes', [ClassController::class, 'teacherClasses'])->name('classes.index');
+    Route::get('/my-students', [StudentController::class, 'teachertudents'])->name('students.index');
+    Route::get('/classes/load', [ClassController::class, 'loadClasses'])->name('classes.load');
+    Route::get('/students/load', [StudentController::class, 'loadStudents'])->name('students.load');
+    Route::get('/students/profile/{id}', [StudentController::class, 'profile'])->name('students.profile');
+    Route::get('/students/search', [StudentController::class, 'search'])->name('students.search');
 });
 
 

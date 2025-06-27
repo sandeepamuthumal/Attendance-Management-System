@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\ClassModel;
+use App\Models\Teacher;
 use App\Repositories\Contracts\ClassRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -25,11 +26,21 @@ class ClassRepository implements ClassRepositoryInterface
 
     public function getAllActive(): Collection
     {
-        return $this->model->withRelations()
-            ->active()
-            ->orderBy('year', 'desc')
-            ->orderBy('class_name')
-            ->get();
+        if (auth()->user()->user_types_id == 1) {
+            return $this->model->withRelations()
+                ->active()
+                ->orderBy('year', 'desc')
+                ->orderBy('class_name')
+                ->get();
+        } else {
+            $teacher = Teacher::where('users_id', auth()->id())->first();
+            return $this->model->withRelations()
+                ->active()
+                ->byTeacher($teacher->id)
+                ->orderBy('year', 'desc')
+                ->orderBy('class_name')
+                ->get();
+        }
     }
 
     public function getAllWithFilters(array $filters = []): Collection
@@ -124,7 +135,7 @@ class ClassRepository implements ClassRepositoryInterface
             ->get();
     }
 
-      public function getAllWithRelations()
+    public function getAllWithRelations()
     {
         return $this->model
             ->with(['subject', 'teacher.user', 'grade'])

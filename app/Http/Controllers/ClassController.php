@@ -28,7 +28,6 @@ class ClassController extends Controller
         $grades = Grade::all();
         $years = $this->getAvailableYears();
 
-
         return view('pages.admin.classes.index', compact('subjects', 'teachers', 'grades', 'years'));
     }
 
@@ -42,6 +41,16 @@ class ClassController extends Controller
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
+    }
+
+    public function teacherClasses()
+    {
+        $subjects = Subject::all();
+        $grades = Grade::all();
+        $years = $this->getAvailableYears();
+        $teacher = Teacher::with('user')->where('users_id', auth()->id())->first();
+
+        return view('pages.teacher.classes', compact('subjects', 'teacher', 'grades', 'years'));
     }
 
     public function store(CreateClassRequest $request): JsonResponse

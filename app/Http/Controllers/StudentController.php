@@ -33,6 +33,12 @@ class StudentController extends Controller
         return view('pages.admin.students.index', compact('classes'));
     }
 
+    public function teachertudents()
+    {
+        $classes = ClassModel::with(['subject','grade'])->active()->get();
+        return view('pages.teacher.students', compact('classes'));
+    }
+
     /**
      * Show create student form
      */
@@ -225,7 +231,7 @@ class StudentController extends Controller
         }
     }
 
-    
+
     /**
      * Download student QR code
      */
