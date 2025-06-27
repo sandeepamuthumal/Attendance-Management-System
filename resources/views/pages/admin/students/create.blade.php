@@ -312,7 +312,7 @@
         }
 
         .step.active .step-number {
-            background: #007bff;
+            background: #134D80;
             color: white;
         }
 
@@ -328,7 +328,7 @@
         }
 
         .step.active .step-title {
-            color: #007bff;
+            color: #134D80;
             font-weight: 500;
         }
 
@@ -371,8 +371,8 @@
         }
 
         .form-check-input:checked {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #134D80;
+            border-color: #134D80;
         }
 
         .invalid-feedback {

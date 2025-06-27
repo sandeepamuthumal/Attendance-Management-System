@@ -61,6 +61,7 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li> <a href="{{ route('attendance.scanner') }}">Scanner</a></li>
+                    <li> <a href="{{ route('attendance.reports') }}">Reports</a></li>
                 </ul>
             </li>
         </ul>

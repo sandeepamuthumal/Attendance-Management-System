@@ -217,7 +217,7 @@
         }
 
         .nav-tabs .nav-link.active {
-            color: #007bff;
+            color: #134D80;
             font-weight: 500;
         }
 

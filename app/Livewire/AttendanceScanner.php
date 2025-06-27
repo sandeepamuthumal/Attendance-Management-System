@@ -6,68 +6,88 @@ use App\Models\Attendance;
 use App\Models\ClassModel;
 use App\Models\Student;
 use App\Models\StudentHasClass;
+use App\Services\AttendanceService;
+use App\Services\ClassService;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class AttendanceScanner extends Component
 {
     public $classes;
     public $selected_date;
-    public $selected_class,$student,$enrollment;
+    public $selected_class;
+    public $student;
+    public $enrollment;
+    public $output_value;
 
     public $totalStudents = 0;
     public $presentStudents = 0;
 
-    public function changeClass($class_id)
+    protected $attendanceService;
+    protected $classService;
+
+    public function boot(AttendanceService $attendanceService, ClassService $classService)
     {
-        $this->selected_class = $class_id;
+        $this->attendanceService = $attendanceService;
+        $this->classService = $classService;
+    }
+
+     public function changeClass($classId)
+    {
+        $this->selected_class = $classId;
+        $this->resetStudentData();
     }
 
     public function loadStats()
     {
-        $this->totalStudents = 0;
-        $this->presentStudents = 0;
+        $this->resetStats();
 
-        if ($this->selected_class) {
-           $this->totalStudents = StudentHasClass::where('classes_id', $this->selected_class)->where('status',1)->count();
-           $this->presentStudents = Attendance::leftJoin('students_has_classes', 'attendances.students_has_classes_id', '=', 'students_has_classes.id')
-                ->where('students_has_classes.classes_id', $this->selected_class)
-                ->whereDate('attendances.date', Carbon::today())
-                ->count();
+        if (!$this->selected_class) {
+            return;
+        }
+
+        try {
+            $stats = $this->attendanceService->getAttendanceStats(
+                $this->selected_class,
+                $this->selected_date
+            );
+
+            $this->totalStudents = $stats['total'];
+            $this->presentStudents = $stats['present'];
+        } catch (\Exception $e) {
+            Log::error('Failed to load attendance stats: ' . $e->getMessage());
+            $this->dispatch('showError', 'Failed to load statistics');
         }
     }
 
-    public function loadStudent($student_id)
+    public function loadStudent($studentId)
     {
-        $this->student = Student::where('student_id', $student_id)->where('status', 1)->first();
-        if (!$this->student) {
-            $this->dispatch('showError', 'Student not found');
+        if (!$this->selected_class) {
+            $this->dispatch('showError', 'Please select a class first');
             return;
         }
 
-        // Check if the student is enrolled in the selected class
-        $this->enrollment = StudentHasClass::where('students_id', $this->student->id)
-            ->where('classes_id', $this->selected_class)
-            ->where('status', 1)
-            ->first();
-
-        if (!$this->enrollment) {
-            $this->dispatch('showError', 'Student is not enrolled in the selected class');
+        if (empty($studentId)) {
+            $this->dispatch('showError', 'Please scan a QR code or enter a Student ID');
             return;
         }
 
-        // Check if the student has already been marked present selected_date
-        $attendance = Attendance::where('students_id', $this->student->id)
-            ->where('students_has_classes_id', $this->enrollment->id)
-            ->whereDate('date',  $this->selected_date)
-            ->first();
+        try {
+            $result = $this->attendanceService->validateAndLoadStudent(
+                $studentId,
+                $this->selected_class,
+                $this->selected_date
+            );
 
-        if ($attendance) {
-            $this->dispatch('showError', 'Student has already been marked present');
-            return;
+            $this->student = $result['student'];
+            $this->enrollment = $result['enrollment'];
+
+            $this->dispatch('openStudentModal');
+        } catch (\Exception $e) {
+            Log::error('Failed to load student: ' . $e->getMessage());
+            $this->dispatch('showError', $e->getMessage());
         }
-
-        $this->dispatch('openStudentModal');
     }
 
     public function markAttendance()
@@ -77,20 +97,27 @@ class AttendanceScanner extends Component
             return;
         }
 
-        // Create attendance record
-        Attendance::create([
-            'students_id' => $this->student->id,
-            'students_has_classes_id' => $this->enrollment->id,
-            'date' => $this->selected_date,
-        ]);
+        try {
+            $this->attendanceService->markAttendance(
+                $this->student->id,
+                $this->enrollment->id,
+                $this->selected_date
+            );
 
-        $this->dispatch('showSuccess', 'Attendance marked successfully');
+            $this->dispatch('showSuccess', 'Attendance marked successfully');
+            $this->resetStudentData();
+            $this->loadStats(); // Refresh stats after marking attendance
+        } catch (\Exception $e) {
+            Log::error('Failed to mark attendance: ' . $e->getMessage());
+            $this->dispatch('showError', $e->getMessage());
+        }
     }
 
     public function mount()
     {
-        $this->classes = ClassModel::with(['subject', 'teacher.user', 'grade'])->get();
+        $this->classes = $this->classService->getAllClasses();
         $this->selected_date = Carbon::today()->format('Y-m-d');
+        $this->resetStats();
     }
 
     public function render()
@@ -98,4 +125,29 @@ class AttendanceScanner extends Component
         $this->loadStats();
         return view('livewire.attendance-scanner');
     }
+
+     private function resetStudentData()
+    {
+        $this->student = null;
+        $this->enrollment = null;
+        $this->output_value = '';
+    }
+
+    private function resetStats()
+    {
+        $this->totalStudents = 0;
+        $this->presentStudents = 0;
+    }
+
+    // Validation rules
+    protected $rules = [
+        'selected_class' => 'required|integer|exists:classes,id',
+        'selected_date' => 'required|date',
+        'output_value' => 'nullable|string|max:255',
+    ];
+
+    protected $messages = [
+        'selected_class.required' => 'Please select a class',
+        'selected_date.required' => 'Please select a date',
+    ];
 }

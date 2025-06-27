@@ -46,4 +46,35 @@ class AttendanceRepository implements AttendanceRepositoryInterface
             ->whereDate('attendances.date', $date)
             ->get();
     }
+
+    public function getAttendanceReport(array $filters)
+    {
+        $query = $this->model
+            ->with(['student', 'enrollment.class.subject', 'enrollment.class.grade'])
+            ->join('students_has_classes', 'attendances.students_has_classes_id', '=', 'students_has_classes.id')
+            ->join('students', 'attendances.students_id', '=', 'students.id')
+            ->join('classes', 'students_has_classes.classes_id', '=', 'classes.id')
+            ->select('attendances.*');
+
+        // Apply filters
+        if (!empty($filters['class_id'])) {
+            $query->where('students_has_classes.classes_id', $filters['class_id']);
+        }
+
+        if (!empty($filters['student_id'])) {
+            $query->where('attendances.students_id', $filters['student_id']);
+        }
+
+        if (!empty($filters['start_date'])) {
+            $query->whereDate('attendances.date', '>=', $filters['start_date']);
+        }
+
+        if (!empty($filters['end_date'])) {
+            $query->whereDate('attendances.date', '<=', $filters['end_date']);
+        }
+
+        return $query->orderBy('attendances.date', 'desc')
+            ->orderBy('attendances.created_at', 'desc')
+            ->get();
+    }
 }

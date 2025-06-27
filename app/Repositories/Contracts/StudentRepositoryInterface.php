@@ -17,5 +17,5 @@ interface StudentRepositoryInterface
     public function searchStudents(string $search, int $limit = 50);
 
     public function getStudentsByClass(int $classId);
-     public function findActiveByStudentId(string $studentId);
+    public function findActiveByStudentId(string $studentId);
 }

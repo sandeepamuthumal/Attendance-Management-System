@@ -80,6 +80,8 @@ Route::middleware(['auth', 'is.admin'])->prefix('admin')->group(function () {
 
     //Attendance Management
     Route::get('/attendance-scanner', [AttendanceController::class, 'attendanceScanner'])->name('attendance.scanner');
+    Route::get('/attendance-reports', [AttendanceController::class, 'attendanceReports'])->name('attendance.reports');
+    Route::get('/attendance/report/students', [AttendanceController::class, 'getStudents'])->name('attendance.report.students');
 });
 
 // Teacher Routes (for viewing their classes)

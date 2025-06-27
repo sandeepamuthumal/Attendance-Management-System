@@ -80,4 +80,23 @@ class AttendanceService
             'absent' => $totalStudents - $presentStudents
         ];
     }
+
+    public function getAttendanceReport(array $filters)
+    {
+        return $this->attendanceRepository->getAttendanceReport($filters);
+    }
+
+    public function getReportSummary(array $filters): array
+    {
+        $records = $this->getAttendanceReport($filters);
+
+        return [
+            'total_records' => $records->count(),
+            'unique_students' => $records->unique('students_id')->count(),
+            'date_range' => [
+                'start' => $filters['start_date'] ?? null,
+                'end' => $filters['end_date'] ?? null,
+            ]
+        ];
+    }
 }
