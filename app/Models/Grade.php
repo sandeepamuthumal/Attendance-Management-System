@@ -13,8 +13,11 @@ class Grade extends Model
         'grade',
     ];
 
+    public $timestamps = false;
+
     public function classes()
     {
         return $this->hasMany(ClassModel::class, 'grades_id');
     }
+
 }
