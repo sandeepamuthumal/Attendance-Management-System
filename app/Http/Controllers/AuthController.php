@@ -33,13 +33,13 @@ class AuthController extends Controller
 
                 //set sessions
                 $user_type = DB::table('user_types')->where('id', Auth::user()->user_types_id)->first();
-                session()->put('tickets_director_user_type', $user_type->user_type);
+                session()->put('brightedu_user_type', $user_type->user_type);
 
                 // Retrieve the intended URL or default to dashboard
                 if (Auth::user()->user_types_id == 1) {
                     $intendedUrl = Session::pull('intended_url', '/admin-dashboard');
                 } else if (Auth::user()->user_types_id == 2) {
-                    $intendedUrl = Session::pull('intended_url', '/manager-dashboard');
+                    $intendedUrl = Session::pull('intended_url', '/teacher-dashboard');
                 } else {
                     return back()->with('error', 'You cannot access this page!');
                 }
@@ -58,7 +58,7 @@ class AuthController extends Controller
         if (Auth::user()->user_types_id == 1) {
             $intendedUrl = Session::pull('intended_url', '/admin-dashboard');
         } else if (Auth::user()->user_types_id == 2) {
-            $intendedUrl = Session::pull('intended_url', '/manager-dashboard');
+            $intendedUrl = Session::pull('intended_url', '/teacher-dashboard');
         } else {
             return back()->with('error', 'You cannot access this page!');
         }

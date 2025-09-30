@@ -11,8 +11,7 @@ class Subject extends Model
 
     protected $fillable = [
         'subject',
-        'subject_code',
-        'description'
+        'subject_code'
     ];
 
     public $timestamps = false;
