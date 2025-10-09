@@ -142,7 +142,7 @@
 
         {{-- Statistics Section --}}
         <div class="col-lg-4">
-            <div class="card">
+            <div class="card" wire:poll="loadStats">
                 <div class="card-header">
                     <h5 class="card-title mb-0">Attendance Statistics</h5>
                     @if ($selected_date)

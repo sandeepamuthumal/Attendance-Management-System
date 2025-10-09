@@ -280,7 +280,7 @@
                 text: 'This action cannot be undone. Student will be permanently deleted!',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#dc3545',
+                confirmButtonColor: '#28a745',
                 cancelButtonColor: '#6c757d',
                 confirmButtonText: 'Yes, delete it!',
                 cancelButtonText: 'Cancel'
@@ -288,7 +288,7 @@
                 if (result.isConfirmed) {
                     $.ajax({
                         url: `/admin/students/delete/${studentId}`,
-                        method: 'DELETE',
+                        method: 'POST',
                         data: {
                             _token: $('meta[name="csrf-token"]').attr('content')
                         },

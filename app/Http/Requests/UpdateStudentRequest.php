@@ -33,13 +33,13 @@ class UpdateStudentRequest extends FormRequest
             'email' => [
                 'required',
                 'email',
-                Rule::unique('students')->ignore($studentId),
+                Rule::unique('students')->ignore($studentId)->where(fn($query) => $query->where('status', 1)),
             ],
             'nic' => [
                 'required',
                 'string',
                 'max:12',
-                Rule::unique('students')->ignore($studentId),
+                Rule::unique('students')->ignore($studentId)->where(fn($query) => $query->where('status', 1)),
             ],
             'address' => 'required|string',
             'class_ids' => 'array',

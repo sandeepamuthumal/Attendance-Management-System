@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateStudentRequest;
 use App\Models\ClassModel;
 use App\Models\Grade;
 use App\Models\Subject;
+use App\Services\NotificationService;
 use App\Services\StudentService;
 use App\Services\QRCodeService;
 use Exception;
@@ -18,10 +19,12 @@ use Illuminate\Http\Response;
 class StudentController extends Controller
 {
     protected $studentService;
+    protected $notificationService;
 
-    public function __construct(StudentService $studentService)
+    public function __construct(StudentService $studentService, NotificationService $notificationService)
     {
         $this->studentService = $studentService;
+        $this->notificationService = $notificationService;
     }
 
     /**
@@ -58,6 +61,7 @@ class StudentController extends Controller
     {
         try {
             $data = $request->validated();
+            $data['status'] = 1;
             $classIds = $data['class_ids'] ?? [];
             unset($data['class_ids']);
 
@@ -70,6 +74,9 @@ class StudentController extends Controller
             if (!empty($classIds)) {
                 $this->studentService->enrollStudentToClasses($student->id, $classIds);
             }
+
+            // Send email to student
+            $this->notificationService->sendStudentQRCode($student);
 
             return response()->json([
                 'success' => true,

@@ -71,7 +71,7 @@ Route::middleware(['auth', 'is.admin'])->prefix('admin')->group(function () {
         // AJAX Routes
         Route::get('/students/load', [StudentController::class, 'loadStudents'])->name('students.load');
         Route::get('/students/search', [StudentController::class, 'search'])->name('students.search');
-        Route::delete('/students/delete/{id}', [StudentController::class, 'deactivate'])->name('students.destroy');
+        Route::post('/students/delete/{id}', [StudentController::class, 'deactivate'])->name('students.destroy');
 
         // QR Code & Classes
         Route::get('/students/download-qr/{id}', [StudentController::class, 'downloadQR'])->name('students.download-qr');

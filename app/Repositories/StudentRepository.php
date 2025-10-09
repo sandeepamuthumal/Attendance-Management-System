@@ -44,7 +44,7 @@ class StudentRepository implements StudentRepositoryInterface
             });
         }
 
-        return $query->orderBy('student_id')->get();
+        return $query->orderBy('student_id')->active()->get();
     }
 
     public function findById(int $id): ?Student
@@ -82,6 +82,11 @@ class StudentRepository implements StudentRepositoryInterface
     {
         return $this->model->with(['classes.subject', 'classes.teacher.user', 'classes.grade'])
             ->find($id);
+    }
+
+    public function getStudentWithUser(int $id): ?Student
+    {
+        return $this->model->with('user')->find($id);
     }
 
     public function searchStudents(string $search, int $limit = 50): Collection
