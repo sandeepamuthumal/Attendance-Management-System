@@ -151,7 +151,6 @@ class StudentService
         try {
             $result = $this->studentRepository->changeStatus($id, false);
 
-
             return $result;
         } catch (Exception $e) {
             Log::error('Error deactivating student: ' . $e->getMessage());

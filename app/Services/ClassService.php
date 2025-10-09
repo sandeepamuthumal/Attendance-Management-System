@@ -185,13 +185,11 @@ class ClassService
 
     private function generateActionButtons(int $classId, bool $status): string
     {
-        $editBtn = '<button class="btn btn-sm btn-primary me-1 edit-class" data-id="' . $classId . '" title="Edit">
+        $editBtn = '<button class="btn btn-sm btn-primary btn-xs me-1 edit-class" data-id="' . $classId . '" title="Edit">
                         <i class="icon-pencil-alt"></i>
                     </button>';
 
-
-
-        $deleteBtn = '<button class="btn btn-sm btn-warning delete-class" data-id="' . $classId . '" title="Delete">
+        $deleteBtn = '<button class="btn btn-sm btn-danger btn-xs delete-class" data-id="' . $classId . '" title="Delete">
                           <i class="icon-trash"></i>
                       </button>';
 
