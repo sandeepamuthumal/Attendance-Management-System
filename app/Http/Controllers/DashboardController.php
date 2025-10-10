@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Subject;
+use App\Services\ClassService;
 use App\Services\DashboardService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,10 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     protected $dashboardService;
+    protected $classService;
 
-    public function __construct(DashboardService $dashboardService)
+    public function __construct(DashboardService $dashboardService, ClassService $classService)
     {
         $this->dashboardService = $dashboardService;
+        $this->classService = $classService;
     }
     public function index()
     {
@@ -30,6 +34,7 @@ class DashboardController extends Controller
     public function adminDashboard()
     {
         $stats = $this->dashboardService->getDashboardStats();
+
         return view('pages.admin.dashboard',compact('stats'));
     }
 

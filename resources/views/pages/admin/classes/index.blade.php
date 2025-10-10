@@ -501,7 +501,7 @@
                         ],
                         pageLength: 25,
                         lengthChange: true,
-                        order: [[0, 'asc']],
+                        order: [],
                         destroy: true,
                         data: response,
                         columns: [

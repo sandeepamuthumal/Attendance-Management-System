@@ -62,6 +62,7 @@ class StudentController extends Controller
         try {
             $data = $request->validated();
             $data['status'] = 1;
+
             $classIds = $data['class_ids'] ?? [];
             unset($data['class_ids']);
 

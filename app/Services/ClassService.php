@@ -22,6 +22,8 @@ class ClassService
         try {
             $classes = $this->classRepository->getAllWithFilters($filters);
 
+           
+
             return $classes->map(function ($class) {
                 return [
                     'id' => $class->id,

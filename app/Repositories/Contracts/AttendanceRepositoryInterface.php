@@ -10,4 +10,6 @@ interface AttendanceRepositoryInterface
     public function getAttendanceByClass(int $classId, string $date);
 
     public function getAttendanceReport(array $filters);
+
+    public function getAttendanceById(int $id);
 }

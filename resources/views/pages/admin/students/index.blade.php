@@ -73,9 +73,8 @@
                                         <th>Student ID</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Contact No</th>
                                         <th>Classes</th>
-                                        <th>Created Date</th>
+                                        <th>Registered Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -176,18 +175,17 @@
                     studentDataTable = $('#student-table').DataTable({
                         dom: 'Bfrtip',
                         buttons: ['pageLength', 'csv', 'excel', 'pdf', 'print'],
-                        pageLength: 25,
+                        pageLength: 10,
                         lengthChange: true,
-                        order: [[0, 'asc']],
+                        order: [],
                         destroy: true,
                         data: response,
                         columns: [
                             { data: 'student_id', title: 'Student ID' },
                             { data: 'name', title: 'Name' },
                             { data: 'email', title: 'Email' },
-                            { data: 'contact_no', title: 'Contact No' },
                             { data: 'classes', title: 'Classes' },
-                            { data: 'created_date', title: 'Created Date' },
+                            { data: 'created_date', title: 'Registered Date' },
                             {
                                 data: 'action',
                                 title: 'Action',

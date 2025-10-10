@@ -202,7 +202,7 @@ class StudentService
 
     private function generateActionButtons(int $studentId): string
     {
-        $viewBtn = '<a href="/admin/students/profile/' . $studentId . '" class="btn btn-xs btn-info me-1" title="View Profile">
+        $viewBtn = '<a href="/admin/students/profile/' . $studentId . '" class="btn btn-xs btn-warning me-1" title="View Profile">
                         <i class="bi bi-eye"></i>
                     </a>';
 

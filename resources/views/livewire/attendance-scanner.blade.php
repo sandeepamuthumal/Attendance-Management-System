@@ -199,6 +199,12 @@
                                     </div>
                                 </div>
                             @endif
+
+                            <ul>
+                                @foreach ($notifications as $notification)
+                                    <li>{{ $notification }}</li>
+                                @endforeach
+                            </ul>
                         </div>
                     @else
                         <div class="text-center text-muted py-5">
@@ -286,6 +292,13 @@
                     confirmButtonColor: '#ffc107'
                 });
             });
+
+            document.addEventListener('livewire:load', function() {
+                window.Echo.channel('attendance-updates')
+                    .listen('.attendance.marked', (e) => {
+                        Livewire.emit('attendanceUpdated', e.attendance);
+                    });
+            });
         </script>
     @endscript
 
@@ -342,7 +355,7 @@
             @this.call('markAttendance');
 
             setTimeout(() => {
-                button.prop('disabled', false);
+                $("#scan-btn").prop('disabled', false);
             }, 3000);
         }
 
@@ -356,6 +369,26 @@
         function focusInput() {
             $('#output_value').focus();
         }
+
+        var pusher = new Pusher('{{ config('broadcasting.connections.pusher.key') }}', {
+            cluster: '{{ config('broadcasting.connections.pusher.options.cluster') }}'
+        });
+
+        var channel = pusher.subscribe('attendance-channel');
+        channel.bind('AttendanceMarked', function(data) {
+            console.log("Received:", data);
+            // You can show SweetAlert2 here
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'success',
+                title: `${data.student_name} marked attendance`,
+                text: `at ${data.time}`,
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+            });
+        });
 
         // Bootstrap modal event handlers
         $('#student-modal').on('hidden.bs.modal', function() {

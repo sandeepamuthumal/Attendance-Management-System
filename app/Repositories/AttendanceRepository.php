@@ -15,7 +15,7 @@ class AttendanceRepository implements AttendanceRepositoryInterface
         $this->model = $model;
     }
 
-    public function create(array $data)
+    public function create(array $data): Attendance
     {
         return $this->model->create($data);
     }
@@ -76,5 +76,10 @@ class AttendanceRepository implements AttendanceRepositoryInterface
         return $query->orderBy('attendances.date', 'desc')
             ->orderBy('attendances.created_at', 'desc')
             ->get();
+    }
+
+    public function getAttendanceById(int $id)
+    {
+        return $this->model->with(['student', 'enrollment.class.subject', 'enrollment.class.grade'])->find($id);
     }
 }
