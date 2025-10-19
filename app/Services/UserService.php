@@ -77,8 +77,13 @@ class UserService
                     'nic' => $data['teacher_data']['nic']
                 ]);
 
+                $user->assignRole('Teacher');
+
                 //send login credentials
                 $this->notificationService->sendTeacherCredentials($user, $password);
+            }
+            else{
+                $user->assignRole('Admin');
             }
 
             DB::commit();

@@ -5,25 +5,27 @@ namespace App\Http\Controllers;
 use App\Models\Subject;
 use App\Services\ClassService;
 use App\Services\DashboardService;
+use App\Services\TeacherDashboardService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    protected $dashboardService;
+    protected $dashboardService, $teacherDashboardService;
     protected $classService;
 
-    public function __construct(DashboardService $dashboardService, ClassService $classService)
+    public function __construct(DashboardService $dashboardService, ClassService $classService, TeacherDashboardService $teacherDashboardService)
     {
         $this->dashboardService = $dashboardService;
         $this->classService = $classService;
+        $this->teacherDashboardService = $teacherDashboardService;
     }
     public function index()
     {
-        if(Auth::user()->user_types_id == 1){
+        if(Auth::user()->hasRole('Admin')){
             return redirect()->route('admin.dashboard');
         }
-        else if(Auth::user()->user_types_id == 2){
+        else if(Auth::user()->hasRole('Teacher')){
             return redirect()->route('teacher.dashboard');
         }
 
@@ -40,7 +42,8 @@ class DashboardController extends Controller
 
     public function teacherDashboard()
     {
-        $stats = $this->dashboardService->getDashboardStats();
+        $stats = $this->teacherDashboardService->getDashboardStats();
+
         return view('pages.teacher.dashboard', compact('stats'));
     }
 }

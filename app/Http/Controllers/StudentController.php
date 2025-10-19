@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateStudentRequest;
 use App\Models\ClassModel;
 use App\Models\Grade;
 use App\Models\Subject;
+use App\Repositories\ClassRepository;
+use App\Repositories\Contracts\TeacherRepositoryInterface;
 use App\Services\NotificationService;
 use App\Services\StudentService;
 use App\Services\QRCodeService;
@@ -21,10 +23,13 @@ class StudentController extends Controller
     protected $studentService;
     protected $notificationService;
 
-    public function __construct(StudentService $studentService, NotificationService $notificationService)
+    protected $classRepository;
+
+    public function __construct(StudentService $studentService, NotificationService $notificationService, ClassRepository $classRepository)
     {
         $this->studentService = $studentService;
         $this->notificationService = $notificationService;
+        $this->classRepository = $classRepository;
     }
 
     /**
@@ -32,13 +37,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $classes = ClassModel::with(['subject', 'grade'])->active()->get();
+        $classes = $this->classRepository->getAllActive();
         return view('pages.admin.students.index', compact('classes'));
     }
 
     public function teachertudents()
     {
-        $classes = ClassModel::with(['subject','grade'])->active()->get();
+        $classes =  $this->classRepository->getAllActive();
         return view('pages.teacher.students', compact('classes'));
     }
 

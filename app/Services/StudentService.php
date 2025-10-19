@@ -8,6 +8,7 @@ use App\Services\QRCodeService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class StudentService
 {
@@ -202,7 +203,7 @@ class StudentService
 
     private function generateActionButtons(int $studentId): string
     {
-        $viewBtn = '<a href="/admin/students/profile/' . $studentId . '" class="btn btn-xs btn-warning me-1" title="View Profile">
+        $viewBtn = '<a href="/students/profile/' . $studentId . '" class="btn btn-xs btn-warning me-1" title="View Profile">
                         <i class="bi bi-eye"></i>
                     </a>';
 
@@ -214,6 +215,8 @@ class StudentService
                           <i class="icon-trash"></i>
                       </button>';
 
-        return $viewBtn . $editBtn . $deleteBtn;
+        return Auth::user()->can('manage students')
+            ? $viewBtn . $editBtn . $deleteBtn
+            : $viewBtn;
     }
 }

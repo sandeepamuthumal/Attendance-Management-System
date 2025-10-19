@@ -5,14 +5,18 @@ namespace App\Repositories;
 use App\Models\Student;
 use App\Repositories\Contracts\StudentRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
 
 class StudentRepository implements StudentRepositoryInterface
 {
     protected $model;
 
-    public function __construct(Student $model)
+    protected $teacherRepository;
+
+    public function __construct(Student $model, TeacherRepository $teacherRepository)
     {
         $this->model = $model;
+        $this->teacherRepository = $teacherRepository;
     }
 
     public function getAll(): Collection
@@ -41,6 +45,13 @@ class StudentRepository implements StudentRepositoryInterface
         if (isset($filters['class_id']) && $filters['class_id'] !== '') {
             $query->whereHas('classes', function ($q) use ($filters) {
                 $q->where('classes.id', $filters['class_id']);
+            });
+        }
+
+        if(Auth::user()->hasRole('Teacher')){
+            $query->whereHas('classes', function ($q) {
+                $teacher = $this->teacherRepository->findByUserId(auth()->id());
+                $q->where('teachers_id', $teacher->id);
             });
         }
 
