@@ -362,17 +362,6 @@
             padding: 4px 8px;
         }
 
-        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
-            background: #667eea !important;
-            border-color: #667eea !important;
-            color: white !important;
-        }
-
-        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-            background: #5a6fd8 !important;
-            border-color: #5a6fd8 !important;
-            color: white !important;
-        }
     </style>
 @endpush
 
