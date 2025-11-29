@@ -36,6 +36,17 @@ class StudentClassRepository implements StudentClassRepositoryInterface
                 );
             }
 
+            //get all enrollments
+            $enrollments = $this->model->forStudent($studentId)->get();
+
+            //check difference and deactivate unenrolled classes
+            foreach ($enrollments as $enrollment) {
+                if (!in_array($enrollment->classes_id, $classIds)) {
+                    $enrollment->status = 0;
+                    $enrollment->save();
+                }
+            }
+
             DB::commit();
             return true;
         } catch (\Exception $e) {

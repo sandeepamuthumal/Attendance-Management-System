@@ -71,9 +71,6 @@ Route::middleware(['auth', 'role:Admin'])->prefix('admin')->group(function () {
         Route::get('/students/load', [StudentController::class, 'loadStudents'])->name('students.load');
         Route::get('/students/search', [StudentController::class, 'search'])->name('students.search');
         Route::post('/students/delete/{id}', [StudentController::class, 'deactivate'])->name('students.destroy');
-
-        // QR Code & Classes
-        Route::get('/students/available-classes', [StudentController::class, 'getAvailableClasses'])->name('students.available-classes');
     });
 });
 

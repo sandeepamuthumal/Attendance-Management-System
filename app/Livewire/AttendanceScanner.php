@@ -28,7 +28,7 @@ class AttendanceScanner extends Component
     protected $attendanceService;
     protected $classService;
 
-     public $notifications = [];
+    public $notifications = [];
 
     public function boot(AttendanceService $attendanceService, ClassService $classService)
     {

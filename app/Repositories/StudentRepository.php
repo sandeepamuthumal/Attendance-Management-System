@@ -112,6 +112,7 @@ class StudentRepository implements StudentRepositoryInterface
     {
         return $this->model->whereHas('classes', function ($query) use ($classId) {
             $query->where('classes.id', $classId);
+            $query->where('status', 1);
         })->active()->get();
     }
 

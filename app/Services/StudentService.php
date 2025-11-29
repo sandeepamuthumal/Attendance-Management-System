@@ -15,12 +15,18 @@ class StudentService
     protected $studentRepository;
     protected $studentClassRepository;
 
+    protected $qrCodeService;
+
+    protected $notificationService;
+
     public function __construct(
         StudentRepositoryInterface $studentRepository,
-        StudentClassRepositoryInterface $studentClassRepository
+        StudentClassRepositoryInterface $studentClassRepository,
+        QRCodeService $qrCodeService
     ) {
         $this->studentRepository = $studentRepository;
         $this->studentClassRepository = $studentClassRepository;
+        $this->qrCodeService = $qrCodeService;
     }
 
     public function getStudentsWithFilters(array $filters = [])
@@ -54,7 +60,20 @@ class StudentService
         try {
             DB::beginTransaction();
 
+            $classIds = $data['class_ids'] ?? [];
+            unset($data['class_ids']);
             $student = $this->studentRepository->create($data);
+
+            // Generate QR code
+            $this->qrCodeService->generateStudentQR($student);
+
+            // Enroll to classes if provided
+            if (!empty($classIds)) {
+                $this->studentClassRepository->enrollStudent($student->id, $classIds);
+            }
+
+            // Send email to student
+            $this->notificationService->sendStudentQRCode($student);
 
             DB::commit();
             return $student;
@@ -70,13 +89,20 @@ class StudentService
         try {
             DB::beginTransaction();
 
+            $classIds = $data['class_ids'] ?? [];
+            unset($data['student_id'], $data['class_ids']);
+
             $oldStudent = $this->studentRepository->getStudentWithClasses($id);
             if (!$oldStudent) {
                 throw new Exception('Student not found');
             }
 
             $this->studentRepository->update($id, $data);
-            $newStudent = $this->studentRepository->getStudentWithClasses($id);
+
+            // Update class enrollments
+            if (isset($classIds)) {
+                $this->studentClassRepository->enrollStudent($oldStudent->id, $classIds);
+            }
 
 
             DB::commit();
@@ -198,6 +224,16 @@ class StudentService
         } catch (Exception $e) {
             Log::error('Error searching students: ' . $e->getMessage());
             throw new Exception('Failed to search students');
+        }
+    }
+
+    public function getStudentsByClass(int $classId)
+    {
+        try {
+            return $this->studentRepository->getStudentsByClass($classId);
+        } catch (Exception $e) {
+            Log::error('Error fetching students by class: ' . $e->getMessage());
+            throw new Exception('Failed to fetch students by class');
         }
     }
 

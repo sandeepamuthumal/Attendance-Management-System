@@ -68,21 +68,7 @@ class StudentController extends Controller
             $data = $request->validated();
             $data['status'] = 1;
 
-            $classIds = $data['class_ids'] ?? [];
-            unset($data['class_ids']);
-
             $student = $this->studentService->createStudent($data);
-
-            // Generate QR code
-            QRCodeService::generateStudentQR($student);
-
-            // Enroll to classes if provided
-            if (!empty($classIds)) {
-                $this->studentService->enrollStudentToClasses($student->id, $classIds);
-            }
-
-            // Send email to student
-            $this->notificationService->sendStudentQRCode($student);
 
             return response()->json([
                 'success' => true,
@@ -117,7 +103,6 @@ class StudentController extends Controller
             $enrolledClassIds = $student->classes->pluck('id')->toArray();
 
 
-
             return view('pages.admin.students.edit', compact('student', 'classes', 'grades', 'subjects', 'enrolledClassIds'));
         } catch (Exception $e) {
             abort(404, 'Student not found');
@@ -132,20 +117,13 @@ class StudentController extends Controller
         try {
             $data = $request->validated();
             $studentId = $data['student_id'];
-            $classIds = $data['class_ids'] ?? [];
-            unset($data['student_id'], $data['class_ids']);
 
             $this->studentService->updateStudent($studentId, $data);
-
-            // Update class enrollments
-            if (isset($request->class_ids)) {
-                $this->studentService->enrollStudentToClasses($studentId, $classIds);
-            }
 
             return response()->json([
                 'success' => true,
                 'message' => 'Student updated successfully',
-                'redirect' => route('admin.students.profile', $studentId)
+                'redirect' => route('students.profile', $studentId)
             ]);
         } catch (Exception $e) {
             return response()->json([
@@ -263,41 +241,6 @@ class StudentController extends Controller
                 ->header('Content-Disposition', 'attachment; filename="' . $student->student_id . '_qr.png"');
         } catch (Exception $e) {
             abort(500, 'Failed to generate QR code');
-        }
-    }
-
-    /**
-     * Get available classes for enrollment
-     */
-    public function getAvailableClasses(Request $request): JsonResponse
-    {
-        try {
-            $filters = $request->only(['grade_id', 'subject_id']);
-            $query = ClassModel::with(['subject', 'teacher.user', 'grade'])->active();
-
-            if (!empty($filters['grade_id'])) {
-                $query->where('grades_id', $filters['grade_id']);
-            }
-
-            if (!empty($filters['subject_id'])) {
-                $query->where('subjects_id', $filters['subject_id']);
-            }
-
-            $classes = $query->get();
-
-            return response()->json($classes->map(function ($class) {
-                return [
-                    'id' => $class->id,
-                    'name' => $class->class_name,
-                    'subject' => $class->subject->subject,
-                    'teacher' => $class->teacher->user->full_name,
-                    'grade' => $class->grade->grade_name,
-                    'year' => $class->year,
-                    'full_name' => $class->class_name . ' - ' . $class->subject->subject . ' (' . $class->grade->grade_name . ')'
-                ];
-            }));
-        } catch (Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 }

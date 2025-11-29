@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Services\AttendanceService;
 use App\Services\ClassService;
+use App\Services\StudentService;
 use Illuminate\Http\Request;
 
 class AttendanceController extends Controller
@@ -12,12 +13,16 @@ class AttendanceController extends Controller
     protected $attendanceService;
     protected $classService;
 
+    protected $studentService;
+
     public function __construct(
         AttendanceService $attendanceService,
-        ClassService $classService
+        ClassService $classService,
+        StudentService $studentService
     ) {
         $this->attendanceService = $attendanceService;
         $this->classService = $classService;
+        $this->studentService = $studentService;
     }
 
 
@@ -36,10 +41,7 @@ class AttendanceController extends Controller
 
         // Get students for selected class
         if ($request->filled('class_id')) {
-            $students = Student::whereHas('studentClasses', function($query) use ($request) {
-                $query->where('classes_id', $request->class_id)
-                      ->where('status', 1);
-            })->where('status', 1)->get();
+            $students = $this->studentService->getStudentsByClass($request->class_id);
         }
 
         // Generate report if filters are applied
@@ -78,12 +80,7 @@ class AttendanceController extends Controller
             return response()->json([]);
         }
 
-        $students = Student::whereHas('studentClasses', function($query) use ($request) {
-            $query->where('classes_id', $request->class_id)
-                  ->where('status', 1);
-        })->where('status', 1)
-        ->select('id', 'student_id', 'first_name', 'last_name')
-        ->get();
+        $students =  $this->studentService->getStudentsByClass($request->class_id);
 
         return response()->json($students);
     }
