@@ -15,20 +15,30 @@
                         <h5>Student Information</h5>
                         <div class="dropdown">
                             <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button"
-                                    data-bs-toggle="dropdown">
+                                data-bs-toggle="dropdown">
                                 Actions
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('admin.students.edit', $student->id) }}">
-                                    <i class="bi bi-pencil-square"></i> Edit Student
-                                </a></li>
-                                <li><a class="dropdown-item" href="{{ route('admin.students.download-qr', $student->id) }}">
-                                    <i class="bi bi-download"></i> Download QR Code
-                                </a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item text-danger" href="#" onclick="deleteStudent({{ $student->id }})">
-                                   <i class="bi bi-trash"></i> Delete Student
-                                </a></li>
+                                @can('manage students')
+                                    <li><a class="dropdown-item" href="{{ route('admin.students.edit', $student->id) }}">
+                                            <i class="bi bi-pencil-square"></i> Edit Student
+                                        </a></li>
+                                @endcan
+
+                                <li><a class="dropdown-item" href="{{ route('students.download-qr', $student->id) }}">
+                                        <i class="bi bi-download"></i> Download QR Code
+                                    </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                @can('manage students')
+                                    <li><a class="dropdown-item text-danger" href="#"
+                                            onclick="deleteStudent({{ $student->id }})">
+                                            <i class="bi bi-trash"></i> Delete Student
+                                        </a></li>
+                                @endcan
+
                             </ul>
                         </div>
                     </div>
@@ -91,12 +101,14 @@
                 <div class="card">
                     <div class="card-header">
                         <h5>Enrolled Classes</h5>
+                        @can('manage classes')
                             <button class="btn btn-sm btn-primary" onclick="manageClasses()">
-                               <i class="bi bi-plus-circle"></i> Manage Classes
+                                <i class="bi bi-plus-circle"></i> Manage Classes
                             </button>
+                        @endcan
                     </div>
                     <div class="card-body">
-                        @if($classes->count() > 0)
+                        @if ($classes->count() > 0)
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
@@ -108,11 +120,13 @@
                                             <th>Year</th>
                                             <th>Enrolled Date</th>
                                             <th>Status</th>
-                                            <th>Action</th>
+                                            @can('manage classes')
+                                                <th>Action</th>
+                                            @endcan
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($classes as $enrollment)
+                                        @foreach ($classes as $enrollment)
                                             <tr>
                                                 <td>{{ $enrollment->class->class_name }}</td>
                                                 <td>{{ $enrollment->class->subject->subject }}</td>
@@ -121,23 +135,26 @@
                                                 <td>{{ $enrollment->class->year }}</td>
                                                 <td>{{ $enrollment->enrolled_date->format('M d, Y') }}</td>
                                                 <td>
-                                                    <span class="badge bg-{{ $enrollment->status ? 'success' : 'danger' }}">
+                                                    <span
+                                                        class="badge bg-{{ $enrollment->status ? 'success' : 'danger' }}">
                                                         {{ $enrollment->status ? 'Active' : 'Inactive' }}
                                                     </span>
                                                 </td>
-                                                <td>
-                                                    @if($enrollment->status)
-                                                        <button class="btn btn-sm btn-danger"
+                                                @can('manage classes')
+                                                    <td>
+                                                        @if ($enrollment->status)
+                                                            <button class="btn btn-sm btn-danger"
                                                                 onclick="unenrollFromClass({{ $student->id }}, {{ $enrollment->classes_id }})">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    @else
-                                                        <button class="btn btn-sm btn-success"
+                                                                <i class="fa fa-times"></i>
+                                                            </button>
+                                                        @else
+                                                            <button class="btn btn-sm btn-success"
                                                                 onclick="enrollToClass({{ $student->id }}, {{ $enrollment->classes_id }})">
-                                                            <i class="fa fa-check"></i>
-                                                        </button>
-                                                    @endif
-                                                </td>
+                                                                <i class="fa fa-check"></i>
+                                                            </button>
+                                                        @endif
+                                                    </td>
+                                                @endcan
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -209,7 +226,7 @@
                     dark: '#000000',
                     light: '#FFFFFF'
                 }
-            }, function (error, canvas) {
+            }, function(error, canvas) {
                 if (error) {
                     console.error('QR Code generation failed:', error);
                     $('#qr-code').html('<p class="text-danger">Failed to generate QR code</p>');
@@ -221,7 +238,7 @@
 
         function manageClasses() {
             // Redirect to edit page or open modal for class management
-            window.location.href = '{{ route("admin.students.edit", $student->id) }}#step-3';
+            window.location.href = '{{ route('admin.students.edit', $student->id) }}#step-3';
         }
 
         function unenrollFromClass(studentId, classId) {
@@ -270,7 +287,7 @@
                 cancelButtonText: 'Cancel'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = '{{ route("admin.students.index") }}';
+                    window.location.href = '{{ route('admin.students.index') }}';
                 }
             });
         }

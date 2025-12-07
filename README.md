@@ -6,12 +6,15 @@ A modern, efficient attendance management system built with Laravel, featuring Q
 ![PHP](https://img.shields.io/badge/PHP-8.1+-blue.svg)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0+-orange.svg)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+https://brighteducation.teamscits.com
 
 ## 🚀 Features
 
 ### Core Features
 - **QR Code Scanning**: Fast and accurate attendance marking using QR codes
+- **Role-based access** (Admin, Teacher, Student) using Spatie Permissions
+- **Class scheduling** with FullCalendar.js
 - **Real-time Dashboard**: Live statistics and attendance insights
 - **Comprehensive Reporting**: Detailed attendance reports with filtering options
 - **Student Management**: Complete student enrollment and class management
@@ -25,18 +28,22 @@ A modern, efficient attendance management system built with Laravel, featuring Q
 - **Caching**: Optimized performance with intelligent caching
 - **Validation**: Comprehensive input validation and security
 
-## 📋 Table of Contents
+### 🛠 Engineering & Architecture
+- Service–Repository Pattern
+- Form Request Validations
+- Query Scopes for clean Eloquent queries
+- Centralized logging & error handling
+- PHPUnit Unit + Feature Tests
+- Secure authentication & authorization
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Database Setup](#database-setup)
-- [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Architecture](#architecture)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
+## 🧩 Tech Stack
+
+**Backend:** Laravel 10, MySQL  
+**Frontend:** Blade, Livewire, Bootstrap  
+**Real-time:** Laravel Echo, Pusher  
+**Scheduling:** FullCalendar.js  
+**Testing:** PHPUnit  
+**Role Management:** Spatie Permissions 
 
 ## 🔧 Requirements
 
@@ -47,25 +54,12 @@ A modern, efficient attendance management system built with Laravel, featuring Q
 - **Node.js**: 16+ (for asset compilation)
 - **Composer**: 2.0+
 
-### PHP Extensions
-```
-- BCMath PHP Extension
-- Ctype PHP Extension
-- Fileinfo PHP Extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- OpenSSL PHP Extension
-- PDO PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
-- GD PHP Extension (for QR code generation)
-```
 
 ## 📥 Installation
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/attendance-management-system.git
+git clone https://github.com/sandeepamuthumal/Attendance-Management-System
 cd attendance-management-system
 ```
 
@@ -90,35 +84,6 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-### 4. Configure Environment Variables
-Edit `.env` file with your database and application settings:
-
-```env
-APP_NAME="Attendance Management System"
-APP_ENV=local
-APP_KEY=base64:your-generated-key
-APP_DEBUG=true
-APP_URL=http://localhost
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=attendance_system
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
-
-# Cache Configuration
-CACHE_DRIVER=redis
-REDIS_HOST=127.0.0.1
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-
-# Attendance System Configuration
-ATTENDANCE_CACHE_TTL=300
-AUTO_SCAN_COOLDOWN=3000
-MAX_FUTURE_ATTENDANCE_DAYS=0
-```
-
 ## 🗄️ Database Setup
 
 ### 1. Create Database
@@ -131,16 +96,6 @@ CREATE DATABASE attendance_system;
 php artisan migrate
 ```
 
-### 3. Seed Sample Data (Optional)
-```bash
-php artisan db:seed --class=AttendanceSeeder
-```
-
-### 4. Create Storage Link
-```bash
-php artisan storage:link
-```
-
 ## 🚀 Usage
 
 ### Starting the Application
@@ -149,92 +104,6 @@ php artisan storage:link
 php artisan serve
 
 # For production, configure your web server to point to the public directory
-```
-
-### Default Access
-- **URL**: `http://localhost:8000`
-- **Admin Dashboard**: `http://localhost:8000/dashboard`
-- **Attendance Scanner**: `http://localhost:8000/attendance`
-- **Reports**: `http://localhost:8000/attendance/report`
-
-## 📱 Main Features Usage
-
-### 1. Dashboard
-- View real-time attendance statistics
-- Monitor daily, weekly, and monthly trends
-- Quick access to all system features
-- Recent attendance activity
-
-### 2. Attendance Scanner
-```
-1. Select a class from the dropdown
-2. Choose the attendance date
-3. Scan QR code or manually enter Student ID
-4. Confirm student details in popup
-5. Mark attendance with one click
-```
-
-### 3. Attendance Reports
-```
-1. Navigate to Reports section
-2. Apply filters:
-   - Select Class (optional)
-   - Choose Student (optional)
-   - Set Date Range
-3. Click "Generate Report"
-4. View results in data table
-5. Export to CSV if needed
-```
-
-### 4. Student Management
-- Add new students
-- Manage class enrollments
-- Update student information
-- Track enrollment history
-
-## 🔌 API Documentation
-
-### Authentication
-All API endpoints require authentication using Laravel Sanctum.
-
-### Endpoints
-
-#### Get Classes
-```http
-GET /api/attendance/classes
-Authorization: Bearer {token}
-```
-
-#### Get Attendance Statistics
-```http
-GET /api/attendance/stats?class_id=1&date=2025-06-27
-Authorization: Bearer {token}
-```
-
-#### Validate Student
-```http
-POST /api/attendance/validate-student
-Authorization: Bearer {token}
-Content-Type: application/json
-
-{
-    "student_id": "STU001",
-    "class_id": 1,
-    "date": "2025-06-27"
-}
-```
-
-#### Mark Attendance
-```http
-POST /api/attendance/mark
-Authorization: Bearer {token}
-Content-Type: application/json
-
-{
-    "student_id": "STU001",
-    "class_id": 1,
-    "date": "2025-06-27"
-}
 ```
 
 ## 🏗️ Architecture
@@ -290,26 +159,6 @@ php artisan test tests/Unit/
 - **Feature Tests**: End-to-end functionality testing
 - **Unit Tests**: Individual component testing
 - **Integration Tests**: Database and service testing
-
-### Example Test
-```php
-public function test_can_mark_attendance()
-{
-    $student = Student::factory()->create();
-    $class = ClassModel::factory()->create();
-    
-    $response = $this->post('/api/attendance/mark', [
-        'student_id' => $student->student_id,
-        'class_id' => $class->id,
-        'date' => Carbon::today()->format('Y-m-d')
-    ]);
-    
-    $response->assertSuccessful();
-    $this->assertDatabaseHas('attendances', [
-        'students_id' => $student->id
-    ]);
-}
-```
 
 ## 📊 Performance Optimization
 
@@ -399,53 +248,6 @@ composer update
 - Storage permissions
 - QR scanner functionality
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Commit changes**: `git commit -m 'Add amazing feature'`
-4. **Push to branch**: `git push origin feature/amazing-feature`
-5. **Open a Pull Request**
-
-### Development Guidelines
-- Follow PSR-12 coding standards
-- Write tests for new features
-- Update documentation
-- Use meaningful commit messages
-
-### Code Style
-```bash
-# Check code style
-./vendor/bin/pint --test
-
-# Fix code style
-./vendor/bin/pint
-```
-
-## 📋 Changelog
-
-### Version 1.0.0 (2025-06-27)
-- Initial release
-- QR code attendance scanning
-- Dashboard with statistics
-- Comprehensive reporting system
-- Export functionality
-- Mobile responsive design
-
-## 🆘 Support
-
-### Getting Help
-- **Documentation**: Check this README and inline documentation
-- **Issues**: [GitHub Issues](https://github.com/sandeepamuthumal/attendance-management-system/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/sandeepamuthumal/attendance-management-system/discussions)
-
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - **Laravel Framework**: For providing an excellent foundation
@@ -481,7 +283,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Project Maintainer**: Sandeepa Muthumal  
 **Email**: sandeepamuthumal3@gmail.com 
 **GitHub**: [@sandeepamuthumal](https://github.com/sandeepamuthumal)  
-**LinkedIn**: [Sandeepa Muthumal](www.linkedin.com/in/sandeepa-muthumal-67a904295)
+**LinkedIn**: [Sandeepa Muthumal](https://www.linkedin.com/in/sandeepa-muthumal)
 
 ---
 

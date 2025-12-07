@@ -46,31 +46,48 @@ class DashboardService
         ];
     }
 
-    private function getWeeklyAttendanceStats(): array
+    private function getWeeklyAttendanceStats($classId = null, $subject = null): array
     {
         $weekStart = Carbon::now()->startOfWeek();
         $weekEnd = Carbon::now()->endOfWeek();
 
-        $weeklyData = Attendance::whereBetween('date', [$weekStart, $weekEnd])
-            ->selectRaw('DATE(date) as attendance_date, COUNT(*) as count')
+        // Get attendance data for the week
+        $attendanceQuery = Attendance::whereBetween('date', [$weekStart, $weekEnd]);
+
+        if ($classId) {
+            $attendanceQuery->whereHas('enrollment', function ($q) use ($classId) {
+                $q->where('classes_id', $classId);
+            });
+        }
+
+        $weeklyData = $attendanceQuery
+            ->selectRaw('DATE(date) as attendance_date, COUNT(DISTINCT students_id) as count')
             ->groupBy('attendance_date')
             ->orderBy('attendance_date')
             ->get()
             ->keyBy('attendance_date');
 
-        $chartData = [];
         $labels = [];
+        $presentData = [];
+        $absentData = [];
+        $totalStudents = Student::where('status', 1)->count();
 
         for ($date = $weekStart->copy(); $date <= $weekEnd; $date->addDay()) {
             $dateStr = $date->format('Y-m-d');
-            $labels[] = $date->format('M d');
-            $chartData[] = $weeklyData->get($dateStr)->count ?? 0;
+            $labels[] = $date->format('D'); // Mon, Tue, etc.
+
+            $present = $weeklyData->get($dateStr)->count ?? 0;
+            $absent = $totalStudents - $present;
+
+            $presentData[] = $present;
+            $absentData[] = $absent;
         }
 
         return [
             'labels' => $labels,
-            'data' => $chartData,
-            'total_week' => array_sum($chartData),
+            'present' => $presentData,
+            'absent' => $absentData,
+            'total_week' => array_sum($presentData),
         ];
     }
 

@@ -16,7 +16,7 @@
                         <div class="breadcrumb-section">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('admin.students.index') }}">Students</a></li>
-                                <li class="breadcrumb-item"><a href="{{ route('admin.students.profile', $student->id) }}">{{ $student->full_name }}</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('admin.students.edit', $student->id) }}">{{ $student->full_name }}</a></li>
                                 <li class="breadcrumb-item active">Edit</li>
                             </ol>
                         </div>
@@ -98,8 +98,8 @@
                                     </div>
 
                                     <div class="d-flex justify-content-between">
-                                        <a href="{{ route('admin.students.profile', $student->id) }}" class="btn btn-secondary">
-                                            <i class="fa fa-arrow-left"></i> Back to Profile
+                                        <a href="{{ route('students.profile', $student->id) }}" class="btn btn-secondary">
+                                            <i class="fa fa-arrow-left"></i> Back to Students
                                         </a>
                                         <button type="submit" class="btn btn-primary">
                                             <i class="fa fa-save"></i> Update Student

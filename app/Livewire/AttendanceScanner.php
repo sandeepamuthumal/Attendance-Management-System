@@ -10,6 +10,7 @@ use App\Services\AttendanceService;
 use App\Services\ClassService;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class AttendanceScanner extends Component
@@ -27,13 +28,30 @@ class AttendanceScanner extends Component
     protected $attendanceService;
     protected $classService;
 
+    public $notifications = [];
+
     public function boot(AttendanceService $attendanceService, ClassService $classService)
     {
         $this->attendanceService = $attendanceService;
         $this->classService = $classService;
     }
 
-     public function changeClass($classId)
+    #[On('echo:attendance-channel,AttendanceMarked')]
+    public function handleAttendanceEvent($payload)
+    {
+        $this->notifications[] = "{$payload['student_name']} marked attendance at {$payload['time']}";
+
+        $student = $payload['student_name'];
+        $time = $payload['time'];
+
+        // Dispatch event to frontend
+        $this->dispatch('attendance-notification', [
+            'student' => $student,
+            'time' => $time,
+        ]);
+    }
+
+    public function changeClass($classId)
     {
         $this->selected_class = $classId;
         $this->resetStudentData();
@@ -108,7 +126,7 @@ class AttendanceScanner extends Component
             $this->resetStudentData();
             $this->loadStats(); // Refresh stats after marking attendance
         } catch (\Exception $e) {
-            Log::error('Failed to mark attendance: ' . $e->getMessage());
+            Log::error('Failed to mark attendance: ' . $e);
             $this->dispatch('showError', $e->getMessage());
         }
     }

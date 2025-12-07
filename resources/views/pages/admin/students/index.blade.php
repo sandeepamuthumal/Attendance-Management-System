@@ -73,9 +73,8 @@
                                         <th>Student ID</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Contact No</th>
                                         <th>Classes</th>
-                                        <th>Created Date</th>
+                                        <th>Registered Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -176,18 +175,17 @@
                     studentDataTable = $('#student-table').DataTable({
                         dom: 'Bfrtip',
                         buttons: ['pageLength', 'csv', 'excel', 'pdf', 'print'],
-                        pageLength: 25,
+                        pageLength: 10,
                         lengthChange: true,
-                        order: [[0, 'asc']],
+                        order: [],
                         destroy: true,
                         data: response,
                         columns: [
                             { data: 'student_id', title: 'Student ID' },
                             { data: 'name', title: 'Name' },
                             { data: 'email', title: 'Email' },
-                            { data: 'contact_no', title: 'Contact No' },
                             { data: 'classes', title: 'Classes' },
-                            { data: 'created_date', title: 'Created Date' },
+                            { data: 'created_date', title: 'Registered Date' },
                             {
                                 data: 'action',
                                 title: 'Action',
@@ -280,7 +278,7 @@
                 text: 'This action cannot be undone. Student will be permanently deleted!',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#dc3545',
+                confirmButtonColor: '#28a745',
                 cancelButtonColor: '#6c757d',
                 confirmButtonText: 'Yes, delete it!',
                 cancelButtonText: 'Cancel'
@@ -288,7 +286,7 @@
                 if (result.isConfirmed) {
                     $.ajax({
                         url: `/admin/students/delete/${studentId}`,
-                        method: 'DELETE',
+                        method: 'POST',
                         data: {
                             _token: $('meta[name="csrf-token"]').attr('content')
                         },

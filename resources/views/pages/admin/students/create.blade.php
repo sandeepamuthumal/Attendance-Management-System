@@ -135,12 +135,9 @@
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
-                                                <th>
+                                                <th style="width: 5%">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" id="select_all_classes">
-                                                        <label class="form-check-label" for="select_all_classes">
-                                                            Select All
-                                                        </label>
                                                     </div>
                                                 </th>
                                                 <th>Class Name</th>
@@ -169,7 +166,7 @@
                                                     <td>{{ $class->class_name }}</td>
                                                     <td>{{ $class->subject->subject }}</td>
                                                     <td>{{ $class->teacher->user->full_name }}</td>
-                                                    <td>{{ $class->grade->grade_name }}</td>
+                                                    <td>{{ $class->grade->grade }}</td>
                                                     <td>{{ $class->year }}</td>
                                                 </tr>
                                             @endforeach

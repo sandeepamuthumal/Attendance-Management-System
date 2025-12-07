@@ -56,6 +56,8 @@
 <!-- custom script -->
 <script src="{{ asset('assets/js/script.js') }}"></script>
 
+<script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
+
 <script type="text/javascript">
     const preloader = document.querySelector('#preloader');
     if (preloader) {

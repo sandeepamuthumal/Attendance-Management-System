@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Models\Teacher;
+use App\Models\User;
 use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Repositories\Contracts\TeacherRepositoryInterface;
 use Illuminate\Support\Facades\DB;
@@ -13,12 +15,16 @@ class UserService
     protected $userRepository;
     protected $teacherRepository;
 
+    protected $notificationService;
+
     public function __construct(
         UserRepositoryInterface $userRepository,
-        TeacherRepositoryInterface $teacherRepository
+        TeacherRepositoryInterface $teacherRepository,
+        NotificationService $notificationService
     ) {
         $this->userRepository = $userRepository;
         $this->teacherRepository = $teacherRepository;
+        $this->notificationService = $notificationService;
     }
 
     public function getUsersByType(int $userTypeId)
@@ -50,6 +56,8 @@ class UserService
         try {
             DB::beginTransaction();
 
+            $password = $data['password'];
+
             $user = $this->userRepository->create([
                 'user_types_id' => $data['user_types_id'],
                 'first_name' => $data['first_name'],
@@ -68,6 +76,14 @@ class UserService
                     'address' => $data['teacher_data']['address'],
                     'nic' => $data['teacher_data']['nic']
                 ]);
+
+                $user->assignRole('Teacher');
+
+                //send login credentials
+                $this->notificationService->sendTeacherCredentials($user, $password);
+            }
+            else{
+                $user->assignRole('Admin');
             }
 
             DB::commit();

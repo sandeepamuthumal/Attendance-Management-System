@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Events\AttendanceMarked;
 use App\Repositories\Contracts\AttendanceRepositoryInterface;
 use App\Repositories\Contracts\StudentClassRepositoryInterface;
 use App\Repositories\Contracts\StudentRepositoryInterface;
@@ -57,11 +58,15 @@ class AttendanceService
     public function markAttendance(int $studentId, int $enrollmentId, string $date): bool
     {
         try {
-            $this->attendanceRepository->create([
+            $attendance = $this->attendanceRepository->create([
                 'students_id' => $studentId,
                 'students_has_classes_id' => $enrollmentId,
                 'date' => $date,
             ]);
+
+            $newAttendance = $this->attendanceRepository->getAttendanceById($attendance->id);
+
+            event(new AttendanceMarked($newAttendance));
 
             return true;
         } catch (\Exception $e) {

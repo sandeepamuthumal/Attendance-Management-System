@@ -5,14 +5,18 @@ namespace App\Repositories;
 use App\Models\Student;
 use App\Repositories\Contracts\StudentRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
 
 class StudentRepository implements StudentRepositoryInterface
 {
     protected $model;
 
-    public function __construct(Student $model)
+    protected $teacherRepository;
+
+    public function __construct(Student $model, TeacherRepository $teacherRepository)
     {
         $this->model = $model;
+        $this->teacherRepository = $teacherRepository;
     }
 
     public function getAll(): Collection
@@ -44,7 +48,14 @@ class StudentRepository implements StudentRepositoryInterface
             });
         }
 
-        return $query->orderBy('student_id')->get();
+        if(Auth::user()->hasRole('Teacher')){
+            $query->whereHas('classes', function ($q) {
+                $teacher = $this->teacherRepository->findByUserId(auth()->id());
+                $q->where('teachers_id', $teacher->id);
+            });
+        }
+
+        return $query->orderBy('student_id')->active()->get();
     }
 
     public function findById(int $id): ?Student
@@ -84,6 +95,11 @@ class StudentRepository implements StudentRepositoryInterface
             ->find($id);
     }
 
+    public function getStudentWithUser(int $id): ?Student
+    {
+        return $this->model->with('user')->find($id);
+    }
+
     public function searchStudents(string $search, int $limit = 50): Collection
     {
         return $this->model->search($search)
@@ -96,6 +112,7 @@ class StudentRepository implements StudentRepositoryInterface
     {
         return $this->model->whereHas('classes', function ($query) use ($classId) {
             $query->where('classes.id', $classId);
+            $query->where('status', 1);
         })->active()->get();
     }
 

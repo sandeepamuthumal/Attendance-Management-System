@@ -46,6 +46,11 @@ class Student extends Model
         return $this->hasMany(StudentHasClass::class, 'students_id');
     }
 
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class, 'students_id');
+    }
+
     // Accessors
     public function getFullNameAttribute()
     {

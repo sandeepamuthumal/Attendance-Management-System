@@ -8,18 +8,25 @@ use App\Services\QRCodeService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class StudentService
 {
     protected $studentRepository;
     protected $studentClassRepository;
 
+    protected $qrCodeService;
+
+    protected $notificationService;
+
     public function __construct(
         StudentRepositoryInterface $studentRepository,
-        StudentClassRepositoryInterface $studentClassRepository
+        StudentClassRepositoryInterface $studentClassRepository,
+        QRCodeService $qrCodeService
     ) {
         $this->studentRepository = $studentRepository;
         $this->studentClassRepository = $studentClassRepository;
+        $this->qrCodeService = $qrCodeService;
     }
 
     public function getStudentsWithFilters(array $filters = [])
@@ -53,7 +60,20 @@ class StudentService
         try {
             DB::beginTransaction();
 
+            $classIds = $data['class_ids'] ?? [];
+            unset($data['class_ids']);
             $student = $this->studentRepository->create($data);
+
+            // Generate QR code
+            $this->qrCodeService->generateStudentQR($student);
+
+            // Enroll to classes if provided
+            if (!empty($classIds)) {
+                $this->studentClassRepository->enrollStudent($student->id, $classIds);
+            }
+
+            // Send email to student
+            $this->notificationService->sendStudentQRCode($student);
 
             DB::commit();
             return $student;
@@ -69,13 +89,20 @@ class StudentService
         try {
             DB::beginTransaction();
 
+            $classIds = $data['class_ids'] ?? [];
+            unset($data['student_id'], $data['class_ids']);
+
             $oldStudent = $this->studentRepository->getStudentWithClasses($id);
             if (!$oldStudent) {
                 throw new Exception('Student not found');
             }
 
             $this->studentRepository->update($id, $data);
-            $newStudent = $this->studentRepository->getStudentWithClasses($id);
+
+            // Update class enrollments
+            if (isset($classIds)) {
+                $this->studentClassRepository->enrollStudent($oldStudent->id, $classIds);
+            }
 
 
             DB::commit();
@@ -151,7 +178,6 @@ class StudentService
         try {
             $result = $this->studentRepository->changeStatus($id, false);
 
-
             return $result;
         } catch (Exception $e) {
             Log::error('Error deactivating student: ' . $e->getMessage());
@@ -201,9 +227,19 @@ class StudentService
         }
     }
 
+    public function getStudentsByClass(int $classId)
+    {
+        try {
+            return $this->studentRepository->getStudentsByClass($classId);
+        } catch (Exception $e) {
+            Log::error('Error fetching students by class: ' . $e->getMessage());
+            throw new Exception('Failed to fetch students by class');
+        }
+    }
+
     private function generateActionButtons(int $studentId): string
     {
-        $viewBtn = '<a href="/admin/students/profile/' . $studentId . '" class="btn btn-xs btn-info me-1" title="View Profile">
+        $viewBtn = '<a href="/students/profile/' . $studentId . '" class="btn btn-xs btn-warning me-1" title="View Profile">
                         <i class="bi bi-eye"></i>
                     </a>';
 
@@ -215,6 +251,8 @@ class StudentService
                           <i class="icon-trash"></i>
                       </button>';
 
-        return $viewBtn . $editBtn . $deleteBtn;
+        return Auth::user()->can('manage students')
+            ? $viewBtn . $editBtn . $deleteBtn
+            : $viewBtn;
     }
 }

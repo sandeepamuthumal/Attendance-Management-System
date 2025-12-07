@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class CreateStudentRequest extends FormRequest
 {
@@ -26,8 +27,21 @@ class CreateStudentRequest extends FormRequest
             'last_name' => 'required|string|max:255',
             'contact_no' => 'required|string|max:15',
             'parent_contact_no' => 'required|string|max:15',
-            'email' => 'required|email|unique:students,email',
-            'nic' => 'required|string|max:12|unique:students,nic',
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('students', 'email')->where(function ($query) {
+                    return $query->where('status', 1);
+                }),
+            ],
+            'nic' => [
+                'required',
+                'string',
+                'max:12',
+                Rule::unique('students', 'nic')->where(function ($query) {
+                    return $query->where('status', 1);
+                })
+            ],
             'address' => 'required|string',
             'class_ids' => 'array',
             'class_ids.*' => 'exists:classes,id'

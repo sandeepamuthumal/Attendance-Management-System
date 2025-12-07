@@ -22,153 +22,261 @@
             </div>
         </div>
 
-        <div class="row mb-4">
-            <div class="col-lg-3 col-md-6 mb-3">
-                <div class="card bg-primary text-white h-100">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="card-title mb-0">Total Students</h6>
-                                <h2 class="mb-0">{{ $stats['overview']['total_students'] }}</h2>
-                            </div>
-                            <i class="fas fa-users fa-2x opacity-75"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-3">
-                <div class="card bg-success text-white h-100">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="card-title mb-0">Total Classes</h6>
-                                <h2 class="mb-0">{{ $stats['overview']['total_classes'] }}</h2>
-                            </div>
-                            <i class="fas fa-chalkboard-teacher fa-2x opacity-75"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-3">
-                <div class="card bg-info text-white h-100">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="card-title mb-0">Total Enrollments</h6>
-                                <h2 class="mb-0">{{ $stats['overview']['total_enrollments'] }}</h2>
-                            </div>
-                            <i class="fas fa-user-graduate fa-2x opacity-75"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-3">
-                <div class="card bg-warning text-white h-100">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="card-title mb-0">Today's Attendance</h6>
-                                <h2 class="mb-0">{{ $stats['overview']['total_attendance_today'] }}</h2>
-                            </div>
-                            <i class="fas fa-calendar-check fa-2x opacity-75"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {{-- Today's Attendance Summary --}}
-        <div class="row mb-4">
-            <div class="col-lg-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-header">
-                        <h5 class="mb-0">
-                            <i class="fas fa-chart-pie me-2"></i>Today's Attendance Summary
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row text-center">
-                            <div class="col-4">
-                                <div class="mb-2">
-                                    <i class="fas fa-user-check fa-2x text-success mb-2"></i>
-                                    <h4 class="mb-0 text-success">{{ $stats['today_attendance']['present_today'] }}</h4>
-                                    <small class="text-muted">Present</small>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="mb-2">
-                                    <i class="fas fa-user-times fa-2x text-danger mb-2"></i>
-                                    <h4 class="mb-0 text-danger">{{ $stats['today_attendance']['absent_today'] }}</h4>
-                                    <small class="text-muted">Absent</small>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="mb-2">
-                                    <i class="fas fa-percentage fa-2x text-primary mb-2"></i>
-                                    <h4 class="mb-0 text-primary">{{ $stats['today_attendance']['attendance_rate'] }}%</h4>
-                                    <small class="text-muted">Rate</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- Progress Bar --}}
-                        <div class="mt-3">
-                            <div class="d-flex justify-content-between small mb-1">
-                                <span>Attendance Progress</span>
-                                <span>{{ $stats['today_attendance']['present_today'] }}/{{ $stats['today_attendance']['total_students'] }}</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success"
-                                    style="width: {{ $stats['today_attendance']['attendance_rate'] }}%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Recent Attendance --}}
-            <div class="col-lg-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-header">
-                        <h5 class="mb-0">
-                            <i class="fas fa-clock me-2"></i>Recent Attendance
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        @if (!empty($stats['recent_attendance']))
-                            <div class="list-group list-group-flush">
-                                @foreach ($stats['recent_attendance'] as $attendance)
-                                    <div class="list-group-item border-0 px-0">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h6 class="mb-0">{{ $attendance['student_name'] }}</h6>
-                                                <small class="text-muted">
-                                                    {{ $attendance['student_id'] }} • {{ $attendance['class_name'] }}
-                                                </small>
-                                            </div>
-                                            <div class="text-end">
-                                                <small class="text-muted d-block">{{ $attendance['date'] }}</small>
-                                                <small class="text-success">{{ $attendance['time'] }}</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @else
-                            <div class="text-center py-3">
-                                <i class="fas fa-clipboard-list fa-2x text-muted mb-2"></i>
-                                <p class="text-muted mb-0">No recent attendance records</p>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-      
+        @livewire('dashboard')
     </div>
+@endsection
+
+@push('css')
+    <style>
+        .card {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            border: 1px solid rgba(0, 0, 0, 0.125);
+        }
+
+        .progress {
+            background-color: #e9ecef;
+        }
+
+        .list-group-item:last-child {
+            border-bottom: 0;
+        }
+
+        .opacity-75 {
+            opacity: 0.75;
+        }
+
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 1rem 0.75rem;
+            }
+
+            .btn {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Activity Feed */
+        .activity-feed {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .activity-item {
+            display: flex;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .activity-content {
+            flex-grow: 1;
+        }
+
+        /* Pulse Animation */
+        .pulse-badge {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        /* Legend Dot */
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+@endpush
+
+@section('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('{{ config('broadcasting.connections.pusher.key') }}', {
+            cluster: '{{ config('broadcasting.connections.pusher.options.cluster') }}'
+        });
+
+        var channel = pusher.subscribe('attendance-channel');
+        channel.bind('AttendanceMarked', function(data) {
+            console.log("Received:", data);
+            // You can show SweetAlert2 here
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'success',
+                title: `${data.student_name} marked attendance`,
+                text: `at ${data.time}`,
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+            });
+        });
+
+        // Chart.js Configurations
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#6c757d';
+
+        // Attendance Trend Chart
+        const trendCtx = document.getElementById('attendanceTrendChart').getContext('2d');
+        const trendChart = new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: {!! json_encode($stats['weekly_attendance']['labels'] ?? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']) !!},
+                datasets: [{
+                    label: 'Present',
+                    data: {!! json_encode($stats['weekly_attendance']['present'] ?? [15, 18, 16, 20, 19, 12, 8]) !!},
+                    borderColor: '#28a745',
+                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: '#28a745',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                }, {
+                    label: 'Absent',
+                    data: {!! json_encode($stats['weekly_attendance']['absent'] ?? [6, 3, 5, 1, 2, 9, 13]) !!},
+                    borderColor: '#dc3545',
+                    backgroundColor: 'rgba(220, 53, 69, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: '#dc3545',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 15,
+                            font: {
+                                size: 12,
+                                weight: '600'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        borderColor: '#fff',
+                        borderWidth: 1,
+                        displayColors: true,
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y + ' students';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 5,
+                            callback: function(value) {
+                                return value;
+                            }
+                        },
+                        grid: {
+                            display: true,
+                            drawBorder: false,
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Attendance Pie Chart
+        const pieCtx = document.getElementById('attendancePieChart').getContext('2d');
+        const pieChart = new Chart(pieCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Present', 'Absent'],
+                datasets: [{
+                    data: [
+                        {{ $stats['today_attendance']['present_today'] ?? 0 }},
+                        {{ $stats['today_attendance']['absent_today'] ?? 0 }},
+                    ],
+                    backgroundColor: [
+                        '#28a745',
+                        '#dc3545',
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.parsed || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : 0;
+                                return label + ': ' + value + ' (' + percentage + '%)';
+                            }
+                        }
+                    }
+                },
+                cutout: '70%'
+            }
+        });
+    </script>
 @endsection

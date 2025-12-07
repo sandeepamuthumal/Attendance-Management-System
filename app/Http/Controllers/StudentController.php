@@ -8,6 +8,9 @@ use App\Http\Requests\UpdateStudentRequest;
 use App\Models\ClassModel;
 use App\Models\Grade;
 use App\Models\Subject;
+use App\Repositories\ClassRepository;
+use App\Repositories\Contracts\TeacherRepositoryInterface;
+use App\Services\NotificationService;
 use App\Services\StudentService;
 use App\Services\QRCodeService;
 use Exception;
@@ -18,10 +21,15 @@ use Illuminate\Http\Response;
 class StudentController extends Controller
 {
     protected $studentService;
+    protected $notificationService;
 
-    public function __construct(StudentService $studentService)
+    protected $classRepository;
+
+    public function __construct(StudentService $studentService, NotificationService $notificationService, ClassRepository $classRepository)
     {
         $this->studentService = $studentService;
+        $this->notificationService = $notificationService;
+        $this->classRepository = $classRepository;
     }
 
     /**
@@ -29,13 +37,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $classes = ClassModel::with(['subject', 'grade'])->active()->get();
+        $classes = $this->classRepository->getAllActive();
         return view('pages.admin.students.index', compact('classes'));
     }
 
     public function teachertudents()
     {
-        $classes = ClassModel::with(['subject','grade'])->active()->get();
+        $classes =  $this->classRepository->getAllActive();
         return view('pages.teacher.students', compact('classes'));
     }
 
@@ -58,18 +66,9 @@ class StudentController extends Controller
     {
         try {
             $data = $request->validated();
-            $classIds = $data['class_ids'] ?? [];
-            unset($data['class_ids']);
+            $data['status'] = 1;
 
             $student = $this->studentService->createStudent($data);
-
-            // Generate QR code
-            QRCodeService::generateStudentQR($student);
-
-            // Enroll to classes if provided
-            if (!empty($classIds)) {
-                $this->studentService->enrollStudentToClasses($student->id, $classIds);
-            }
 
             return response()->json([
                 'success' => true,
@@ -104,7 +103,6 @@ class StudentController extends Controller
             $enrolledClassIds = $student->classes->pluck('id')->toArray();
 
 
-
             return view('pages.admin.students.edit', compact('student', 'classes', 'grades', 'subjects', 'enrolledClassIds'));
         } catch (Exception $e) {
             abort(404, 'Student not found');
@@ -119,20 +117,13 @@ class StudentController extends Controller
         try {
             $data = $request->validated();
             $studentId = $data['student_id'];
-            $classIds = $data['class_ids'] ?? [];
-            unset($data['student_id'], $data['class_ids']);
 
             $this->studentService->updateStudent($studentId, $data);
-
-            // Update class enrollments
-            if (isset($request->class_ids)) {
-                $this->studentService->enrollStudentToClasses($studentId, $classIds);
-            }
 
             return response()->json([
                 'success' => true,
                 'message' => 'Student updated successfully',
-                'redirect' => route('admin.students.profile', $studentId)
+                'redirect' => route('students.profile', $studentId)
             ]);
         } catch (Exception $e) {
             return response()->json([
@@ -250,41 +241,6 @@ class StudentController extends Controller
                 ->header('Content-Disposition', 'attachment; filename="' . $student->student_id . '_qr.png"');
         } catch (Exception $e) {
             abort(500, 'Failed to generate QR code');
-        }
-    }
-
-    /**
-     * Get available classes for enrollment
-     */
-    public function getAvailableClasses(Request $request): JsonResponse
-    {
-        try {
-            $filters = $request->only(['grade_id', 'subject_id']);
-            $query = ClassModel::with(['subject', 'teacher.user', 'grade'])->active();
-
-            if (!empty($filters['grade_id'])) {
-                $query->where('grades_id', $filters['grade_id']);
-            }
-
-            if (!empty($filters['subject_id'])) {
-                $query->where('subjects_id', $filters['subject_id']);
-            }
-
-            $classes = $query->get();
-
-            return response()->json($classes->map(function ($class) {
-                return [
-                    'id' => $class->id,
-                    'name' => $class->class_name,
-                    'subject' => $class->subject->subject,
-                    'teacher' => $class->teacher->user->full_name,
-                    'grade' => $class->grade->grade_name,
-                    'year' => $class->year,
-                    'full_name' => $class->class_name . ' - ' . $class->subject->subject . ' (' . $class->grade->grade_name . ')'
-                ];
-            }));
-        } catch (Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 }
