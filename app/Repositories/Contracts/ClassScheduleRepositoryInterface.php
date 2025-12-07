@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Interfaces;
+namespace App\Repositories\Contracts;
 
 interface ClassScheduleRepositoryInterface
 {
@@ -9,4 +9,7 @@ interface ClassScheduleRepositoryInterface
     public function create(array $data);
     public function update($id, array $data);
     public function delete($id);
+    public function getByClassId($classId);
+
+    public function deleteByClassId($classId);
 }

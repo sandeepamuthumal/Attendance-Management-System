@@ -3,6 +3,7 @@
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ClassScheduleController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
@@ -82,6 +83,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/attendance-scanner', [AttendanceController::class, 'attendanceScanner'])->name('attendance.scanner');
     Route::get('/attendance-reports', [AttendanceController::class, 'attendanceReports'])->name('attendance.reports');
     Route::get('/attendance/report/students', [AttendanceController::class, 'getStudents'])->name('attendance.report.students');
+
+    //Class schedule management
+    Route::get('/classes/schedule/load', [ClassScheduleController::class, 'loadSchedule'])->name('classes.schedule.load');
+    Route::post('/classes/schedule/save', [ClassScheduleController::class, 'saveSchedule'])->name('classes.schedule.save');
 });
 
 // Teacher Routes (for viewing their classes)

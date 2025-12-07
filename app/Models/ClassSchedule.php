@@ -10,12 +10,18 @@ class ClassSchedule extends Model
     use HasFactory;
 
     protected $fillable = [
-        'class_id',
+        'classes_id',
         'date',
         'start_time',
         'end_time',
         'location',
         'recurring_pattern',
     ];
+
+
+    public function class()
+    {
+        return $this->belongsTo(ClassModel::class, 'classes_id');
+    }
 
 }

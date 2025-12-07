@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Repositories\Interfaces\ClassScheduleRepositoryInterface;
+use App\Repositories\Contracts\ClassScheduleRepositoryInterface;
 
 class ClassScheduleService
 {
@@ -13,5 +13,33 @@ class ClassScheduleService
         $this->classScheduleRepository = $classScheduleRepository;
     }
 
-    // Business logic methods will go here later
+    public function getAllSchedules()
+    {
+        return $this->classScheduleRepository->all();
+    }
+
+    public function getSchedulesByClassId($classId)
+    {
+        return $this->classScheduleRepository->getByClassId($classId);
+    }
+
+    public function createSchedule(array $data)
+    {
+        $classId = $data['classes_id'];
+
+        $this->classScheduleRepository->deleteByClassId($classId);
+
+        foreach ($data['schedule'] as $item) {
+            $this->classScheduleRepository->create([
+                'classes_id' => $classId,
+                'date' => $item['date'],
+                'start_time' => $item['start_time'],
+                'end_time' => $item['end_time'],
+                'location' => $item['location'] ?? null,
+                'recurring_pattern' => $item['recurring_pattern'] ?? null,
+            ]);
+        }
+
+        return true;
+    }
 }

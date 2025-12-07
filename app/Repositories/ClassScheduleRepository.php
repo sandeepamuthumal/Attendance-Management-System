@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Repositories\Eloquent;
+namespace App\Repositories;
 
 use App\Models\ClassSchedule;
-use App\Repositories\Interfaces\ClassScheduleRepositoryInterface;
+use App\Repositories\Contracts\ClassScheduleRepositoryInterface;
+use Illuminate\Database\Eloquent\Collection;
 
 class ClassScheduleRepository implements ClassScheduleRepositoryInterface
 {
@@ -33,5 +34,15 @@ class ClassScheduleRepository implements ClassScheduleRepositoryInterface
     {
         $schedule = $this->find($id);
         return $schedule->delete();
+    }
+
+    public function getByClassId($classId)
+    {
+        return ClassSchedule::where('classes_id', $classId)->get();
+    }
+
+    public function deleteByClassId($classId)
+    {
+        return ClassSchedule::where('classes_id', $classId)->delete();
     }
 }

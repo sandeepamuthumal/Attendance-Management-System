@@ -185,6 +185,9 @@ class ClassService
 
     private function generateActionButtons(int $classId, bool $status): string
     {
+        $scheduleBtn = '<button class="btn btn-xs btn-info me-1 schedule-class" data-id="' . $classId . '" title="Manage Schedule">
+                            <i class="fa-solid fa-clock"></i>
+                        </button>';
         $editBtn = '<button class="btn btn-sm btn-primary btn-xs me-1 edit-class" data-id="' . $classId . '" title="Edit">
                         <i class="icon-pencil-alt"></i>
                     </button>';
@@ -193,6 +196,6 @@ class ClassService
                           <i class="icon-trash"></i>
                       </button>';
 
-        return $editBtn . $deleteBtn;
+        return $scheduleBtn . $editBtn . $deleteBtn;
     }
 }

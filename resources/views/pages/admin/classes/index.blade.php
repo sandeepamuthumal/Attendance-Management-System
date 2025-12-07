@@ -21,15 +21,17 @@
                             <div class="row">
                                 <div class="col-6 mb-3">
                                     <label class="form-label">Class Name</label>
-                                    <input class="form-control" name="class_name" type="text" placeholder="e.g., Mathematics A" required>
+                                    <input class="form-control" name="class_name" type="text"
+                                        placeholder="e.g., Mathematics A" required>
                                     <span class="text-danger" id="class_nameError"></span>
                                 </div>
                                 <div class="col-6 mb-3">
                                     <label class="form-label">Year</label>
                                     <select class="form-select" name="year" required>
                                         <option value="">Choose Year...</option>
-                                        @foreach($years as $year)
-                                            <option value="{{ $year }}" {{ $year == date('Y') ? 'selected' : '' }}>{{ $year }}</option>
+                                        @foreach ($years as $year)
+                                            <option value="{{ $year }}" {{ $year == date('Y') ? 'selected' : '' }}>
+                                                {{ $year }}</option>
                                         @endforeach
                                     </select>
                                     <span class="text-danger" id="yearError"></span>
@@ -38,7 +40,7 @@
                                     <label class="form-label">Subject</label>
                                     <select class="form-select" name="subjects_id" required>
                                         <option value="">Choose Subject...</option>
-                                        @foreach($subjects as $subject)
+                                        @foreach ($subjects as $subject)
                                             <option value="{{ $subject->id }}">{{ $subject->subject }}</option>
                                         @endforeach
                                     </select>
@@ -48,7 +50,7 @@
                                     <label class="form-label">Grade</label>
                                     <select class="form-select" name="grades_id" required>
                                         <option value="">Choose Grade...</option>
-                                        @foreach($grades as $gd)
+                                        @foreach ($grades as $gd)
                                             <option value="{{ $gd->id }}">{{ $gd->grade }}</option>
                                         @endforeach
                                     </select>
@@ -58,15 +60,17 @@
                                     <label class="form-label">Teacher</label>
                                     <select class="form-select" name="teachers_id" required>
                                         <option value="">Choose Teacher...</option>
-                                        @foreach($teachers as $teacher)
-                                            <option value="{{ $teacher->id }}">{{ $teacher->user->full_name }} - {{ $teacher->subject->subject }}</option>
+                                        @foreach ($teachers as $teacher)
+                                            <option value="{{ $teacher->id }}">{{ $teacher->user->full_name }} -
+                                                {{ $teacher->subject->subject }}</option>
                                         @endforeach
                                     </select>
                                     <span class="text-danger" id="teachers_idError"></span>
                                 </div>
                                 <div class="col-12 mb-3 d-none">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="status" value="1" id="status" checked>
+                                        <input class="form-check-input" type="checkbox" name="status" value="1"
+                                            id="status" checked>
                                         <label class="form-check-label" for="status">
                                             Active Class
                                         </label>
@@ -97,14 +101,15 @@
                             <div class="row">
                                 <div class="col-6 mb-3">
                                     <label class="form-label">Class Name</label>
-                                    <input class="form-control" name="class_name" id="edit_class_name" type="text" placeholder="e.g., Mathematics A" required>
+                                    <input class="form-control" name="class_name" id="edit_class_name" type="text"
+                                        placeholder="e.g., Mathematics A" required>
                                     <span class="text-danger" id="edit_class_nameError"></span>
                                 </div>
                                 <div class="col-6 mb-3">
                                     <label class="form-label">Year</label>
                                     <select class="form-select" name="year" id="edit_year" required>
                                         <option value="">Choose Year...</option>
-                                        @foreach($years as $year)
+                                        @foreach ($years as $year)
                                             <option value="{{ $year }}">{{ $year }}</option>
                                         @endforeach
                                     </select>
@@ -114,7 +119,7 @@
                                     <label class="form-label">Subject</label>
                                     <select class="form-select" name="subjects_id" id="edit_subjects_id" required>
                                         <option value="">Choose Subject...</option>
-                                        @foreach($subjects as $subject)
+                                        @foreach ($subjects as $subject)
                                             <option value="{{ $subject->id }}">{{ $subject->subject }}</option>
                                         @endforeach
                                     </select>
@@ -124,7 +129,7 @@
                                     <label class="form-label">Grade</label>
                                     <select class="form-select" name="grades_id" id="edit_grades_id" required>
                                         <option value="">Choose Grade...</option>
-                                        @foreach($grades as $gd)
+                                        @foreach ($grades as $gd)
                                             <option value="{{ $gd->id }}">{{ $gd->grade }}</option>
                                         @endforeach
                                     </select>
@@ -134,15 +139,17 @@
                                     <label class="form-label">Teacher</label>
                                     <select class="form-select" name="teachers_id" id="edit_teachers_id" required>
                                         <option value="">Choose Teacher...</option>
-                                        @foreach($teachers as $teacher)
-                                            <option value="{{ $teacher->id }}">{{ $teacher->user->full_name }} - {{ $teacher->subject->subject }}</option>
+                                        @foreach ($teachers as $teacher)
+                                            <option value="{{ $teacher->id }}">{{ $teacher->user->full_name }} -
+                                                {{ $teacher->subject->subject }}</option>
                                         @endforeach
                                     </select>
                                     <span class="text-danger" id="edit_teachers_idError"></span>
                                 </div>
                                 <div class="col-12 mb-3 d-none">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="status" value="1" id="edit_status">
+                                        <input class="form-check-input" type="checkbox" name="status" value="1"
+                                            id="edit_status">
                                         <label class="form-check-label" for="edit_status">
                                             Active Class
                                         </label>
@@ -158,6 +165,77 @@
             </div>
         </div>
 
+        {{-- Schedule Class Modal --}}
+        <div class="modal fade bd-example-modal-lg" id="schedule-class-modal" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title fs-5">Class Schedule</h3>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <input type="hidden" id="schedule_class_id">
+
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <label class="form-label">Weekday</label>
+                                <select class="form-select" id="schedule_weekday">
+                                    <option value="">Select Day</option>
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                    <option value="Saturday">Saturday</option>
+                                    <option value="Sunday">Sunday</option>
+                                </select>
+                                <span class="text-danger" id="schedule_weekdayError"></span>
+                            </div>
+
+                            <div class="col-4 mb-3">
+                                <label class="form-label">Start Time</label>
+                                <input type="time" class="form-control" id="schedule_start_time">
+                                <span class="text-danger" id="schedule_start_timeError"></span>
+                            </div>
+
+                            <div class="col-4 mb-3">
+                                <label class="form-label">End Time</label>
+                                <input type="time" class="form-control" id="schedule_end_time">
+                                <span class="text-danger" id="schedule_end_timeError"></span>
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <button class="btn btn-primary" id="add-schedule-btn">ADD ENTRY</button>
+                            </div>
+
+                            <!-- Display added schedule items -->
+                            <div class="col-12">
+                                <table class="table table-bordered" id="schedule-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Day</th>
+                                            <th>Start</th>
+                                            <th>End</th>
+                                            <th>Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-success" id="save-schedule-btn">SAVE SCHEDULE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         {{-- Classes List --}}
         <div class="row">
             <div class="col-sm-12">
@@ -170,7 +248,7 @@
                             <div>
                                 <div class="light-box">
                                     <a data-bs-toggle="collapse" href="#collapseFilters" title="Filter Classes"
-                                       role="button" aria-expanded="false" aria-controls="collapseFilters">
+                                        role="button" aria-expanded="false" aria-controls="collapseFilters">
                                         <i class="filter-icon show" data-feather="filter"></i>
                                         <i class="icon-close filter-close hide"></i>
                                     </a>
@@ -190,15 +268,17 @@
                                     <div class="col">
                                         <select class="form-select" id="filter_year" onchange="loadClasses();">
                                             <option value="">All Years</option>
-                                            @foreach($years as $year)
-                                                <option value="{{ $year }}" {{ $year == date('Y') ? 'selected' : '' }}>{{ $year }}</option>
+                                            @foreach ($years as $year)
+                                                <option value="{{ $year }}"
+                                                    {{ $year == date('Y') ? 'selected' : '' }}>{{ $year }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="col">
                                         <select class="form-select" id="filter_grade" onchange="loadClasses();">
                                             <option value="">All Grades</option>
-                                            @foreach($grades as $grade)
+                                            @foreach ($grades as $grade)
                                                 <option value="{{ $grade->id }}">{{ $grade->grade }}</option>
                                             @endforeach
                                         </select>
@@ -206,7 +286,7 @@
                                     <div class="col">
                                         <select class="form-select" id="filter_subject" onchange="loadClasses();">
                                             <option value="">All Subjects</option>
-                                            @foreach($subjects as $subject)
+                                            @foreach ($subjects as $subject)
                                                 <option value="{{ $subject->id }}">{{ $subject->subject }}</option>
                                             @endforeach
                                         </select>
@@ -214,8 +294,9 @@
                                     <div class="col">
                                         <select class="form-select" id="filter_teacher" onchange="loadClasses();">
                                             <option value="">All Teachers</option>
-                                            @foreach($teachers as $teacher)
-                                                <option value="{{ $teacher->id }}">{{ $teacher->user->full_name }}</option>
+                                            @foreach ($teachers as $teacher)
+                                                <option value="{{ $teacher->id }}">{{ $teacher->user->full_name }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -257,11 +338,13 @@
 
 @push('css')
     <style>
-        .btn-group-sm > .btn, .btn-sm {
+        .btn-group-sm>.btn,
+        .btn-sm {
             margin-right: 5px;
         }
 
-        .filter-icon, .icon-close {
+        .filter-icon,
+        .icon-close {
             width: 20px;
             height: 20px;
         }
@@ -341,8 +424,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Form validation styles */
@@ -361,7 +449,6 @@
             border-radius: 4px;
             padding: 4px 8px;
         }
-
     </style>
 @endpush
 
@@ -391,7 +478,8 @@
         function initializeEventHandlers() {
             // Add Class
             $('#add-class-btn').click(function() {
-                submitClassForm('#add-class-form', '{{ route("classes.store") }}', 'POST', '#add-class-modal', '#add-class-btn', 'CREATE CLASS');
+                submitClassForm('#add-class-form', '{{ route('classes.store') }}', 'POST', '#add-class-modal',
+                    '#add-class-btn', 'CREATE CLASS');
             });
 
             // Edit Class
@@ -402,7 +490,8 @@
 
             // Update Class
             $('#update-class-btn').click(function() {
-                submitClassForm('#edit-class-form', '{{ route("classes.update") }}', 'POST', '#edit-class-modal', '#update-class-btn', 'UPDATE CLASS');
+                submitClassForm('#edit-class-form', '{{ route('classes.update') }}', 'POST', '#edit-class-modal',
+                    '#update-class-btn', 'UPDATE CLASS');
             });
 
             // Activate/Deactivate Class
@@ -471,7 +560,7 @@
             };
 
             $.ajax({
-                url: '{{ route("classes.load") }}',
+                url: '{{ route('classes.load') }}',
                 method: 'GET',
                 data: currentFilters,
                 success: function(response) {
@@ -493,13 +582,30 @@
                         order: [],
                         destroy: true,
                         data: response,
-                        columns: [
-                            { data: 'class_name', title: 'Class Name' },
-                            { data: 'subject', title: 'Subject' },
-                            { data: 'teacher', title: 'Teacher' },
-                            { data: 'grade', title: 'Grade' },
-                            { data: 'year', title: 'Year' },
-                            { data: 'created_date', title: 'Created Date' },
+                        columns: [{
+                                data: 'class_name',
+                                title: 'Class Name'
+                            },
+                            {
+                                data: 'subject',
+                                title: 'Subject'
+                            },
+                            {
+                                data: 'teacher',
+                                title: 'Teacher'
+                            },
+                            {
+                                data: 'grade',
+                                title: 'Grade'
+                            },
+                            {
+                                data: 'year',
+                                title: 'Year'
+                            },
+                            {
+                                data: 'created_date',
+                                title: 'Created Date'
+                            },
                             {
                                 data: 'action',
                                 title: 'Action',
@@ -539,15 +645,38 @@
 
                     classDataTable = $('#class-table').DataTable({
                         data: [],
-                        columns: [
-                            { data: 'class_name', title: 'Class Name' },
-                            { data: 'subject', title: 'Subject' },
-                            { data: 'teacher', title: 'Teacher' },
-                            { data: 'grade', title: 'Grade' },
-                            { data: 'year', title: 'Year' },
-                            { data: 'status_badge', title: 'Status' },
-                            { data: 'created_date', title: 'Created Date' },
-                            { data: 'action', title: 'Action' }
+                        columns: [{
+                                data: 'class_name',
+                                title: 'Class Name'
+                            },
+                            {
+                                data: 'subject',
+                                title: 'Subject'
+                            },
+                            {
+                                data: 'teacher',
+                                title: 'Teacher'
+                            },
+                            {
+                                data: 'grade',
+                                title: 'Grade'
+                            },
+                            {
+                                data: 'year',
+                                title: 'Year'
+                            },
+                            {
+                                data: 'status_badge',
+                                title: 'Status'
+                            },
+                            {
+                                data: 'created_date',
+                                title: 'Created Date'
+                            },
+                            {
+                                data: 'action',
+                                title: 'Action'
+                            }
                         ]
                     });
                 }
@@ -559,9 +688,11 @@
             clearErrors();
 
             $.ajax({
-                url: '{{ route("classes.edit") }}',
+                url: '{{ route('classes.edit') }}',
                 method: 'GET',
-                data: { id: classId },
+                data: {
+                    id: classId
+                },
                 success: function(response) {
                     console.log("Class data loaded for edit", response);
 
@@ -707,7 +838,8 @@
 
             Swal.fire({
                 title: confirmText,
-                text: action === 'deactivate' ? 'Students will not be able to attend this class.' : 'This class will be available for attendance.',
+                text: action === 'deactivate' ? 'Students will not be able to attend this class.' :
+                    'This class will be available for attendance.',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: action === 'activate' ? '#28a745' : '#dc3545',
@@ -729,7 +861,8 @@
 
                             Swal.fire({
                                 title: `${actionText.charAt(0).toUpperCase() + actionText.slice(1)}d!`,
-                                text: response.message || `Class has been ${action}d successfully.`,
+                                text: response.message ||
+                                    `Class has been ${action}d successfully.`,
                                 icon: 'success',
                                 timer: 2000,
                                 showConfirmButton: false
@@ -778,7 +911,8 @@
 
                             Swal.fire({
                                 title: 'Deleted!',
-                                text: response.message || 'Class has been deleted successfully.',
+                                text: response.message ||
+                                    'Class has been deleted successfully.',
                                 icon: 'success',
                                 timer: 2000,
                                 showConfirmButton: false
@@ -1033,7 +1167,103 @@
             }
         });
 
-        console.log('Class Management SPA loaded successfully');
-        console.log('Available shortcuts: Ctrl+N (New Class), F5 (Refresh), ESC (Close Modal)');
+        $(document).on('click', '.schedule-class', function() {
+            const classId = $(this).data('id');
+            openScheduleModal(classId);
+        });
+
+        function openScheduleModal(classId) {
+            $('#schedule_class_id').val(classId);
+            $('#schedule-table tbody').empty();
+
+            showGlobalLoading();
+
+            $.ajax({
+                url: '{{ route('classes.schedule.load') }}',
+                method: 'GET',
+                data: {
+                    id: classId
+                },
+                success: function(response) {
+                    response.schedule.forEach(item => {
+                        addScheduleRow(item.weekday, item.start_time, item.end_time);
+                    });
+
+                    $('#schedule-class-modal').modal('show');
+                    hideGlobalLoading();
+                },
+                error: function() {
+                    hideGlobalLoading();
+                    showErrorMessage("Failed to load schedule");
+                }
+            });
+        }
+
+        $('#add-schedule-btn').click(function() {
+            const day = $('#schedule_weekday').val();
+            const start = $('#schedule_start_time').val();
+            const end = $('#schedule_end_time').val();
+
+            if (!day || !start || !end) {
+                showErrorMessage('Please fill all schedule fields');
+                return;
+            }
+
+            addScheduleRow(day, start, end);
+
+            $('#schedule_weekday').val('');
+            $('#schedule_start_time').val('');
+            $('#schedule_end_time').val('');
+        });
+
+        function addScheduleRow(day, start, end) {
+            const row = `
+                <tr>
+                    <td>${day}</td>
+                    <td>${start}</td>
+                    <td>${end}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm remove-schedule-row">&times;</button>
+                    </td>
+                </tr>
+            `;
+
+            $('#schedule-table tbody').append(row);
+        }
+
+        $(document).on('click', '.remove-schedule-row', function() {
+            $(this).closest('tr').remove();
+        });
+
+        $('#save-schedule-btn').click(function() {
+            const classId = $('#schedule_class_id').val();
+            let schedule = [];
+
+            $('#schedule-table tbody tr').each(function() {
+                const tds = $(this).find('td');
+                schedule.push({
+                    weekday: tds.eq(0).text(),
+                    start_time: tds.eq(1).text(),
+                    end_time: tds.eq(2).text(),
+                });
+            });
+
+            $.ajax({
+                url: '{{ route('classes.schedule.save') }}',
+                method: 'POST',
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    id: classId,
+                    schedule: schedule
+                },
+                success: function() {
+                    showSuccessMessage("Schedule saved successfully");
+                    $('#schedule-class-modal').modal('hide');
+                },
+                error: function() {
+                    showErrorMessage("Failed to save schedule");
+                }
+            });
+        });
     </script>
 @endsection

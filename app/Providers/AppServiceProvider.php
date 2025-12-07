@@ -8,12 +8,13 @@ use App\Repositories\Contracts\AttendanceRepositoryInterface;
 use App\Repositories\Contracts\ClassRepositoryInterface;
 use App\Repositories\Contracts\StudentClassRepositoryInterface;
 use App\Repositories\Contracts\StudentRepositoryInterface;
+use App\Repositories\ClassScheduleRepository;
+use App\Repositories\Contracts\ClassScheduleRepositoryInterface;
 use App\Services\ClassScheduleService;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Repositories\UserRepository;
 use App\Repositories\Contracts\TeacherRepositoryInterface;
-use App\Repositories\Eloquent\ClassScheduleRepository;
 use App\Repositories\StudentClassRepository;
 use App\Repositories\StudentRepository;
 use App\Repositories\TeacherRepository;
@@ -30,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(StudentRepositoryInterface::class, StudentRepository::class);
         $this->app->bind(StudentClassRepositoryInterface::class, StudentClassRepository::class);
         $this->app->bind(AttendanceRepositoryInterface::class, AttendanceRepository::class);
-        $this->app->bind(ClassScheduleService::class, ClassScheduleRepository::class);
+        $this->app->bind(ClassScheduleRepositoryInterface::class, ClassScheduleRepository::class);
     }
 
     /**
